@@ -1,14 +1,14 @@
 {
   "displayOrder": ["shortBio","projects", "work", "education", "awards", "volunteer", "social"],
-  "hideDesignedBy": false,
+  "hideDesignedBy": true,
   "personal": {
-    "name": "Navdeep Sekhon",
+    "name": "Kai (devvyyxyz) Mitchell",
     "title": "Software Developer",
     "email": "devvyydev@protonmail.com",
     "phone": "",
-    "website": "http://www.navdeepsekhon.com",
-    "shortBio": "Hello! I am Navdeep Sekhon. I make stuff. Here's some of it.",
-    "location": "Delaware",
+    "website": "http://www.devvyy.xyz",
+    "shortBio": "Hey, Bonjour, 你好 i’m Devvyy, A software and cyber security developer!",
+    "location": "England, UK",
     "profiles": [
       {
         "network": "Twitter",
@@ -24,7 +24,7 @@
       },
       {
         "network": "facebook",
-        "url": "facebook.com/navdeepsekhon6"
+        "url": "http://facebook.com/devvyyxyz"
       }
     ]
   },

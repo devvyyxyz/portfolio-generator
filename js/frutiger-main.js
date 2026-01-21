@@ -3,6 +3,7 @@
 // Initialize after components are loaded
 function initializeApp() {
     console.log('Initializing app...');
+    initThemeSwitcher();
     injectAmbientLayers();
     initParticles(18);
     initToasts();
@@ -339,6 +340,58 @@ function initializeApp() {
     });
 };
 
+// Theme Switcher
+const THEME_MAP = {
+    aero: { className: 'theme-aero', label: 'Frutiger Aero', meta: '#3fa9f5' },
+    eco: { className: 'theme-eco', label: 'Eco', meta: '#52b788' },
+    metro: { className: 'theme-metro', label: 'Metro', meta: '#ff1843' },
+    red: { className: 'theme-red', label: 'Metro Red', meta: '#e53946' }
+};
+
+function initThemeSwitcher() {
+    const savedTheme = localStorage.getItem('portfolioTheme') || 'red';
+    applyTheme(savedTheme, false);
+
+    if (window.__themeSwitcherInitialized) return;
+    window.__themeSwitcherInitialized = true;
+
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const key = btn.dataset.theme;
+            applyTheme(key);
+        });
+    });
+}
+
+function applyTheme(themeKey, persist = true) {
+    const theme = THEME_MAP[themeKey] || THEME_MAP.red;
+    const body = document.body;
+
+    Object.values(THEME_MAP).forEach(entry => body.classList.remove(entry.className));
+    body.classList.add(theme.className);
+    body.dataset.theme = themeKey;
+
+    if (persist) {
+        localStorage.setItem('portfolioTheme', themeKey);
+    }
+
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === themeKey);
+    });
+
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+        metaTheme.setAttribute('content', theme.meta);
+    }
+
+    const devTheme = document.getElementById('dev-theme');
+    if (devTheme) {
+        devTheme.textContent = theme.label;
+    }
+
+    window.currentTheme = themeKey;
+}
+
 // Ambient gradient overlay + particles shell
 function injectAmbientLayers() {
     if (!document.querySelector('.ambient-overlay')) {
@@ -414,13 +467,17 @@ function initDevOverlay() {
         overlay.innerHTML = `
             <h4>Developer Mode</h4>
             <div class="dev-row"><span>Status</span><span id="dev-status">Idle</span></div>
-            <div class="dev-row"><span>Theme</span><span>Metro Red</span></div>
+            <div class="dev-row"><span>Theme</span><span id="dev-theme">Metro Red</span></div>
             <div class="dev-row"><span>Build</span><span>Aero v2.3.1</span></div>
             <div class="dev-row"><span>RAM</span><span id="dev-ram">2.4 GB</span></div>
             <div class="dev-row"><span>FPS</span><span id="dev-fps">60</span></div>
         `;
         document.body.appendChild(overlay);
     }
+
+    // Sync dev overlay with current theme selection
+    const activeTheme = document.body.dataset.theme || localStorage.getItem('portfolioTheme') || 'red';
+    applyTheme(activeTheme, false);
 
     let fpsLast = performance.now();
     let frameCount = 0;

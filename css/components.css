@@ -54,6 +54,49 @@
   animation: toast-in 0.3s ease forwards;
 }
 
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+  margin-left: var(--spacing-md, 16px);
+  flex-wrap: wrap;
+}
+
+.theme-switcher .theme-label {
+  color: var(--color-text-light);
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+.theme-buttons {
+  display: flex;
+  gap: var(--spacing-xs, 4px);
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-light);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm, 2px);
+  padding: 6px 10px;
+  font-size: 0.85em;
+  letter-spacing: 0.01em;
+  transition: var(--transition-fast, 0.15s ease);
+}
+
+.theme-btn:hover {
+  color: var(--color-accent-blue);
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 70, 100, 0.3);
+}
+
+.theme-btn.active {
+  background: var(--color-accent-blue);
+  color: #0c0c12;
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 14px rgba(255, 70, 100, 0.45);
+}
+
 .dev-overlay {
   position: fixed;
   top: 20px;

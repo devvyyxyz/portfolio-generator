@@ -20,6 +20,9 @@
   --color-text-dark: #f5f5f5;
   --color-border: rgba(255, 70, 100, 0.5);
   --color-shadow: rgba(0, 0, 0, 0.7);
+  --bg-overlay: linear-gradient(180deg, rgba(8, 8, 12, 0.8) 0%, rgba(8, 8, 12, 0.85) 100%);
+  --bg-image: url('../Assets/backgrounds/red-wave.jpg');
+  --theme-accent: var(--color-accent-blue);
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -71,12 +74,11 @@
 
 /* Base Body Styles */
 body {
-  background:
-    linear-gradient(180deg, rgba(8, 8, 12, 0.8) 0%, rgba(8, 8, 12, 0.85) 100%),
-    url('../Assets/backgrounds/red-wave.jpg');
+  background: var(--bg-overlay), var(--bg-image);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   font-family: var(--font-family-main);
   color: var(--color-text-light);
   overflow-x: hidden;
@@ -145,4 +147,45 @@ a:hover {
   height: 100vh;
   position: absolute;
   pointer-events: none;
+}
+
+/* Theme Variants */
+body.theme-red {
+  --color-primary-light: rgba(60, 60, 70, 0.95);
+  --color-primary-medium: rgba(35, 35, 45, 0.98);
+  --color-primary-dark: rgba(10, 10, 16, 0.98);
+  --color-accent-blue: #e53946;
+  --color-border: rgba(229, 57, 70, 0.5);
+  --bg-overlay: linear-gradient(180deg, rgba(8, 8, 12, 0.8) 0%, rgba(8, 8, 12, 0.85) 100%);
+  --bg-image: url('../Assets/backgrounds/red-wave.jpg');
+}
+
+body.theme-aero {
+  --color-primary-light: rgba(64, 104, 158, 0.9);
+  --color-primary-medium: rgba(34, 60, 112, 0.92);
+  --color-primary-dark: rgba(14, 28, 52, 0.95);
+  --color-accent-blue: #3fa9f5;
+  --color-border: rgba(63, 169, 245, 0.5);
+  --bg-overlay: linear-gradient(180deg, rgba(10, 18, 32, 0.82) 0%, rgba(10, 26, 46, 0.9) 100%);
+  --bg-image: url('../Assets/backgrounds/aero-water.jpg');
+}
+
+body.theme-eco {
+  --color-primary-light: rgba(26, 54, 36, 0.9);
+  --color-primary-medium: rgba(18, 40, 28, 0.92);
+  --color-primary-dark: rgba(10, 22, 14, 0.95);
+  --color-accent-blue: #64f4ac;
+  --color-border: rgba(100, 244, 172, 0.42);
+  --bg-overlay: linear-gradient(180deg, rgba(10, 22, 14, 0.85) 0%, rgba(8, 18, 12, 0.9) 100%);
+  --bg-image: url('../Assets/backgrounds/eco-field.jpg');
+}
+
+body.theme-metro {
+  --color-primary-light: rgba(34, 34, 44, 0.95);
+  --color-primary-medium: rgba(22, 22, 30, 0.96);
+  --color-primary-dark: rgba(12, 12, 18, 0.98);
+  --color-accent-blue: #ff1843;
+  --color-border: rgba(255, 24, 67, 0.42);
+  --bg-overlay: linear-gradient(180deg, rgba(12, 12, 16, 0.86) 0%, rgba(12, 12, 16, 0.93) 100%);
+  --bg-image: url('../Assets/backgrounds/metro-graffiti.jpg');
 }

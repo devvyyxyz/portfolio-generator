@@ -34,13 +34,12 @@
 }
 
 body {
-  background:
-    linear-gradient(180deg, rgba(8, 8, 12, 0.8) 0%, rgba(8, 8, 12, 0.85) 100%),
-    url('../Assets/backgrounds/red-wave.jpg');
+  background: var(--bg-overlay), var(--bg-image);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: rgba(8, 8, 12, 0.95);
+  background-repeat: no-repeat;
+  background-color: var(--color-primary-dark);
   font-family: Helvetica, Arial, "Segoe UI", sans-serif;
   overflow-x: hidden;
   padding: 12px;

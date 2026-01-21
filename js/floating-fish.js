@@ -201,11 +201,17 @@ class FloatingFish {
 
 // Initialize on page load
 let fishSystem;
-document.addEventListener('DOMContentLoaded', () => {
-  fishSystem = new FloatingFish();
+
+function initializeFishButtons() {
+  if (!fishSystem) return;
   
   // Setup toggle buttons
   const fishButtons = document.querySelectorAll('.fish-btn');
+  
+  if (fishButtons.length === 0) {
+    console.warn('Fish buttons not found');
+    return;
+  }
   
   fishButtons.forEach(btn => {
     btn.classList.remove('active');
@@ -231,4 +237,30 @@ document.addEventListener('DOMContentLoaded', () => {
       this.classList.add('active');
     });
   });
+}
+
+// Wait for DOM and components to be loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    fishSystem = new FloatingFish();
+    
+    // Try to initialize buttons immediately
+    setTimeout(() => {
+      initializeFishButtons();
+    }, 100);
+  });
+} else {
+  // DOM already loaded
+  fishSystem = new FloatingFish();
+  
+  // Try to initialize buttons immediately
+  setTimeout(() => {
+    initializeFishButtons();
+  }, 100);
+}
+
+// Also listen for components loaded event
+document.addEventListener('componentsLoaded', () => {
+  initializeFishButtons();
 });
+

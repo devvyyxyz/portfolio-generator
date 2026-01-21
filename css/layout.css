@@ -1,0 +1,168 @@
+/* Layout & Spacing */
+
+/* Main Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    margin-top: 70px;
+    padding: var(--spacing-lg);
+}
+
+footer {
+    margin-top: auto;
+    padding: var(--spacing-lg);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+/* Grid System */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -var(--spacing-md);
+}
+
+.row > [class*="col-"] {
+    padding: var(--spacing-md);
+}
+
+.col-md-4 {
+    flex: 0 0 calc(33.333% - var(--spacing-md) * 2);
+}
+
+.col-md-6 {
+    flex: 0 0 calc(50% - var(--spacing-md) * 2);
+}
+
+.col-md-12 {
+    flex: 0 0 calc(100% - var(--spacing-md) * 2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .col-md-4,
+    .col-md-6 {
+        flex: 0 0 calc(100% - var(--spacing-md) * 2);
+    }
+    
+    .date-text,
+    .location-text {
+        float: none;
+        display: block;
+    }
+}
+
+/* Project Row */
+.project-row {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.project-row > div {
+    flex: 1;
+    min-width: 200px;
+    max-width: calc(33.333% - var(--spacing-md));
+}
+
+@media (max-width: 1024px) {
+    .project-row > div {
+        max-width: calc(50% - var(--spacing-md));
+    }
+}
+
+@media (max-width: 768px) {
+    .project-row > div {
+        max-width: 100%;
+    }
+}
+
+/* Social Links Layout */
+.social {
+    width: 100%;
+    margin: var(--spacing-lg) auto;
+    text-align: center;
+}
+
+.social ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin: 0;
+    padding: 0;
+}
+
+.social li {
+    display: inline-flex;
+}
+
+.social-list {
+    font-size: 3.5em;
+    line-height: 2.5em;
+}
+
+/* Section Spacing */
+section {
+    margin: var(--spacing-xl) 0;
+}
+
+section h2 {
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--primary-light);
+}
+
+/* Content Sections */
+#contacts {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+#short-bio {
+    font-size: var(--font-size-large);
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Text Utilities */
+.text-name {
+    margin: auto;
+}
+
+.text-thin {
+    font-weight: 400;
+}
+
+/* Collapse Content */
+.collapse {
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+    max-height: 0;
+}
+
+.collapse.in {
+    max-height: 1000px;
+}

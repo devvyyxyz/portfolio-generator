@@ -8,14 +8,14 @@
         "social"
     ],
     "personal": {
-        "name": "Navdeep Sekhon",
-        "title": "{FrontEnd, BackEnd, Mobile} Developer",
+        "name": "Kai",
+        "title": "FrontEnd, BackEnd & Mobile Developer",
         "image": "",
-        "email": "hey@navdeep.co",
-        "phone": "732-860-8502",
+        "email": "devvyy@protonmail.com",
+        "phone": "",
         "website": "",
-        "shortBio": "<i>Hello! I am Navdeep Sekhon. I like programming and tea. Usually I take both at the same time. I have a passion for solving problems and learning new things.</i><p class='text-center'><i>I have written code for front-end, back-end, mobile apps etcetera etcetera. I never shy away from a challenge and I am always looking for opportunities to push my boundaries and build new and exciting things. Here are some of the things I built in my free time while learning new technologies.</i></p><p class='text-center'><i>Feel free to say hello on <a href='https://www.linkedin.com/in/navdeepsekhon' target='_blank'>LinkedIn</a> or any other network listed below</i> :)</p>",
-        "location": "Delaware",
+        "shortBio": "Hey, Bonjour, 你好 i’m Devvyy, A software and cyber security developer!",
+        "location": "England, UK",
         "profiles": [
             {
                 "network": "Twitter",
@@ -31,27 +31,27 @@
             },
             {
                 "network": "facebook",
-                "url": "http://facebook.com/navdeepsekhon6"
+                "url": "http://facebook.com/devvyyxyz"
             }
         ]
     },
     "work": [
         {
-            "employer": "JPMorgan Chase",
-            "location": "Newark, DE",
-            "title": "Application Developer",
-            "website": "https://www.jpmorganchase.com/",
-            "dates": "July 2014 - Present",
+            "employer": "Montraluz",
+            "location": "England, UK",
+            "title": "Social Media Manager",
+            "website": "https://www.,ontraluz.com/",
+            "dates": "Oct 2024 - Present",
             "highlights": []
         }
     ],
     "education": [
         {
             "institution": "Gloucestershire College",
-            "major": "Computer Engineering",
-            "degree": "Bachelor",
-            "graduationDate": "2014",
-            "gpa": "3.7/4.0"
+            "major": "Advanced cyber security and forensics",
+            "degree": "Level 3",
+            "graduationDate": "2023",
+            "gpa": "MMP"
         }
     ],
     "projectSections": [

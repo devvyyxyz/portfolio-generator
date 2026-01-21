@@ -1,0 +1,344 @@
+{
+  "personal": {
+    "name": "Kai",
+    "title": "FrontEnd, BackEnd & Mobile Developer",
+    "email": "devvyy@protonmail.com",
+    "location": "England, UK",
+    "bio": "Hey, Bonjour, 你好 i'm Devvyy, A software and cyber security developer!",
+    "image": "",
+    "website": ""
+  },
+  
+  "sections": {
+    "gamesTested": {
+      "title": "Games Tested",
+      "icon": "🎮",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Example Game Alpha",
+          "role": "Alpha Tester",
+          "company": "Game Studio",
+          "period": "2024 - 2025",
+          "phase": "alpha",
+          "description": "Tested early alpha builds, reported bugs, provided feedback on game mechanics",
+          "platforms": ["PC", "Console"],
+          "image": ""
+        }
+      ]
+    },
+    
+    "gamesMade": {
+      "title": "Games Created",
+      "icon": "🕹️",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Your Game Title",
+          "description": "Game description here",
+          "role": "Developer",
+          "period": "2024",
+          "technologies": ["Unity", "C#"],
+          "platform": ["PC", "Mobile"],
+          "link": "",
+          "image": "",
+          "gallery": []
+        }
+      ]
+    },
+    
+    "art": {
+      "title": "Art & Design",
+      "icon": "🎨",
+      "enabled": true,
+      "items": [
+        {
+          "title": "3D Character Model",
+          "type": "3D",
+          "description": "Character modeling and texturing",
+          "software": ["Blender", "Substance Painter"],
+          "date": "2024",
+          "image": "",
+          "gallery": []
+        }
+      ]
+    },
+    
+    "codingProjects": {
+      "title": "Coding Projects",
+      "icon": "💻",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Portfolio JS Framework",
+          "description": "Javascript framework that automatically generates a responsive portfolio website from resume data",
+          "technologies": ["JavaScript", "HTML", "CSS"],
+          "link": "https://github.com/navdeepsekhon/portfolio-generator",
+          "repository": "https://github.com/navdeepsekhon/portfolio-generator",
+          "image": "https://raw.githubusercontent.com/navdeepsekhon/portfolio-generator/master/screenshot.PNG",
+          "features": [
+            "Responsive design from phone to desktop",
+            "Image galleries for projects",
+            "Customizable section ordering",
+            "Social network icons support"
+          ],
+          "status": "active"
+        }
+      ]
+    },
+    
+    "workExperience": {
+      "title": "Work Experience",
+      "icon": "💼",
+      "enabled": true,
+      "items": [
+        {
+          "company": "Montraluz",
+          "position": "Social Media Manager",
+          "location": "England, UK",
+          "period": "Oct 2024 - Present",
+          "current": true,
+          "website": "https://www.montraluz.com/",
+          "responsibilities": [
+            "Manage social media presence",
+            "Create content strategy",
+            "Engage with community"
+          ],
+          "achievements": []
+        }
+      ]
+    },
+    
+    "clients": {
+      "title": "Clients & Collaborations",
+      "icon": "🤝",
+      "enabled": true,
+      "items": [
+        {
+          "name": "Client/Company Name",
+          "role": "Freelance Developer",
+          "period": "2024",
+          "project": "Project description",
+          "technologies": ["React", "Node.js"],
+          "testimonial": ""
+        }
+      ]
+    },
+    
+    "projects": {
+      "title": "Featured Projects",
+      "icon": "📁",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Project Title",
+          "category": "Web Development",
+          "description": "Project description",
+          "role": "Full Stack Developer",
+          "period": "2024",
+          "technologies": ["React", "Node.js", "MongoDB"],
+          "link": "",
+          "repository": "",
+          "image": "",
+          "highlights": []
+        }
+      ]
+    },
+    
+    "education": {
+      "title": "Education",
+      "icon": "🎓",
+      "enabled": true,
+      "items": [
+        {
+          "institution": "Gloucestershire College",
+          "degree": "Level 3",
+          "field": "Advanced cyber security and forensics",
+          "graduationDate": "2023",
+          "grade": "MMP",
+          "location": "England, UK",
+          "achievements": []
+        }
+      ]
+    },
+    
+    "awards": {
+      "title": "Awards & Recognition",
+      "icon": "🏆",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Award Title",
+          "issuer": "Organization",
+          "date": "2024",
+          "description": "Award description",
+          "category": "Development"
+        }
+      ]
+    },
+    
+    "certifications": {
+      "title": "Certifications",
+      "icon": "📜",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Certification Name",
+          "issuer": "Issuing Organization",
+          "date": "2024",
+          "expiryDate": "",
+          "credentialId": "",
+          "link": ""
+        }
+      ]
+    },
+    
+    "skills": {
+      "title": "Skills",
+      "icon": "⚡",
+      "enabled": true,
+      "categories": [
+        {
+          "category": "Frontend",
+          "skills": [
+            {"name": "JavaScript", "level": 90},
+            {"name": "React", "level": 85},
+            {"name": "HTML/CSS", "level": 95}
+          ]
+        },
+        {
+          "category": "Backend",
+          "skills": [
+            {"name": "Node.js", "level": 85},
+            {"name": "Python", "level": 80}
+          ]
+        }
+      ]
+    },
+    
+    "social": {
+      "title": "Social Links",
+      "icon": "🔗",
+      "enabled": true,
+      "items": [
+        {
+          "platform": "Twitter",
+          "username": "devvyyxyz",
+          "url": "http://twitter.com/devvyyxyz"
+        },
+        {
+          "platform": "GitHub",
+          "username": "devvyy",
+          "url": "http://devvyy.xyz"
+        },
+        {
+          "platform": "LinkedIn",
+          "username": "khyle-mitchell",
+          "url": "https://www.linkedin.com/in/khyle-mitchell-5a39a031a/"
+        },
+        {
+          "platform": "Facebook",
+          "username": "devvyyxyz",
+          "url": "http://facebook.com/devvyyxyz"
+        }
+      ]
+    },
+    
+    "blog": {
+      "title": "Blog & Articles",
+      "icon": "📝",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Getting Started with Web Development",
+          "category": "Tutorial",
+          "date": "2024",
+          "description": "A comprehensive guide for beginners starting their web development journey",
+          "link": "",
+          "tags": ["Web Development", "Tutorial", "Beginners"]
+        }
+      ]
+    },
+    
+    "openSource": {
+      "title": "Open Source Contributions",
+      "icon": "🌐",
+      "enabled": true,
+      "items": [
+        {
+          "project": "Project Name",
+          "repository": "https://github.com/org/repo",
+          "description": "Description of your contribution",
+          "contributions": ["Feature implementation", "Bug fixes", "Documentation"],
+          "technologies": ["JavaScript", "React"],
+          "prCount": 5,
+          "stars": 100
+        }
+      ]
+    },
+    
+    "speaking": {
+      "title": "Speaking & Events",
+      "icon": "🎤",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Conference/Workshop Title",
+          "event": "Event Name",
+          "type": "Conference | Workshop | Meetup | Webinar",
+          "date": "2024",
+          "location": "City, Country / Online",
+          "description": "Talk description",
+          "slides": "",
+          "recording": "",
+          "topics": ["Topic 1", "Topic 2"]
+        }
+      ]
+    },
+    
+    "testimonials": {
+      "title": "Testimonials",
+      "icon": "💬",
+      "enabled": true,
+      "items": [
+        {
+          "name": "Client/Colleague Name",
+          "position": "Position",
+          "company": "Company Name",
+          "testimonial": "Quote about working with you",
+          "photo": "",
+          "relationship": "Client | Colleague | Manager"
+        }
+      ]
+    }
+  },
+  
+  "navigation": {
+    "order": [
+      "gamesTested",
+      "gamesMade",
+      "art",
+      "codingProjects",
+      "workExperience",
+      "clients",
+      "projects",
+      "education",
+      "awards",
+      "certifications",
+      "skills",
+      "blog",
+      "openSource",
+      "speaking",
+      "testimonials",
+      "social"
+    ]
+  },
+  
+  "settings": {
+    "theme": "blue-glass",
+    "showImages": true,
+    "itemsPerPage": 6,
+    "enableFiltering": true,
+    "enableSearch": true
+  }
+}

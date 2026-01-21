@@ -1,0 +1,76 @@
+/* Frutiger Eco/Aero Design - Windows Vista/7 Aesthetic */
+:root {
+    /* Primary Colors - Nature Inspired Blues & Greens */
+    --primary-color: #00BFFF;           /* Deep Sky Blue */
+    --primary-light: #7FD9FF;           /* Light Sky Blue */
+    --primary-dark: #0099CC;            /* Ocean Blue */
+    
+    /* Secondary Colors - Spring Greens */
+    --secondary-color: #9FFFC5;         /* Mint Green (Vista Default) */
+    --secondary-light: #C8FFE0;         /* Pale Mint */
+    --secondary-dark: #5FE69D;          /* Sea Green */
+    
+    /* Accent Colors - Aurora Spectrum */
+    --accent-pink: #FFB6D9;             /* Soft Pink */
+    --accent-purple: #C299FF;           /* Lavender */
+    --accent-orange: #FFC785;           /* Peach */
+    --accent-lime: #D4FF85;             /* Lime */
+    
+    /* Backgrounds - Soft Gradients */
+    --bg-primary: #F0F8FF;              /* Alice Blue */
+    --bg-secondary: #E0F6FF;            /* Light Cyan */
+    --bg-dark: #1A1A2E;                 /* Deep Navy */
+    --bg-gradient-1: linear-gradient(135deg, #00BFFF 0%, #9FFFC5 50%, #FFB6D9 100%);
+    --bg-gradient-2: linear-gradient(0deg, #A7D9F5 0%, #BCE5FC 49%, #D9F0FC 49%, #EAF6FD 100%);
+    --bg-gradient-glossy: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+    
+    /* Text Colors */
+    --text-primary: #000033;            /* Deep Navy */
+    --text-secondary: #003366;          /* Navy */
+    --text-muted: #667788;              /* Blue-Gray */
+    --text-light: #FFFFFF;              /* White */
+    
+    /* Glossy Effects */
+    --shine-color: rgba(255, 255, 255, 0.6);
+    --glass-opacity: 0.85;
+    --glass-blur: 8px;
+    
+    /* Borders & Shadows - Glossy */
+    --border-radius: 25px;              /* Very rounded for bubbly look */
+    --border-radius-small: 15px;
+    --border-radius-bubble: 50%;
+    
+    /* Shadows - Depth & Gloss */
+    --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+    --shadow-outer: 0 5px 15px rgba(0, 0, 0, 0.25);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(0, 191, 255, 0.4);
+    --shadow-glow-pink: 0 0 20px rgba(255, 0, 255, 0.3);
+    
+    /* Borders */
+    --border-glossy: 2px solid rgba(255, 255, 255, 0.5);
+    --border-glow: 3px solid rgba(0, 191, 255, 0.6);
+    
+    /* Spacing */
+    --spacing-xs: 6px;
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+    
+    /* Typography - Helvetica/Arial Priority */
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, 'Roboto', 'Segoe UI', sans-serif;
+    --font-display: 'Helvetica Neue', Helvetica, Arial, 'Roboto', 'Segoe UI', sans-serif;
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+    --font-size-large: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 36px;
+    
+    /* Transitions - Bouncy 2000s feel */
+    --transition-fast: 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-normal: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-slow: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}

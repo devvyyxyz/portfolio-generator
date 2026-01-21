@@ -6,6 +6,7 @@
 .size-btn,
 .sound-btn,
 .music-btn,
+.particle-btn,
 .fish-btn {
   background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-medium) 60%, var(--color-primary-dark) 100%);
   color: var(--color-text-light);
@@ -31,6 +32,7 @@
 .size-btn:hover,
 .sound-btn:hover,
 .music-btn:hover,
+.particle-btn:hover,
 .fish-btn:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
@@ -43,6 +45,7 @@
 .size-btn.active,
 .sound-btn.active,
 .music-btn.active,
+.particle-btn.active,
 .fish-btn.active {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 60%, rgba(0, 0, 0, 0.4) 100%);
   color: var(--color-accent-blue);
@@ -98,6 +101,7 @@
 .side-settings-bar .size-btn,
 .side-settings-bar .sound-btn,
 .side-settings-bar .music-btn,
+.side-settings-bar .particle-btn,
 .side-settings-bar .fish-btn,
 .side-settings-bar .skip-btn {
   width: 100%;

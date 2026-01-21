@@ -178,6 +178,12 @@
   display: block;
 }
 
+.particles-bar .nav-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
 .side-settings-bar .settings-titles {
   font-weight: var(--font-weight-bold);
   font-size: 1.1em;

@@ -5,7 +5,28 @@ function initializeApp() {
     console.log('Initializing app...');
     initThemeSwitcher();
     injectAmbientLayers();
-    initParticles(18);
+    const particleContainer = document.querySelector('.ui-particles');
+    let particlesOn = localStorage.getItem('portfolioParticlesEnabled') !== 'false';
+
+    function applyParticleState(enabled) {
+        particlesOn = enabled;
+        if (particleContainer) {
+            particleContainer.classList.toggle('is-hidden', !enabled);
+            particleContainer.innerHTML = '';
+        }
+        if (enabled) {
+            initParticles(18);
+        }
+        localStorage.setItem('portfolioParticlesEnabled', particlesOn);
+
+        const particleButtons = document.querySelectorAll('.particle-btn');
+        particleButtons.forEach(btn => {
+            const shouldBeActive = btn.dataset.particles === (enabled ? 'on' : 'off');
+            btn.classList.toggle('active', shouldBeActive);
+        });
+    }
+
+    applyParticleState(particlesOn);
     initToasts();
     initDevOverlay();
     
@@ -194,6 +215,23 @@ function initializeApp() {
 
     initSystemStatus();
     initLogoEasterEgg();
+
+    // Particle toggle controls
+    function bindParticleButtons() {
+        const particleButtons = document.querySelectorAll('.particle-btn');
+        particleButtons.forEach(button => {
+            if (button.dataset.particlesBound === 'true') return;
+            button.dataset.particlesBound = 'true';
+            button.addEventListener('click', function() {
+                const setting = this.dataset.particles === 'on';
+                applyParticleState(setting);
+            });
+        });
+        applyParticleState(particlesOn);
+    }
+
+    bindParticleButtons();
+    document.addEventListener('componentsLoaded', bindParticleButtons);
     
     // Sound Toggle Controls
     const soundButtons = document.querySelectorAll('.sound-btn');

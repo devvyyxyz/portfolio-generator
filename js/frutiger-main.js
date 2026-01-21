@@ -44,6 +44,206 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Sound System
+    const soundEnabled = localStorage.getItem('portfolioSoundsEnabled') !== 'false'; // default true
+    let soundsOn = soundEnabled;
+    
+    const sounds = {
+        click: new Audio('Assets/sounds/links.ogg'),
+        hover: new Audio('Assets/sounds/tokoni_hover.ogg'),
+        leave: new Audio('Assets/sounds/tokoni_leave.ogg'),
+        enable: new Audio('Assets/sounds/sounds_enable.mp3'),
+        disable: new Audio('Assets/sounds/sounds_disable.mp3')
+    };
+    
+    // Preload all sounds
+    Object.values(sounds).forEach(sound => {
+        sound.preload = 'auto';
+        sound.volume = 0.3;
+    });
+    
+    function playSound(soundName) {
+        if (soundsOn && sounds[soundName]) {
+            sounds[soundName].currentTime = 0;
+            sounds[soundName].play().catch(e => console.log('Sound play failed:', e));
+        }
+    }
+    
+    // Music Player System
+    const musicEnabled = localStorage.getItem('portfolioMusicEnabled') !== 'false'; // default true
+    let musicOn = musicEnabled;
+    
+    const musicPlaylist = [
+        'Assets/music/home.mp3',
+        'Assets/music/about.mp3',
+        'Assets/music/blog.mp3',
+        'Assets/music/community.mp3',
+        'Assets/music/resources.mp3',
+        'Assets/music/chatroom.mp3',
+        'Assets/music/art_gallery.mp3',
+        'Assets/music/all_links.mp3',
+        'Assets/music/creator_spotlights.mp3',
+        'Assets/music/news.mp3',
+        'Assets/music/blog/website_launched.mp3',
+        'Assets/music/blog/10k_100k_milestone_event.mp3',
+        'Assets/music/creator_spotlights/january.mp3',
+        'Assets/music/creator_spotlights/february.mp3',
+        'Assets/music/creator_spotlights/march.mp3',
+        'Assets/music/creator_spotlights/april.mp3',
+        'Assets/music/creator_spotlights/may.mp3',
+        'Assets/music/creator_spotlights/june.mp3',
+        'Assets/music/creator_spotlights/july.mp3',
+        'Assets/music/creator_spotlights/august.mp3',
+        'Assets/music/creator_spotlights/september.mp3',
+        'Assets/music/creator_spotlights/october.mp3',
+        'Assets/music/creator_spotlights/november.mp3',
+        'Assets/music/creator_spotlights/december.mp3'
+    ];
+    
+    let currentTrackIndex = 0;
+    const musicPlayer = new Audio(musicPlaylist[currentTrackIndex]);
+    musicPlayer.volume = 0.2;
+    musicPlayer.loop = false;
+    
+    // Auto-play next song when current one ends
+    musicPlayer.addEventListener('ended', function() {
+        if (musicOn) {
+            skipToNextTrack();
+        }
+    });
+    
+    function skipToNextTrack() {
+        currentTrackIndex = (currentTrackIndex + 1) % musicPlaylist.length;
+        musicPlayer.src = musicPlaylist[currentTrackIndex];
+        if (musicOn) {
+            musicPlayer.play().catch(e => console.log('Music play failed:', e));
+        }
+    }
+    
+    function toggleMusic(shouldPlay) {
+        musicOn = shouldPlay;
+        if (musicOn) {
+            musicPlayer.play().catch(e => {
+                console.log('Music autoplay blocked. User interaction required.');
+                // Will play on next user interaction
+            });
+        } else {
+            musicPlayer.pause();
+        }
+        localStorage.setItem('portfolioMusicEnabled', musicOn);
+    }
+    
+    // Music Toggle Controls
+    const musicButtons = document.querySelectorAll('.music-btn');
+    
+    // Set initial state
+    musicButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.music === 'on' && musicOn) {
+            btn.classList.add('active');
+        } else if (btn.dataset.music === 'off' && !musicOn) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Add click handlers to music buttons
+    musicButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const setting = this.dataset.music;
+            const shouldPlay = setting === 'on';
+            
+            toggleMusic(shouldPlay);
+            
+            // Update active button state
+            musicButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+    
+    // Skip button functionality
+    const skipButton = document.querySelector('.skip-btn');
+    if (skipButton) {
+        skipButton.addEventListener('click', function() {
+            skipToNextTrack();
+            playSound('click');
+        });
+    }
+    
+    // Attempt to start music if enabled (may be blocked by browser)
+    if (musicOn) {
+        setTimeout(() => {
+            musicPlayer.play().catch(e => {
+                console.log('Music autoplay blocked. Click anywhere to start.');
+            });
+        }, 1000);
+    }
+    
+    // Sound Toggle Controls
+    const soundButtons = document.querySelectorAll('.sound-btn');
+    
+    // Set initial state
+    soundButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.sound === 'on' && soundsOn) {
+            btn.classList.add('active');
+        } else if (btn.dataset.sound === 'off' && !soundsOn) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Add click handlers to sound buttons
+    soundButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const setting = this.dataset.sound;
+            soundsOn = setting === 'on';
+            
+            // Play enable/disable sound
+            if (soundsOn) {
+                sounds.enable.currentTime = 0;
+                sounds.enable.play().catch(e => console.log('Sound play failed:', e));
+            } else {
+                sounds.disable.currentTime = 0;
+                sounds.disable.play().catch(e => console.log('Sound play failed:', e));
+            }
+            
+            // Update active button state
+            soundButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Save preference to localStorage
+            localStorage.setItem('portfolioSoundsEnabled', soundsOn);
+        });
+    });
+    
+    // Add sound effects to all interactive elements
+    function addSoundEffects() {
+        // Add click sound to all buttons
+        const buttons = document.querySelectorAll('button, .btn, .size-btn, .sound-btn');
+        buttons.forEach(btn => {
+            if (!btn.dataset.soundsAdded) {
+                btn.addEventListener('click', () => playSound('click'));
+                btn.dataset.soundsAdded = 'true';
+            }
+        });
+        
+        // Add hover sounds to all links and cards
+        const interactiveElements = document.querySelectorAll('a, .project-card, .timeline-item, .award-card, .volunteer-item, .social-link');
+        interactiveElements.forEach(el => {
+            if (!el.dataset.soundsAdded) {
+                el.addEventListener('mouseenter', () => playSound('hover'));
+                el.addEventListener('mouseleave', () => playSound('leave'));
+                el.dataset.soundsAdded = 'true';
+            }
+        });
+    }
+    
+    // Expose functions globally for dynamic content
+    window.playSound = playSound;
+    window.addSoundEffects = addSoundEffects;
+    
+    // Apply sound effects after a short delay to ensure DOM is ready
+    setTimeout(addSoundEffects, 500);
+
     // Text Size Controls
     const sizeButtons = document.querySelectorAll('.size-btn');
     const siteContainer = document.getElementById('siteContainer');
@@ -169,6 +369,11 @@ function populatePortfolio(data) {
         }, { threshold: 0.1 });
 
         cards.forEach(card => observer.observe(card));
+        
+        // Reapply sound effects to dynamically created elements
+        if (window.addSoundEffects) {
+            window.addSoundEffects();
+        }
     }, 100);
 }
 

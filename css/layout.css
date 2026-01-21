@@ -1,5 +1,79 @@
 /* LAYOUT - Grid, flexbox, containers, and structural layouts */
 
+/* Contact Details */
+.contact-details {
+  background: rgba(200, 220, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.contact-detail {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(150, 190, 255, 0.3);
+}
+
+.contact-detail:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.contact-detail strong {
+  color: #003366;
+  font-size: var(--font-size-md);
+}
+
+.contact-detail a {
+  color: #316DC5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-detail a:hover {
+  color: #1a3d6f;
+  text-decoration: underline;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.skill-category {
+  background: linear-gradient(135deg, rgba(200, 220, 255, 0.5) 0%, rgba(170, 200, 255, 0.4) 100%);
+  border: 1px solid rgba(150, 190, 255, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgba(100, 150, 220, 0.5);
+}
+
+.skill-category h3 {
+  color: #003366;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.skill-category p {
+  color: #555;
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Main Layout Containers */
 .site-wrapper {
   display: flex;

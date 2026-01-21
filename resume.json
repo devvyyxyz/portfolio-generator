@@ -1,211 +1,205 @@
 {
-  "displayOrder": ["shortBio","projects", "work", "education", "awards", "volunteer", "social"],
+  "displayOrder": ["shortBio", "projects", "work", "education", "awards", "volunteer", "social"],
   "hideDesignedBy": true,
   "personal": {
-    "name": "Kai (devvyyxyz) Mitchell",
-    "title": "Software Developer",
-    "email": "devvyydev@protonmail.com",
-    "phone": "",
-    "website": "http://www.devvyy.xyz",
-    "shortBio": "Hey, Bonjour, 你好 i’m Devvyy, A software and cyber security developer!",
+    "name": "Khyle Mitchell",
+    "title": "Full Stack Developer & Software Engineer",
+    "email": "khyle.mitchell@email.com",
+    "phone": "+44 (0) 123 4567890",
+    "website": "https://khyle-mitchell.dev",
+    "shortBio": "Passionate full-stack developer with expertise in building responsive web applications and mobile solutions. Committed to clean code, user-centric design, and continuous learning.",
     "location": "England, UK",
     "profiles": [
       {
-        "network": "Twitter",
-        "url": "http://twitter.com/devvyyxyz"
-      },
-      {
-        "network": "github",
-        "url": "http://devvyy.xyz"
-      },
-      {
-        "network": "linkedin",
+        "network": "LinkedIn",
         "url": "https://www.linkedin.com/in/khyle-mitchell-5a39a031a/"
       },
       {
-        "network": "facebook",
-        "url": "http://facebook.com/devvyyxyz"
+        "network": "GitHub",
+        "url": "https://github.com/khylemitchell"
+      },
+      {
+        "network": "Twitter",
+        "url": "https://twitter.com/khylemitchell"
       }
     ]
   },
   "work": [
     {
-      "employer": "ABC Company",
-      "location": "Newark, DE",
-      "title": "Job with no highlights",
-      "website": "http://google.com",
-      "dates": "July 2014 - Present",
-      "highlights": []
-    },
-    {
-      "employer": "DEF Company",
-      "location": "Newark, DE",
-      "title": "Job with no link to employer site",
-      "website": "",
-      "dates": "1900 - 1901",
+      "employer": "Tech Solutions Ltd",
+      "location": "London, England",
+      "title": "Senior Full Stack Developer",
+      "website": "https://techsolutions.co.uk",
+      "dates": "March 2023 - Present",
       "highlights": [
-        "Implemented new APIs",
-        "Integrated and tested existing C++ libraries with the google testing framework",
-        "Implemented and improved functionality in the backend as well as the frontend of the system",
-        "Technology: C++, SQL, PHP, ExtJS, Unix"
+        "Led development of 5+ full-stack web applications using React and Node.js",
+        "Improved application performance by 40% through code optimization and database restructuring",
+        "Mentored junior developers and conducted code reviews",
+        "Implemented CI/CD pipelines using GitHub Actions and Docker"
       ]
     },
     {
-      "employer": "University Of Delaware",
-      "location": "Newark, DE",
-      "title": "Job with both link to employer site and highlights",
-      "website": "http://google.com",
-      "dates": "1899 – 1900",
+      "employer": "Digital Agency Pro",
+      "location": "Manchester, England",
+      "title": "Full Stack Developer",
+      "website": "https://digitalagencypro.com",
+      "dates": "June 2021 - February 2023",
       "highlights": [
-        "Worked on Model and Simulation of DRAM-PCM Dual Architecture with Dr. Chengmo Yang",
-        "Developed simulators for various parts of the architecture",
-        "Integrated different algorithms",
-        "Tested the algorithms and analyzed the results",
-        "Presented research findings at research seminar"
+        "Developed 15+ client websites using JavaScript, React, and Vue.js",
+        "Built RESTful APIs with Node.js and Express for various applications",
+        "Collaborated with UI/UX designers to implement responsive designs",
+        "Reduced page load times by 35% implementing lazy loading and code splitting"
+      ]
+    },
+    {
+      "employer": "StartUp Ventures",
+      "location": "Birmingham, England",
+      "title": "Junior Web Developer",
+      "website": "https://startupventures.io",
+      "dates": "January 2020 - May 2021",
+      "highlights": [
+        "Developed front-end features using HTML, CSS, and JavaScript",
+        "Assisted in building backend services with Python Flask",
+        "Fixed 200+ bugs reported through QA and user feedback",
+        "Participated in agile sprints and weekly code reviews"
       ]
     }
   ],
-  "volunteer":[
-    {
-      "organization": "Volunteer Org #1",
-      "location": "Newark, DE",
-      "title": "Volunteer without link to website",
-      "website": "",
-      "dates": "December 2015",
-      "highlights": [
-        "highlight",
-        "highlight"
-      ]
-    },
-    {
-      "organization": "Volunteer Org #2",
-      "location": "Newark, DE",
-      "title": "Volunteer without highlights",
-      "website": "https://www.udel.edu/",
-      "dates": "November 2015",
-      "highlights": [
-        
-      ]
-    },
-    {
-      "organization": "Volunteer Org #3",
-      "location": "Newark, DE",
-      "title": "Volunteer with website and highlights",
-      "website": "https://www.udel.edu/",
-      "dates": "November 2015",
-      "highlights": [
-            "highlight",
-             "highlight"
-      ]
-    }
-    ],
   "education": [
-      {
-      "institution": "University Of noGPA",
-      "major": "Computer Engineering",
-      "degree": "Masters",
-      "graduationDate": "Fall 2020"
+    {
+      "institution": "University of Birmingham",
+      "major": "Computer Science",
+      "degree": "Bachelor of Science (2:1 Honours)",
+      "graduationDate": "June 2020",
+      "gpa": "2:1 (Upper Second Class Honours)",
+      "highlights": [
+        "Software Engineering & Web Development",
+        "Database Design & Management",
+        "Artificial Intelligence & Machine Learning"
+      ]
     },
     {
-      "institution": "University Of Delaware",
-      "major": "Computer Engineering",
-      "degree": "Bachelor",
-      "graduationDate": "Fall 2010",
-      "gpa": "3.7/4.0"
-    }
-  ],
-  "projectSections": [
-       {
-      "title": "FrontEnd",
-      "projects" :[{
-        "title": "Project with bulleted description",
-        "link": "https://github.com/navdeepsekhon/AndroidWeatherApp/",
-        "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/portfolio-generator/master/screenshot.PNG",
-        "description": [
-          "Javascript framework that automatically generates a portfolio website from resume data.",
-          "Ability to create image galleries for projects.",
-          "Ability to choose the order of different sections or skip sections entirely.",
-          "Ability to have custom named sections for projects.",
-          "Supports all major social networks icon. ",
-          "The code for this entire site is generated by the framework. Nothing is hardcoded!"
-          ]
-        },
-        {
-        "title": "Project with no link",
-        "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/portfolio-generator/master/screenshot.PNG",
-        "description": [
-          "To crete a bulleted list in the pop up",
-          "Put description content within []",
-          "Each bullet item separated by comma"
-          ]
-        },
-        {
-        "title": "Project with long paragraph description",
-        "link": "https://github.com/navdeepsekhon/AndroidWeatherApp/",
-        "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/portfolio-generator/master/screenshot.PNG",
-        "description": "To create a paragraph description in the pop up, do not put content in [], just put it everything within the double quotes."
-          
-        }]
-    },
-    {
-      "title": "Android",
-      "projects": [
-        {
-          "title": "Project with image gallery",
-          "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/tablet_mainscreen.png",
-          "link": "https://github.com/navdeepsekhon/AndroidWeatherApp/",
-          "description": "To create an image gallery in pop up, put the image URLs comma separated in gallery: []",
-          "gallery": [
-            "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/phone_detailscreen_portrait.png",
-            "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/phone_mainscreen.png",
-            "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/user_settings_screen.png",
-            "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/tablet_mainscreen.png"
-          ]
-        },
-        {
-          "title": "No gallery, no description(?!)",
-          "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/PopMovies/master/screenshots/tablet_movie_details_landscape.PNG",
-          "link": "https://github.com/navdeepsekhon/PopMovies"
-        },
-        {
-          "title": "Top Ten Songs App",
-          "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/TopTenSongsAndroidApp/master/screenshots/tablet_player.PNG",
-          "link": "https://github.com/navdeepsekhon/TopTenSongsAndroidApp",
-          "description": "Android app to play current top ten songs for an artist. Supports instant search for artists. Uses spotify API. Optimized for phone and tablet.",
-          "gallery": [
-            "https://raw.githubusercontent.com/navdeepsekhon/TopTenSongsAndroidApp/master/screenshots/phone_initial_view.png",
-            "https://raw.githubusercontent.com/navdeepsekhon/TopTenSongsAndroidApp/master/screenshots/phone_instant_search.png",
-            "https://raw.githubusercontent.com/navdeepsekhon/TopTenSongsAndroidApp/master/screenshots/phone_artist_top_songs.png",
-            "https://raw.githubusercontent.com/navdeepsekhon/TopTenSongsAndroidApp/master/screenshots/tablet_instant_search.PNG",
-            "https://raw.githubusercontent.com/navdeepsekhon/TopTenSongsAndroidApp/master/screenshots/tablet_artist_top_songs.PNG",
-            "https://raw.githubusercontent.com/navdeepsekhon/TopTenSongsAndroidApp/master/screenshots/tablet_player.PNG"
-          ]
-        },
-        {
-          "title": "Court Counter",
-          "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/CourtCounter/master/screenshots/Screenshot_2015-06-07-14-12-32.png",
-          "link": "https://github.com/navdeepsekhon/CourtCounter",
-          "description": "Android app to keep track of a basketball game score!",
-          "gallery": [
-            "https://raw.githubusercontent.com/navdeepsekhon/CourtCounter/master/screenshots/Screenshot_2015-06-07-14-12-32.png",
-            "https://raw.githubusercontent.com/navdeepsekhon/CourtCounter/master/screenshots/Screenshot_2015-06-07-14-12-43.png"
-          ]
-        }
+      "institution": "Gloucestershire College",
+      "major": "IT & Computer Science",
+      "degree": "National Diploma",
+      "graduationDate": "June 2017",
+      "gpa": "Distinction",
+      "highlights": [
+        "Web Development",
+        "Systems Analysis",
+        "Network Administration"
       ]
     }
-   
   ],
   "awards": [
     {
-      "title": "Award with description",
-      "date": "March 2014",
-      "awarder": "University of Delaware Electrical and Computer Engineering Department",
-      "description": "Awarded to the team with the best senior design project within the ECE department. Project: INERTIA: Dead reckoning tracking system for application in GPS degraded environments."
+      "title": "Developer of the Year",
+      "date": "December 2023",
+      "awarder": "Tech Solutions Ltd",
+      "description": "Recognized for exceptional contributions to company projects and mentoring team members"
     },
     {
-      "title": "Award without description",
-      "date": "March 2014",
-      "awarder": "University of Delaware Electrical and Computer Engineering Department"
+      "title": "Innovation Award",
+      "date": "June 2022",
+      "awarder": "Digital Agency Pro",
+      "description": "Awarded for implementing an innovative performance optimization solution that reduced page load times"
+    },
+    {
+      "title": "Rising Star Award",
+      "date": "March 2021",
+      "awarder": "StartUp Ventures",
+      "description": "Recognition for rapid skill development and outstanding contribution as a junior developer"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Code Education Initiative",
+      "location": "England, UK",
+      "title": "Coding Mentor",
+      "website": "https://codeeducation.org",
+      "dates": "January 2021 - Present",
+      "highlights": [
+        "Developed curriculum for beginner web development course",
+        "Mentored 30+ students in web development fundamentals",
+        "Organized monthly workshops on modern web technologies",
+        "Helped students secure entry-level developer positions"
+      ]
+    },
+    {
+      "organization": "Open Source Community",
+      "location": "Remote",
+      "title": "Active Contributor",
+      "website": "https://github.com",
+      "dates": "June 2019 - Present",
+      "highlights": [
+        "Contributed bug fixes and new features to popular JavaScript libraries",
+        "Reviewed pull requests for community projects",
+        "Maintained personal open-source projects with 1000+ stars",
+        "Participated in open source hackathons and events"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "link": "https://github.com/khylemitchell/ecommerce-platform",
+      "description": "Full-stack e-commerce solution with payment integration, inventory management, and real-time notifications. Features React frontend with Redux state management, Node.js/Express backend, MongoDB database, and Stripe payment processing.",
+      "highlights": [
+        "React + Redux for frontend state management",
+        "Node.js + Express backend with MongoDB",
+        "Stripe payment integration",
+        "Real-time order tracking",
+        "Admin dashboard for inventory management",
+        "Responsive design for mobile and desktop"
+      ]
+    },
+    {
+      "title": "Task Management App",
+      "link": "https://github.com/khylemitchell/task-manager",
+      "description": "Collaborative task management application with real-time updates using WebSocket technology. Allows teams to create projects, assign tasks, and track progress with live notifications.",
+      "highlights": [
+        "Vue.js frontend with WebSocket support",
+        "Firebase backend for real-time database",
+        "Team collaboration features",
+        "Mobile responsive design",
+        "Real-time notifications",
+        "Task filtering and sorting"
+      ]
+    },
+    {
+      "title": "Portfolio Generator",
+      "link": "https://github.com/khylemitchell/portfolio-generator",
+      "description": "JavaScript framework for generating responsive portfolio websites from JSON configuration. Features modular CSS architecture, component-based system, and FrutigerAero aesthetic design.",
+      "highlights": [
+        "Responsive design from mobile to desktop",
+        "JSON-based configuration system",
+        "Modular CSS architecture",
+        "Component-based system",
+        "Animated background effects",
+        "Built-in dark theme support"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend Development",
+      "level": "Expert",
+      "keywords": ["React", "Vue.js", "JavaScript", "HTML5", "CSS3", "Responsive Design", "Redux", "GraphQL"]
+    },
+    {
+      "name": "Backend Development",
+      "level": "Advanced",
+      "keywords": ["Node.js", "Express", "Python", "APIs", "Database Design", "SQL", "MongoDB", "Firebase"]
+    },
+    {
+      "name": "Tools & Technologies",
+      "level": "Advanced",
+      "keywords": ["Git", "Docker", "CI/CD", "AWS", "Firebase", "PostgreSQL", "MongoDB", "GitHub Actions"]
+    },
+    {
+      "name": "Soft Skills",
+      "level": "Expert",
+      "keywords": ["Team Leadership", "Communication", "Problem Solving", "Mentoring", "Project Management"]
     }
   ]
 }

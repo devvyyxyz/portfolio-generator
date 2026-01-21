@@ -1,344 +1,264 @@
 {
   "personal": {
-    "name": "Kai",
-    "title": "FrontEnd, BackEnd & Mobile Developer",
-    "email": "devvyy@protonmail.com",
+    "name": "Khyle Mitchell",
+    "title": "Full Stack Developer & Software Engineer",
+    "email": "khyle.mitchell@email.com",
     "location": "England, UK",
-    "bio": "Hey, Bonjour, 你好 i'm Devvyy, A software and cyber security developer!",
-    "image": "",
-    "website": ""
+    "bio": "Passionate full-stack developer with expertise in building responsive web applications and mobile solutions. Committed to clean code, user-centric design, and continuous learning.",
+    "image": "Assets/pfp-profile.jpg",
+    "website": "https://khyle-mitchell.dev"
   },
   
   "sections": {
-    "gamesTested": {
-      "title": "Games Tested",
-      "icon": "🎮",
-      "enabled": true,
-      "items": [
-        {
-          "title": "Example Game Alpha",
-          "role": "Alpha Tester",
-          "company": "Game Studio",
-          "period": "2024 - 2025",
-          "phase": "alpha",
-          "description": "Tested early alpha builds, reported bugs, provided feedback on game mechanics",
-          "platforms": ["PC", "Console"],
-          "image": ""
-        }
-      ]
-    },
-    
-    "gamesMade": {
-      "title": "Games Created",
-      "icon": "🕹️",
-      "enabled": true,
-      "items": [
-        {
-          "title": "Your Game Title",
-          "description": "Game description here",
-          "role": "Developer",
-          "period": "2024",
-          "technologies": ["Unity", "C#"],
-          "platform": ["PC", "Mobile"],
-          "link": "",
-          "image": "",
-          "gallery": []
-        }
-      ]
-    },
-    
-    "art": {
-      "title": "Art & Design",
-      "icon": "🎨",
-      "enabled": true,
-      "items": [
-        {
-          "title": "3D Character Model",
-          "type": "3D",
-          "description": "Character modeling and texturing",
-          "software": ["Blender", "Substance Painter"],
-          "date": "2024",
-          "image": "",
-          "gallery": []
-        }
-      ]
-    },
-    
-    "codingProjects": {
-      "title": "Coding Projects",
-      "icon": "💻",
-      "enabled": true,
-      "items": [
-        {
-          "title": "Portfolio JS Framework",
-          "description": "Javascript framework that automatically generates a responsive portfolio website from resume data",
-          "technologies": ["JavaScript", "HTML", "CSS"],
-          "link": "https://github.com/navdeepsekhon/portfolio-generator",
-          "repository": "https://github.com/navdeepsekhon/portfolio-generator",
-          "image": "https://raw.githubusercontent.com/navdeepsekhon/portfolio-generator/master/screenshot.PNG",
-          "features": [
-            "Responsive design from phone to desktop",
-            "Image galleries for projects",
-            "Customizable section ordering",
-            "Social network icons support"
-          ],
-          "status": "active"
-        }
-      ]
-    },
-    
     "workExperience": {
       "title": "Work Experience",
       "icon": "💼",
       "enabled": true,
       "items": [
         {
-          "company": "Montraluz",
-          "position": "Social Media Manager",
-          "location": "England, UK",
-          "period": "Oct 2024 - Present",
-          "current": true,
-          "website": "https://www.montraluz.com/",
-          "responsibilities": [
-            "Manage social media presence",
-            "Create content strategy",
-            "Engage with community"
+          "title": "Senior Full Stack Developer",
+          "company": "Tech Solutions Ltd",
+          "location": "London, England",
+          "period": "March 2023 - Present",
+          "description": "Led development of full-stack web applications and mentored junior developers",
+          "highlights": [
+            "Led development of 5+ full-stack web applications using React and Node.js",
+            "Improved application performance by 40% through code optimization",
+            "Mentored junior developers and conducted code reviews",
+            "Implemented CI/CD pipelines using GitHub Actions and Docker"
           ],
-          "achievements": []
-        }
-      ]
-    },
-    
-    "clients": {
-      "title": "Clients & Collaborations",
-      "icon": "🤝",
-      "enabled": true,
-      "items": [
+          "technologies": ["React", "Node.js", "MongoDB", "Docker", "AWS"]
+        },
         {
-          "name": "Client/Company Name",
-          "role": "Freelance Developer",
-          "period": "2024",
-          "project": "Project description",
-          "technologies": ["React", "Node.js"],
-          "testimonial": ""
+          "title": "Full Stack Developer",
+          "company": "Digital Agency Pro",
+          "location": "Manchester, England",
+          "period": "June 2021 - February 2023",
+          "description": "Developed responsive websites and web applications for multiple clients",
+          "highlights": [
+            "Developed 15+ client websites using JavaScript, React, and Vue.js",
+            "Built RESTful APIs with Node.js and Express",
+            "Collaborated with UI/UX designers on responsive designs",
+            "Reduced page load times by 35% with optimization"
+          ],
+          "technologies": ["React", "Vue.js", "JavaScript", "Node.js", "Express"]
+        },
+        {
+          "title": "Junior Web Developer",
+          "company": "StartUp Ventures",
+          "location": "Birmingham, England",
+          "period": "January 2020 - May 2021",
+          "description": "Developed front-end and back-end features for web applications",
+          "highlights": [
+            "Developed front-end features using HTML, CSS, and JavaScript",
+            "Assisted in building backend services with Python Flask",
+            "Fixed 200+ bugs reported through QA and user feedback",
+            "Participated in agile sprints and weekly code reviews"
+          ],
+          "technologies": ["HTML", "CSS", "JavaScript", "Python", "Flask"]
         }
       ]
     },
-    
+
     "projects": {
       "title": "Featured Projects",
-      "icon": "📁",
+      "icon": "💻",
       "enabled": true,
       "items": [
         {
-          "title": "Project Title",
-          "category": "Web Development",
-          "description": "Project description",
+          "title": "E-Commerce Platform",
+          "description": "Full-stack e-commerce solution with payment integration",
           "role": "Full Stack Developer",
-          "period": "2024",
-          "technologies": ["React", "Node.js", "MongoDB"],
-          "link": "",
-          "repository": "",
+          "period": "2023",
+          "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+          "link": "https://github.com/khylemitchell/ecommerce-platform",
+          "highlights": [
+            "React + Redux for state management",
+            "Node.js + Express backend",
+            "Stripe payment integration",
+            "Real-time order tracking",
+            "Admin dashboard for inventory"
+          ],
           "image": "",
-          "highlights": []
+          "gallery": []
+        },
+        {
+          "title": "Task Management App",
+          "description": "Collaborative task management with real-time updates",
+          "role": "Full Stack Developer",
+          "period": "2022",
+          "technologies": ["Vue.js", "Firebase", "WebSocket"],
+          "link": "https://github.com/khylemitchell/task-manager",
+          "highlights": [
+            "Vue.js frontend with WebSocket support",
+            "Firebase real-time database",
+            "Team collaboration features",
+            "Mobile responsive design"
+          ],
+          "image": "",
+          "gallery": []
+        },
+        {
+          "title": "Portfolio Generator",
+          "description": "JavaScript framework for generating responsive portfolio websites",
+          "role": "Creator & Maintainer",
+          "period": "2024",
+          "technologies": ["JavaScript", "HTML", "CSS", "Responsive Design"],
+          "link": "https://github.com/khylemitchell/portfolio-generator",
+          "highlights": [
+            "Responsive design from mobile to desktop",
+            "JSON-based configuration",
+            "Modular CSS architecture",
+            "Component-based system"
+          ],
+          "image": "",
+          "gallery": []
         }
       ]
     },
-    
+
     "education": {
       "title": "Education",
       "icon": "🎓",
       "enabled": true,
       "items": [
         {
+          "institution": "University of Birmingham",
+          "degree": "Bachelor of Science",
+          "field": "Computer Science",
+          "period": "2017 - 2020",
+          "score": "2:1 (Upper Second Class Honours)",
+          "highlights": [
+            "Software Engineering & Web Development",
+            "Database Design & Management",
+            "Artificial Intelligence & Machine Learning"
+          ]
+        },
+        {
           "institution": "Gloucestershire College",
-          "degree": "Level 3",
-          "field": "Advanced cyber security and forensics",
-          "graduationDate": "2023",
-          "grade": "MMP",
-          "location": "England, UK",
-          "achievements": []
+          "degree": "National Diploma",
+          "field": "IT & Computer Science",
+          "period": "2015 - 2017",
+          "score": "Distinction",
+          "highlights": [
+            "Web Development",
+            "Systems Analysis",
+            "Network Administration"
+          ]
         }
       ]
     },
-    
+
     "awards": {
       "title": "Awards & Recognition",
       "icon": "🏆",
       "enabled": true,
       "items": [
         {
-          "title": "Award Title",
-          "issuer": "Organization",
-          "date": "2024",
-          "description": "Award description",
-          "category": "Development"
+          "title": "Developer of the Year",
+          "awarder": "Tech Solutions Ltd",
+          "date": "December 2023",
+          "description": "Recognized for exceptional contributions to company projects and mentoring team members"
+        },
+        {
+          "title": "Innovation Award",
+          "awarder": "Digital Agency Pro",
+          "date": "June 2022",
+          "description": "Awarded for implementing an innovative performance optimization solution"
+        },
+        {
+          "title": "Rising Star Award",
+          "awarder": "StartUp Ventures",
+          "date": "March 2021",
+          "description": "Recognition for rapid skill development and outstanding contribution"
         }
       ]
     },
-    
-    "certifications": {
-      "title": "Certifications",
-      "icon": "📜",
+
+    "volunteer": {
+      "title": "Volunteer Work",
+      "icon": "🤝",
       "enabled": true,
       "items": [
         {
-          "title": "Certification Name",
-          "issuer": "Issuing Organization",
-          "date": "2024",
-          "expiryDate": "",
-          "credentialId": "",
-          "link": ""
+          "organization": "Code Education Initiative",
+          "role": "Coding Mentor",
+          "location": "England, UK",
+          "period": "January 2021 - Present",
+          "description": "Teaching web development to underprivileged youth",
+          "highlights": [
+            "Developed beginner web development curriculum",
+            "Mentored 30+ students in web development",
+            "Organized monthly workshops on modern technologies",
+            "Helped students secure entry-level positions"
+          ]
+        },
+        {
+          "organization": "Open Source Community",
+          "role": "Active Contributor",
+          "location": "Remote",
+          "period": "June 2019 - Present",
+          "description": "Contributing to popular open-source projects",
+          "highlights": [
+            "Contributed bug fixes to JavaScript libraries",
+            "Reviewed pull requests for community projects",
+            "Maintained projects with 1000+ GitHub stars",
+            "Participated in open-source hackathons"
+          ]
         }
       ]
     },
-    
+
     "skills": {
-      "title": "Skills",
+      "title": "Skills & Expertise",
       "icon": "⚡",
       "enabled": true,
       "categories": [
         {
-          "category": "Frontend",
-          "skills": [
-            {"name": "JavaScript", "level": 90},
-            {"name": "React", "level": 85},
-            {"name": "HTML/CSS", "level": 95}
-          ]
+          "name": "Frontend",
+          "skills": ["React", "Vue.js", "JavaScript", "HTML5", "CSS3", "Redux", "TypeScript"]
         },
         {
-          "category": "Backend",
-          "skills": [
-            {"name": "Node.js", "level": 85},
-            {"name": "Python", "level": 80}
-          ]
+          "name": "Backend",
+          "skills": ["Node.js", "Express", "Python", "APIs", "MongoDB", "PostgreSQL", "Firebase"]
+        },
+        {
+          "name": "Tools",
+          "skills": ["Git", "Docker", "AWS", "CI/CD", "GitHub Actions", "VSCode"]
+        },
+        {
+          "name": "Soft Skills",
+          "skills": ["Leadership", "Communication", "Problem Solving", "Mentoring", "Agile"]
         }
       ]
     },
-    
+
     "social": {
-      "title": "Social Links",
+      "title": "Connect With Me",
       "icon": "🔗",
       "enabled": true,
-      "items": [
+      "links": [
         {
-          "platform": "Twitter",
-          "username": "devvyyxyz",
-          "url": "http://twitter.com/devvyyxyz"
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com/in/khyle-mitchell-5a39a031a/",
+          "icon": "linkedin"
         },
         {
-          "platform": "GitHub",
-          "username": "devvyy",
-          "url": "http://devvyy.xyz"
+          "name": "GitHub",
+          "url": "https://github.com/khylemitchell",
+          "icon": "github"
         },
         {
-          "platform": "LinkedIn",
-          "username": "khyle-mitchell",
-          "url": "https://www.linkedin.com/in/khyle-mitchell-5a39a031a/"
+          "name": "Twitter",
+          "url": "https://twitter.com/khylemitchell",
+          "icon": "twitter"
         },
         {
-          "platform": "Facebook",
-          "username": "devvyyxyz",
-          "url": "http://facebook.com/devvyyxyz"
-        }
-      ]
-    },
-    
-    "blog": {
-      "title": "Blog & Articles",
-      "icon": "📝",
-      "enabled": true,
-      "items": [
-        {
-          "title": "Getting Started with Web Development",
-          "category": "Tutorial",
-          "date": "2024",
-          "description": "A comprehensive guide for beginners starting their web development journey",
-          "link": "",
-          "tags": ["Web Development", "Tutorial", "Beginners"]
-        }
-      ]
-    },
-    
-    "openSource": {
-      "title": "Open Source Contributions",
-      "icon": "🌐",
-      "enabled": true,
-      "items": [
-        {
-          "project": "Project Name",
-          "repository": "https://github.com/org/repo",
-          "description": "Description of your contribution",
-          "contributions": ["Feature implementation", "Bug fixes", "Documentation"],
-          "technologies": ["JavaScript", "React"],
-          "prCount": 5,
-          "stars": 100
-        }
-      ]
-    },
-    
-    "speaking": {
-      "title": "Speaking & Events",
-      "icon": "🎤",
-      "enabled": true,
-      "items": [
-        {
-          "title": "Conference/Workshop Title",
-          "event": "Event Name",
-          "type": "Conference | Workshop | Meetup | Webinar",
-          "date": "2024",
-          "location": "City, Country / Online",
-          "description": "Talk description",
-          "slides": "",
-          "recording": "",
-          "topics": ["Topic 1", "Topic 2"]
-        }
-      ]
-    },
-    
-    "testimonials": {
-      "title": "Testimonials",
-      "icon": "💬",
-      "enabled": true,
-      "items": [
-        {
-          "name": "Client/Colleague Name",
-          "position": "Position",
-          "company": "Company Name",
-          "testimonial": "Quote about working with you",
-          "photo": "",
-          "relationship": "Client | Colleague | Manager"
+          "name": "Email",
+          "url": "mailto:khyle.mitchell@email.com",
+          "icon": "email"
         }
       ]
     }
-  },
-  
-  "navigation": {
-    "order": [
-      "gamesTested",
-      "gamesMade",
-      "art",
-      "codingProjects",
-      "workExperience",
-      "clients",
-      "projects",
-      "education",
-      "awards",
-      "certifications",
-      "skills",
-      "blog",
-      "openSource",
-      "speaking",
-      "testimonials",
-      "social"
-    ]
-  },
-  
-  "settings": {
-    "theme": "blue-glass",
-    "showImages": true,
-    "itemsPerPage": 6,
-    "enableFiltering": true,
-    "enableSearch": true
   }
 }

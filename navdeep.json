@@ -5,100 +5,207 @@
         "work",
         "education",
         "awards",
+        "volunteer",
         "social"
     ],
     "personal": {
-        "name": "Kai",
-        "title": "FrontEnd, BackEnd & Mobile Developer",
-        "image": "",
-        "email": "devvyy@protonmail.com",
-        "phone": "",
-        "website": "",
-        "shortBio": "Hey, Bonjour, 你好 i’m Devvyy, A software and cyber security developer!",
+        "name": "Khyle Mitchell",
+        "title": "Full Stack Developer & Software Engineer",
+        "image": "Assets/pfp-profile.jpg",
+        "email": "khyle.mitchell@email.com",
+        "phone": "+44 (0) 123 4567890",
+        "website": "https://khyle-mitchell.dev",
+        "shortBio": "Passionate full-stack developer with expertise in building responsive web applications and mobile solutions. Committed to clean code, user-centric design, and continuous learning.",
         "location": "England, UK",
         "profiles": [
             {
-                "network": "Twitter",
-                "url": "http://twitter.com/devvyyxyz"
-            },
-            {
-                "network": "github",
-                "url": "http://devvyy.xyz"
-            },
-            {
-                "network": "linkedin",
+                "network": "LinkedIn",
                 "url": "https://www.linkedin.com/in/khyle-mitchell-5a39a031a/"
             },
             {
-                "network": "facebook",
-                "url": "http://facebook.com/devvyyxyz"
+                "network": "GitHub",
+                "url": "https://github.com/khylemitchell"
+            },
+            {
+                "network": "Twitter",
+                "url": "https://twitter.com/khylemitchell"
             }
         ]
     },
     "work": [
         {
-            "employer": "Montraluz",
-            "location": "England, UK",
-            "title": "Social Media Manager",
-            "website": "https://www.,ontraluz.com/",
-            "dates": "Oct 2024 - Present",
-            "highlights": []
+            "employer": "Tech Solutions Ltd",
+            "location": "London, England",
+            "title": "Senior Full Stack Developer",
+            "website": "https://techsolutions.co.uk",
+            "dates": "March 2023 - Present",
+            "highlights": [
+                "Led development of 5+ full-stack web applications using React and Node.js",
+                "Improved application performance by 40% through code optimization",
+                "Mentored junior developers and conducted code reviews",
+                "Implemented CI/CD pipelines using GitHub Actions and Docker"
+            ]
+        },
+        {
+            "employer": "Digital Agency Pro",
+            "location": "Manchester, England",
+            "title": "Full Stack Developer",
+            "website": "https://digitalagencypro.com",
+            "dates": "June 2021 - February 2023",
+            "highlights": [
+                "Developed 15+ client websites using JavaScript, React, and Vue.js",
+                "Built RESTful APIs with Node.js and Express for various applications",
+                "Collaborated with UI/UX designers to implement responsive designs",
+                "Reduced page load times by 35% implementing lazy loading and code splitting"
+            ]
+        },
+        {
+            "employer": "StartUp Ventures",
+            "location": "Birmingham, England",
+            "title": "Junior Web Developer",
+            "website": "https://startupventures.io",
+            "dates": "January 2020 - May 2021",
+            "highlights": [
+                "Developed front-end features using HTML, CSS, and JavaScript",
+                "Assisted in building backend services with Python Flask",
+                "Fixed 200+ bugs reported through QA and user feedback",
+                "Participated in agile sprints and weekly code reviews"
+            ]
         }
     ],
     "education": [
         {
-            "institution": "Gloucestershire College",
-            "major": "Advanced cyber security and forensics",
-            "degree": "Level 3",
-            "graduationDate": "2023",
-            "gpa": "MMP"
-        }
-    ],
-    "projectSections": [
-        {
-            "title": "FrontEnd",
-            "projects": [
-                {
-                    "title": "Porfolio JS Framework",
-                    "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/portfolio-generator/master/screenshot.PNG",
-                    "link": "https://github.com/navdeepsekhon/portfolio-generator",
-                    "description": [
-                        "Javascript framework that automatically generates a responsive portfolio website from resume data.",
-                        "Adapts to different screen sizes from phone to desktop.",
-                        "Ability to create image galleries for projects.",
-                        "Ability to choose the order of different sections or skip sections entirely.",
-                        "Ability to have custom named sections for projects.",
-                        "Supports all major social networks icon. ",
-                        "The code for this entire site is generated by the framework. Nothing is hardcoded!",
-                        "Create yours using the link below the thumbnail!"
-                    ]
-                }
-            ]
+            "institution": "University of Birmingham",
+            "area": "Computer Science",
+            "studyType": "Bachelor of Science",
+            "startDate": "2017-09-01",
+            "endDate": "2020-06-30",
+            "score": "2:1 (Upper Second Class Honours)"
         },
         {
-            "title": "Android",
-            "projects": [
-                {
-                    "title": "Weather App",
-                    "thumbnail": "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/tablet_mainscreen.png",
-                    "link": "https://github.com/navdeepsekhon/AndroidWeatherApp/",
-                    "description": "Android weather app using open weather API. Optimized for phone and tablet UI. Refreshes data every 3 hours in SQLite database.",
-                    "gallery": [
-                        "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/phone_detailscreen_portrait.png",
-                        "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/phone_mainscreen.png",
-                        "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/user_settings_screen.png",
-                        "https://raw.githubusercontent.com/navdeepsekhon/AndroidWeatherApp/master/screenshots/tablet_mainscreen.png"
-                    ]
-                }
-            ]
+            "institution": "Gloucestershire College",
+            "area": "IT & Computer Science",
+            "studyType": "National Diploma",
+            "startDate": "2015-09-01",
+            "endDate": "2017-06-30",
+            "score": "Distinction"
         }
     ],
     "awards": [
         {
-            "title": "Outstanding Project Award for Capstone Senior Design",
-            "date": "March 2014",
-            "awarder": "University of Delaware Electrical and Computer Engineering Department",
-            "description": "Awarded to the team with the best senior design project within the ECE department. Project: INERTIA: Dead reckoning tracking system for application in GPS degraded environments."
+            "title": "Developer of the Year",
+            "date": "December 2023",
+            "awarder": "Tech Solutions Ltd",
+            "summary": "Recognized for exceptional contributions to company projects and mentoring team members"
+        },
+        {
+            "title": "Innovation Award",
+            "date": "June 2022",
+            "awarder": "Digital Agency Pro",
+            "summary": "Awarded for implementing an innovative performance optimization solution"
+        },
+        {
+            "title": "Rising Star Award",
+            "date": "March 2021",
+            "awarder": "StartUp Ventures",
+            "summary": "Recognition for rapid skill development and outstanding contribution as a junior developer"
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Code Education Initiative",
+            "position": "Coding Mentor",
+            "website": "https://codeeducation.org",
+            "startDate": "2021-01-01",
+            "endDate": "Present",
+            "summary": "Teaching web development to underprivileged youth, helping 30+ students gain coding skills",
+            "highlights": [
+                "Developed curriculum for beginner web development course",
+                "Provided one-on-one mentoring to students",
+                "Organized monthly workshops on modern web technologies"
+            ]
+        },
+        {
+            "organization": "Open Source Community",
+            "position": "Active Contributor",
+            "website": "https://github.com",
+            "startDate": "2019-06-01",
+            "endDate": "Present",
+            "summary": "Active contributor to multiple open-source projects with 50+ commits",
+            "highlights": [
+                "Contributed bug fixes and new features to popular JavaScript libraries",
+                "Reviewed pull requests for community projects",
+                "Maintained personal open-source projects"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "E-Commerce Platform",
+            "description": "Full-stack e-commerce solution with payment integration",
+            "highlights": [
+                "React + Redux for frontend state management",
+                "Node.js + Express backend with MongoDB",
+                "Stripe payment integration",
+                "Real-time order tracking"
+            ],
+            "keywords": ["React", "Node.js", "MongoDB", "Stripe"],
+            "startDate": "2023-03-01",
+            "endDate": "2023-09-30",
+            "url": "https://github.com/khylemitchell/ecommerce-platform",
+            "roles": ["Full Stack Developer", "Lead Developer"]
+        },
+        {
+            "name": "Task Management App",
+            "description": "Collaborative task management application with real-time updates",
+            "highlights": [
+                "Vue.js frontend with WebSocket support",
+                "Firebase backend for real-time database",
+                "Team collaboration features",
+                "Mobile responsive design"
+            ],
+            "keywords": ["Vue.js", "Firebase", "WebSocket", "PWA"],
+            "startDate": "2022-06-01",
+            "endDate": "2022-12-31",
+            "url": "https://github.com/khylemitchell/task-manager",
+            "roles": ["Full Stack Developer"]
+        },
+        {
+            "name": "Portfolio Generator",
+            "description": "JavaScript framework for generating responsive portfolio websites",
+            "highlights": [
+                "Responsive design from mobile to desktop",
+                "JSON-based configuration",
+                "Modular CSS architecture",
+                "Component-based system"
+            ],
+            "keywords": ["JavaScript", "HTML", "CSS", "Responsive Design"],
+            "startDate": "2024-01-01",
+            "endDate": "Present",
+            "url": "https://github.com/khylemitchell/portfolio-generator",
+            "roles": ["Creator", "Maintainer"]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Frontend Development",
+            "level": "Expert",
+            "keywords": ["React", "Vue.js", "JavaScript", "HTML5", "CSS3", "Responsive Design"]
+        },
+        {
+            "name": "Backend Development",
+            "level": "Advanced",
+            "keywords": ["Node.js", "Express", "Python", "APIs", "Database Design", "SQL"]
+        },
+        {
+            "name": "Tools & Technologies",
+            "level": "Advanced",
+            "keywords": ["Git", "Docker", "CI/CD", "AWS", "Firebase", "MongoDB"]
+        },
+        {
+            "name": "Soft Skills",
+            "level": "Expert",
+            "keywords": ["Team Leadership", "Communication", "Problem Solving", "Mentoring"]
         }
     ]
 }

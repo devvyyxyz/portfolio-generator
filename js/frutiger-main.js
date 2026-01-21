@@ -1,19 +1,23 @@
 // FrutigerAero Portfolio Builder
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Hide preloader
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-        }, 2000);
+// Initialize after components are loaded
+function initializeApp() {
+    console.log('Initializing app...');
+    
+    // Load resume data (only on index page)
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '/') {
+        console.log('Loading resume data...');
+        fetch('resume.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load resume.json');
+                return response.json();
+            })
+            .then(data => {
+                console.log('Resume data loaded:', data);
+                populatePortfolio(data);
+            })
+            .catch(error => console.error('Error loading resume:', error));
     }
-
-    // Load resume data
-    fetch('resume.json')
-        .then(response => response.json())
-        .then(data => populatePortfolio(data))
-        .catch(error => console.error('Error loading resume:', error));
 
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
@@ -519,8 +523,24 @@ function buildSocial(profiles) {
     });
 }
 
-// Auto-hide empty sections
+// Initialize on components loaded
+document.addEventListener('componentsLoaded', function() {
+    console.log('Components loaded, initializing app...');
+    initializeApp();
+});
+
+// Fallback if components don't load
 document.addEventListener('DOMContentLoaded', function() {
+    // If components haven't loaded after 500ms, initialize anyway
+    setTimeout(() => {
+        const navbar = document.querySelector('#navbarPlaceholder nav');
+        if (!navbar) {
+            console.log('Components not loaded, initializing without components...');
+            initializeApp();
+        }
+    }, 500);
+    
+    // Auto-hide empty sections
     setTimeout(() => {
         const sections = ['projects', 'work', 'education', 'awards', 'volunteer', 'social'];
         
@@ -532,5 +552,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 sectionElement.style.display = 'none';
             }
         });
-    }, 500);
+    }, 1000);
 });

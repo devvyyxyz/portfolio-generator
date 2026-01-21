@@ -1,0 +1,63 @@
+/* Floating Fish Animation */
+.fish-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.fish {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: opacity 0.5s ease;
+}
+
+.fish.active {
+  opacity: 0.9;
+}
+
+/* Fish Image */
+.fish img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Swimming Animation - removed since we're using dynamic positioning */
+
+/* Bubbles */
+.bubble {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.4));
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatUp 3s ease-in-out infinite;
+  box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-50px) translateX(10px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-100px) translateX(-5px);
+    opacity: 0;
+  }
+}

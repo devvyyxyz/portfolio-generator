@@ -11,42 +11,19 @@
     <link rel="stylesheet" href="css/frutiger-components.css">
     <link rel="stylesheet" href="css/frutiger-aero-modals.css">
     <link rel="stylesheet" href="css/frutiger-icons.css">
+    <link rel="stylesheet" href="css/floating-fish.css">
+    
+    <!-- Component Loader -->
+    <script src="js/component-loader.js"></script>
 </head>
 <body>
     <!-- Background Cursor Fix -->
     <div id="background"></div>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="orbs">
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-                <div class="orb orb-3"></div>
-            </div>
-            <div class="progress-bar"></div>
-            <div class="loader-text">Loading Portfolio</div>
-        </div>
-    </div>
 
     <!-- Site Container -->
     <div id="siteContainer" class="site-wrapper">
         <!-- Navigation Settings Bar -->
-        <nav id="mainSettingsBar" class="settings-bar">
-            <div class="settings-bar-divs nav-bar">
-                <img src="Assets/Icons/style-glossy-blue/on-off.png" alt="Portfolio" class="nav-icon"><span class="settings-titles">Portfolio</span>
-                <div class="settings-buttons nav-menu">
-                    <a href="#about" class="nav-link">About</a>
-                    <span class="settings-side-vertical-separators">|</span>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <span class="settings-side-vertical-separators">|</span>
-                    <a href="#work" class="nav-link">Work</a>
-                    <span class="settings-side-vertical-separators">|</span>
-                    <a href="#education" class="nav-link">Education</a>
-                    <span class="settings-side-vertical-separators">|</span>
-                    <a href="#contact" class="nav-link">Connect</a>
-                </div>
-            </div>
-        </nav>
+        <div id="navbarPlaceholder" data-component="navbar"></div>
 
         <!-- Main Content with Side Panel Layout -->
         <div class="content-wrapper">
@@ -121,48 +98,14 @@
             </div>
 
             <!-- Side Control Panel -->
-            <aside class="side-control-panel">
-                <!-- Settings Bars for Controls -->
-                <nav class="side-settings-bar">
-                    <div class="settings-bar-divs text-size-bar">
-                        <img src="Assets/Icons/style-glossy-blue/phone.png" alt="Text Size" class="nav-icon">
-                        <span class="settings-titles">Text Size</span>
-                        <div class="settings-buttons">
-                            <button class="size-btn" data-size="small">S</button>
-                            <button class="size-btn active" data-size="medium">M</button>
-                            <button class="size-btn" data-size="large">L</button>
-                        </div>
-                    </div>
-                    <div class="settings-bar-divs sound-bar">
-                        <img src="Assets/Icons/style-glossy-blue/music.png" alt="Sounds" class="nav-icon">
-                        <span class="settings-titles">Sounds</span>
-                        <div class="settings-buttons">
-                            <button class="sound-btn active" data-sound="on">On</button>
-                            <button class="sound-btn" data-sound="off">Off</button>
-                        </div>
-                    </div>
-                    <div class="settings-bar-divs music-bar">
-                        <img src="Assets/Icons/style-glossy-blue/music.png" alt="Music" class="nav-icon">
-                        <span class="settings-titles">Music</span>
-                        <div class="settings-buttons">
-                            <button class="music-btn active" data-music="on">On</button>
-                            <button class="music-btn" data-music="off">Off</button>
-                        </div>
-                        <button class="skip-btn">Skip ⏭</button>
-                    </div>
-                </nav>
-            </aside>
+            <div id="sidebarPlaceholder" data-component="sidebar"></div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Portfolio. Built with FrutigerAero aesthetic.</p>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+    <div id="footerPlaceholder" data-component="footer"></div>
 
     <script src="js/frutiger-main.js"></script>
+    <script src="js/floating-fish.js"></script>
 </body>
 </html>

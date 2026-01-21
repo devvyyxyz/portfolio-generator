@@ -1,5 +1,39 @@
 /* FrutigerAero - Components and Interactive Elements */
 
+/* Base Button Styles - Modular */
+.btn-base {
+  background: linear-gradient(
+    180deg,
+    rgba(180, 188, 190, 0.4) 0%,
+    rgba(107, 115, 119, 0.4) 50%,
+    rgba(61, 65, 67, 0.014) 50.1%
+  );
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(100, 120, 140, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.btn-base:hover {
+  filter: brightness(1.1);
+}
+
+.btn-base.active {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 49%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  color: #5fd196;
+}
+
 /* Main Navigation */
 .nav-bar {
   display: flex !important;

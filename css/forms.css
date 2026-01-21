@@ -9,53 +9,57 @@ textarea,
 select {
   font-family: var(--font-family-main);
   font-size: var(--font-size-sm);
-  color: var(--color-text-light);
+  color: var(--text-strong);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm) var(--spacing-md);
   box-sizing: border-box;
   transition: all var(--transition-normal);
+  background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(4px);
 }
 
 /* Aero Input Fields */
 .aero-input {
-  background-color: rgba(20, 20, 28, 0.96);
-  border: 1px solid rgba(255, 70, 100, 0.6);
+  background-color: color-mix(in srgb, var(--surface-2) 82%, transparent);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm) var(--spacing-md);
   font-size: var(--font-size-sm);
   font-family: var(--font-family-main);
-  color: var(--color-text-light);
+  color: var(--text-strong);
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
 }
 
 .aero-input:focus {
   outline: none;
-  border-color: rgba(255, 110, 150, 0.95);
-  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(255, 70, 100, 0.6);
-  background-color: rgba(24, 24, 32, 0.98);
+  border-color: var(--color-accent-blue);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(255, 70, 100, 0.3);
+  background-color: color-mix(in srgb, var(--surface-2) 90%, transparent);
 }
 
 /* Aero Textarea */
 textarea.aero-input {
   resize: vertical;
   min-height: 100px;
-  background-color: rgba(20, 20, 28, 0.96);
-  border: 1px solid rgba(255, 70, 100, 0.6);
+  background-color: color-mix(in srgb, var(--surface-2) 82%, transparent);
+  border: 1px solid var(--card-border);
 }
 
 textarea.aero-input:focus {
-  background-color: rgba(24, 24, 32, 0.98);
-  border-color: rgba(255, 110, 150, 0.95);
+  background-color: color-mix(in srgb, var(--surface-2) 90%, transparent);
+  border-color: var(--color-accent-blue);
 }
 
 /* Contact Form Inputs */
 #contactForm input,
 #contactForm textarea {
-  background: rgba(18, 18, 26, 0.98);
-  border: 2px solid rgba(255, 70, 100, 0.6);
+  background: color-mix(in srgb, var(--surface-2) 82%, transparent);
+  border: 1px solid var(--card-border);
   border-radius: 5px;
   padding: 10px;
-  color: var(--color-text-light);
+  color: var(--text-strong);
   font-family: "Noto Sans Regular", Arial, Helvetica, sans-serif;
   font-size: 1em;
   backdrop-filter: blur(4px);
@@ -63,15 +67,15 @@ textarea.aero-input:focus {
 
 #contactForm input::placeholder,
 #contactForm textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
 }
 
 #contactForm input:focus,
 #contactForm textarea:focus {
   outline: none;
-  border-color: rgba(255, 110, 150, 0.95);
-  background: rgba(22, 22, 32, 0.98);
-  box-shadow: 0 0 10px rgba(255, 70, 100, 0.6);
+  border-color: var(--color-accent-blue);
+  background: color-mix(in srgb, var(--surface-2) 90%, transparent);
+  box-shadow: 0 0 10px rgba(255, 70, 100, 0.3);
 }
 
 /* Aero Checkbox & Radio */

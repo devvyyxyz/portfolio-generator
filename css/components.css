@@ -4,9 +4,9 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 20% 20%, rgba(255, 90, 120, 0.15), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(255, 70, 100, 0.1), transparent 40%),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.03), transparent 45%, rgba(255, 255, 255, 0.03));
+  background: radial-gradient(circle at 20% 20%, rgba(255, 90, 120, 0.06), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(255, 70, 100, 0.04), transparent 40%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.01), transparent 45%, rgba(255, 255, 255, 0.01));
   mix-blend-mode: screen;
   animation: ambient-shift 28s ease-in-out infinite;
   z-index: 1;

@@ -93,6 +93,19 @@
   min-height: fit-content;
 }
 
+/* Text size variants controlled by sidebar buttons */
+#siteContainer.text-small {
+  font-size: 0.95rem;
+}
+
+#siteContainer.text-medium {
+  font-size: 1rem;
+}
+
+#siteContainer.text-large {
+  font-size: 1.1rem;
+}
+
 /* Content Wrapper */
 .content-wrapper {
   display: flex;

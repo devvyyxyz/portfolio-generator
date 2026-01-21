@@ -9,7 +9,7 @@
 .fish-btn {
   background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-medium) 60%, var(--color-primary-dark) 100%);
   color: var(--color-text-light);
-  border: 1px solid rgba(255, 70, 100, 0.6);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
@@ -53,36 +53,31 @@
 .btn-primary {
   background: linear-gradient(180deg, rgba(255, 90, 120, 0.98) 0%, rgba(220, 40, 70, 0.98) 55%, rgba(150, 20, 40, 0.95) 100%);
   color: var(--color-text-light);
-  border: 1px solid rgba(255, 110, 150, 0.9);
+  border: 1px solid var(--card-border);
   animation: glow-pulse 12s ease-in-out infinite;
 }
 
 .btn-primary:hover {
   background: linear-gradient(180deg, rgba(255, 120, 150, 0.98) 0%, rgba(230, 60, 90, 0.98) 55%, rgba(170, 25, 50, 0.95) 100%);
-  border-color: rgba(255, 140, 170, 0.95);
+  border-color: var(--card-border);
   transform: translateY(-2px);
 }
 
 /* Secondary Button Variant */
 .btn-secondary {
-  background: linear-gradient(180deg, rgba(40, 40, 52, 0.98) 0%, rgba(26, 26, 36, 0.98) 55%, rgba(10, 10, 18, 0.98) 100%);
-  border: 1px solid rgba(255, 70, 100, 0.5);
+  background: var(--surface-2);
+  border: 1px solid var(--card-border);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(180deg, rgba(50, 50, 64, 0.98) 0%, rgba(32, 32, 42, 0.98) 55%, rgba(14, 14, 22, 0.98) 100%);
+  background: var(--surface-3);
 }
 
 /* Skip Button */
 .skip-btn {
-  background: linear-gradient(
-    180deg,
-    rgba(200, 220, 255, 0.6) 0%,
-    rgba(150, 190, 255, 0.5) 50%,
-    rgba(130, 180, 255, 0.4) 50.1%
-  );
+  background: var(--surface-2);
   color: var(--color-text-light);
-  border: 1px solid var(--color-primary-dark);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
@@ -119,9 +114,9 @@
   gap: var(--spacing-sm);
   margin: var(--spacing-lg) 0;
   padding: var(--spacing-sm) var(--spacing-md);
-  background: linear-gradient(180deg, rgba(40, 40, 52, 0.98) 0%, rgba(26, 26, 36, 0.98) 55%, rgba(10, 10, 18, 0.98) 100%);
+  background: var(--surface-2);
   color: var(--color-text-light);
-  border: 1px solid rgba(255, 70, 100, 0.6);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   text-decoration: none;
   font-weight: 600;

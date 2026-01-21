@@ -46,7 +46,7 @@
   border-radius: 10px;
   background: rgba(10, 10, 16, 0.9);
   color: var(--color-text-light);
-  border: 1px solid rgba(255, 70, 100, 0.5);
+  border: 1px solid var(--card-border);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
   font-size: 0.95em;
   opacity: 0;
@@ -94,7 +94,7 @@
   background: var(--color-accent-blue);
   color: #0c0c12;
   border-color: var(--color-accent-blue);
-  box-shadow: 0 0 14px rgba(255, 70, 100, 0.45);
+  box-shadow: 0 0 14px var(--glow-accent);
 }
 
 .dev-overlay {
@@ -104,8 +104,8 @@
   min-width: 240px;
   padding: 14px;
   border-radius: 12px;
-  background: rgba(10, 10, 16, 0.9);
-  border: 1px solid rgba(255, 70, 100, 0.6);
+  background: var(--surface-2);
+  border: 1px solid var(--card-border);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.75);
   color: var(--color-text-light);
   z-index: 1100;

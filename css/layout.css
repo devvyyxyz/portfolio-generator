@@ -252,6 +252,8 @@
     inset 0px -2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
+  will-change: opacity;
+  contain: layout style paint;
 }
 
 .settings-bar-divs img {
@@ -289,6 +291,8 @@
   border-radius: var(--radius-lg);
   border: 1px solid var(--card-border);
   color: var(--text-strong);
+  will-change: opacity;
+  contain: layout style paint;
 }
 
 .section-header {
@@ -340,6 +344,8 @@
   border-radius: var(--radius-lg);
   backdrop-filter: blur(4px);
   border: 1px solid var(--card-border);
+  will-change: opacity;
+  contain: layout style paint;
 }
 
 /* Containers */
@@ -575,6 +581,8 @@
   background: color-mix(in srgb, var(--surface-1) 82%, transparent);
   position: relative;
   overflow: hidden;
+  will-change: opacity;
+  contain: layout style paint;
 }
 
 .intro-content {

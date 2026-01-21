@@ -361,14 +361,22 @@ function initializeApp() {
         });
     });
 
-    // Parallax effect
+    // Parallax effect with scroll throttling
     const heroBg = document.querySelector('.hero-bg');
     if (heroBg) {
+        let ticking = false;
+        let scrolled = 0;
+        
         window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
-    }
+            scrolled = window.scrollY;
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
 
     // Keyboard navigation
     document.addEventListener('keydown', function(e) {

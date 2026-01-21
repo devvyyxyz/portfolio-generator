@@ -85,13 +85,23 @@ class PortfolioFeatures {
         const scrollBtn = document.getElementById('scrollToTop');
         if (!scrollBtn) return;
 
-        window.addEventListener('scroll', () => {
+        let ticking = false;
+
+        const updateScrollBtn = () => {
             if (window.scrollY > 500) {
                 scrollBtn.classList.add('visible');
             } else {
                 scrollBtn.classList.remove('visible');
             }
-        });
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollBtn);
+                ticking = true;
+            }
+        }, { passive: true });
 
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({
@@ -392,8 +402,9 @@ class PortfolioFeatures {
      */
     initParallax() {
         const parallaxElements = document.querySelectorAll('.parallax');
+        let ticking = false;
         
-        window.addEventListener('scroll', () => {
+        const updateParallax = () => {
             const scrolled = window.scrollY;
             
             parallaxElements.forEach(el => {
@@ -401,7 +412,16 @@ class PortfolioFeatures {
                 const yPos = -(scrolled * speed);
                 el.style.transform = `translateY(${yPos}px)`;
             });
-        });
+            
+            ticking = false;
+        };
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }, { passive: true });
     }
 
     /**

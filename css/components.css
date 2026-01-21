@@ -1,0 +1,278 @@
+/* COMPONENTS - Modals, panels, cards, and UI components */
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: rgba(230, 240, 255, 0.95);
+  border: inset 1px #ffffff;
+  border-right: inset 1px rgba(150, 190, 255, 0.5);
+  border-bottom: inset 1px rgba(150, 190, 255, 0.5);
+  border-radius: 6px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+/* Modal Header */
+.modal-header {
+  background: linear-gradient(to right, rgba(49, 106, 197, 0.9) 0%, rgba(89, 149, 214, 0.9) 100%);
+  color: white;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  user-select: none;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+  font-family: var(--font-family-main);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 16px;
+  background-color: rgba(230, 240, 255, 0.9);
+  font-size: 14px;
+  color: #000;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 8px 12px;
+  background-color: rgba(230, 240, 255, 0.9);
+  border-top: 1px solid rgba(150, 190, 255, 0.5);
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  background: linear-gradient(to bottom, rgba(220, 235, 255, 1) 0%, rgba(190, 220, 255, 1) 100%);
+}
+
+/* Close Button */
+.modal-close {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.modal-close:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Panel Styling */
+.panel {
+  background-color: rgba(230, 240, 255, 0.9);
+  border: 1px solid rgba(150, 190, 255, 0.5);
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  padding: 12px;
+  margin: 12px 0;
+}
+
+.panel-header {
+  background: linear-gradient(to right, rgba(70, 110, 150, 0.8) 0%, rgba(100, 140, 180, 0.8) 100%);
+  color: white;
+  padding: 8px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  font-family: var(--font-family-main);
+}
+
+.panel-body {
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background-color: rgba(210, 230, 255, 0.8);
+  border-bottom: 1px solid rgba(150, 190, 255, 0.5);
+  gap: 2px;
+  padding: 2px;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: rgba(190, 220, 255, 0.7);
+  border: 1px solid rgba(120, 170, 240, 0.6);
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  user-select: none;
+  transition: all 0.15s ease;
+  font-size: 13px;
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-bold);
+}
+
+.tab:hover {
+  background-color: rgba(210, 230, 255, 0.85);
+  border-color: rgba(80, 140, 220, 0.8);
+}
+
+.tab.active {
+  background-color: rgba(230, 240, 255, 0.95);
+  border-color: rgba(100, 150, 220, 0.7);
+  border-bottom-color: rgba(230, 240, 255, 0.95);
+  position: relative;
+  z-index: 10;
+}
+
+.tab-content {
+  display: none;
+  padding: 12px;
+  background-color: rgba(230, 240, 255, 0.9);
+  color: var(--color-text-dark);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Window Container */
+.window {
+  background-color: rgba(230, 240, 255, 0.9);
+  border: 1px solid rgba(150, 190, 255, 0.5);
+  border-radius: 6px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+.window-body {
+  background-color: rgba(230, 240, 255, 0.9);
+  padding: 12px;
+  color: #003366;
+}
+
+/* Scrollbar Styling */
+.modal-body::-webkit-scrollbar,
+.window-body::-webkit-scrollbar {
+  width: 16px;
+}
+
+.modal-body::-webkit-scrollbar-track,
+.window-body::-webkit-scrollbar-track {
+  background-color: rgba(230, 240, 255, 0.9);
+  border-left: 1px solid rgba(150, 190, 255, 0.5);
+}
+
+.modal-body::-webkit-scrollbar-thumb,
+.window-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, rgba(150, 190, 255, 0.7), rgba(190, 220, 255, 0.7));
+  border-radius: 8px;
+  border: 2px solid rgba(150, 190, 255, 0.3);
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover,
+.window-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, rgba(120, 170, 240, 0.8), rgba(160, 200, 255, 0.8));
+}
+
+/* Cards */
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(190, 220, 255, 0.4) 0%,
+    rgba(160, 200, 255, 0.35) 50%,
+    rgba(130, 180, 255, 0.3) 100%
+  );
+  border: 1px solid rgba(150, 190, 255, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(100, 150, 220, 0.7);
+  color: white;
+  border-radius: 20px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.badge-primary {
+  background-color: rgba(100, 150, 220, 0.7);
+}
+
+.badge-success {
+  background-color: rgba(95, 209, 150, 0.7);
+}
+
+.badge-warning {
+  background-color: rgba(255, 193, 7, 0.7);
+}
+
+.badge-danger {
+  background-color: rgba(244, 67, 54, 0.7);
+}
+
+/* Alerts */
+.alert {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  border-left: 4px solid;
+}
+
+.alert-info {
+  background-color: rgba(230, 240, 255, 0.8);
+  border-left-color: rgba(100, 150, 220, 0.7);
+  color: #003366;
+}
+
+.alert-success {
+  background-color: rgba(232, 245, 233, 0.8);
+  border-left-color: rgba(76, 175, 80, 0.7);
+  color: #1b5e20;
+}
+
+.alert-warning {
+  background-color: rgba(255, 243, 224, 0.8);
+  border-left-color: rgba(255, 152, 0, 0.7);
+  color: #e65100;
+}
+
+.alert-danger {
+  background-color: rgba(255, 235, 238, 0.8);
+  border-left-color: rgba(244, 67, 54, 0.7);
+  color: #b71c1c;
+}

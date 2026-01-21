@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Portfolio</title>
     
-    <!-- FrutigerAero Styles -->
-    <link rel="stylesheet" href="../css/frutiger-global.css">
-    <link rel="stylesheet" href="../css/frutiger-portfolio.css">
-    <link rel="stylesheet" href="../css/frutiger-components.css">
-    <link rel="stylesheet" href="../css/frutiger-aero-modals.css">
-    <link rel="stylesheet" href="../css/frutiger-icons.css">
+    <!-- FrutigerAero Styles (Modular Architecture) -->
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/floating-fish.css">
+    
+    <!-- SEO & Metadata will be loaded here by component-loader.js -->
+    <script>
+        // Load metadata component before page renders
+        (async () => {
+            const response = await fetch('../components/metadata.html');
+            if (response.ok) {
+                const metadata = await response.text();
+                document.head.innerHTML += metadata;
+            }
+        })();
+    </script>
     
     <!-- Component Loader -->
     <script src="../js/component-loader.js"></script>
@@ -38,11 +51,12 @@
             cursor: pointer;
             background: linear-gradient(
                 180deg,
-                rgba(103, 108, 112, 0.3) 0%,
-                rgba(22, 22, 22, 0.3) 100%
+                rgba(200, 220, 255, 0.3) 0%,
+                rgba(150, 190, 255, 0.2) 100%
             );
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3),
-                inset 0px 2px 5px rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15),
+                inset 0px 2px 5px rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(150, 190, 255, 0.3);
         }
 
         .gallery-item img {
@@ -67,9 +81,9 @@
             height: 100%;
             background: linear-gradient(
                 135deg,
-                rgba(255, 255, 255, 0.2) 0%,
+                rgba(255, 255, 255, 0.25) 0%,
                 transparent 50%,
-                rgba(0, 0, 0, 0.1) 100%
+                rgba(100, 150, 220, 0.1) 100%
             );
             pointer-events: none;
             z-index: 1;
@@ -130,20 +144,20 @@
             padding: 10px 20px;
             background: linear-gradient(
                 180deg,
-                rgba(180, 188, 190, 0.4) 0%,
-                rgba(107, 115, 119, 0.4) 50%,
-                rgba(61, 65, 67, 0.014) 50.1%
+                rgba(200, 220, 255, 0.6) 0%,
+                rgba(150, 190, 255, 0.5) 50%,
+                rgba(120, 170, 240, 0.4) 100%
             );
-            color: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(100, 120, 140, 0.3);
+            color: #003366;
+            border: 1px solid rgba(100, 150, 220, 0.4);
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.2s ease;
         }
 
         .back-btn:hover {
-            filter: brightness(1.1);
+            filter: brightness(0.95);
             transform: translateY(-2px);
             text-decoration: none;
         }
@@ -158,8 +172,9 @@
         <!-- Navigation Settings Bar -->
         <div id="navbarPlaceholder" data-component="navbar"></div>
 
-        <!-- Main Content -->
+        <!-- Main Content with Side Panel Layout -->
         <div class="content-wrapper">
+            <!-- Main Content Area -->
             <div class="main-content-area">
                 <!-- Gallery Header -->
                 <div class="gallery-header">
@@ -172,11 +187,23 @@
                     <!-- Images will be loaded here -->
                 </div>
             </div>
+
+            <!-- Sidebar Controls -->
+            <div id="sidebarPlaceholder" data-component="sidebar"></div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <div id="footerPlaceholder" data-component="footer"></div>
+
     <!-- Gallery Script -->
     <script>
+        // Load components when page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = new ComponentLoader();
+            loader.loadComponents();
+        });
+        
         // Image list
         const images = [
             'asadal_stock_1.jpg',

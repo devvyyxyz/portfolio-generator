@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Portfolio</title>
+    <!-- FrutigerAero Styles (Modular Architecture) -->
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- SEO & Metadata will be loaded here by component-loader.js -->
+    <script>
+        // Load metadata component before page renders
+        (async () => {
+            const response = await fetch('../components/metadata.html');
+            if (response.ok) {
+                const metadata = await response.text();
+                document.head.innerHTML += metadata;
+            }
+        })();
+    </script>
+    
+    <script src="../js/component-loader.js"></script>
+</head>
+<body>
+    <!-- Background Cursor Fix -->
+    <div id="background"></div>
+
+    <!-- Site Container -->
+    <div id="siteContainer" class="site-wrapper">
+        <!-- Navbar Component -->
+        <div id="navbarPlaceholder" data-component="navbar"></div>
+
+        <!-- Main Content with Side Panel Layout -->
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <section class="content-section">
+                    <h1>Sitemap</h1>
+                    <p>Here's a complete overview of all pages on this portfolio site.</p>
+
+                    <div class="sitemap-container">
+                        <h2>Main Pages</h2>
+                        <ul class="sitemap-list">
+                            <li><a href="../index.html">Home - Main portfolio page with introduction and featured work</a></li>
+                            <li><a href="about.html">About - Learn more about me and my background</a></li>
+                            <li><a href="gallery.html">Gallery - Browse interactive image gallery</a></li>
+                            <li><a href="contact.html">Contact - Send me a message</a></li>
+                            <li><a href="sitemap.html">Sitemap - Site navigation overview</a></li>
+                        </ul>
+
+                        <h2>Resources</h2>
+                        <ul class="sitemap-list">
+                            <li><a href="../error.html">404 Error Page</a></li>
+                        </ul>
+
+                        <h2>Quick Navigation</h2>
+                        <div class="sitemap-grid">
+                            <a href="../index.html" class="btn btn-primary">Home</a>
+                            <a href="about.html" class="btn btn-secondary">About</a>
+                            <a href="gallery.html" class="btn btn-secondary">Gallery</a>
+                            <a href="contact.html" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar Controls -->
+            <div id="sidebarPlaceholder" data-component="sidebar"></div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footerPlaceholder" data-component="footer"></div>
+
+    <script>
+        // Load components when page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = new ComponentLoader();
+            loader.loadComponents();
+        });
+    </script>
+</body>
+</html>

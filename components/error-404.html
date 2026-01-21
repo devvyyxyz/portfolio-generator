@@ -1,0 +1,118 @@
+<div class="error-container">
+    <div class="error-content">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">Sorry, the page you're looking for doesn't exist or has been moved.</p>
+        
+        <div class="error-suggestions">
+            <p class="error-subtitle">Here are some helpful links:</p>
+            <ul class="error-links">
+                <li><a href="../index.html" class="btn btn-primary">Return to Home</a></li>
+                <li><a href="../pages/sitemap.html" class="btn btn-secondary">View Sitemap</a></li>
+                <li><a href="../pages/gallery.html" class="btn btn-secondary">Browse Gallery</a></li>
+                <li><a href="../pages/about.html" class="btn btn-secondary">About Me</a></li>
+            </ul>
+        </div>
+
+        <div class="error-decoration">
+            <svg viewBox="0 0 200 200" class="error-icon">
+                <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(100, 150, 220, 0.3)" stroke-width="2"/>
+                <circle cx="60" cy="80" r="8" fill="rgba(100, 150, 220, 0.6)"/>
+                <circle cx="140" cy="80" r="8" fill="rgba(100, 150, 220, 0.6)"/>
+                <path d="M 70 130 Q 100 110 130 130" stroke="rgba(100, 150, 220, 0.6)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(135, 180, 250, 0.1) 0%, rgba(100, 150, 220, 0.05) 100%);
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.error-content {
+    text-align: center;
+    max-width: 600px;
+    background: rgba(230, 240, 255, 0.7);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(150, 190, 255, 0.3);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.error-code {
+    font-size: 120px;
+    font-weight: 700;
+    color: rgba(100, 150, 220, 0.4);
+    margin: 0;
+    line-height: 1;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.error-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #003366;
+    margin: 10px 0 15px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.error-message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.error-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.error-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.error-links li {
+    display: inline-block;
+}
+
+.error-links a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.error-decoration {
+    margin-top: 30px;
+    opacity: 0.6;
+}
+
+.error-icon {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+</style>

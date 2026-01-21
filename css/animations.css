@@ -1,0 +1,214 @@
+/* ANIMATIONS - Transitions, transforms, and keyframe animations */
+
+/* Smooth Transitions */
+* {
+  transition: all var(--transition-normal);
+}
+
+/* Hover Effects */
+.gradient-headers-buttons-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  z-index: 1;
+}
+
+.gradient-headers-buttons-hover:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide In Animation */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scale Animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 3D Tilt Effect for Gallery */
+.gallery-item {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* Gloss Overlay Transition */
+.gallery-item::before {
+  transition: opacity 0.3s ease;
+}
+
+/* Shine Effect Transition */
+.gallery-item::after {
+  transition: transform 0.6s ease;
+}
+
+/* Scale on Hover */
+.profile-picture {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.02);
+}
+
+/* Grid Item Hover Effects */
+.grid-item {
+  transition: all 0.2s ease-in;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Animations */
+.btn:hover,
+.control-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Link Hover Animation */
+a {
+  position: relative;
+  transition: color var(--transition-normal);
+}
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade Out Animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Slide Out Animation */
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+}
+
+/* Modal Enter Animation */
+.modal.enter {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Modal Exit Animation */
+.modal.exit {
+  animation: fadeOut 0.2s ease-in;
+}
+
+/* Stagger Animation for List Items */
+.list-item {
+  animation: slideInLeft 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.list-item:nth-child(1) { animation-delay: 0s; }
+.list-item:nth-child(2) { animation-delay: 0.1s; }
+.list-item:nth-child(3) { animation-delay: 0.2s; }
+.list-item:nth-child(4) { animation-delay: 0.3s; }
+.list-item:nth-child(5) { animation-delay: 0.4s; }
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Transition for Opacity Changes */
+.fade-in-out {
+  transition: opacity var(--transition-smooth);
+}

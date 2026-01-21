@@ -76,7 +76,19 @@ class ComponentLoader {
       html = this.fixNavLinks(html);
     }
 
-    placeholder.innerHTML = html;
+    // Special handling for metadata component - insert into head
+    if (componentName === 'metadata') {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      // Move all child elements to head
+      Array.from(tempDiv.children).forEach(child => {
+        document.head.appendChild(child);
+      });
+      // Remove the placeholder
+      placeholder.remove();
+    } else {
+      placeholder.innerHTML = html;
+    }
   }
 
   // Load all components on the page

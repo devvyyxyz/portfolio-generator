@@ -325,7 +325,7 @@ function initializeApp() {
             navMenu.classList.remove('active');
         }
     });
-});
+};
 
 function populatePortfolio(data) {
     const { personal, displayOrder } = data;

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Portfolio</title>
+    <!-- FrutigerAero Styles (Modular Architecture) -->
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- SEO & Metadata will be loaded here by component-loader.js -->
+    <script>
+        // Load metadata component before page renders
+        (async () => {
+            const response = await fetch('../components/metadata.html');
+            if (response.ok) {
+                const metadata = await response.text();
+                document.head.innerHTML += metadata;
+            }
+        })();
+    </script>
+    
+    <script src="../js/component-loader.js"></script>
+</head>
+<body>
+    <!-- Background Cursor Fix -->
+    <div id="background"></div>
+
+    <!-- Site Container -->
+    <div id="siteContainer" class="site-wrapper">
+        <!-- Navbar Component -->
+        <div id="navbarPlaceholder" data-component="navbar"></div>
+
+        <!-- Main Content with Side Panel Layout -->
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <section class="content-section">
+                    <h1>About Me</h1>
+                    <p>Welcome to the about page! Here you can learn more about the creator of this portfolio, their background, interests, and journey.</p>
+                    
+                    <h2>Background</h2>
+                    <p>I am a passionate developer and designer with expertise in creating modern, interactive web experiences. My work focuses on combining aesthetics with functionality.</p>
+                    
+                    <h2>Skills & Expertise</h2>
+                    <ul>
+                        <li>Web Development (HTML, CSS, JavaScript)</li>
+                        <li>UI/UX Design</li>
+                        <li>Responsive Design</li>
+                        <li>Interactive Components</li>
+                    </ul>
+                    
+                    <h2>Philosophy</h2>
+                    <p>I believe in creating beautiful, user-friendly digital experiences that are both functional and delightful to interact with.</p>
+                </section>
+            </div>
+
+            <!-- Sidebar Controls -->
+            <div id="sidebarPlaceholder" data-component="sidebar"></div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footerPlaceholder" data-component="footer"></div>
+
+    <script>
+        // Load components when page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = new ComponentLoader();
+            loader.loadComponents();
+        });
+    </script>
+</body>
+</html>

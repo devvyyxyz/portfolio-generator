@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    
+    <!-- FrutigerAero Styles (Modular Architecture) -->
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- SEO & Metadata will be loaded here by component-loader.js -->
+    <script>
+        // Load metadata component before page renders
+        (async () => {
+            const response = await fetch('components/metadata.html');
+            if (response.ok) {
+                const metadata = await response.text();
+                document.head.innerHTML += metadata;
+            }
+        })();
+    </script>
+    
+    <!-- Component Loader -->
+    <script src="js/component-loader.js"></script>
+</head>
+<body>
+    <!-- Background Cursor Fix -->
+    <div id="background"></div>
+
+    <!-- Site Container -->
+    <div id="siteContainer" class="site-wrapper">
+        <!-- Navigation -->
+        <div id="navbarPlaceholder" data-component="navbar"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <div class="main-content-area">
+                <!-- 404 Error Component -->
+                <div id="errorPlaceholder" data-component="error-404"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footerPlaceholder" data-component="footer"></div>
+
+    <script>
+        // Load components when page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = new ComponentLoader();
+            loader.loadComponents();
+        });
+    </script>
+</body>
+</html>

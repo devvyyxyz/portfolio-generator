@@ -5,103 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Modular CSS Files -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <!-- FrutigerAero Styles -->
+    <link rel="stylesheet" href="css/frutiger-global.css">
+    <link rel="stylesheet" href="css/frutiger-portfolio.css">
+    <link rel="stylesheet" href="css/frutiger-components.css">
+    <link rel="stylesheet" href="css/frutiger-aero-modals.css">
+    <link rel="stylesheet" href="css/frutiger-icons.css">
 </head>
-<body class="source-sans fade-in">
-    <!-- Navigation Bar -->
-    <nav class="fixed-nav-bar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h2 id="name" class="text-thin text-name"></h2>
-                <div id="title" class="nav-subtitle"></div>
+<body>
+    <!-- Background Cursor Fix -->
+    <div id="background"></div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu"></ul>
+            <div class="progress-bar"></div>
+            <div class="loader-text">Loading Portfolio</div>
         </div>
-    </nav>
+    </div>
 
-    <!-- Main Content -->
-    <main id="main" class="container"></main>
+    <!-- Site Container -->
+    <div id="siteContainer" class="site-wrapper">
+        <!-- Navigation Settings Bar -->
+        <nav id="mainSettingsBar" class="settings-bar">
+            <div class="settings-bar-divs nav-bar">
+                <img src="Assets/Icons/style-glossy-blue/on-off.png" alt="Portfolio" class="nav-icon"><span class="settings-titles">Portfolio</span>
+                <div class="settings-buttons nav-menu">
+                    <a href="#about" class="nav-link">About</a>
+                    <span class="settings-side-vertical-separators">|</span>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <span class="settings-side-vertical-separators">|</span>
+                    <a href="#work" class="nav-link">Work</a>
+                    <span class="settings-side-vertical-separators">|</span>
+                    <a href="#education" class="nav-link">Education</a>
+                    <span class="settings-side-vertical-separators">|</span>
+                    <a href="#contact" class="nav-link">Connect</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content with Side Panel Layout -->
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <!-- Introduction Section / Hero -->
+                <section id="introductionSection" class="introduction-section">
+                    <article class="intro-content">
+                        <img id="mascotImg" src="Assets/pfp-profile.jpg" alt="Profile Picture" class="profile-picture">
+                        <div class="intro-text">
+                            <h2 id="heroName"></h2>
+                            <p id="heroTitle" class="subtitle"></p>
+                            <p id="shortBio" class="bio"></p>
+                            <div class="intro-buttons">
+                                <a href="#projects" class="btn btn-primary">View Projects</a>
+                                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Main Content Sections -->
+                <main class="main-content">
+                    <!-- Projects Section -->
+                    <section id="projects" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Projects</h2>
+                        </div>
+                        <div id="projects-container" class="content-grid"></div>
+                    </section>
+
+                    <!-- Work Section -->
+                    <section id="work" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Work Experience</h2>
+                        </div>
+                        <div id="work-container" class="content-grid"></div>
+                    </section>
+
+                    <!-- Education Section -->
+                    <section id="education" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Education</h2>
+                        </div>
+                        <div id="education-container" class="content-grid"></div>
+                    </section>
+
+                    <!-- Awards Section -->
+                    <section id="awards" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Awards & Achievements</h2>
+                        </div>
+                        <div id="awards-container" class="content-grid"></div>
+                    </section>
+
+                    <!-- Volunteer Section -->
+                    <section id="volunteer" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Volunteer Work</h2>
+                        </div>
+                        <div id="volunteer-container" class="content-grid"></div>
+                    </section>
+
+                    <!-- Social Section -->
+                    <section id="social" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Connect With Me</h2>
+                        </div>
+                        <div id="social-container" class="content-grid social-grid"></div>
+                    </section>
+                </main>
+            </div>
+
+            <!-- Side Control Panel -->
+            <aside class="side-control-panel">
+                <!-- Settings Bars for Controls -->
+                <nav class="side-settings-bar">
+                    <div class="settings-bar-divs text-size-bar">
+                        <img src="Assets/Icons/style-glossy-blue/phone.png" alt="Text Size" class="nav-icon">
+                        <span class="settings-titles">Text Size</span>
+                        <div class="settings-buttons">
+                            <button class="size-btn" data-size="small">S</button>
+                            <button class="size-btn active" data-size="medium">M</button>
+                            <button class="size-btn" data-size="large">L</button>
+                        </div>
+                    </div>
+                    <div class="settings-bar-divs sound-bar">
+                        <img src="Assets/Icons/style-glossy-blue/music.png" alt="Sounds" class="nav-icon">
+                        <span class="settings-titles">Sounds</span>
+                        <div class="settings-buttons">
+                            <button class="sound-btn active">On</button>
+                            <button class="sound-btn">Off</button>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="text-center">
-        <p><a href="http://navdeepsekhon.com">Designed by Navdeep Sekhon</a></p>
+    <footer class="footer">
+        <p>&copy; 2026 Portfolio. Built with FrutigerAero aesthetic.</p>
     </footer>
 
-    <!-- Hidden Image Repository -->
-    <div class="hidden" id="image-repo"></div>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
 
-    <!-- Gallery Modal -->
-    <div class="modal fade projectModal" id="modal-gallery" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button class="close" type="button" data-dismiss="modal">&times;</button>
-                    <h3 id="gallery-title" class="modal-title text-center"></h3>
-                </div>
-                <div class="modal-body">
-                    <div id="modal-carousel" class="carousel">
-                        <div class="carousel-inner"></div>
-                        <a class="carousel-control left" href="#modal-carousel" data-slide="prev">
-                            <i class="glyphicon glyphicon-chevron-left"></i>
-                        </a>
-                        <a class="carousel-control right" href="#modal-carousel" data-slide="next">
-                            <i class="glyphicon glyphicon-chevron-right"></i>
-                        </a>
-                    </div>
-                    <p class="text-center" id="modal-project-desc"></p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Description Modal -->
-    <div class="modal fade projectModal" id="modal-desc" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title text-center" id="modal-title"></h3>
-                </div>
-                <div id="modal-desc-body" class="modal-body text-center"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- External Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-    <!-- Configuration & Templates -->
-    <script src="js/config.js"></script>
-    <script src="js/templates.js"></script>
-    
-    <!-- Modular JavaScript Files -->
-    <script src="js/utils.js"></script>
-    <script src="js/dataLoader.js"></script>
-    <script src="js/renderer.js"></script>
-    <script src="js/eventHandlers.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/frutiger-main.js"></script>
 </body>
 </html>

@@ -15,6 +15,9 @@ async function initializePortfolio() {
 
         // Load data
         const data = await dataLoader.load();
+        
+        // Store data globally for features.js
+        window.portfolioData = data;
 
         // Create and render with new renderer
         const renderer = new DOMRenderer(data);
@@ -28,6 +31,13 @@ async function initializePortfolio() {
 
         // Update page title
         document.title = `${data.personal.name} - ${data.personal.title}`;
+
+        // Hide preloader after portfolio is rendered
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.classList.add('loaded');
+            document.body.classList.add('content-loaded');
+        }
 
         debug('Portfolio initialized successfully');
     } catch (error) {

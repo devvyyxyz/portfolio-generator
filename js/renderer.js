@@ -96,6 +96,12 @@ class DOMRenderer {
                 return;
             }
 
+            // Special handling for testimonials section
+            if (sectionKey === 'testimonials') {
+                this.renderTestimonialsSection(section);
+                return;
+            }
+
             // Standard section rendering
             this.renderSection(sectionKey, section);
         });
@@ -148,6 +154,14 @@ class DOMRenderer {
                 return this.renderAwardItem(item);
             case 'certifications':
                 return this.renderCertificationItem(item);
+            case 'blog':
+                return this.renderBlogItem(item);
+            case 'openSource':
+                return this.renderOpenSourceItem(item);
+            case 'speaking':
+                return this.renderSpeakingItem(item);
+            case 'testimonials':
+                return this.renderTestimonialItem(item);
             default:
                 return this.renderGenericItem(item);
         }
@@ -345,6 +359,89 @@ class DOMRenderer {
         });
     }
 
+    renderBlogItem(item) {
+        const tags = item.tags ? 
+            item.tags.map(t => this.fillTemplate(TEMPLATES.itemTag, { tag: t })).join('') : '';
+        
+        const footer = item.link ? 
+            this.fillTemplate(TEMPLATES.itemFooter, {
+                content: this.fillTemplate(TEMPLATES.itemLink, { url: item.link, icon: '📖', text: 'Read Article' })
+            }) : '';
+
+        return this.fillTemplate(TEMPLATES.portfolioItem, {
+            image: '',
+            title: item.title || '',
+            meta: this.fillTemplate(TEMPLATES.itemMeta, {
+                content: `<span>${item.category || 'Article'}</span><span>${item.date || ''}</span>`
+            }),
+            description: item.excerpt || item.description || '',
+            tags: this.fillTemplate(TEMPLATES.itemTags, { tags: tags }),
+            footer: footer
+        });
+    }
+
+    renderOpenSourceItem(item) {
+        const technologies = item.technologies ? 
+            item.technologies.map(t => this.fillTemplate(TEMPLATES.itemTag, { tag: t })).join('') : '';
+        
+        const stats = [];
+        if (item.prs) stats.push(`${item.prs} PRs`);
+        if (item.stars) stats.push(`⭐ ${item.stars}`);
+        
+        const footer = item.repository ? 
+            this.fillTemplate(TEMPLATES.itemFooter, {
+                content: this.fillTemplate(TEMPLATES.itemLink, { url: item.repository, icon: '💻', text: 'View on GitHub' })
+            }) : '';
+
+        return this.fillTemplate(TEMPLATES.portfolioItem, {
+            image: '',
+            title: item.project || '',
+            meta: this.fillTemplate(TEMPLATES.itemMeta, {
+                content: `<span>${item.role || 'Contributor'}</span><span>${stats.join(' • ')}</span>`
+            }),
+            description: item.description || '',
+            tags: this.fillTemplate(TEMPLATES.itemTags, { tags: technologies }),
+            footer: footer
+        });
+    }
+
+    renderSpeakingItem(item) {
+        const links = [];
+        if (item.slides) links.push(this.fillTemplate(TEMPLATES.itemLink, { url: item.slides, icon: '📊', text: 'Slides' }));
+        if (item.recording) links.push(this.fillTemplate(TEMPLATES.itemLink, { url: item.recording, icon: '▶️', text: 'Recording' }));
+        
+        const footer = links.length ? 
+            this.fillTemplate(TEMPLATES.itemFooter, { content: links.join('') }) : '';
+
+        return this.fillTemplate(TEMPLATES.portfolioItem, {
+            image: '',
+            title: item.title || '',
+            meta: this.fillTemplate(TEMPLATES.itemMeta, {
+                content: `<span>${item.event || ''}</span><span>${item.date || ''}</span><span class="item-badge">${item.type || 'Talk'}</span>`
+            }),
+            description: item.description || '',
+            tags: '',
+            footer: footer
+        });
+    }
+
+    renderTestimonialItem(item) {
+        const image = item.image ? 
+            `<img src="${item.image}" alt="${item.name}" class="testimonial-image" />` : '';
+        
+        return `
+            <div class="portfolio-item testimonial-item">
+                ${image}
+                <blockquote class="testimonial-quote">"${item.quote || ''}"</blockquote>
+                <div class="testimonial-author">
+                    <strong>${item.name || ''}</strong>
+                    <span>${item.position || ''}</span>
+                    ${item.company ? `<span>${item.company}</span>` : ''}
+                </div>
+            </div>
+        `;
+    }
+
     renderGenericItem(item) {
         return this.fillTemplate(TEMPLATES.portfolioItem, {
             image: '',
@@ -388,30 +485,70 @@ class DOMRenderer {
     renderSocialSection(section) {
         if (!section.items || !section.items.length) return;
 
-        const socialIcons = {
-            'Twitter': '🐦',
-            'GitHub': '💻',
-            'LinkedIn': '💼',
-            'Facebook': '📘',
-            'Instagram': '📷',
-            'YouTube': '📺',
-            'Discord': '💬'
+        const iconMap = {
+            'linkedin': 'Assets/Icons/style-glossy-blue/linkedin.png',
+            'github': 'Assets/Icons/style-glossy-blue/linkedin.png', // Using LinkedIn as placeholder
+            'youtube': 'Assets/Icons/style-glossy-blue/youtube.png',
+            'instagram': 'Assets/Icons/style-glossy-blue/instagram.png',
+            'facebook': 'Assets/Icons/style-glossy-blue/facebook.png',
+            'reddit': 'Assets/Icons/style-glossy-blue/reddit.png',
+            'pinterest': 'Assets/Icons/style-glossy-blue/pinterest.png',
+            'tumblr': 'Assets/Icons/style-glossy-blue/tumblr.png',
+            'skype': 'Assets/Icons/style-glossy-blue/skype.png',
+            'twitter': 'Assets/Icons/style-glossy-blue/reddit.png', // Using Reddit as placeholder
+            'discord': 'Assets/Icons/style-glossy-blue/messages.png'
         };
 
-        const itemsHTML = section.items.map(item => 
-            this.fillTemplate(TEMPLATES.socialItem, {
-                url: item.url || '#',
-                icon: socialIcons[item.platform] || '🔗',
-                platform: item.platform || '',
-                username: item.username || ''
-            })
-        ).join('');
+        const itemsHTML = section.items.map(item => {
+            const platformLower = (item.platform || '').toLowerCase();
+            const iconPath = iconMap[platformLower];
+            const iconHTML = iconPath 
+                ? `<img src="${iconPath}" alt="${item.platform}" class="social-icon-img" width="48" height="48" loading="lazy" />`
+                : `<span class="social-icon-fallback">${item.platform ? item.platform.charAt(0) : '?'}</span>`;
+            
+            return `
+                <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer" 
+                   class="social-link hover-lift" aria-label="${item.platform}">
+                    <div class="social-icon">${iconHTML}</div>
+                    <div class="social-info">
+                        <div class="social-platform">${item.platform || ''}</div>
+                        <div class="social-username">${item.username || ''}</div>
+                    </div>
+                </a>
+            `;
+        }).join('');
 
-        const socialHTML = this.fillTemplate(TEMPLATES.socialSection, {
-            items: itemsHTML
-        });
+        const socialHTML = `
+            <section id="social" class="portfolio-section reveal">
+                <h2 class="section-title">
+                    <span class="section-icon">${section.icon || '🔗'}</span>
+                    ${section.title}
+                </h2>
+                <div class="social-grid">
+                    ${itemsHTML}
+                </div>
+            </section>
+        `;
 
         this.main.insertAdjacentHTML('beforeend', socialHTML);
+    }
+
+    renderTestimonialsSection(section) {
+        const sectionHTML = this.fillTemplate(TEMPLATES.section, {
+            sectionId: 'testimonials',
+            icon: section.icon || '💬',
+            title: section.title
+        });
+
+        this.main.insertAdjacentHTML('beforeend', sectionHTML);
+
+        const grid = document.getElementById('testimonials-grid');
+        if (!grid || !section.items) return;
+
+        section.items.forEach(item => {
+            const itemHTML = this.renderTestimonialItem(item);
+            grid.insertAdjacentHTML('beforeend', itemHTML);
+        });
     }
 
     /**

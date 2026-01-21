@@ -39,9 +39,14 @@ function initializeApp() {
     // Scroll to top button
     const scrollTop = document.getElementById('scrollTop');
     if (scrollTop) {
-        window.addEventListener('scroll', () => {
-            scrollTop.classList.toggle('show', window.scrollY > 300);
-        });
+        const updateScrollTopVisibility = () => {
+            const threshold = window.innerHeight * 0.25; // show after ~25% viewport scroll
+            scrollTop.classList.toggle('show', window.scrollY > threshold);
+        };
+
+        window.addEventListener('scroll', updateScrollTopVisibility);
+        // Run once on load in case page starts scrolled
+        updateScrollTopVisibility();
 
         scrollTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });

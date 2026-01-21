@@ -30,20 +30,8 @@ function initializeApp() {
     initToasts();
     initDevOverlay();
     
-    // Load resume data (only on index page)
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '/') {
-        console.log('Loading resume data...');
-        fetch('resume.json')
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load resume.json');
-                return response.json();
-            })
-            .then(data => {
-                console.log('Resume data loaded:', data);
-                populatePortfolio(data);
-            })
-            .catch(error => console.error('Error loading resume:', error));
-    }
+    // Content now loaded from HTML components via component-loader.js
+    // No JSON data loading needed
 
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
@@ -377,6 +365,7 @@ function initializeApp() {
                 ticking = true;
             }
         }, { passive: true });
+    }
 
     // Keyboard navigation
     document.addEventListener('keydown', function(e) {
@@ -384,7 +373,7 @@ function initializeApp() {
             navMenu.classList.remove('active');
         }
     });
-};
+}
 
 // Theme Switcher
 const THEME_MAP = {

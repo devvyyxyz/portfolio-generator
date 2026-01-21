@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/components-content.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/floating-fish.css">
     
@@ -42,71 +43,28 @@
         <div class="content-wrapper">
             <!-- Main Content Area -->
             <div class="main-content-area">
-                <!-- Introduction Section / Hero -->
-                <section id="introductionSection" class="introduction-section">
-                    <article class="intro-content">
-                        <img id="mascotImg" src="Assets/pfp-profile.jpg" alt="Profile Picture" class="profile-picture">
-                        <div class="intro-text">
-                            <h2 id="heroName"></h2>
-                            <p id="heroTitle" class="subtitle"></p>
-                            <p id="shortBio" class="bio"></p>
-                            <div class="intro-buttons">
-                                <a href="#projects" class="btn btn-primary">View Projects</a>
-                                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                            </div>
-                        </div>
-                    </article>
-                </section>
+                <!-- Hero Introduction -->
+                <div id="heroIntroPlaceholder" data-component="hero-intro"></div>
 
                 <!-- Main Content Sections -->
                 <main class="main-content">
                     <!-- Projects Section -->
-                    <section id="projects" class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">Projects</h2>
-                        </div>
-                        <div id="projects-container" class="content-grid"></div>
-                    </section>
+                    <div id="projectsPlaceholder" data-component="projects"></div>
 
-                    <!-- Work Section -->
-                    <section id="work" class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">Work Experience</h2>
-                        </div>
-                        <div id="work-container" class="content-grid"></div>
-                    </section>
+                    <!-- Work Experience Section -->
+                    <div id="workPlaceholder" data-component="work-experience"></div>
 
                     <!-- Education Section -->
-                    <section id="education" class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">Education</h2>
-                        </div>
-                        <div id="education-container" class="content-grid"></div>
-                    </section>
+                    <div id="educationPlaceholder" data-component="education"></div>
 
                     <!-- Awards Section -->
-                    <section id="awards" class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">Awards & Achievements</h2>
-                        </div>
-                        <div id="awards-container" class="content-grid"></div>
-                    </section>
+                    <div id="awardsPlaceholder" data-component="awards"></div>
 
                     <!-- Volunteer Section -->
-                    <section id="volunteer" class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">Volunteer Work</h2>
-                        </div>
-                        <div id="volunteer-container" class="content-grid"></div>
-                    </section>
+                    <div id="volunteerPlaceholder" data-component="volunteer"></div>
 
-                    <!-- Social Section -->
-                    <section id="social" class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">Connect With Me</h2>
-                        </div>
-                        <div id="social-container" class="content-grid social-grid"></div>
-                    </section>
+                    <!-- Skills Section -->
+                    <div id="skillsPlaceholder" data-component="skills"></div>
                 </main>
             </div>
 

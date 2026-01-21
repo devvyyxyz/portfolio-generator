@@ -3,6 +3,10 @@
 // Initialize after components are loaded
 function initializeApp() {
     console.log('Initializing app...');
+    injectAmbientLayers();
+    initParticles(18);
+    initToasts();
+    initDevOverlay();
     
     // Load resume data (only on index page)
     if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '/') {
@@ -186,6 +190,9 @@ function initializeApp() {
             });
         }, 1000);
     }
+
+    initSystemStatus();
+    initLogoEasterEgg();
     
     // Sound Toggle Controls
     const soundButtons = document.querySelectorAll('.sound-btn');
@@ -331,6 +338,158 @@ function initializeApp() {
         }
     });
 };
+
+// Ambient gradient overlay + particles shell
+function injectAmbientLayers() {
+    if (!document.querySelector('.ambient-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.className = 'ambient-overlay';
+        document.body.appendChild(overlay);
+    }
+    if (!document.querySelector('.ui-particles')) {
+        const particles = document.createElement('div');
+        particles.className = 'ui-particles';
+        document.body.appendChild(particles);
+    }
+}
+
+// Floating particles
+function initParticles(count = 12) {
+    const container = document.querySelector('.ui-particles');
+    if (!container) return;
+    container.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+        const p = document.createElement('span');
+        const size = Math.random() * 6 + 4;
+        p.style.width = `${size}px`;
+        p.style.height = `${size}px`;
+        p.style.left = `${Math.random() * 100}%`;
+        p.style.animationDuration = `${12 + Math.random() * 10}s`;
+        p.style.animationDelay = `${Math.random() * 8}s`;
+        container.appendChild(p);
+    }
+}
+
+const TOAST_MESSAGES = [
+    '💾 Skills cache refreshed',
+    '🌐 Network stable',
+    '🧠 Learning module loaded',
+    '🎛️ UI services restarted',
+    '🔔 Notifications routed'
+];
+
+// Toast notifications
+function initToasts() {
+    if (document.querySelector('.toast-container')) return;
+    const container = document.createElement('div');
+    container.className = 'toast-container';
+    document.body.appendChild(container);
+    const msg = TOAST_MESSAGES[Math.floor(Math.random() * TOAST_MESSAGES.length)];
+    showToast(msg, 3200);
+}
+
+function showToast(message, timeout = 3000) {
+    const container = document.querySelector('.toast-container');
+    if (!container) return;
+    const el = document.createElement('div');
+    el.className = 'toast';
+    el.textContent = message;
+    container.appendChild(el);
+    setTimeout(() => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(10px)';
+        setTimeout(() => el.remove(), 400);
+    }, timeout);
+}
+
+// Dev overlay (Ctrl+Shift+F)
+function initDevOverlay() {
+    if (window.__devOverlayInitialized) return;
+    window.__devOverlayInitialized = true;
+    let overlay = document.getElementById('devOverlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'devOverlay';
+        overlay.className = 'dev-overlay';
+        overlay.innerHTML = `
+            <h4>Developer Mode</h4>
+            <div class="dev-row"><span>Status</span><span id="dev-status">Idle</span></div>
+            <div class="dev-row"><span>Theme</span><span>Metro Red</span></div>
+            <div class="dev-row"><span>Build</span><span>Aero v2.3.1</span></div>
+            <div class="dev-row"><span>RAM</span><span id="dev-ram">2.4 GB</span></div>
+            <div class="dev-row"><span>FPS</span><span id="dev-fps">60</span></div>
+        `;
+        document.body.appendChild(overlay);
+    }
+
+    let fpsLast = performance.now();
+    let frameCount = 0;
+    let fpsValue = 60;
+
+    function trackFPS(now) {
+        frameCount++;
+        if (now - fpsLast >= 1000) {
+            fpsValue = frameCount;
+            frameCount = 0;
+            fpsLast = now;
+            const fpsEl = document.getElementById('dev-fps');
+            if (fpsEl) fpsEl.textContent = fpsValue;
+        }
+        requestAnimationFrame(trackFPS);
+    }
+    requestAnimationFrame(trackFPS);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'f') {
+            overlay.classList.toggle('active');
+            const status = overlay.classList.contains('active') ? 'Online' : 'Hidden';
+            const statusEl = document.getElementById('dev-status');
+            if (statusEl) statusEl.textContent = status;
+            const ramEl = document.getElementById('dev-ram');
+            if (ramEl) ramEl.textContent = `${(2 + Math.random() * 6).toFixed(1)} GB`;
+        }
+    });
+}
+
+// System Status widget
+function initSystemStatus() {
+    const main = document.querySelector('.main-content');
+    if (!main || document.querySelector('.system-status')) return;
+    const creativity = Math.floor(70 + Math.random() * 25);
+    const coffee = ['Low ☕', 'Steady ☕', 'Critical ☕', 'Refill 🚨'][Math.floor(Math.random() * 4)];
+    const latency = Math.floor(15 + Math.random() * 30);
+    const html = `
+      <section class="system-status content-section">
+        <div class="status-card">
+          <h3>System Status</h3>
+          <div class="status-item"><span>Portfolio</span><span>Online</span></div>
+          <div class="status-item"><span>Latency</span><span>${latency} ms</span></div>
+          <div class="status-item"><span>Network</span><span>Stable</span></div>
+        </div>
+        <div class="status-card">
+          <h3>Creativity Level</h3>
+          <div class="status-item"><span>Meter</span><span>${creativity}%</span></div>
+          <div class="status-bar"><div class="status-bar-fill" style="width:${creativity}%;"></div></div>
+          <div class="status-item" style="margin-top: var(--spacing-sm);"><span>Coffee Intake</span><span>${coffee}</span></div>
+        </div>
+      </section>`;
+    main.insertAdjacentHTML('afterbegin', html);
+}
+
+// Logo easter egg: 5 clicks -> toast
+function initLogoEasterEgg() {
+    const logo = document.querySelector('[data-nav-icon]');
+    if (!logo || logo.dataset.easterEggBound) return;
+    logo.dataset.easterEggBound = 'true';
+    let clicks = 0;
+    logo.addEventListener('click', () => {
+        clicks += 1;
+        if (clicks === 5) {
+            showToast('🔊 Retro sound pack armed');
+            clicks = 0;
+        }
+    });
+}
 
 function populatePortfolio(data) {
     const { personal, displayOrder } = data;

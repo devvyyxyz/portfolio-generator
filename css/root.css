@@ -72,9 +72,10 @@
 /* Base Body Styles */
 body {
   background:
-    radial-gradient(circle at top left, rgba(220, 40, 70, 0.24), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(220, 40, 70, 0.3), transparent 55%),
-    linear-gradient(135deg, #050608 0%, #111118 50%, #050608 100%);
+    linear-gradient(180deg, rgba(8, 8, 12, 0.8) 0%, rgba(8, 8, 12, 0.85) 100%),
+    url('../Assets/backgrounds/red-wave.jpg');
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   font-family: var(--font-family-main);
   color: var(--color-text-light);

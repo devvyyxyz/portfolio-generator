@@ -1,1 +1,0 @@
-var GITHUB_USERNAME="khylemitchell";

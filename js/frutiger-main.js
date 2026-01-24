@@ -543,10 +543,11 @@ function initDevOverlay() {
     });
 }
 
-// System Status widget
+// System Status widget - only on homepage
 function initSystemStatus() {
     const main = document.querySelector('.main-content');
-    if (!main || document.querySelector('.system-status')) return;
+    const isHomepage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+    if (!main || document.querySelector('.system-status') || !isHomepage) return;
     const creativity = Math.floor(70 + Math.random() * 25);
     const coffee = ['Low ☕', 'Steady ☕', 'Critical ☕', 'Refill 🚨'][Math.floor(Math.random() * 4)];
     const latency = Math.floor(15 + Math.random() * 30);

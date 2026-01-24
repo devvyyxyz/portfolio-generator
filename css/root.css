@@ -79,6 +79,21 @@
   font-weight: 600;
 }
 
+/* Custom heading fonts */
+@font-face {
+  font-family: "Ageta Chubby";
+  src: url('../Assets/fonts/AgetaChubbyDemo-O7L6.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ageta Chubby";
+  src: url('../Assets/fonts/AgetaChubbyDemoItalic-ZlZ3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
 /* Base Body Styles */
 body {
   background: var(--bg-overlay), var(--bg-image);
@@ -98,8 +113,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-family-main);
-  font-weight: var(--font-weight-bold);
+  font-family: "Ageta Chubby", var(--font-family-main);
+  font-weight: normal;
 }
 
 h1,

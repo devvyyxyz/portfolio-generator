@@ -2,34 +2,62 @@
 <section class="hero-intro-component">
     <div class="hero-intro-card intro-surface">
         <div class="intro-header">
-            <h1 class="intro-title">Khyle Mitchell</h1>
-            <p class="intro-subtitle">Full Stack Developer & Software Engineer</p>
+            <h1 class="intro-title" data-config="personal.name">Khyle Mitchell</h1>
+            <p class="intro-subtitle" data-config="personal.title">Full Stack Developer & Software Engineer</p>
         </div>
         
         <div class="intro-bio-wrapper">
-            <p class="intro-bio-text">
+            <p class="intro-bio-text" data-config="bio.heroIntro">
                 Passionate full-stack developer with expertise in building responsive web applications and mobile solutions. 
                 Committed to clean code, user-centric design, and continuous learning.
             </p>
         </div>
         
         <div class="intro-contact-grid">
-            <a href="mailto:khyle.mitchell@email.com" class="intro-contact-item" title="Email">
+            <a href="mailto:" class="intro-contact-item" title="Email" data-config-href="personal.email" data-config-mailto="true">
                 <span class="contact-icon">📧</span>
                 <span class="contact-label">Email</span>
             </a>
-            <a href="tel:+441234567890" class="intro-contact-item" title="Phone">
+            <a href="tel:" class="intro-contact-item" title="Phone" data-config-href="personal.phone" data-config-tel="true">
                 <span class="contact-icon">📱</span>
                 <span class="contact-label">Phone</span>
             </a>
-            <a href="https://khyle-mitchell.dev" target="_blank" rel="noopener" class="intro-contact-item" title="Website">
+            <a href="" target="_blank" rel="noopener" class="intro-contact-item" title="Website" data-config-href="personal.website">
                 <span class="contact-icon">🌐</span>
                 <span class="contact-label">Website</span>
             </a>
             <span class="intro-contact-item location-item" title="Location">
                 <span class="contact-icon">📍</span>
-                <span class="contact-label">England, UK</span>
+                <span class="contact-label" data-config="personal.location">England, UK</span>
             </span>
         </div>
     </div>
 </section>
+
+<script>
+// Populate hero intro with config data
+(async () => {
+    if (!window.siteConfig) return;
+    const config = await window.siteConfig.load();
+    
+    // Update text content
+    document.querySelectorAll('[data-config]').forEach(el => {
+        const value = window.siteConfig.get(el.dataset.config);
+        if (value) el.textContent = value;
+    });
+    
+    // Update href attributes
+    document.querySelectorAll('[data-config-href]').forEach(el => {
+        const value = window.siteConfig.get(el.dataset.configHref);
+        if (value) {
+            if (el.dataset.configMailto) {
+                el.href = `mailto:${value}`;
+            } else if (el.dataset.configTel) {
+                el.href = `tel:${value}`;
+            } else {
+                el.href = value;
+            }
+        }
+    });
+})();
+</script>

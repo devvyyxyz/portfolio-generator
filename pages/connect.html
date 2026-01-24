@@ -4,29 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect - Portfolio</title>
-    <!-- FrutigerAero Styles (Modular Architecture) -->
-    <link rel="stylesheet" href="../css/root.css">
-    <link rel="stylesheet" href="../css/buttons.css">
-    <link rel="stylesheet" href="../css/forms.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/components-content.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/floating-fish.css">
     
-    <!-- SEO & Metadata will be loaded here by component-loader.js -->
-    <script>
-        // Load metadata component before page renders
-        (async () => {
-            const response = await fetch('../components/metadata.html');
-            if (response.ok) {
-                const metadata = await response.text();
-                document.head.innerHTML += metadata;
-            }
-        })();
-    </script>
+    <!-- Metadata Component -->
+    <div id="metadataPlaceholder" data-component="metadata"></div>
 
-    <script src="../js/component-loader.js"></script>
     <style>
         .connect-page-header {
             background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);

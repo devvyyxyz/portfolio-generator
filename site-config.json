@@ -1,0 +1,67 @@
+{
+  "personal": {
+    "name": "Khyle Mitchell",
+    "title": "Full Stack Developer & Software Engineer",
+    "email": "khyle.mitchell@email.com",
+    "phone": "+441234567890",
+    "location": "England, UK",
+    "website": "https://khyle-mitchell.dev",
+    "profileImage": "Assets/pfp-profile.jpg"
+  },
+  
+  "bio": {
+    "heroIntro": "Passionate full-stack developer with expertise in building responsive web applications and mobile solutions. Committed to clean code, user-centric design, and continuous learning.",
+    "homePageWelcome": "I'm a full-stack developer passionate about creating beautiful, functional web experiences. With expertise in modern web technologies and a keen eye for design, I build solutions that matter.",
+    "getToKnowMe": "I'm Khyle Mitchell, a computer scientist and developer based in England with a passion for building innovative digital solutions. My career spans full-stack development, UI/UX design, and emerging technologies.",
+    "getToKnowMeExtended": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with other developers through blogging and community engagement.",
+    "aboutPageIntro": "I'm Khyle Mitchell, a passionate full-stack developer from England with a strong commitment to building beautiful, functional web applications that solve real-world problems. My journey in technology started during college and has evolved into a rewarding career working with startups and established tech companies.",
+    "aboutPageBackground": "I completed my Bachelor of Science in Computer Science from the University of Birmingham in 2020 with a 2:1 (Upper Second Class Honours). My education focused on software engineering, web development, and emerging technologies like AI and machine learning. Before university, I studied IT and Computer Science at Gloucestershire College, where I developed a strong foundation in systems analysis and network administration.",
+    "aboutPageQuote": "Technology has the power to transform lives and solve real-world problems. Every line of code I write is an opportunity to make that difference.",
+    "aboutPagePhilosophy1": "I believe in writing clean, maintainable code that other developers can understand and work with. I'm passionate about user-centric design and creating interfaces that are both beautiful and intuitive. Continuous learning is a core part of my identity - I regularly explore new technologies and best practices to stay at the forefront of web development.",
+    "aboutPagePhilosophy2": "Every project is an opportunity to learn something new and to create value for the end user. I approach problems systematically, breaking them down into manageable pieces and collaborating with teams to find the best solutions.",
+    "aboutPageCommunity": "Beyond my professional work, I'm committed to giving back to the developer community. I volunteer as a mentor with the Code Education Initiative, teaching web development to underprivileged youth. I'm also an active contributor to open-source projects, having contributed to several popular JavaScript libraries with 50+ commits.",
+    "aboutPageCommunityExtended": "I believe that sharing knowledge and helping others succeed is just as important as personal achievement. Through mentoring, blogging, and open-source contributions, I work to elevate the entire developer community.",
+    "aboutPageClosing": "I'm always interested in opportunities where I can leverage my full-stack expertise to build scalable, user-focused applications. Whether you have a project in mind, want to collaborate, or just want to chat about web development, I'd love to hear from you.",
+    "connectPageIntro": "Get in touch, follow my journey, or collaborate on exciting projects. I'm always eager to connect with fellow developers and creative minds.",
+    "blogPageIntro": "I write about topics I'm passionate about: modern web development practices, design patterns, emerging technologies, and lessons learned from real-world projects. Whether you're a beginner just starting your coding journey or an experienced developer looking for new perspectives, I hope you'll find something valuable here.",
+    "blogPageIntroExtended": "Each article is carefully crafted to provide practical insights and actionable takeaways. If you have feedback or topic suggestions, feel free to reach out!"
+  },
+  
+  "social": {
+    "github": {
+      "url": "https://github.com/khylemitchell",
+      "handle": "@khylemitchell",
+      "stat": "150+ repositories"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/khyle-mitchell-5a39a031a/",
+      "handle": "Khyle Mitchell",
+      "stat": "500+ connections"
+    },
+    "twitter": {
+      "url": "https://twitter.com/khylemitchell",
+      "handle": "@khylemitchell",
+      "stat": "Tech & Dev updates"
+    },
+    "codepen": {
+      "url": "https://codepen.io/khylemitchell",
+      "handle": "@khylemitchell",
+      "stat": "Creative experiments"
+    },
+    "devto": {
+      "url": "https://dev.to/khylemitchell",
+      "handle": "@khylemitchell",
+      "stat": "Technical articles"
+    },
+    "portfolio": {
+      "url": "https://khyle-mitchell.dev",
+      "handle": "khyle-mitchell.dev",
+      "stat": "My Projects"
+    }
+  },
+  
+  "theme": {
+    "default": "aero",
+    "available": ["aero", "eco", "metro", "red"]
+  }
+}

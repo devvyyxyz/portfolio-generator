@@ -87,7 +87,24 @@ class ComponentLoader {
       // Remove the placeholder
       placeholder.remove();
     } else {
-      placeholder.innerHTML = html;
+      // Extract scripts before inserting HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      const scripts = tempDiv.querySelectorAll('script');
+      const scriptContents = Array.from(scripts).map(script => script.textContent);
+      
+      // Remove scripts from HTML
+      scripts.forEach(script => script.remove());
+      
+      // Insert HTML without scripts
+      placeholder.innerHTML = tempDiv.innerHTML;
+      
+      // Execute scripts in order
+      scriptContents.forEach(content => {
+        const script = document.createElement('script');
+        script.textContent = content;
+        document.body.appendChild(script);
+      });
     }
   }
 

@@ -32,6 +32,9 @@ class ComponentLoader {
       html = html.replace(/url\("Assets\//g, `url("${this.basePath}Assets/`);
       // Fix links that need base path
       html = html.replace(/href="pages\//g, `href="${this.basePath}pages/`);
+      // Fix CSS and JS paths
+      html = html.replace(/href="css\//g, `href="${this.basePath}css/`);
+      html = html.replace(/src="js\//g, `src="${this.basePath}js/`);
     }
     return html;
   }

@@ -116,61 +116,6 @@
             color: white;
         }
 
-        .featured-projects {
-            margin: 3rem 0;
-        }
-
-        .featured-projects h2 {
-            font-size: 2em;
-            margin-bottom: 2rem;
-            color: var(--text-strong);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .featured-project-card {
-            background: var(--surface-1);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .featured-project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--color-accent-blue), #667eea);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
-            margin: 0 0 0.5rem 0;
-            color: var(--text-strong);
-        }
-
-        .project-info p {
-            color: var(--text-secondary);
-            margin: 0.5rem 0;
-            font-size: 0.95em;
-        }
-
         .get-to-know {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -285,15 +230,6 @@
 
                 <!-- Main Content Sections -->
                 <main class="main-content">
-                    <!-- Featured Projects Section -->
-                    <section class="featured-projects">
-                        <h2>Featured Projects</h2>
-                        <div id="projectsPlaceholder" data-component="projects"></div>
-                        <p style="text-align: center; margin-top: 2rem;">
-                            <a href="pages/work.html" class="cta-button secondary" style="display: inline-block;">View All Projects →</a>
-                        </p>
-                    </section>
-
                     <!-- Get to Know Me Section -->
                     <section class="get-to-know">
                         <div class="get-to-know-text">

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work - Portfolio</title>
+    <!-- FrutigerAero Styles (Modular Architecture) -->
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/components-content.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/floating-fish.css">
+    
+    <!-- SEO & Metadata will be loaded here by component-loader.js -->
+    <script>
+        // Load metadata component before page renders
+        (async () => {
+            const response = await fetch('../components/metadata.html');
+            if (response.ok) {
+                const metadata = await response.text();
+                document.head.innerHTML += metadata;
+            }
+        })();
+    </script>
+
+    <script src="../js/component-loader.js"></script>
+    <style>
+        .work-page-header {
+            background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .work-page-header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        .projects-showcase {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: var(--text-strong);
+            margin: 3rem 0 2rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-accent-blue);
+        }
+
+        .skills-showcase {
+            background: var(--surface-1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--color-accent-blue);
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-strong);
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Cursor Fix -->
+    <div id="background"></div>
+
+    <!-- Site Container -->
+    <div id="siteContainer" class="site-wrapper">
+        <!-- Navbar Component -->
+        <div id="navbarPlaceholder" data-component="navbar"></div>
+
+        <!-- Main Content with Side Panel Layout -->
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <!-- Page Header -->
+                <section class="work-page-header">
+                    <h1>My Work & Experience</h1>
+                    <p>A showcase of projects, professional experience, and technical expertise</p>
+                </section>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- Featured Projects -->
+                    <section class="projects-showcase">
+                        <h2 class="section-title">Featured Projects</h2>
+                        <div id="projectsPlaceholder" data-component="projects"></div>
+                    </section>
+
+                    <!-- Work Experience -->
+                    <section>
+                        <h2 class="section-title">Professional Experience</h2>
+                        <div id="workPlaceholder" data-component="work-experience"></div>
+                    </section>
+
+                    <!-- Skills -->
+                    <section class="skills-showcase">
+                        <h2 class="section-title">Technical Skills</h2>
+                        <div id="skillsPlaceholder" data-component="skills"></div>
+                    </section>
+
+                    <!-- Certifications -->
+                    <section>
+                        <h2 class="section-title">Certifications & Credentials</h2>
+                        <div id="certificationsPlaceholder" data-component="certifications"></div>
+                    </section>
+
+                    <!-- Awards -->
+                    <section>
+                        <h2 class="section-title">Recognition & Awards</h2>
+                        <div id="awardsPlaceholder" data-component="awards"></div>
+                    </section>
+                </main>
+            </div>
+
+            <!-- Side Control Panel -->
+            <div id="sidebarPlaceholder" data-component="sidebar"></div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footerPlaceholder" data-component="footer"></div>
+    </div>
+
+    <script src="../js/frutiger-main.js"></script>
+    <script src="../js/floating-fish.js"></script>
+</body>
+</html>

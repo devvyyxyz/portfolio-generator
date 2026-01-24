@@ -27,6 +27,187 @@
     </script>
     
     <script src="../js/component-loader.js"></script>
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-hero-content h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .about-hero-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--color-accent-blue), #667eea);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: var(--text-strong);
+            margin: 3rem 0 2rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-accent-blue);
+        }
+
+        .content-section {
+            line-height: 1.8;
+        }
+
+        .content-section h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-strong);
+        }
+
+        .content-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul {
+            color: var(--text-secondary);
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-section {
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            background: var(--surface-1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--color-accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 102, 255, 0.2);
+        }
+
+        .timeline-item h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-strong);
+        }
+
+        .timeline-date {
+            color: var(--color-accent-blue);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .timeline-item p {
+            margin: 0.5rem 0;
+        }
+
+        .quote-section {
+            background: var(--surface-2);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-accent-blue);
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .skill-category {
+            background: var(--surface-1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            margin: 0 0 0.8rem 0;
+            color: var(--color-accent-blue);
+        }
+
+        .skill-category p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        .image-with-text {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--color-accent-blue), #667eea);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero-content h1 {
+                font-size: 2em;
+            }
+
+            .image-with-text {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero-image {
+                height: 200px;
+            }
+
+            .image-placeholder {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Background Cursor Fix -->
@@ -41,50 +222,104 @@
         <div class="content-wrapper">
             <!-- Main Content Area -->
             <div class="main-content-area">
-                <section class="content-section">
-                    <h1>About Me</h1>
-                    
-                    <p>I'm Khyle Mitchell, a passionate full-stack developer from England with a strong commitment to building beautiful, functional web applications that solve real-world problems. My journey in technology started during college and has evolved into a rewarding career working with startups and established tech companies.</p>
+                <!-- Hero Section -->
+                <section class="about-hero">
+                    <div class="about-hero-content">
+                        <h1>About Me</h1>
+                        <p>I'm Khyle Mitchell, a passionate full-stack developer from England with a strong commitment to building beautiful, functional web applications that solve real-world problems. My journey in technology started during college and has evolved into a rewarding career working with startups and established tech companies.</p>
+                    </div>
+                    <div class="about-hero-image">👨‍💻</div>
+                </section>
 
-                    <h2>My Background</h2>
+                <!-- Main Content -->
+                <section class="content-section">
+                    <!-- My Background -->
+                    <h2 class="section-title">My Journey</h2>
                     <p>I completed my Bachelor of Science in Computer Science from the University of Birmingham in 2020 with a 2:1 (Upper Second Class Honours). My education focused on software engineering, web development, and emerging technologies like AI and machine learning. Before university, I studied IT and Computer Science at Gloucestershire College, where I developed a strong foundation in systems analysis and network administration.</p>
 
-                    <h2>Professional Experience</h2>
-                    <p>Over the past 4+ years, I've had the opportunity to work with diverse teams and technologies:</p>
-                    <ul>
-                        <li><strong>Tech Solutions Ltd (Current)</strong> - As a Senior Full Stack Developer, I lead the development of multiple web applications and mentor junior developers. I focus on performance optimization and implementing robust CI/CD pipelines.</li>
-                        <li><strong>Digital Agency Pro</strong> - Developed 15+ client websites and web applications, working closely with designers and clients to deliver high-quality solutions.</li>
-                        <li><strong>StartUp Ventures</strong> - Started my career as a Junior Web Developer, where I built a strong foundation in both frontend and backend development.</li>
-                    </ul>
+                    <div class="quote-section">
+                        "Technology has the power to transform lives and solve real-world problems. Every line of code I write is an opportunity to make that difference."
+                    </div>
 
-                    <h2>Technical Skills & Expertise</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Frontend</h3>
-                            <p>React, Vue.js, JavaScript, HTML5, CSS3, Redux, TypeScript</p>
+                    <!-- Professional Experience -->
+                    <h2 class="section-title">Professional Timeline</h2>
+                    <div class="timeline-section">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022 - Present</div>
+                            <h3>Senior Full Stack Developer</h3>
+                            <p><strong>Tech Solutions Ltd</strong></p>
+                            <p>Leading the development of multiple web applications and mentoring junior developers. I focus on performance optimization and implementing robust CI/CD pipelines. Key achievements include reducing page load time by 40% and establishing coding standards across the team.</p>
                         </div>
-                        <div class="skill-category">
-                            <h3>Backend</h3>
-                            <p>Node.js, Express, Python, APIs, MongoDB, PostgreSQL, Firebase</p>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020 - 2022</div>
+                            <h3>Full Stack Developer</h3>
+                            <p><strong>Digital Agency Pro</strong></p>
+                            <p>Developed 15+ client websites and web applications, working closely with designers and clients to deliver high-quality solutions. Specialized in responsive design and modern JavaScript frameworks.</p>
                         </div>
-                        <div class="skill-category">
-                            <h3>Tools & Platforms</h3>
-                            <p>Git, Docker, AWS, CI/CD, GitHub Actions, VSCode</p>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Soft Skills</h3>
-                            <p>Team Leadership, Communication, Problem Solving, Mentoring, Agile</p>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2019 - 2020</div>
+                            <h3>Junior Web Developer</h3>
+                            <p><strong>StartUp Ventures</strong></p>
+                            <p>Started my professional career where I built a strong foundation in both frontend and backend development. Contributed to 5+ startup projects and learned valuable lessons about agile development.</p>
                         </div>
                     </div>
 
-                    <h2>Philosophy & Approach</h2>
-                    <p>I believe in writing clean, maintainable code that other developers can understand and work with. I'm passionate about user-centric design and creating interfaces that are both beautiful and intuitive. Continuous learning is a core part of my identity - I regularly explore new technologies and best practices to stay at the forefront of web development.</p>
+                    <!-- Skills Section -->
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Frontend Development</h3>
+                            <p>React, Vue.js, JavaScript, HTML5, CSS3, Redux, TypeScript, Responsive Design</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Backend Development</h3>
+                            <p>Node.js, Express, Python, APIs, MongoDB, PostgreSQL, Firebase, Authentication</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Platforms</h3>
+                            <p>Git, Docker, AWS, CI/CD, GitHub Actions, VSCode, Webpack, Figma</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Soft Skills</h3>
+                            <p>Team Leadership, Communication, Problem Solving, Mentoring, Project Management</p>
+                        </div>
+                    </div>
 
-                    <h2>Community Involvement</h2>
+                    <!-- Philosophy -->
+                    <h2 class="section-title">My Philosophy</h2>
+                    <div class="image-with-text">
+                        <div>
+                            <p>I believe in writing clean, maintainable code that other developers can understand and work with. I'm passionate about user-centric design and creating interfaces that are both beautiful and intuitive. Continuous learning is a core part of my identity - I regularly explore new technologies and best practices to stay at the forefront of web development.</p>
+                            <p>Every project is an opportunity to learn something new and to create value for the end user. I approach problems systematically, breaking them down into manageable pieces and collaborating with teams to find the best solutions.</p>
+                        </div>
+                        <div class="image-placeholder">🎨</div>
+                    </div>
+
+                    <!-- Community -->
+                    <h2 class="section-title">Community & Giving Back</h2>
                     <p>Beyond my professional work, I'm committed to giving back to the developer community. I volunteer as a mentor with the Code Education Initiative, teaching web development to underprivileged youth. I'm also an active contributor to open-source projects, having contributed to several popular JavaScript libraries with 50+ commits.</p>
 
-                    <h2>What I'm Looking For</h2>
-                    <p>I'm interested in opportunities where I can leverage my full-stack expertise to build scalable, user-focused applications. I'm particularly drawn to projects that involve modern tech stacks, collaborative teams, and continuous innovation.</p>
+                    <div class="image-with-text">
+                        <div class="image-placeholder">🤝</div>
+                        <div>
+                            <p>I believe that sharing knowledge and helping others succeed is just as important as personal achievement. Through mentoring, blogging, and open-source contributions, I work to elevate the entire developer community.</p>
+                            <p>When I'm not coding, you'll find me:</p>
+                            <ul>
+                                <li>Contributing to open-source projects</li>
+                                <li>Writing technical blog posts</li>
+                                <li>Mentoring junior developers</li>
+                                <li>Exploring new technologies</li>
+                                <li>Speaking at tech meetups</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p>I'm always interested in opportunities where I can leverage my full-stack expertise to build scalable, user-focused applications. Whether you have a project in mind, want to collaborate, or just want to chat about web development, I'd love to hear from you.</p>
+                    <p>
+                        <a href="connect.html" class="cta-button primary" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-accent-blue), #0066ff); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s ease;">Get In Touch →</a>
+                    </p>
                 </section>
             </div>
 

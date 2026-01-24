@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Portfolio</title>
+    <!-- FrutigerAero Styles (Modular Architecture) -->
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/components-content.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/floating-fish.css">
+    
+    <!-- SEO & Metadata will be loaded here by component-loader.js -->
+    <script>
+        // Load metadata component before page renders
+        (async () => {
+            const response = await fetch('../components/metadata.html');
+            if (response.ok) {
+                const metadata = await response.text();
+                document.head.innerHTML += metadata;
+            }
+        })();
+    </script>
+
+    <script src="../js/component-loader.js"></script>
+    <style>
+        .blog-page-header {
+            background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .blog-page-header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            max-width: 600px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: var(--text-strong);
+            margin: 3rem 0 2rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-accent-blue);
+        }
+
+        .about-blog {
+            background: var(--surface-1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-blog h2 {
+            margin-top: 0;
+        }
+
+        .about-blog p {
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .blog-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .category-filter {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--color-accent-blue);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--color-accent-blue);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .category-filter:hover,
+        .category-filter.active {
+            background: var(--color-accent-blue);
+            color: white;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .blog-card {
+            background: var(--surface-1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-thumbnail {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, var(--color-accent-blue), #667eea);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: var(--color-accent-blue);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            margin: 0.5rem 0;
+            color: var(--text-strong);
+            font-size: 1.3em;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        .read-more {
+            color: var(--color-accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Cursor Fix -->
+    <div id="background"></div>
+
+    <!-- Site Container -->
+    <div id="siteContainer" class="site-wrapper">
+        <!-- Navbar Component -->
+        <div id="navbarPlaceholder" data-component="navbar"></div>
+
+        <!-- Main Content with Side Panel Layout -->
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <!-- Page Header -->
+                <section class="blog-page-header">
+                    <h1>Blog & Articles</h1>
+                    <p>Thoughts, tutorials, and insights on web development, design, and technology trends</p>
+                </section>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- About the Blog -->
+                    <section class="about-blog">
+                        <h2>Welcome to My Blog</h2>
+                        <p>I write about topics I'm passionate about: modern web development practices, design patterns, emerging technologies, and lessons learned from real-world projects. Whether you're a beginner just starting your coding journey or an experienced developer looking for new perspectives, I hope you'll find something valuable here.</p>
+                        <p>Each article is carefully crafted to provide practical insights and actionable takeaways. If you have feedback or topic suggestions, feel free to reach out!</p>
+                    </section>
+
+                    <!-- Blog Posts -->
+                    <section>
+                        <h2 class="section-title">Latest Articles</h2>
+                        <div id="blogPostsPlaceholder" data-component="blog-posts"></div>
+                    </section>
+                </main>
+            </div>
+
+            <!-- Side Control Panel -->
+            <div id="sidebarPlaceholder" data-component="sidebar"></div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footerPlaceholder" data-component="footer"></div>
+    </div>
+
+    <script src="../js/frutiger-main.js"></script>
+    <script src="../js/floating-fish.js"></script>
+</body>
+</html>

@@ -29,6 +29,234 @@
     
     <!-- Component Loader -->
     <script src="js/component-loader.js"></script>
+    <style>
+        /* Homepage-specific styles */
+        .homepage-hero {
+            background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .homepage-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--color-accent-blue) 0%, transparent 70%);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .homepage-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .homepage-hero h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .homepage-hero p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: var(--text-strong);
+            max-width: 600px;
+            margin: 1rem 0;
+        }
+
+        .homepage-hero .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button.primary {
+            background: linear-gradient(135deg, var(--color-accent-blue), #0066ff);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+        }
+
+        .cta-button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 102, 255, 0.5);
+        }
+
+        .cta-button.secondary {
+            background: var(--surface-1);
+            color: var(--text-strong);
+            border: 2px solid var(--color-accent-blue);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--color-accent-blue);
+            color: white;
+        }
+
+        .featured-projects {
+            margin: 3rem 0;
+        }
+
+        .featured-projects h2 {
+            font-size: 2em;
+            margin-bottom: 2rem;
+            color: var(--text-strong);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .featured-project-card {
+            background: var(--surface-1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .featured-project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-accent-blue), #667eea);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-strong);
+        }
+
+        .project-info p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+            font-size: 0.95em;
+        }
+
+        .get-to-know {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 3rem 0;
+            background: var(--surface-2);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .get-to-know-text h2 {
+            font-size: 2em;
+            margin-bottom: 1rem;
+            color: var(--text-strong);
+        }
+
+        .get-to-know-text p {
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .get-to-know-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--color-accent-blue), #667eea);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            color: white;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .quick-link-card {
+            background: var(--surface-1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .quick-link-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 102, 255, 0.2);
+        }
+
+        .quick-link-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-strong);
+        }
+
+        .quick-link-card p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .get-to-know {
+                grid-template-columns: 1fr;
+            }
+
+            .homepage-hero h1 {
+                font-size: 2em;
+            }
+
+            .homepage-hero .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Background Cursor Fix -->
@@ -43,40 +271,63 @@
         <div class="content-wrapper">
             <!-- Main Content Area -->
             <div class="main-content-area">
-                <!-- Hero Introduction -->
-                <div id="heroIntroPlaceholder" data-component="hero-intro"></div>
+                <!-- Redesigned Hero Section -->
+                <section class="homepage-hero">
+                    <div class="homepage-hero-content">
+                        <h1>Welcome to My Portfolio</h1>
+                        <p>I'm a full-stack developer passionate about creating beautiful, functional web experiences. With expertise in modern web technologies and a keen eye for design, I build solutions that matter.</p>
+                        <div class="cta-buttons">
+                            <a href="pages/about.html" class="cta-button primary">Learn More About Me</a>
+                            <a href="pages/work.html" class="cta-button secondary">Explore My Work</a>
+                        </div>
+                    </div>
+                </section>
 
                 <!-- Main Content Sections -->
                 <main class="main-content">
-                    <!-- Projects Section -->
-                    <div id="projectsPlaceholder" data-component="projects"></div>
+                    <!-- Featured Projects Section -->
+                    <section class="featured-projects">
+                        <h2>Featured Projects</h2>
+                        <div id="projectsPlaceholder" data-component="projects"></div>
+                        <p style="text-align: center; margin-top: 2rem;">
+                            <a href="pages/work.html" class="cta-button secondary" style="display: inline-block;">View All Projects →</a>
+                        </p>
+                    </section>
 
-                    <!-- Work Experience Section -->
-                    <div id="workPlaceholder" data-component="work-experience"></div>
+                    <!-- Get to Know Me Section -->
+                    <section class="get-to-know">
+                        <div class="get-to-know-text">
+                            <h2>Get to Know Me</h2>
+                            <p>I'm Khyle Mitchell, a computer scientist and developer based in England with a passion for building innovative digital solutions. My career spans full-stack development, UI/UX design, and emerging technologies.</p>
+                            <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with other developers through blogging and community engagement.</p>
+                            <a href="pages/about.html" class="cta-button primary" style="display: inline-block; margin-top: 1rem;">Read Full Bio →</a>
+                        </div>
+                        <div class="get-to-know-image">👨‍💻</div>
+                    </section>
 
-                    <!-- Education Section -->
-                    <div id="educationPlaceholder" data-component="education"></div>
-
-                    <!-- Awards Section -->
-                    <div id="awardsPlaceholder" data-component="awards"></div>
-
-                    <!-- Volunteer Section -->
-                    <div id="volunteerPlaceholder" data-component="volunteer"></div>
-
-                    <!-- Skills Section -->
-                    <div id="skillsPlaceholder" data-component="skills"></div>
-
-                    <!-- Testimonials Section -->
-                    <div id="testimonialsPlaceholder" data-component="testimonials"></div>
-
-                    <!-- Certifications Section -->
-                    <div id="certificationsPlaceholder" data-component="certifications"></div>
-
-                    <!-- Social Showcase Section -->
-                    <div id="socialShowcasePlaceholder" data-component="social-showcase"></div>
-
-                    <!-- Blog Posts Section -->
-                    <div id="blogPostsPlaceholder" data-component="blog-posts"></div>
+                    <!-- Quick Links Section -->
+                    <section class="quick-links">
+                        <div class="quick-link-card">
+                            <h3>💼 Experience</h3>
+                            <p>5+ years of professional development across startups and established tech companies. Explore my career journey.</p>
+                            <a href="pages/work.html" style="color: var(--color-accent-blue); text-decoration: none;">Learn More →</a>
+                        </div>
+                        <div class="quick-link-card">
+                            <h3>🎓 Education</h3>
+                            <p>Computer Science degree from University of Birmingham. Continuous learner with multiple certifications.</p>
+                            <a href="pages/about.html" style="color: var(--color-accent-blue); text-decoration: none;">View Timeline →</a>
+                        </div>
+                        <div class="quick-link-card">
+                            <h3>🤝 Let's Connect</h3>
+                            <p>Interested in collaborating? Check out my social profiles and get in touch with me directly.</p>
+                            <a href="pages/connect.html" style="color: var(--color-accent-blue); text-decoration: none;">Connect With Me →</a>
+                        </div>
+                        <div class="quick-link-card">
+                            <h3>📝 Latest Blog</h3>
+                            <p>I regularly share insights about web development, design patterns, and technology trends.</p>
+                            <a href="pages/blog.html" style="color: var(--color-accent-blue); text-decoration: none;">Read Articles →</a>
+                        </div>
+                    </section>
                 </main>
             </div>
 

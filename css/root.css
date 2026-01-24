@@ -240,14 +240,17 @@ body.theme-metro {
   --glow-accent: rgba(255, 24, 67, 0.32);
 }
 
-/* Y2K Preloader Styles */
+/* Y2K Preloader Styles - Glassmorphic Frutiger Aero */
 .y2k-preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(10, 10, 20, 0.98) 0%, rgba(30, 10, 40, 0.98) 100%);
+  background: linear-gradient(135deg, rgba(10, 10, 20, 0.3) 0%, rgba(30, 10, 40, 0.3) 100%), 
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,6 +272,15 @@ body.theme-metro {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  background: linear-gradient(180deg, rgba(60, 60, 80, 0.4) 0%, rgba(40, 20, 60, 0.4) 100%);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 100, 200, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37),
+              inset 0 0 20px rgba(255, 200, 255, 0.1),
+              0 0 40px rgba(0, 212, 255, 0.2);
 }
 
 /* Y2K Loading Circles */
@@ -285,8 +297,9 @@ body.theme-metro {
   height: 12px;
   border-radius: 50%;
   background: linear-gradient(45deg, #00d4ff, #ff00ff);
-  box-shadow: 0 0 10px #00d4ff, 0 0 20px #ff00ff;
+  box-shadow: 0 0 15px #00d4ff, 0 0 30px #ff00ff, 0 0 45px rgba(0, 212, 255, 0.5);
   animation: y2k-pulse 1.2s infinite;
+  border: 2px solid rgba(0, 212, 255, 0.6);
 }
 
 .circle:nth-child(1) {

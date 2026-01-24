@@ -195,6 +195,51 @@
     </style>
 </head>
 <body>
+    <!-- Y2K Preloader -->
+    <div class="y2k-preloader" id="y2kPreloader">
+      <div style="position: relative;">
+        <div class="glow-lines">
+          <div class="glow-line line-1"></div>
+          <div class="glow-line line-2"></div>
+        </div>
+        <div class="preloader-content">
+          <div class="loading-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+          <div class="preloader-text">Loading...</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const preloadStartTime = Date.now();
+      const minPreloadDuration = 3000; // 3 seconds
+      
+      function hidePreloader() {
+        const preloader = document.getElementById('y2kPreloader');
+        if (preloader) {
+          const elapsedTime = Date.now() - preloadStartTime;
+          const remainingTime = Math.max(0, minPreloadDuration - elapsedTime);
+          
+          if (remainingTime > 0) {
+            setTimeout(() => {
+              preloader.classList.add('hidden');
+            }, remainingTime);
+          } else {
+            preloader.classList.add('hidden');
+          }
+        }
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hidePreloader);
+      } else {
+        hidePreloader();
+      }
+      window.addEventListener('load', hidePreloader);
+    </script>
+
     <!-- Background Cursor Fix -->
     <div id="background"></div>
 

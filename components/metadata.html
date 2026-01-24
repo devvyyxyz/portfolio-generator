@@ -82,3 +82,41 @@
 <link rel="stylesheet" href="css/components-content.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/floating-fish.css">
+
+<!-- Y2K Preloader (Appears during page load) -->
+<div class="y2k-preloader" id="y2kPreloader">
+  <div style="position: relative;">
+    <div class="glow-lines">
+      <div class="glow-line line-1"></div>
+      <div class="glow-line line-2"></div>
+    </div>
+    <div class="preloader-content">
+      <div class="loading-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <div class="preloader-text">Loading...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Hide preloader when page is ready
+  function hidePreloader() {
+    const preloader = document.getElementById('y2kPreloader');
+    if (preloader) {
+      preloader.classList.add('hidden');
+    }
+  }
+  
+  // Hide preloader when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hidePreloader);
+  } else {
+    hidePreloader();
+  }
+  
+  // Also hide on full page load to catch all assets
+  window.addEventListener('load', hidePreloader);
+</script>

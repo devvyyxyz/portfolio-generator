@@ -239,3 +239,138 @@ body.theme-metro {
   --text-muted: rgba(220, 204, 210, 0.78);
   --glow-accent: rgba(255, 24, 67, 0.32);
 }
+
+/* Y2K Preloader Styles */
+.y2k-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 10, 20, 0.98) 0%, rgba(30, 10, 40, 0.98) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+  visibility: visible;
+}
+
+.y2k-preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Y2K Loading Circles */
+.loading-circles {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00d4ff, #ff00ff);
+  box-shadow: 0 0 10px #00d4ff, 0 0 20px #ff00ff;
+  animation: y2k-pulse 1.2s infinite;
+}
+
+.circle:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes y2k-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Y2K Loading Text */
+.preloader-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00d4ff, #ff00ff, #00ff88, #ffd700, #00d4ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s linear infinite;
+  font-family: "Ageta Chubby", var(--font-family-main);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Y2K Glow Lines */
+.glow-lines {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.3;
+}
+
+.glow-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  animation: scan-line 2s ease-in-out infinite;
+}
+
+.line-1 {
+  width: 100%;
+  height: 2px;
+  top: 30%;
+  left: 0;
+  animation: scan-line 2s ease-in-out infinite 0s;
+}
+
+.line-2 {
+  width: 100%;
+  height: 2px;
+  top: 60%;
+  left: 0;
+  animation: scan-line 2s ease-in-out infinite 0.3s;
+}
+
+@keyframes scan-line {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}

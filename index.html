@@ -67,35 +67,41 @@
 
         .cta-button {
             padding: 0.8rem 2rem;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .cta-button.primary {
-            background: linear-gradient(135deg, var(--color-accent-blue), #0066ff);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+            color: var(--text-strong);
         }
 
         .cta-button.primary:hover {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.12) 100%);
+            border-color: rgba(255, 255, 255, 0.35);
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 102, 255, 0.5);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
         .cta-button.secondary {
-            background: var(--surface-1);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
             color: var(--text-strong);
-            border: 2px solid var(--color-accent-blue);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .cta-button.secondary:hover {
-            background: var(--color-accent-blue);
-            color: white;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
         .get-to-know {

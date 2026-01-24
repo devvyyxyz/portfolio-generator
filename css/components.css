@@ -84,20 +84,26 @@
 }
 
 .theme-btn {
-  background: rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
   color: var(--color-text-light);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-sm, 2px);
   padding: 6px 10px;
   font-size: 0.85em;
   letter-spacing: 0.01em;
   transition: var(--transition-fast, 0.15s ease);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .theme-btn:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.12) 100%);
   color: var(--color-accent-blue);
-  border-color: var(--color-accent-blue);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 70, 100, 0.3);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
 }
 
 .theme-btn.active {

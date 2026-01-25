@@ -277,12 +277,23 @@
   min-width: 0;
 }
 
+/* Center align sidebar setting content and titles */
+.side-settings-bar .setting-content {
+  align-items: center;
+  text-align: center;
+}
+
+.side-settings-bar .settings-titles {
+  justify-content: center;
+}
+
 .fish-controls,
 .music-controls {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  align-items: flex-start; /* prevent children from stretching full width */
+  align-items: center;
+  width: 100%;
 }
 
 .settings-titles {

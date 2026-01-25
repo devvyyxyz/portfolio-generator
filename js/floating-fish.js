@@ -13,7 +13,20 @@ class FloatingFish {
       if (cfg !== undefined) initialActive = !!cfg;
     }
     this.isActive = (initialActive === null) ? true : initialActive;
-    this.maxFish = 5;
+
+    // Determine initial fish count: localStorage > config default > fallback
+    const storedCountRaw = localStorage.getItem('portfolioFishCount');
+    const storedCount = storedCountRaw ? parseInt(storedCountRaw, 10) : null;
+    let countFromConfig = null;
+    if (window.siteConfig && typeof window.siteConfig.get === 'function') {
+      const cfgCount = window.siteConfig.get('defaults.fishCount');
+      if (cfgCount !== undefined) countFromConfig = parseInt(cfgCount, 10);
+    }
+    const initialCount = storedCount && !Number.isNaN(storedCount)
+      ? storedCount
+      : (countFromConfig && !Number.isNaN(countFromConfig) ? countFromConfig : 5);
+    this.maxFish = Math.max(1, Math.min(initialCount, 20));
+
     this.basePath = this.getBasePath();
     // All fish images available in Assets/images/fishes/
     this.fishImages = [
@@ -224,6 +237,7 @@ class FloatingFish {
   updateMaxFish(newMax) {
     const oldMax = this.maxFish;
     this.maxFish = Math.max(1, Math.min(newMax, 20)); // Clamp between 1 and 20
+    localStorage.setItem('portfolioFishCount', String(this.maxFish));
     
     if (this.maxFish > oldMax) {
       // Add more fish
@@ -257,9 +271,11 @@ function initializeFishButtons() {
   // Setup toggle buttons
   const fishButtons = document.querySelectorAll('.fish-btn');
   const fishToggleBtn = document.querySelector('.setting-toggle-btn[data-setting="fish"]');
+  const fishCountSlider = document.getElementById('fish-count-slider');
+  const fishCountDisplay = document.getElementById('fish-count-display');
   
-  if (fishButtons.length === 0) {
-    if (window.Logger) window.Logger.warn('Fish buttons not found');
+  if (fishButtons.length === 0 && !fishToggleBtn && !fishCountSlider) {
+    if (window.Logger) window.Logger.warn('Fish controls not found');
     return;
   }
   
@@ -296,6 +312,8 @@ function initializeFishButtons() {
         if (valueSpan) valueSpan.textContent = isActive ? 'On' : 'Off';
         fishToggleBtn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       }
+
+      if (fishCountSlider) fishCountSlider.disabled = !fishSystem.isActive;
     });
   });
 
@@ -306,6 +324,7 @@ function initializeFishButtons() {
     if (valueSpan) valueSpan.textContent = fishSystem.isActive ? 'On' : 'Off';
     fishToggleBtn.classList.toggle('active', fishSystem.isActive);
     fishToggleBtn.setAttribute('aria-pressed', fishSystem.isActive ? 'true' : 'false');
+    if (fishCountSlider) fishCountSlider.disabled = !fishSystem.isActive;
 
     fishToggleBtn.addEventListener('click', () => {
       if (fishSystem.isActive) {
@@ -317,17 +336,16 @@ function initializeFishButtons() {
       fishToggleBtn.classList.toggle('active', active);
       if (valueSpan) valueSpan.textContent = active ? 'On' : 'Off';
       fishToggleBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      if (fishCountSlider) fishCountSlider.disabled = !active;
     });
   }
 
   // Setup fish count slider
-  const fishCountSlider = document.getElementById('fish-count-slider');
-  const fishCountDisplay = document.getElementById('fish-count-display');
-  
   if (fishCountSlider && fishCountDisplay) {
     // Set initial value from system
     fishCountSlider.value = fishSystem.maxFish;
     fishCountDisplay.textContent = fishSystem.maxFish;
+    fishCountSlider.disabled = !fishSystem.isActive;
     
     fishCountSlider.addEventListener('input', function() {
       const newCount = parseInt(this.value);

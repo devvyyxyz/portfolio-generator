@@ -405,8 +405,9 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
 .fish-slider-container {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 6px 8px;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 6px 10px;
   background: 
     radial-gradient(
       farthest-corner at bottom center,

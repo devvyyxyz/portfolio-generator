@@ -64,5 +64,98 @@
   "theme": {
     "default": "aero",
     "available": ["aero", "eco", "metro", "red"]
+  },
+  
+  "footer": {
+    "sections": {
+      "about": {
+        "title": "About",
+        "links": [
+          { "label": "About Me", "href": "../pages/about.html" },
+          { "label": "My Work", "href": "../pages/work.html" },
+          { "label": "Blog", "href": "../pages/blog.html" },
+          { "label": "Gallery", "href": "../pages/gallery.html" }
+        ]
+      },
+      "projects": {
+        "title": "Projects",
+        "links": [
+          { "label": "Featured Projects", "href": "#featured-projects" },
+          { "label": "Open Source", "href": "#open-source" },
+          { "label": "Case Studies", "href": "#case-studies" },
+          { "label": "Portfolio", "href": "#portfolio" }
+        ]
+      },
+      "services": {
+        "title": "Services",
+        "links": [
+          { "label": "Web Development", "href": "#web-dev" },
+          { "label": "Frontend Design", "href": "#frontend" },
+          { "label": "Backend Development", "href": "#backend" },
+          { "label": "Consulting", "href": "#consulting" }
+        ]
+      },
+      "technologies": {
+        "title": "Technologies",
+        "links": [
+          { "label": "React", "href": "#react" },
+          { "label": "Node.js", "href": "#nodejs" },
+          { "label": "JavaScript", "href": "#javascript" },
+          { "label": "Web Design", "href": "#web-design" }
+        ]
+      },
+      "experience": {
+        "title": "Experience",
+        "links": [
+          { "label": "Companies", "href": "#companies" },
+          { "label": "Work History", "href": "#work-history" },
+          { "label": "Education", "href": "#education" },
+          { "label": "Certifications", "href": "#certifications" }
+        ]
+      },
+      "community": {
+        "title": "Community",
+        "links": [
+          { "label": "Contributions", "href": "#contributions" },
+          { "label": "Speaking", "href": "#speaking" },
+          { "label": "Mentoring", "href": "#mentoring" },
+          { "label": "Testimonials", "href": "#testimonials" }
+        ]
+      },
+      "resources": {
+        "title": "Resources",
+        "links": [
+          { "label": "Articles", "href": "#articles" },
+          { "label": "Tutorials", "href": "#tutorials" },
+          { "label": "Tools", "href": "#tools" },
+          { "label": "Guides", "href": "#guides" }
+        ]
+      },
+      "connect": {
+        "title": "Connect",
+        "links": [
+          { "label": "Contact", "href": "../pages/connect.html" },
+          { "label": "GitHub", "href": "social.github.url" },
+          { "label": "LinkedIn", "href": "social.linkedin.url" },
+          { "label": "Twitter", "href": "social.twitter.url" },
+          { "label": "CodePen", "href": "social.codepen.url" },
+          { "label": "Dev.to", "href": "social.devto.url" }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": [
+          { "label": "Sitemap", "href": "../pages/sitemap.html" },
+          { "label": "Privacy Policy", "href": "../pages/privacy.html" },
+          { "label": "Terms of Use", "href": "../pages/terms.html" },
+          { "label": "Accessibility", "href": "#accessibility" }
+        ]
+      }
+    },
+    "bottomLinks": [
+      { "label": "Privacy Statement", "href": "../pages/privacy.html" },
+      { "label": "Terms of Use", "href": "../pages/terms.html" },
+      { "label": "Contact", "href": "../pages/contact.html" }
+    ]
   }
 }

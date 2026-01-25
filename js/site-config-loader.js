@@ -175,14 +175,100 @@ class SiteConfigLoader {
                 element.setAttribute('content', `${value} - ${title || 'Full Stack Developer & Software Engineer'}`);
             }
         });
+    }
 
-        document.querySelectorAll('meta[data-config-twitter-title]').forEach(element => {
-            const path = element.getAttribute('data-config-twitter-title');
-            const value = this.get(path);
-            if (value !== undefined) {
-                element.setAttribute('content', `${value} - Full Stack Developer`);
-            }
+    /**
+     * Generate footer links from config
+     * @private
+     */
+    _applyFooterLinks() {
+        const footerConfig = this.config.footer;
+        if (!footerConfig || !footerConfig.sections) {
+            console.warn('Footer config not found', footerConfig);
+            return;
+        }
+
+        const footerColumnsContainer = document.querySelector('.footer-columns');
+        if (!footerColumnsContainer) {
+            console.warn('Footer columns container not found. Checking for footer element:', document.querySelector('footer'));
+            return;
+        }
+
+        console.log('Applying footer links from config...');
+
+        // Clear existing footer columns (but not bottom section)
+        const existingColumns = footerColumnsContainer.querySelectorAll('.footer-column');
+        console.log(`Found ${existingColumns.length} existing columns, removing...`);
+        existingColumns.forEach(col => col.remove());
+
+        // Create columns from config
+        Object.entries(footerConfig.sections).forEach(([key, section]) => {
+            const column = document.createElement('div');
+            column.className = 'footer-column';
+
+            const header = document.createElement('h4');
+            header.className = 'footer-header';
+            header.textContent = section.title;
+            column.appendChild(header);
+
+            const ul = document.createElement('ul');
+            ul.className = 'footer-links';
+
+            section.links.forEach(link => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.textContent = link.label;
+
+                // Check if href is a config path (contains '.')
+                if (link.href.includes('.')) {
+                    a.href = this.get(link.href) || '#';
+                    a.target = '_blank';
+                } else {
+                    a.href = link.href;
+                }
+
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+
+            column.appendChild(ul);
+            footerColumnsContainer.appendChild(column);
         });
+
+        // Update footer bottom links
+        const footerBottomCenter = document.querySelector('.footer-bottom-center');
+        if (footerBottomCenter && footerConfig.bottomLinks) {
+            footerBottomCenter.innerHTML = '';
+
+            footerConfig.bottomLinks.forEach((link, index) => {
+                const a = document.createElement('a');
+                a.href = link.href;
+                a.textContent = link.label;
+                footerBottomCenter.appendChild(a);
+
+                // Add separator between links
+                if (index < footerConfig.bottomLinks.length - 1) {
+                    const span = document.createElement('span');
+                    span.className = 'separator';
+                    span.textContent = '|';
+                    footerBottomCenter.appendChild(span);
+                }
+            });
+        }
+
+        console.log('Footer links applied successfully');
+    }
+
+    /**
+     * Apply footer links after components are loaded
+     * Public method to call after footer component is inserted
+     */
+    applyFooterLinks() {
+        if (!this.config) {
+            console.warn('Config not loaded. Waiting...');
+            return this.load().then(() => this._applyFooterLinks());
+        }
+        this._applyFooterLinks();
     }
 }
 
@@ -210,6 +296,7 @@ if (document.readyState === 'loading') {
 document.addEventListener('componentsLoaded', () => {
     if (window.siteConfig && window.siteConfig.config) {
         window.siteConfig.applyToDOM();
+        window.siteConfig.applyFooterLinks();
         console.log('Config reapplied after components loaded');
     }
 });

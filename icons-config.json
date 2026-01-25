@@ -19,7 +19,7 @@
       "files": {
         "style-classic": "Assets/Icons/style-classic/linkedin.png",
         "style-glossy-blue": "Assets/Icons/style-glossy-blue/linkedin.png",
-        "style-ios6": "Assets/Icons/style-ios6/LinkedIn.png"
+        "style-ios6": "Assets/Icons/style-ios6/Contacts.png"
       },
       "emoji": "💼"
     },
@@ -41,7 +41,7 @@
       "files": {
         "style-classic": "Assets/Icons/style-classic/messenger.png",
         "style-glossy-blue": "Assets/Icons/style-glossy-blue/phone.png",
-        "style-ios6": "Assets/Icons/style-ios6/Safari.png"
+        "style-ios6": "Assets/Icons/style-ios6/Contacts.png"
       },
       "emoji": "🎨"
     },
@@ -52,7 +52,7 @@
       "files": {
         "style-classic": "Assets/Icons/style-classic/telegram.png",
         "style-glossy-blue": "Assets/Icons/style-glossy-blue/messages.png",
-        "style-ios6": "Assets/Icons/style-ios6/Messages.png"
+        "style-ios6": "Assets/Icons/style-ios6/Contacts.png"
       },
       "emoji": "📝"
     },
@@ -115,7 +115,7 @@
       "name": "Star",
       "type": "image",
       "alt": "Star",
-      "icon": "Assets/Icons/Windows Vista Icons/Other050.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Game018.ico"
     }
   },
   "page-sections": {
@@ -123,7 +123,7 @@
       "name": "About",
       "type": "image",
       "alt": "About",
-      "icon": "Assets/Icons/Windows Vista Icons/User001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Folder174 .ico"
     },
     "work": {
       "name": "Work",
@@ -161,19 +161,19 @@
       "name": "Experience",
       "type": "image",
       "alt": "Experience",
-      "icon": "Assets/Icons/Windows Vista Icons/File078.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/User006.ico"
     },
     "education": {
       "name": "Education",
       "type": "image",
       "alt": "Education",
-      "icon": "Assets/Icons/Windows Vista Icons/File079.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Game004.ico"
     },
     "connect": {
       "name": "Connect",
       "type": "image",
       "alt": "Connect",
-      "icon": "Assets/Icons/Windows Vista Icons/Net001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/H&D036.ico"
     },
     "blog": {
       "name": "Blog",
@@ -263,7 +263,7 @@
       "name": "Award",
       "type": "image",
       "alt": "Award",
-      "icon": "Assets/Icons/Windows Vista Icons/Other050.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Game018.ico"
     },
     "creative": {
       "name": "Creative",
@@ -281,7 +281,7 @@
       "name": "Avatar",
       "type": "image",
       "alt": "Avatar",
-      "icon": "Assets/Icons/Windows Vista Icons/User001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Folder174.ico"
     }
   },
   "certifications": {

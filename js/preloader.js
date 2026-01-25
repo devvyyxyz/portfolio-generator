@@ -1,11 +1,9 @@
 /**
  * Modular Y2K Preloader Handler
- * Manages the preloader display with a minimum 3-second duration
+ * Manages the preloader display - only disappears after components are loaded
  */
 
 const PreloaderManager = {
-  startTime: Date.now(),
-  minDuration: 3000, // 3 seconds
   preloaderElement: null,
 
   init() {
@@ -16,34 +14,17 @@ const PreloaderManager = {
       return;
     }
 
-    // Listen for DOM ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => this.checkHidePreloader());
-    } else {
-      this.checkHidePreloader();
-    }
-
-    // Also listen for full page load
-    window.addEventListener('load', () => this.checkHidePreloader());
-  },
-
-  checkHidePreloader() {
-    if (!this.preloaderElement) return;
-
-    const elapsedTime = Date.now() - this.startTime;
-    const remainingTime = Math.max(0, this.minDuration - elapsedTime);
-
-    if (remainingTime > 0) {
-      setTimeout(() => {
-        this.hidePreloader();
-      }, remainingTime);
-    } else {
+    // Listen for component load completion
+    document.addEventListener('componentsLoaded', () => this.hidePreloader());
+    
+    // Fallback: Hide after 10 seconds max if components don't finish loading
+    setTimeout(() => {
       this.hidePreloader();
-    }
+    }, 10000);
   },
 
   hidePreloader() {
-    if (this.preloaderElement) {
+    if (this.preloaderElement && !this.preloaderElement.classList.contains('hidden')) {
       this.preloaderElement.classList.add('hidden');
     }
   }

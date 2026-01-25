@@ -1,0 +1,32 @@
+/* MASTER CSS FILE - Imports all stylesheets */
+/* This is the only CSS file that needs to be linked on each page */
+
+/* Core & Foundation */
+@import url("root.css");
+@import url("frutiger-global.css");
+@import url("layout.css");
+
+/* Components & UI */
+@import url("buttons.css");
+@import url("components.css");
+@import url("components-content.css");
+@import url("frutiger-components.css");
+
+/* Forms & Inputs */
+@import url("forms.css");
+
+/* Animations & Effects */
+@import url("animations.css");
+@import url("floating-fish.css");
+
+/* Modular Page Headers */
+@import url("page-headers.css");
+
+/* Page-Specific Styles */
+@import url("homepage.css");
+@import url("about-page.css");
+@import url("work-page.css");
+@import url("blog-page.css");
+@import url("gallery-page.css");
+@import url("connect-page.css");
+@import url("error-404.css");

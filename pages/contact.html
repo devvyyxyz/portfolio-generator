@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Portfolio</title>
-    <!-- FrutigerAero Styles (Modular Architecture) -->
-    <link rel="stylesheet" href="../css/root.css">
-    <link rel="stylesheet" href="../css/buttons.css">
-    <link rel="stylesheet" href="../css/forms.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/components-content.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/floating-fish.css">
     
-    <!-- SEO & Metadata will be loaded here by component-loader.js -->
-    <script>
+    <!-- Component Loader Scripts -->
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/site-config-loader.js"></script>
+    
+    <!-- Metadata Component -->
+    <div id="metadataPlaceholder" data-component="metadata"></div>
         // Load metadata component before page renders
         (async () => {
             const response = await fetch('../components/metadata.html');
@@ -118,10 +113,9 @@
             <!-- Sidebar Controls -->
             <div id="sidebarPlaceholder" data-component="sidebar"></div>
         </div>
+        <!-- Footer Component -->
+        <div id="footerPlaceholder" data-component="footer"></div>
     </div>
-
-    <!-- Footer Component -->
-    <div id="footerPlaceholder" data-component="footer"></div>
 
     <script src="../js/frutiger-main.js"></script>
     <script src="../js/floating-fish.js"></script>

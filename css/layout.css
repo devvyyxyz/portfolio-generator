@@ -634,15 +634,16 @@
 /* Content Sections */
 /* Unified content section - replaces introduction-section, get-to-know */
 .content-section {
-  background: var(--surface-1);
+  background: var(--surface-2);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--card-border);
   margin-bottom: var(--spacing-lg);
   margin-top: var(--spacing-lg);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0px 7px 10px var(--color-shadow),
+    inset 0px 10px 10px rgba(255, 255, 255, 0.3),
+    inset 0px -2px 1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   position: relative;
   overflow: hidden;
   line-height: 1.8;
@@ -658,8 +659,7 @@
 }
 
 .system-status::after,
-.status-card::after,
-.content-section::after {
+.status-card::after {
   content: "";
   position: absolute;
   inset: 0;

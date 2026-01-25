@@ -1,0 +1,308 @@
+/* ==================== FRUTIGER AERO UNIFIED BUTTON SYSTEM ==================== */
+/* All buttons use consistent Frutiger Aero styling with theme integration */
+
+/* Base Button - Default theme colors */
+.btn,
+.cta-button,
+.submit-btn,
+button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn"]):not([class*="particle-btn"]):not([class*="fish-btn"]):not([class*="control-btn"]) {
+  /* Base styling */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75em 2em;
+  
+  /* Background with theme colors and glow */
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.15)
+    );
+  background-color: rgba(255, 255, 255, 0.2);
+  
+  /* Border and shape */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9999px;
+  
+  /* Shadows */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Typography */
+  color: var(--text-strong);
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  
+  /* Interaction */
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: all 300ms ease;
+}
+
+/* Top highlight effect */
+.btn::after,
+.cta-button::after,
+.submit-btn::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 0.75em;
+  width: calc(100% - 1.5em);
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: inherit;
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+/* Hover state */
+.btn:hover,
+.cta-button:hover,
+.submit-btn:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Active state */
+.btn:active,
+.cta-button:active,
+.submit-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+}
+
+/* Primary button variant - uses theme accent */
+.btn.primary,
+.btn-primary,
+.cta-button.primary {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border-color: color-mix(in srgb, var(--color-accent-blue) 80%, white);
+}
+
+/* Secondary button variant - subtle theme */
+.btn.secondary,
+.btn-secondary,
+.cta-button.secondary {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.08)
+    );
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Small size */
+.btn.small {
+  padding: 0.5em 1.5em;
+  font-size: 0.875rem;
+}
+
+/* Medium size (default) */
+.btn.medium,
+.cta-button {
+  padding: 0.75em 2em;
+  font-size: 1rem;
+}
+
+/* Large size */
+.btn.large {
+  padding: 1em 3em;
+  font-size: 1.125rem;
+}
+
+/* Back button specific - less rounded */
+.back-btn {
+  padding: 0.6em 1.5em;
+  gap: 0.5em;
+  border-radius: var(--radius-md);
+}
+
+.back-btn::after {
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  width: auto;
+  height: 35%;
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+/* Skip button specific */
+.skip-btn {
+  padding: 0.6em 1.5em;
+  font-weight: 700;
+}
+
+.skip-btn::after {
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  width: auto;
+  height: 35%;
+  border-radius: 9999px;
+}
+
+/* Settings buttons - compact square style */
+.size-btn,
+.sound-btn,
+.music-btn,
+.particle-btn,
+.fish-btn,
+.control-btn {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.15)
+    );
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-strong);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family-main);
+  min-width: 48px;
+  transition: all 300ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  user-select: none;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+}
+
+/* Settings button highlight */
+.size-btn::after,
+.sound-btn::after,
+.music-btn::after,
+.particle-btn::after,
+.fish-btn::after,
+.control-btn::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  width: auto;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: calc(var(--radius-md) - 2px);
+  pointer-events: none;
+}
+
+/* Settings buttons hover */
+.size-btn:hover,
+.sound-btn:hover,
+.music-btn:hover,
+.particle-btn:hover,
+.fish-btn:hover,
+.control-btn:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Settings buttons active state */
+.size-btn.active,
+.sound-btn.active,
+.music-btn.active,
+.particle-btn.active,
+.fish-btn.active,
+.control-btn.active {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border-color: color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar specific sizing */
+.side-settings-bar .size-btn,
+.side-settings-bar .sound-btn,
+.side-settings-bar .music-btn,
+.side-settings-bar .particle-btn,
+.side-settings-bar .fish-btn,
+.side-settings-bar .skip-btn,
+.side-settings-bar .control-btn {
+  width: 100%;
+  height: 44px;
+  padding: 0;
+  font-size: 1.05em;
+  min-width: auto;
+}
+
+/* Remove old button-specific pseudo-elements that conflict */
+button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn"]):not([class*="particle-btn"]):not([class*="fish-btn"]):not([class*="control-btn"])::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 0.75em;
+  width: calc(100% - 1.5em);
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: inherit;
+  transition: background 400ms ease;
+  pointer-events: none;
+}

@@ -387,41 +387,8 @@
 
 /* Buttons */
 .btn,
-.control-btn,
-.size-btn,
-.sound-btn,
-.music-btn,
-.particle-btn,
-.fish-btn { background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--color-text-light); border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius-md); padding: var(--spacing-sm) var(--spacing-md); cursor: pointer; font-size: var(--font-size-base); font-weight: 500; font-family: var(--font-family-main); min-width: 48px; transition: all var(--transition-normal); display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; user-select: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255,255,255,0.2); }
-.btn:hover,
-.control-btn:hover,
-.size-btn:hover,
-.sound-btn:hover,
-.music-btn:hover,
-.particle-btn:hover,
-.fish-btn:hover { background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3); }
-.btn.active,
-.control-btn.active,
-.size-btn.active,
-.sound-btn.active,
-.music-btn.active,
-.particle-btn.active,
-.fish-btn.active { background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%); border-color: var(--color-accent-blue); color: var(--color-accent-blue); font-weight: 600; box-shadow: 0 4px 15px var(--color-shadow), inset 0 0 10px rgba(255,255,255,0.1); }
-.btn-primary { background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%); color: var(--color-text-light); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.btn-primary:hover { background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3); }
-.btn-secondary { background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-.btn-secondary:hover { background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%); border-color: rgba(255,255,255,0.3); }
-.skip-btn { background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%); color: var(--color-text-light); border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius-md); padding: var(--spacing-sm) var(--spacing-md); cursor: pointer; font-weight: 700; transition: all var(--transition-normal); display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2); }
-.skip-btn:hover { background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3); }
-.side-settings-bar .control-btn,
-.side-settings-bar .size-btn,
-.side-settings-bar .sound-btn,
-.side-settings-bar .music-btn,
-.side-settings-bar .particle-btn,
-.side-settings-bar .fish-btn,
-.side-settings-bar .skip-btn { width: 100%; height: 44px; padding: 0; font-size: 1.05em; min-width: auto; }
-.back-btn { display:inline-flex; align-items:center; gap: var(--spacing-sm); margin: var(--spacing-lg) 0; padding: var(--spacing-sm) var(--spacing-md); background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%); color: var(--color-text-light); border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius-md); text-decoration:none; font-weight:600; transition: all 0.2s ease; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2); }
-.back-btn:hover { background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); text-decoration:none; box-shadow: 0 6px 25px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3); }
+/* Button styles moved to buttons.css for unified Frutiger Aero styling */
+
 /* Component Styles - Content Section Styling */
 
 /* ==================== HERO INTRO COMPONENT ==================== */

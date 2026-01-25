@@ -71,51 +71,7 @@
     margin: 1rem 0;
 }
 
-.homepage-hero .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.cta-button {
-    padding: 0.8rem 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.cta-button.primary {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
-    color: var(--text-strong);
-}
-
-.cta-button.primary:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.12) 100%);
-    border-color: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.cta-button.secondary {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    color: var(--text-strong);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.cta-button.secondary:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
+/* CTA button styles moved to buttons.css for unified Frutiger Aero styling */
 
 /* Get-to-know section now uses .content-section.two-column */
 .content-section-text h2 {
@@ -701,27 +657,8 @@
     color: var(--text-strong);
 }
 
-/* Back button */
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin: 20px 0;
-    padding: 10px 20px;
-    background: color-mix(in srgb, var(--surface-2) 80%, transparent);
-    color: var(--text-strong);
-    border: 1px solid var(--card-border);
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
+/* Back button styles moved to buttons.css for unified Frutiger Aero styling */
 
-.back-btn:hover {
-    background: color-mix(in srgb, var(--surface-2) 90%, transparent);
-    transform: translateY(-2px);
-    text-decoration: none;
-}
 /* Connect Page Styles - Now uses unified .page-header class */
 .contact-card .icon {
     font-size: 3em;
@@ -796,21 +733,8 @@
     min-height: 150px;
 }
 
-.submit-btn {
-    background: linear-gradient(135deg, var(--color-accent-blue), #0066ff);
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+/* Submit button styles moved to buttons.css for unified Frutiger Aero styling */
 
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 102, 255, 0.5);
-}
 /* Error 404 Page Styles */
 .error-container {
     display: flex;

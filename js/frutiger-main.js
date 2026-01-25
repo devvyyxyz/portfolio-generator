@@ -373,12 +373,19 @@ function initThemeSwitcher() {
     if (window.__themeSwitcherInitialized) return;
     window.__themeSwitcherInitialized = true;
 
-    document.querySelectorAll('.theme-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const key = btn.dataset.theme;
-            applyTheme(key);
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        const themeOrder = ['aero', 'eco', 'metro', 'red'];
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('portfolioTheme') || 'red';
+            const currentIndex = themeOrder.indexOf(currentTheme);
+            const nextIndex = (currentIndex + 1) % themeOrder.length;
+            const nextTheme = themeOrder[nextIndex];
+            
+            applyTheme(nextTheme);
         });
-    });
+    }
 }
 
 function applyTheme(themeKey, persist = true) {
@@ -393,9 +400,10 @@ function applyTheme(themeKey, persist = true) {
         localStorage.setItem('portfolioTheme', themeKey);
     }
 
-    document.querySelectorAll('.theme-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.theme === themeKey);
-    });
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.textContent = theme.label;
+    }
 
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) {

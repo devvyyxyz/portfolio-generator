@@ -341,23 +341,13 @@ function initializeFishButtons() {
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     fishSystem = new FloatingFish();
-    
-    // Try to initialize buttons immediately
-    setTimeout(() => {
-      initializeFishButtons();
-    }, 100);
   });
 } else {
   // DOM already loaded
   fishSystem = new FloatingFish();
-  
-  // Try to initialize buttons immediately
-  setTimeout(() => {
-    initializeFishButtons();
-  }, 100);
 }
 
-// Also listen for components loaded event
+// Initialize buttons only after components are loaded (sidebar is in DOM)
 document.addEventListener('componentsLoaded', () => {
   initializeFishButtons();
 });

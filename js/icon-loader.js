@@ -3,11 +3,11 @@
  * Loads icons from config for any element with data-icon-category and data-icon-key attributes
  */
 
-async function loadPageIcons() {
+window.loadPageIcons = async function() {
     // Wait for icon config to be ready
     if (!window.iconConfig) {
         console.log('Icon config not ready, retrying...');
-        setTimeout(loadPageIcons, 100);
+        setTimeout(window.loadPageIcons, 100);
         return;
     }
 
@@ -67,14 +67,14 @@ async function loadPageIcons() {
     } catch (err) {
         console.error('Error in loadPageIcons:', err);
     }
-}
+};
 
 // Auto-load when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadPageIcons);
+    document.addEventListener('DOMContentLoaded', window.loadPageIcons);
 } else {
-    loadPageIcons();
+    window.loadPageIcons();
 }
 
 // Also listen for icon config ready event
-window.addEventListener('iconConfigReady', loadPageIcons);
+window.addEventListener('iconConfigReady', window.loadPageIcons);

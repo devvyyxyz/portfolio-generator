@@ -24,12 +24,33 @@
 </footer>
 
 <script>
-    // Wait for config to be loaded and apply footer links
-    if (window.siteConfig && window.siteConfig.config) {
-        window.siteConfig.applyFooterLinks();
-    } else {
-        document.addEventListener('siteConfigReady', () => {
-            if (window.siteConfig) window.siteConfig.applyFooterLinks();
-        });
-    }
+    // Footer initialization - self-contained
+    (function() {
+        function initializeFooter() {
+            // Apply footer links from config
+            if (window.siteConfig && window.siteConfig.config) {
+                window.siteConfig.applyFooterLinks();
+            } else {
+                document.addEventListener('siteConfigReady', () => {
+                    if (window.siteConfig) {
+                        window.siteConfig.applyFooterLinks();
+                    }
+                });
+            }
+            
+            // Trigger icon loading for footer after a brief delay to ensure DOM is ready
+            setTimeout(() => {
+                if (window.loadPageIcons) {
+                    window.loadPageIcons();
+                }
+            }, 100);
+        }
+        
+        // Run initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeFooter);
+        } else {
+            initializeFooter();
+        }
+    })();
 </script>

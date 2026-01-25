@@ -1,15 +1,40 @@
 /* Icon System Styles */
 
 /* Icon Image Styling */
-.icon-image {
+.icon-image,
+.icon-img {
     display: inline-block;
     vertical-align: middle;
     object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.icon-image:hover {
+.icon-image:hover,
+.icon-img:hover {
     transform: scale(1.1);
+}
+
+/* Default icon size */
+.icon-img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer link icons */
+.footer-link-icon {
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 6px;
+}
+
+/* Section title icons */
+.section-title .icon-img,
+.section-icon-title .icon-img {
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 8px;
 }
 
 /* Icon Emoji Styling */

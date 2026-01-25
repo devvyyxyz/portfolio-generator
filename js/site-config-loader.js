@@ -246,6 +246,11 @@ class SiteConfigLoader {
             footerColumnsContainer.appendChild(column);
         });
 
+        // Trigger icon loading for newly created footer icons
+        if (window.loadPageIcons) {
+            window.loadPageIcons();
+        }
+
         // Update footer bottom links
         const footerBottomCenter = document.querySelector('.footer-bottom-center');
         if (footerBottomCenter && footerConfig.bottomLinks) {

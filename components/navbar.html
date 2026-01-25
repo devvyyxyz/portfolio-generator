@@ -10,8 +10,6 @@
             <span class="settings-side-vertical-separators">|</span>
             <a href="../pages/connect.html" class="nav-link" data-nav-link>Connect</a>
             <span class="settings-side-vertical-separators">|</span>
-            <a href="../pages/blog.html" class="nav-link" data-nav-link>Blog</a>
-            <span class="settings-side-vertical-separators">|</span>
             <a href="../pages/gallery.html" class="nav-link" data-nav-link>Gallery</a>
             <span class="settings-side-vertical-separators">|</span>
             <a href="../pages/sitemap.html" class="nav-link" data-nav-link>Sitemap</a>
@@ -22,3 +20,25 @@
         </div>
     </div>
 </nav>
+
+<script>
+    // Navbar initialization - self-contained
+    (function() {
+        function initializeNavbar() {
+            // Load navbar icons if icon loader is available
+            if (window.loadPageIcons) {
+                window.loadPageIcons();
+            }
+        }
+        
+        // Run initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeNavbar);
+        } else {
+            initializeNavbar();
+        }
+        
+        // Also listen for icon config ready
+        window.addEventListener('iconConfigReady', initializeNavbar);
+    })();
+</script>

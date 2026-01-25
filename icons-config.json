@@ -156,6 +156,32 @@
       "icon": "Assets/Icons/Windows Vista Icons/H&D001.ico"
     }
   },
+  "home-sections": {
+    "experience": {
+      "name": "Experience",
+      "type": "image",
+      "alt": "Experience",
+      "icon": "Assets/Icons/Windows Vista Icons/File078.ico"
+    },
+    "education": {
+      "name": "Education",
+      "type": "image",
+      "alt": "Education",
+      "icon": "Assets/Icons/Windows Vista Icons/File079.ico"
+    },
+    "connect": {
+      "name": "Connect",
+      "type": "image",
+      "alt": "Connect",
+      "icon": "Assets/Icons/Windows Vista Icons/Net001.ico"
+    },
+    "blog": {
+      "name": "Blog",
+      "type": "image",
+      "alt": "Blog",
+      "icon": "Assets/Icons/Windows Vista Icons/Write001.ico"
+    }
+  },
   "sidebar": {
     "text-size": {
       "name": "Text Size",

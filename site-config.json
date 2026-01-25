@@ -1,7 +1,7 @@
 {
   "personal": {
     "name": "Kai",
-    "fullName": "Kai Mitchell",
+    "fullName": "Kai Spife",
     "title": "Full Stack Developer & Software Engineer",
     "email": "devvyydev@protonmail.com",
     "phone": "N/A",
@@ -73,7 +73,6 @@
         "links": [
           { "label": "About Me", "href": "../pages/about.html", "icon": { "category": "footer", "key": "about", "alt": "About" } },
           { "label": "My Work", "href": "../pages/work.html", "icon": { "category": "footer", "key": "about", "alt": "Work" } },
-          { "label": "Blog", "href": "../pages/blog.html", "icon": { "category": "footer", "key": "about", "alt": "Blog" } },
           { "label": "Gallery", "href": "../pages/gallery.html", "icon": { "category": "footer", "key": "about", "alt": "Gallery" } }
         ]
       },

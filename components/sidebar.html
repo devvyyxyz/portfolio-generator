@@ -2,7 +2,7 @@
     <!-- Settings Bars for Controls -->
     <nav class="side-settings-bar">
         <div class="settings-bar-divs text-size-bar">
-            <img src="Assets/Icons/Windows%20Vista%20Icons/Display010.ico" alt="Text Size" class="nav-icon" data-sidebar-icon>
+            <img id="text-size-icon" alt="Text Size" class="nav-icon" data-sidebar-icon data-icon-key="text-size">
             <span class="settings-titles">Text Size</span>
             <div class="settings-buttons">
                 <button class="size-btn" data-size="small">S</button>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="settings-bar-divs sound-bar">
-            <img src="Assets/Icons/Windows%20Vista%20Icons/Media006.ico" alt="Sounds" class="nav-icon" data-sidebar-icon>
+            <img id="sounds-icon" alt="Sounds" class="nav-icon" data-sidebar-icon data-icon-key="sounds">
             <span class="settings-titles">Sounds</span>
             <div class="settings-buttons">
                 <button class="sound-btn active" data-sound="on">On</button>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="settings-bar-divs music-bar">
-            <img src="Assets/Icons/Windows%20Vista%20Icons/Media004.ico" alt="Music" class="nav-icon" data-sidebar-icon>
+            <img id="music-icon" alt="Music" class="nav-icon" data-sidebar-icon data-icon-key="music">
             <span class="settings-titles">Music</span>
             <div class="settings-buttons">
                 <button class="music-btn active" data-music="on">On</button>
@@ -30,7 +30,7 @@
             </button>
         </div>
         <div class="settings-bar-divs particles-bar">
-            <img src="Assets/Icons/Windows%20Vista%20Icons/Other041.ico" alt="Particles" class="nav-icon" data-sidebar-icon>
+            <img id="particles-icon" alt="Particles" class="nav-icon" data-sidebar-icon data-icon-key="particles">
             <span class="settings-titles">Particles</span>
             <div class="settings-buttons">
                 <button class="particle-btn active" data-particles="on">On</button>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="settings-bar-divs fish-bar">
-            <img src="Assets/Icons/Windows%20Vista%20Icons/Net019.ico" alt="Fish" class="nav-icon" data-sidebar-icon>
+            <img id="fish-icon" alt="Fish" class="nav-icon" data-sidebar-icon data-icon-key="fish">
             <span class="settings-titles">Fish</span>
             <div class="settings-buttons">
                 <button class="fish-btn active" data-fish="on">On</button>
@@ -47,3 +47,77 @@
         </div>
     </nav>
 </aside>
+
+<script>
+// Load sidebar icons from config
+async function loadSidebarIcons() {
+    console.log('loadSidebarIcons called, iconConfig:', window.iconConfig)
+    
+    if (!window.iconConfig) {
+        console.log('iconConfig not ready, retrying in 100ms')
+        setTimeout(loadSidebarIcons, 100)
+        return
+    }
+
+    try {
+        console.log('Loading sidebar icons...')
+        var iconKeys = ['text-size', 'sounds', 'music', 'particles', 'fish']
+        var basePath = window.location.pathname.includes('/pages/') ? '../' : ''
+        
+        console.log('Base path:', basePath)
+
+        // Wait for config to be loaded
+        await window.iconConfig.load()
+        console.log('Config loaded')
+
+        for (var i = 0; i < iconKeys.length; i++) {
+            var key = iconKeys[i]
+            var el = document.getElementById(key + '-icon')
+            console.log('Processing icon:', key, 'Element:', el)
+            
+            if (!el) {
+                console.warn('Element not found for:', key)
+                continue
+            }
+
+            try {
+                // Get icon from config
+                var iconData = await window.iconConfig.getIcon('sidebar', key)
+                console.log('Icon data for', key, ':', iconData)
+                
+                if (iconData && iconData.icon) {
+                    var encodedPath = encodeURI(basePath + iconData.icon)
+                    console.log('Setting src for', key, 'to:', encodedPath)
+                    el.src = encodedPath
+                    el.style.display = 'block'
+                    console.log('✓ Icon set successfully for', key)
+                } else {
+                    console.warn('Icon data invalid for:', key, iconData)
+                }
+            } catch (err) {
+                console.error('Error processing icon:', key, err)
+            }
+        }
+    } catch (err) {
+        console.error('Error in loadSidebarIcons:', err)
+    }
+}
+
+// Start loading when ready
+console.log('Sidebar script executing, document ready state:', document.readyState)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOMContentLoaded fired')
+        loadSidebarIcons()
+    })
+} else {
+    console.log('Calling loadSidebarIcons immediately')
+    loadSidebarIcons()
+}
+
+// Also listen for config ready event
+window.addEventListener('iconConfigReady', function() {
+    console.log('iconConfigReady event fired')
+    loadSidebarIcons()
+})
+</script>

@@ -47,7 +47,7 @@ class IconConfigLoader {
         try {
             // Determine the correct path based on current location
             const isInSubdirectory = window.location.pathname.includes('/pages/');
-            const configPath = isInSubdirectory ? '../js/icons-config.json' : 'js/icons-config.json';
+            const configPath = isInSubdirectory ? '../icons-config.json' : 'icons-config.json';
             
             // Add cache busting parameter
             const cacheBuster = `?v=${Date.now()}`;

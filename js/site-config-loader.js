@@ -212,7 +212,23 @@ class SiteConfigLoader {
             section.links.forEach(link => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                a.textContent = link.label;
+                
+                // Add icon if specified
+                if (link.icon) {
+                    const img = document.createElement('img');
+                    img.setAttribute('data-icon-category', link.icon.category);
+                    img.setAttribute('data-icon-key', link.icon.key);
+                    img.alt = link.icon.alt || link.label;
+                    img.className = 'icon-img footer-link-icon';
+                    img.style.width = '16px';
+                    img.style.height = '16px';
+                    img.style.marginRight = '6px';
+                    img.style.verticalAlign = 'middle';
+                    a.appendChild(img);
+                }
+                
+                const textNode = document.createTextNode(link.label);
+                a.appendChild(textNode);
 
                 // Check if href is a config path (contains '.')
                 if (link.href.includes('.')) {

@@ -1,53 +1,68 @@
 <aside class="side-control-panel">
     <!-- Settings Bars for Controls -->
     <nav class="side-settings-bar">
+        <!-- Text Size -->
         <div class="settings-bar-divs text-size-bar">
             <img id="text-size-icon" alt="Text Size" class="nav-icon" data-sidebar-icon data-icon-key="text-size">
-            <span class="settings-titles">Text Size</span>
-            <div class="settings-buttons">
-                <button class="size-btn" data-size="small">Small</button>
-                <button class="size-btn active" data-size="medium">Medium</button>
-                <button class="size-btn" data-size="large">Large</button>
+            <div class="setting-content">
+                <span class="settings-titles">Text Size</span>
+                <button class="setting-toggle-btn" data-setting="textSize">
+                    <span class="setting-value">Medium</span>
+                </button>
             </div>
         </div>
+
+        <!-- Sounds -->
         <div class="settings-bar-divs sound-bar">
             <img id="sounds-icon" alt="Sounds" class="nav-icon" data-sidebar-icon data-icon-key="sounds">
-            <span class="settings-titles">Sounds</span>
-            <div class="settings-buttons">
-                <button class="sound-btn active" data-sound="on">On</button>
-                <button class="sound-btn" data-sound="off">Off</button>
+            <div class="setting-content">
+                <span class="settings-titles">Sounds</span>
+                <button class="setting-toggle-btn" data-setting="sounds">
+                    <span class="setting-value">On</span>
+                </button>
             </div>
         </div>
+
+        <!-- Music -->
         <div class="settings-bar-divs music-bar">
             <img id="music-icon" alt="Music" class="nav-icon" data-sidebar-icon data-icon-key="music">
-            <span class="settings-titles">Music</span>
-            <div class="settings-buttons">
-                <button class="music-btn active" data-music="on">On</button>
-                <button class="music-btn" data-music="off">Off</button>
+            <div class="setting-content">
+                <span class="settings-titles">Music</span>
+                <div class="music-controls">
+                    <button class="setting-toggle-btn" data-setting="music">
+                        <span class="setting-value">On</span>
+                    </button>
+                    <button class="skip-btn">Skip</button>
+                </div>
             </div>
-            <button class="skip-btn">
-                Skip
-            </button>
         </div>
+
+        <!-- Particles -->
         <div class="settings-bar-divs particles-bar">
             <img id="particles-icon" alt="Particles" class="nav-icon" data-sidebar-icon data-icon-key="particles">
-            <span class="settings-titles">Particles</span>
-            <div class="settings-buttons">
-                <button class="particle-btn active" data-particles="on">On</button>
-                <button class="particle-btn" data-particles="off">Off</button>
+            <div class="setting-content">
+                <span class="settings-titles">Particles</span>
+                <button class="setting-toggle-btn" data-setting="particles">
+                    <span class="setting-value">On</span>
+                </button>
             </div>
         </div>
+
+        <!-- Fish -->
         <div class="settings-bar-divs fish-bar">
             <img id="fish-icon" alt="Fish" class="nav-icon" data-sidebar-icon data-icon-key="fish">
-            <span class="settings-titles">Fish</span>
-            <div class="settings-buttons">
-                <button class="fish-btn active" data-fish="on">On</button>
-                <button class="fish-btn" data-fish="off">Off</button>
-            </div>
-            <div class="fish-slider-container">
-                <label for="fish-count-slider" class="fish-slider-label">Count:</label>
-                <input type="range" id="fish-count-slider" class="fish-count-slider" min="1" max="15" value="5">
-                <span id="fish-count-display" class="fish-count-display">5</span>
+            <div class="setting-content">
+                <span class="settings-titles">Fish</span>
+                <div class="fish-controls">
+                    <button class="setting-toggle-btn" data-setting="fish">
+                        <span class="setting-value">On</span>
+                    </button>
+                    <div class="fish-slider-container">
+                        <label for="fish-count-slider" class="fish-slider-label">Count:</label>
+                        <input type="range" id="fish-count-slider" class="fish-count-slider" min="1" max="15" value="5">
+                        <span id="fish-count-display" class="fish-count-display">5</span>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

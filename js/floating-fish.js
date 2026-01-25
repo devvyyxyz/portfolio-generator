@@ -3,7 +3,16 @@ class FloatingFish {
   constructor() {
     this.container = null;
     this.fishElements = [];
-    this.isActive = localStorage.getItem('portfolioFishEnabled') !== 'false';
+    // Determine initial active state: localStorage > config defaults > fallback
+    const fishLS = localStorage.getItem('portfolioFishEnabled');
+    let initialActive = null;
+    if (fishLS !== null) {
+      initialActive = (fishLS !== 'false');
+    } else if (window.siteConfig && typeof window.siteConfig.get === 'function') {
+      const cfg = window.siteConfig.get('defaults.fishes');
+      if (cfg !== undefined) initialActive = !!cfg;
+    }
+    this.isActive = (initialActive === null) ? true : initialActive;
     this.maxFish = 5;
     this.basePath = this.getBasePath();
     // All fish images available in Assets/images/fishes/
@@ -246,6 +255,7 @@ function initializeFishButtons() {
   
   // Setup toggle buttons
   const fishButtons = document.querySelectorAll('.fish-btn');
+  const fishToggleBtn = document.querySelector('.setting-toggle-btn[data-setting="fish"]');
   
   if (fishButtons.length === 0) {
     console.warn('Fish buttons not found');
@@ -274,8 +284,38 @@ function initializeFishButtons() {
       // Update active state
       fishButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
+
+      // Sync unified toggle button, if present
+      if (fishToggleBtn) {
+        const isActive = fishSystem.isActive;
+        fishToggleBtn.classList.toggle('active', isActive);
+        const valueSpan = fishToggleBtn.querySelector('.setting-value');
+        if (valueSpan) valueSpan.textContent = isActive ? 'On' : 'Off';
+        fishToggleBtn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      }
     });
   });
+
+  // Unified fish toggle button
+  if (fishToggleBtn) {
+    // Initial UI state
+    const valueSpan = fishToggleBtn.querySelector('.setting-value');
+    if (valueSpan) valueSpan.textContent = fishSystem.isActive ? 'On' : 'Off';
+    fishToggleBtn.classList.toggle('active', fishSystem.isActive);
+    fishToggleBtn.setAttribute('aria-pressed', fishSystem.isActive ? 'true' : 'false');
+
+    fishToggleBtn.addEventListener('click', () => {
+      if (fishSystem.isActive) {
+        fishSystem.stop();
+      } else {
+        fishSystem.start();
+      }
+      const active = fishSystem.isActive;
+      fishToggleBtn.classList.toggle('active', active);
+      if (valueSpan) valueSpan.textContent = active ? 'On' : 'Off';
+      fishToggleBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
 
   // Setup fish count slider
   const fishCountSlider = document.getElementById('fish-count-slider');
@@ -316,6 +356,23 @@ if (document.readyState === 'loading') {
 
 // Also listen for components loaded event
 document.addEventListener('componentsLoaded', () => {
+  initializeFishButtons();
+});
+
+// Adjust fish state when config becomes ready (if user hasn't set a preference yet)
+window.addEventListener('siteConfigReady', () => {
+  if (!fishSystem) return;
+  const fishLS = localStorage.getItem('portfolioFishEnabled');
+  if (fishLS !== null) return; // user preference already set
+  const cfg = window.siteConfig && window.siteConfig.get('defaults.fishes');
+  if (cfg === undefined) return;
+  const wantActive = !!cfg;
+  if (wantActive && !fishSystem.isActive) {
+    fishSystem.start();
+  } else if (!wantActive && fishSystem.isActive) {
+    fishSystem.stop();
+  }
+  // Refresh UI to reflect potential change
   initializeFishButtons();
 });
 

@@ -66,6 +66,14 @@
     "available": ["aero", "eco", "metro", "red"]
   },
   
+  "defaults": {
+    "textSize": "small",
+    "sounds": false,
+    "music": true,
+    "particles": true,
+    "fishes": true
+  },
+  
   "footer": {
     "sections": {
       "about": {

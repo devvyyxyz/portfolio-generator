@@ -27,8 +27,14 @@ function initializeApp() {
         });
     }
 
+    // Resolve default settings from config (if available)
+    const configDefaults = (window.siteConfig && window.siteConfig.get('defaults')) || {};
+
     // Sound System
-    const soundEnabled = localStorage.getItem('portfolioSoundsEnabled') !== 'false'; // default true
+    const soundLS = localStorage.getItem('portfolioSoundsEnabled');
+    const soundEnabled = (soundLS !== null)
+        ? (soundLS !== 'false')
+        : (configDefaults.sounds !== undefined ? !!configDefaults.sounds : true); // fallback to previous default
     let soundsOn = soundEnabled;
     
     // Detect if we're in a subdirectory and adjust asset paths
@@ -56,7 +62,10 @@ function initializeApp() {
     }
     
     // Music Player System
-    const musicEnabled = localStorage.getItem('portfolioMusicEnabled') !== 'false'; // default true
+    const musicLS = localStorage.getItem('portfolioMusicEnabled');
+    const musicEnabled = (musicLS !== null)
+        ? (musicLS !== 'false')
+        : (configDefaults.music !== undefined ? !!configDefaults.music : true);
     let musicOn = musicEnabled;
     
     const musicPlaylist = [
@@ -119,32 +128,26 @@ function initializeApp() {
         localStorage.setItem('portfolioMusicEnabled', musicOn);
     }
     
-    // Music Toggle Controls
-    const musicButtons = document.querySelectorAll('.music-btn');
-    
-    // Set initial state
-    musicButtons.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.music === 'on' && musicOn) {
-            btn.classList.add('active');
-        } else if (btn.dataset.music === 'off' && !musicOn) {
-            btn.classList.add('active');
-        }
-    });
-    
-    // Add click handlers to music buttons
-    musicButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const setting = this.dataset.music;
-            const shouldPlay = setting === 'on';
-            
+    // Unified Toggle Button Helpers
+    function setToggleButtonState(button, isActive, labelText) {
+        if (!button) return;
+        const valueSpan = button.querySelector('.setting-value');
+        if (valueSpan) valueSpan.textContent = labelText;
+        button.classList.toggle('active', !!isActive);
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    }
+
+    // Music Toggle (single button)
+    const musicToggleBtn = document.querySelector('.setting-toggle-btn[data-setting="music"]');
+    if (musicToggleBtn) {
+        setToggleButtonState(musicToggleBtn, musicOn, musicOn ? 'On' : 'Off');
+        musicToggleBtn.addEventListener('click', () => {
+            const shouldPlay = !musicOn;
             toggleMusic(shouldPlay);
-            
-            // Update active button state
-            musicButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
+            setToggleButtonState(musicToggleBtn, musicOn, musicOn ? 'On' : 'Off');
+            playSound('click');
         });
-    });
+    }
     
     // Skip button functionality
     const skipButton = document.querySelector('.skip-btn');
@@ -167,47 +170,25 @@ function initializeApp() {
     initSystemStatus();
     initLogoEasterEgg();
     
-    // Sound Toggle Controls
-    const soundButtons = document.querySelectorAll('.sound-btn');
-    
-    // Set initial state
-    soundButtons.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.sound === 'on' && soundsOn) {
-            btn.classList.add('active');
-        } else if (btn.dataset.sound === 'off' && !soundsOn) {
-            btn.classList.add('active');
-        }
-    });
-    
-    // Add click handlers to sound buttons
-    soundButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const setting = this.dataset.sound;
-            soundsOn = setting === 'on';
-            
+    // Sound Toggle (single button)
+    const soundToggleBtn = document.querySelector('.setting-toggle-btn[data-setting="sounds"]');
+    if (soundToggleBtn) {
+        setToggleButtonState(soundToggleBtn, soundsOn, soundsOn ? 'On' : 'Off');
+        soundToggleBtn.addEventListener('click', () => {
+            soundsOn = !soundsOn;
             // Play enable/disable sound
-            if (soundsOn) {
-                sounds.enable.currentTime = 0;
-                sounds.enable.play().catch(e => console.log('Sound play failed:', e));
-            } else {
-                sounds.disable.currentTime = 0;
-                sounds.disable.play().catch(e => console.log('Sound play failed:', e));
-            }
-            
-            // Update active button state
-            soundButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Save preference to localStorage
+            const s = soundsOn ? sounds.enable : sounds.disable;
+            s.currentTime = 0;
+            s.play().catch(e => console.log('Sound play failed:', e));
+            setToggleButtonState(soundToggleBtn, soundsOn, soundsOn ? 'On' : 'Off');
             localStorage.setItem('portfolioSoundsEnabled', soundsOn);
         });
-    });
+    }
     
     // Add sound effects to all interactive elements
     function addSoundEffects() {
         // Add click sound to all buttons
-        const buttons = document.querySelectorAll('button, .btn, .size-btn, .sound-btn');
+        const buttons = document.querySelectorAll('button, .btn, .setting-toggle-btn');
         buttons.forEach(btn => {
             if (!btn.dataset.soundsAdded) {
                 btn.addEventListener('click', () => playSound('click'));
@@ -233,41 +214,45 @@ function initializeApp() {
     // Apply sound effects after a short delay to ensure DOM is ready
     setTimeout(addSoundEffects, 500);
 
-    // Text Size Controls
-    const sizeButtons = document.querySelectorAll('.size-btn');
+    // Text Size Controls (single cyclical button)
     const siteContainer = document.getElementById('siteContainer');
-    
-    // Restore saved text size preference from localStorage
-    const savedTextSize = localStorage.getItem('portfolioTextSize') || 'medium';
+    const textSizeToggleBtn = document.querySelector('.setting-toggle-btn[data-setting="textSize"]');
+    const sizeOrder = ['small', 'medium', 'large'];
+    const textLS = localStorage.getItem('portfolioTextSize');
+    let currentSize = textLS || configDefaults.textSize || 'medium';
     if (siteContainer) {
-        siteContainer.classList.add(`text-${savedTextSize}`);
-        sizeButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.size === savedTextSize) {
-                btn.classList.add('active');
+        siteContainer.classList.remove('text-small', 'text-medium', 'text-large');
+        siteContainer.classList.add(`text-${currentSize}`);
+    }
+    if (textSizeToggleBtn) {
+        setToggleButtonState(textSizeToggleBtn, true, currentSize.charAt(0).toUpperCase() + currentSize.slice(1));
+        textSizeToggleBtn.addEventListener('click', () => {
+            const idx = sizeOrder.indexOf(currentSize);
+            currentSize = sizeOrder[(idx + 1) % sizeOrder.length];
+            if (siteContainer) {
+                siteContainer.classList.remove('text-small', 'text-medium', 'text-large');
+                siteContainer.classList.add(`text-${currentSize}`);
             }
+            setToggleButtonState(textSizeToggleBtn, true, currentSize.charAt(0).toUpperCase() + currentSize.slice(1));
+            localStorage.setItem('portfolioTextSize', currentSize);
         });
     }
-    
-    // Add click handlers to size buttons
-    sizeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const size = this.dataset.size;
-            
-            // Remove all text size classes
-            siteContainer.classList.remove('text-small', 'text-medium', 'text-large');
-            
-            // Add the new size class
-            siteContainer.classList.add(`text-${size}`);
-            
-            // Update active button state
-            sizeButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Save preference to localStorage
-            localStorage.setItem('portfolioTextSize', size);
+
+    // Particles Toggle (single button - stub)
+    const particlesToggleBtn = document.querySelector('.setting-toggle-btn[data-setting="particles"]');
+    const particlesLS = localStorage.getItem('portfolioParticlesEnabled');
+    let particlesOn = (particlesLS !== null)
+        ? (particlesLS !== 'false')
+        : (configDefaults.particles !== undefined ? !!configDefaults.particles : true);
+    if (particlesToggleBtn) {
+        setToggleButtonState(particlesToggleBtn, particlesOn, particlesOn ? 'On' : 'Off');
+        particlesToggleBtn.addEventListener('click', () => {
+            particlesOn = !particlesOn;
+            setToggleButtonState(particlesToggleBtn, particlesOn, particlesOn ? 'On' : 'Off');
+            document.body.classList.toggle('particles-enabled', particlesOn);
+            localStorage.setItem('portfolioParticlesEnabled', particlesOn);
         });
-    });
+    }
 
     // Scroll reveal animations
     const observerOptions = {
@@ -330,7 +315,8 @@ const THEME_MAP = {
 };
 
 function initThemeSwitcher() {
-    const savedTheme = localStorage.getItem('portfolioTheme') || 'red';
+    const savedTheme = localStorage.getItem('portfolioTheme')
+        || ((window.siteConfig && window.siteConfig.get('theme.default')) || 'aero');
     applyTheme(savedTheme, false);
 
     if (window.__themeSwitcherInitialized) return;
@@ -352,7 +338,7 @@ function initThemeSwitcher() {
 }
 
 function applyTheme(themeKey, persist = true) {
-    const theme = THEME_MAP[themeKey] || THEME_MAP.red;
+    const theme = THEME_MAP[themeKey] || THEME_MAP.aero;
     const body = document.body;
 
     Object.values(THEME_MAP).forEach(entry => body.classList.remove(entry.className));
@@ -435,7 +421,9 @@ function initDevOverlay() {
     }
 
     // Sync dev overlay with current theme selection
-    const activeTheme = document.body.dataset.theme || localStorage.getItem('portfolioTheme') || 'red';
+    const activeTheme = document.body.dataset.theme
+        || localStorage.getItem('portfolioTheme')
+        || ((window.siteConfig && window.siteConfig.get('theme.default')) || 'aero');
     applyTheme(activeTheme, false);
 
     let fpsLast = performance.now();

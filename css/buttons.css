@@ -217,6 +217,93 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
   text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
 }
 
+/* Single unified toggle button for settings */
+.setting-toggle-btn {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.15)
+    );
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-strong);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-md);
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 600;
+  font-family: var(--font-family-main);
+  transition: all 300ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  user-select: none;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+}
+
+.setting-toggle-btn::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: calc(var(--radius-md) - 2px);
+  pointer-events: none;
+}
+
+.setting-toggle-btn:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.setting-toggle-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+}
+
+.setting-toggle-btn.active {
+  /* Distinct ON state: vivid theme accent with glow */
+  background:
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.85),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 30%, white 10%),
+      color-mix(in srgb, var(--color-accent-blue) 80%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border-color: color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  color: #fff;
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.45),
+    0 0 0 2px color-mix(in srgb, var(--color-accent-blue) 30%, transparent),
+    inset 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+.setting-value {
+  font-weight: 700;
+}
+
 /* Settings button highlight */
 .size-btn::after,
 .sound-btn::after,
@@ -312,9 +399,8 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
 .fish-slider-container {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex: 1;
-  padding: 4px 8px;
+  gap: 0.4rem;
+  padding: 6px 8px;
   background: 
     radial-gradient(
       farthest-corner at bottom center,
@@ -332,12 +418,11 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-md);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
-  height: 32px;
-  min-width: 0;
+  height: fit-content;
 }
 
 .fish-slider-label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-strong);
   text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
@@ -346,7 +431,7 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
 }
 
 .fish-count-slider {
-  flex: 1;
+  width: 100px;
   height: 4px;
   appearance: none;
   -webkit-appearance: none;
@@ -359,15 +444,14 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
   outline: none;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  min-width: 0;
 }
 
 /* Slider thumb styling - matches button theme */
 .fish-count-slider::-webkit-slider-thumb {
   appearance: none;
   -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: 
     radial-gradient(
@@ -398,8 +482,8 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
 
 /* Firefox slider thumb */
 .fish-count-slider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: 
     radial-gradient(
@@ -440,8 +524,8 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
     color-mix(in srgb, var(--color-accent-blue) 60%, transparent),
     color-mix(in srgb, var(--color-accent-blue) 40%, transparent)
   );
-  height: 6px;
-  border-radius: 3px;
+  height: 4px;
+  border-radius: 2px;
 }
 
 .fish-count-display {
@@ -449,7 +533,7 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
   font-weight: 600;
   color: var(--color-accent-blue);
   text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
-  min-width: 20px;
+  min-width: 18px;
   text-align: right;
   flex-shrink: 0;
 }

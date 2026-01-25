@@ -6,7 +6,7 @@
       "type": "image",
       "alt": "GitHub",
       "files": {
-        "style-classic": "Assets/Icons/style-classic/github.png",
+        "style-classic": "Assets/Icons/style-classic/twitter-x.png",
         "style-glossy-blue": "Assets/Icons/style-glossy-blue/reddit.png",
         "style-ios6": "Assets/Icons/style-ios6/Contacts.png"
       },
@@ -39,9 +39,9 @@
       "type": "image",
       "alt": "CodePen",
       "files": {
-        "style-classic": "Assets/Icons/style-classic/instagram.png",
-        "style-glossy-blue": "Assets/Icons/style-glossy-blue/instagram.png",
-        "style-ios6": "Assets/Icons/style-ios6/Instagram.png"
+        "style-classic": "Assets/Icons/style-classic/messenger.png",
+        "style-glossy-blue": "Assets/Icons/style-glossy-blue/phone.png",
+        "style-ios6": "Assets/Icons/style-ios6/Safari.png"
       },
       "emoji": "🎨"
     },
@@ -50,7 +50,7 @@
       "type": "image",
       "alt": "Dev.to",
       "files": {
-        "style-classic": "Assets/Icons/style-classic/facebook.png",
+        "style-classic": "Assets/Icons/style-classic/telegram.png",
         "style-glossy-blue": "Assets/Icons/style-glossy-blue/messages.png",
         "style-ios6": "Assets/Icons/style-ios6/Messages.png"
       },
@@ -63,7 +63,7 @@
       "files": {
         "style-classic": "Assets/Icons/style-classic/youtube.png",
         "style-glossy-blue": "Assets/Icons/style-glossy-blue/youtube.png",
-        "style-ios6": "Assets/Icons/style-ios6/YouTube.png"
+        "style-ios6": "Assets/Icons/style-ios6/Safari.png"
       },
       "emoji": "🌟"
     }
@@ -73,49 +73,49 @@
       "name": "Menu",
       "type": "image",
       "alt": "Menu",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Window001.ico"
     },
     "close": {
       "name": "Close",
       "type": "image",
       "alt": "Close",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Window002.ico"
     },
     "chevron-down": {
       "name": "Chevron Down",
       "type": "image",
       "alt": "Chevron Down",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Sign009.ico"
     },
     "chevron-up": {
       "name": "Chevron Up",
       "type": "image",
       "alt": "Chevron Up",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Sign010.ico"
     },
     "arrow-right": {
       "name": "Arrow Right",
       "type": "image",
       "alt": "Arrow Right",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Sign006.ico"
     },
     "search": {
       "name": "Search",
       "type": "image",
       "alt": "Search",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Other032.ico"
     },
     "check": {
       "name": "Check",
       "type": "image",
       "alt": "Check",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Sign002.ico"
     },
     "star": {
       "name": "Star",
       "type": "image",
       "alt": "Star",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Other050.ico"
     }
   },
   "page-sections": {
@@ -123,37 +123,37 @@
       "name": "About",
       "type": "image",
       "alt": "About",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/User001.ico"
     },
     "work": {
       "name": "Work",
       "type": "image",
       "alt": "Work",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/File078.ico"
     },
     "blog": {
       "name": "Blog",
       "type": "image",
       "alt": "Blog",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Write001.ico"
     },
     "gallery": {
       "name": "Gallery",
       "type": "image",
       "alt": "Gallery",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Display001.ico"
     },
     "connect": {
       "name": "Connect",
       "type": "image",
       "alt": "Connect",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Net001.ico"
     },
     "home": {
       "name": "Home",
       "type": "image",
       "alt": "Home",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/H&D001.ico"
     }
   },
   "sidebar": {
@@ -193,25 +193,25 @@
       "name": "Email",
       "type": "image",
       "alt": "Email",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/C&M001.ico"
     },
     "phone": {
       "name": "Phone",
       "type": "image",
       "alt": "Phone",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/C&M010.ico"
     },
     "location": {
       "name": "Location",
       "type": "image",
       "alt": "Location",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/LM001.ico"
     },
     "social-link": {
       "name": "Social",
       "type": "image",
       "alt": "Social",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Net002.ico"
     }
   },
   "sections": {
@@ -219,43 +219,43 @@
       "name": "Education",
       "type": "image",
       "alt": "Education",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/File079.ico"
     },
     "certifications": {
       "name": "Certifications",
       "type": "image",
       "alt": "Certifications",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Cert001.ico"
     },
     "work": {
       "name": "Work Experience",
       "type": "image",
       "alt": "Work Experience",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/File078.ico"
     },
     "award": {
       "name": "Award",
       "type": "image",
       "alt": "Award",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Other050.ico"
     },
     "creative": {
       "name": "Creative",
       "type": "image",
       "alt": "Creative",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/P&F001.ico"
     },
     "community": {
       "name": "Community",
       "type": "image",
       "alt": "Community",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/User017.ico"
     },
     "avatar": {
       "name": "Avatar",
       "type": "image",
       "alt": "Avatar",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/User001.ico"
     }
   },
   "certifications": {
@@ -263,37 +263,37 @@
       "name": "AWS",
       "type": "image",
       "alt": "AWS",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Net042.ico"
     },
     "react": {
       "name": "React",
       "type": "image",
       "alt": "React",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/App022.ico"
     },
     "security": {
       "name": "Security",
       "type": "image",
       "alt": "Security",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Def001.ico"
     },
     "docker": {
       "name": "Docker",
       "type": "image",
       "alt": "Docker",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/App038.ico"
     },
     "agile": {
       "name": "Agile",
       "type": "image",
       "alt": "Agile",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/File078.ico"
     },
     "ux": {
       "name": "UX Design",
       "type": "image",
       "alt": "UX Design",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/P&F001.ico"
     }
   },
   "footer": {
@@ -301,55 +301,55 @@
       "name": "About",
       "type": "image",
       "alt": "About",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/User001.ico"
     },
     "projects": {
       "name": "Projects",
       "type": "image",
       "alt": "Projects",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Folder001.ico"
     },
     "services": {
       "name": "Services",
       "type": "image",
       "alt": "Services",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/App001.ico"
     },
     "technologies": {
       "name": "Technologies",
       "type": "image",
       "alt": "Technologies",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/H&D001.ico"
     },
     "experience": {
       "name": "Experience",
       "type": "image",
       "alt": "Experience",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/File078.ico"
     },
     "community": {
       "name": "Community",
       "type": "image",
       "alt": "Community",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/User017.ico"
     },
     "resources": {
       "name": "Resources",
       "type": "image",
       "alt": "Resources",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/File001.ico"
     },
     "connect": {
       "name": "Connect",
       "type": "image",
       "alt": "Connect",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Net001.ico"
     },
     "legal": {
       "name": "Legal",
       "type": "image",
       "alt": "Legal",
-      "icon": "Assets/Icons/Windows Vista Icons/Alert036.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Paper001.ico"
     }
   }
 }

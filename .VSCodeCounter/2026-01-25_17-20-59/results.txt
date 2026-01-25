@@ -1,0 +1,89 @@
+Date : 2026-01-25 17:20:59
+Directory : /Users/kaispife/Documents/VSC/portfolio-generator
+Total : 57 files,  11209 codes, 1185 comments, 1697 blanks, all 14091 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| PostCSS    |         11 |      4,832 |        245 |        705 |      5,782 |
+| JavaScript |         17 |      3,796 |        701 |        676 |      5,173 |
+| HTML       |         27 |      2,037 |        239 |        309 |      2,585 |
+| JSON       |          2 |        544 |          0 |          7 |        551 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                              | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                 |         57 |     11,209 |      1,185 |      1,697 |     14,091 |
+| . (Files)                                                                         |          4 |        674 |         26 |         26 |        726 |
+| components                                                                        |         15 |        886 |         53 |        116 |      1,055 |
+| css                                                                               |         11 |      4,832 |        245 |        705 |      5,782 |
+| js                                                                                |         17 |      3,796 |        701 |        676 |      5,173 |
+| pages                                                                             |         10 |      1,021 |        160 |        174 |      1,355 |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                          | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/awards.html          | HTML       |         38 |          4 |          4 |         46 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/certifications.html  | HTML       |         79 |          7 |          7 |         93 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/education.html       | HTML       |         47 |          3 |          7 |         57 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/error-404.html       | HTML       |         24 |          0 |          3 |         27 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/footer.html          | HTML       |         46 |          4 |          7 |         57 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/hero-intro.html      | HTML       |         57 |          1 |          6 |         64 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/metadata.html        | HTML       |         62 |          8 |          8 |         78 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/navbar.html          | HTML       |         41 |          0 |          3 |         44 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/projects.html        | HTML       |         84 |          4 |         16 |        104 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/sidebar.html         | HTML       |        120 |          6 |         16 |        142 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/skills.html          | HTML       |         80 |          5 |          5 |         90 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/social-showcase.html | HTML       |         45 |          2 |         12 |         59 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/testimonials.html    | HTML       |         27 |          2 |          2 |         31 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/volunteer.html       | HTML       |         47 |          3 |          7 |         57 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/components/work-experience.html | HTML       |         89 |          4 |         13 |        106 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/animations.css              | PostCSS    |        237 |         28 |         40 |        305 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/buttons.css                 | PostCSS    |        471 |         32 |         44 |        547 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/components.css              | PostCSS    |      1,382 |         38 |        223 |      1,643 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/floating-fish.css           | PostCSS    |         53 |          4 |          7 |         64 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/forms.css                   | PostCSS    |        157 |          8 |         20 |        185 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/frutiger-global.css         | PostCSS    |        484 |         35 |         53 |        572 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/icons.css                   | PostCSS    |         76 |         12 |         16 |        104 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/layout.css                  | PostCSS    |        790 |         29 |        120 |        939 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/master.css                  | PostCSS    |         10 |          7 |          6 |         23 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/pages.css                   | PostCSS    |        848 |         33 |        134 |      1,015 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/css/root.css                    | PostCSS    |        324 |         19 |         42 |        385 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/error.html                      | HTML       |         40 |          9 |          7 |         56 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/icons-config.json               | JSON       |        381 |          0 |          1 |        382 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/index.html                      | HTML       |         90 |         17 |         12 |        119 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/component-loader.js          | JavaScript |         99 |         25 |         20 |        144 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/dataLoader.js                | JavaScript |        123 |         50 |         29 |        202 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/eventHandlers.js             | JavaScript |        149 |         61 |         31 |        241 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/features.js                  | JavaScript |        359 |         57 |         63 |        479 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/floating-fish.js             | JavaScript |        294 |         41 |         63 |        398 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/frutiger-main.js             | JavaScript |        570 |         46 |         84 |        700 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/icon-config-loader.js        | JavaScript |        114 |         64 |         27 |        205 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/icon-loader.js               | JavaScript |         55 |         12 |         14 |         81 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/icon-style-switcher.js       | JavaScript |         62 |         30 |         13 |        105 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/logger.js                    | JavaScript |         41 |          1 |          8 |         50 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/main.js                      | JavaScript |         70 |         38 |         18 |        126 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/preloader.js                 | JavaScript |         24 |          7 |          8 |         39 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/renderer.js                  | JavaScript |        490 |         38 |         76 |        604 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/secrets.js                   | JavaScript |        826 |         37 |        132 |        995 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/site-config-loader.js        | JavaScript |        247 |         67 |         49 |        363 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/templates.js                 | JavaScript |        171 |         21 |         21 |        213 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/js/utils.js                     | JavaScript |        102 |        106 |         20 |        228 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/about.html                | HTML       |        138 |         21 |         18 |        177 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/blog.html                 | HTML       |         62 |         17 |         12 |         91 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/connect.html              | HTML       |        107 |         19 |         14 |        140 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/contact.html              | HTML       |        114 |         11 |         23 |        148 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/error.html                | HTML       |          0 |          0 |          1 |          1 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/gallery.html              | HTML       |        155 |         21 |         23 |        199 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/privacy.html              | HTML       |         91 |         13 |         21 |        125 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/sitemap.html              | HTML       |        195 |         25 |         25 |        245 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/terms.html                | HTML       |         85 |         13 |         22 |        120 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/pages/work.html                 | HTML       |         74 |         20 |         15 |        109 |
+| /Users/kaispife/Documents/VSC/portfolio-generator/site-config.json                | JSON       |        163 |          0 |          6 |        169 |
+| Total                                                                             |            |     11,209 |      1,185 |      1,697 |     14,091 |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

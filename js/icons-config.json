@@ -1,0 +1,145 @@
+{
+  "iconStyle": "style-ios6",
+  "social": {
+    "github": {
+      "name": "GitHub",
+      "type": "image",
+      "alt": "GitHub",
+      "files": {
+        "style-classic": "Assets/Icons/style-classic/github.png",
+        "style-glossy-blue": "Assets/Icons/style-glossy-blue/reddit.png",
+        "style-ios6": "Assets/Icons/style-ios6/Contacts.png"
+      },
+      "emoji": "🐙"
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "type": "image",
+      "alt": "LinkedIn",
+      "files": {
+        "style-classic": "Assets/Icons/style-classic/linkedin.png",
+        "style-glossy-blue": "Assets/Icons/style-glossy-blue/linkedin.png",
+        "style-ios6": "Assets/Icons/style-ios6/LinkedIn.png"
+      },
+      "emoji": "💼"
+    },
+    "twitter": {
+      "name": "Twitter",
+      "type": "image",
+      "alt": "Twitter",
+      "files": {
+        "style-classic": "Assets/Icons/style-classic/twitter-x.png",
+        "style-glossy-blue": "Assets/Icons/style-glossy-blue/mail.png",
+        "style-ios6": "Assets/Icons/style-ios6/Twitter.png"
+      },
+      "emoji": "🐦"
+    },
+    "codepen": {
+      "name": "CodePen",
+      "type": "image",
+      "alt": "CodePen",
+      "files": {
+        "style-classic": "Assets/Icons/style-classic/instagram.png",
+        "style-glossy-blue": "Assets/Icons/style-glossy-blue/instagram.png",
+        "style-ios6": "Assets/Icons/style-ios6/Instagram.png"
+      },
+      "emoji": "🎨"
+    },
+    "devto": {
+      "name": "Dev.to",
+      "type": "image",
+      "alt": "Dev.to",
+      "files": {
+        "style-classic": "Assets/Icons/style-classic/facebook.png",
+        "style-glossy-blue": "Assets/Icons/style-glossy-blue/messages.png",
+        "style-ios6": "Assets/Icons/style-ios6/Messages.png"
+      },
+      "emoji": "📝"
+    },
+    "portfolio": {
+      "name": "Portfolio",
+      "type": "image",
+      "alt": "Portfolio",
+      "files": {
+        "style-classic": "Assets/Icons/style-classic/youtube.png",
+        "style-glossy-blue": "Assets/Icons/style-glossy-blue/youtube.png",
+        "style-ios6": "Assets/Icons/style-ios6/YouTube.png"
+      },
+      "emoji": "🌟"
+    }
+  },
+  "ui": {
+    "menu": {
+      "name": "Menu",
+      "type": "emoji",
+      "emoji": "☰"
+    },
+    "close": {
+      "name": "Close",
+      "type": "emoji",
+      "emoji": "✕"
+    },
+    "chevron-down": {
+      "name": "Chevron Down",
+      "type": "emoji",
+      "emoji": "▼"
+    },
+    "chevron-up": {
+      "name": "Chevron Up",
+      "type": "emoji",
+      "emoji": "▲"
+    },
+    "arrow-right": {
+      "name": "Arrow Right",
+      "type": "emoji",
+      "emoji": "→"
+    },
+    "search": {
+      "name": "Search",
+      "type": "emoji",
+      "emoji": "🔍"
+    },
+    "check": {
+      "name": "Check",
+      "type": "emoji",
+      "emoji": "✓"
+    },
+    "star": {
+      "name": "Star",
+      "type": "emoji",
+      "emoji": "⭐"
+    }
+  },
+  "page-sections": {
+    "about": {
+      "name": "About",
+      "emoji": "👋",
+      "icon": "about"
+    },
+    "work": {
+      "name": "Work",
+      "emoji": "💼",
+      "icon": "work"
+    },
+    "blog": {
+      "name": "Blog",
+      "emoji": "📝",
+      "icon": "blog"
+    },
+    "gallery": {
+      "name": "Gallery",
+      "emoji": "🖼️",
+      "icon": "gallery"
+    },
+    "connect": {
+      "name": "Connect",
+      "emoji": "🔗",
+      "icon": "connect"
+    },
+    "home": {
+      "name": "Home",
+      "emoji": "🏠",
+      "icon": "home"
+    }
+  }
+}

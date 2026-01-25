@@ -1,0 +1,78 @@
+/* Icon System Styles */
+
+/* Icon Image Styling */
+.icon-image {
+    display: inline-block;
+    vertical-align: middle;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.icon-image:hover {
+    transform: scale(1.1);
+}
+
+/* Icon Emoji Styling */
+.icon-emoji {
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Social Card Icon Container */
+.social-card .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-card:hover .social-icon {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Ensure images fit properly in icon containers */
+.social-card .social-icon .icon-image {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Icon Theme Variants */
+.icon-style-classic .icon-image {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.icon-style-glossy-blue .icon-image {
+    filter: drop-shadow(0 2px 6px rgba(0, 100, 200, 0.2));
+}
+
+.icon-style-ios6 .icon-image {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+}
+
+/* Small icon variant */
+.icon-small {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* Large icon variant */
+.icon-large {
+    width: 64px !important;
+    height: 64px !important;
+}
+
+/* Extra large icon variant */
+.icon-xl {
+    width: 96px !important;
+    height: 96px !important;
+}

@@ -520,19 +520,7 @@
 }
 
 /* Introduction Section / Hero */
-.introduction-section {
-  background: var(--surface-1);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);  margin-top: var(--spacing-lg);  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  background: color-mix(in srgb, var(--surface-1) 82%, transparent);
-  position: relative;
-  overflow: hidden;
-  will-change: opacity;
-  contain: layout style paint;
-}
+/* Consolidated content-section now handles introduction-section, get-to-know, and general content */
 
 .intro-content {
   display: flex;
@@ -644,6 +632,7 @@
 }
 
 /* Content Sections */
+/* Unified content section - replaces introduction-section, get-to-know */
 .content-section {
   background: var(--surface-1);
   padding: var(--spacing-lg);
@@ -651,14 +640,23 @@
   border: 1px solid var(--card-border);
   margin-bottom: var(--spacing-lg);
   margin-top: var(--spacing-lg);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-  background: color-mix(in srgb, var(--surface-1) 82%, transparent);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
+  line-height: 1.8;
 }
 
-.introduction-section::after,
+/* Two-column layout variant for content sections */
+.content-section.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem;
+}
+
 .system-status::after,
 .status-card::after,
 .content-section::after {
@@ -666,8 +664,8 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.06) 38%, rgba(255, 255, 255, 0) 55%);
-  mix-blend-mode: screen;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.15) 38%, rgba(0, 0, 0, 0) 55%);
+  mix-blend-mode: multiply;
 }
 
 .section-header {

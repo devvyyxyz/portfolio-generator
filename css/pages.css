@@ -117,31 +117,20 @@
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.get-to-know {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    margin: 3rem 0;
-    background: var(--surface-2);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.get-to-know-text h2 {
+/* Get-to-know section now uses .content-section.two-column */
+.content-section-text h2 {
     font-size: 2em;
     margin-bottom: 1rem;
     color: var(--text-strong);
 }
 
-.get-to-know-text p {
+.content-section-text p {
     line-height: 1.8;
     color: var(--text-secondary);
     margin-bottom: 1rem;
 }
 
-.get-to-know-image {
+.content-section-image {
     width: 100%;
     height: 300px;
     background: linear-gradient(135deg, var(--color-accent-blue), #667eea);
@@ -164,8 +153,10 @@
     background: var(--surface-1);
     padding: 1.5rem;
     border-radius: 12px;
-    border-left: 4px solid var(--color-accent-blue);
     transition: all 0.3s ease;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .quick-link-card:hover {
@@ -195,7 +186,7 @@
         margin: 0 auto;
     }
 
-    .get-to-know {
+    .content-section.two-column {
         grid-template-columns: 1fr;
     }
 
@@ -263,10 +254,7 @@
     border-bottom: 2px solid var(--color-accent-blue);
 }
 
-.content-section {
-    line-height: 1.8;
-}
-
+/* Content section typography - applies to all .content-section elements */
 .content-section h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -284,6 +272,11 @@
     margin-bottom: 1rem;
 }
 
+/* Shared accent border utility */
+.accent-border {
+    border-left: 4px solid var(--color-accent-blue);
+}
+
 .content-section li {
     margin-bottom: 0.8rem;
 }
@@ -297,8 +290,10 @@
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    border-left: 4px solid var(--color-accent-blue);
     transition: all 0.3s ease;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-item:hover {
@@ -325,11 +320,13 @@
     background: var(--surface-2);
     padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid var(--color-accent-blue);
     margin: 2rem 0;
     font-style: italic;
     color: var(--text-secondary);
     font-size: 1.1em;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .skills-grid {
@@ -393,20 +390,23 @@
     }
 }
 /* Work Page Styles */
-.work-page-header {
+/* ==================== PAGE HEADER (UNIFIED) ==================== */
+/* Replaces work-page-header, blog-page-header, connect-page-header, gallery-page-header */
+.page-header {
     background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
     padding: 3rem 2rem;
     border-radius: 16px;
     margin-bottom: 3rem;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.work-page-header h1 {
+.page-header h1 {
     font-size: 2.5em;
     background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
     -webkit-background-clip: text;
@@ -415,9 +415,11 @@
     margin-bottom: 0.5rem;
 }
 
-.work-page-header p {
+.page-header p {
     color: var(--text-secondary);
     font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .projects-showcase {
@@ -432,13 +434,7 @@
     border-bottom: 2px solid var(--color-accent-blue);
 }
 
-.skills-showcase {
-    background: var(--surface-1);
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 2rem 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+/* skills-showcase now uses .content-section */
 
 .timeline {
     position: relative;
@@ -473,34 +469,6 @@
     margin: 0.5rem 0;
 }
 /* Blog Page Styles */
-.blog-page-header {
-    background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    margin-bottom: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-}
-
-.blog-page-header h1 {
-    font-size: 2.5em;
-    background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
-}
-
-.blog-page-header p {
-    color: var(--text-secondary);
-    font-size: 1.1em;
-    max-width: 600px;
-}
-
-.section-title {
     font-size: 2em;
     color: var(--text-strong);
     margin: 3rem 0 2rem 0;
@@ -754,65 +722,7 @@
     transform: translateY(-2px);
     text-decoration: none;
 }
-/* Connect Page Styles */
-.connect-page-header {
-    background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    margin-bottom: 3rem;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-}
-
-.connect-page-header h1 {
-    font-size: 2.5em;
-    background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
-}
-
-.connect-page-header p {
-    color: var(--text-secondary);
-    font-size: 1.1em;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 2em;
-    color: var(--text-strong);
-    margin: 3rem 0 2rem 0;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--color-accent-blue);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.contact-card {
-    background: var(--surface-1);
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
-}
-
+/* Connect Page Styles - Now uses unified .page-header class */
 .contact-card .icon {
     font-size: 3em;
     margin-bottom: 1rem;
@@ -1049,10 +959,7 @@
 .page-header h1,
 .page-hero h1,
 .page-hero-two-column h1,
-.homepage-hero h1,
-.work-page-header h1,
-.blog-page-header h1,
-.connect-page-header h1 {
+.homepage-hero h1 {
     font-size: 2.5em;
     background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
     -webkit-background-clip: text;
@@ -1073,10 +980,7 @@
 .page-header p,
 .page-hero p,
 .page-hero-two-column p,
-.homepage-hero p,
-.work-page-header p,
-.blog-page-header p,
-.connect-page-header p {
+.homepage-hero p {
     color: var(--text-strong);
     font-size: 1.1em;
     line-height: 1.6;

@@ -164,6 +164,7 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
 .skip-btn {
   padding: 0.6em 1.5em;
   font-weight: 700;
+  border-radius: var(--radius-md);
 }
 
 .skip-btn::after {
@@ -172,7 +173,7 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
   right: 2px;
   width: auto;
   height: 35%;
-  border-radius: 9999px;
+  border-radius: calc(var(--radius-md) - 2px);
 }
 
 /* Settings buttons - compact square style */

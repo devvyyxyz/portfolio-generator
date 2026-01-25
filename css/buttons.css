@@ -307,3 +307,149 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
   transition: background 400ms ease;
   pointer-events: none;
 }
+
+/* ==================== FISH COUNT SLIDER ==================== */
+.fish-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 4px 8px;
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.08)
+    );
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  height: 32px;
+  min-width: 0;
+}
+
+.fish-slider-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fish-count-slider {
+  flex: 1;
+  height: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  min-width: 0;
+}
+
+/* Slider thumb styling - matches button theme */
+.fish-count-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border: 1px solid color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.fish-count-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.fish-count-slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Firefox slider thumb */
+.fish-count-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border: 1px solid color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.fish-count-slider::-moz-range-thumb:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.fish-count-slider::-moz-range-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Firefox track styling */
+.fish-count-slider::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+.fish-count-slider::-moz-range-progress {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--color-accent-blue) 60%, transparent),
+    color-mix(in srgb, var(--color-accent-blue) 40%, transparent)
+  );
+  height: 6px;
+  border-radius: 3px;
+}
+
+.fish-count-display {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent-blue);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  min-width: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}

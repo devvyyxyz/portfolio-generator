@@ -5,7 +5,29 @@ class FloatingFish {
     this.fishElements = [];
     this.isActive = localStorage.getItem('portfolioFishEnabled') !== 'false';
     this.maxFish = 5;
+    this.basePath = this.getBasePath();
+    // All fish images available in Assets/images/fishes/
+    this.fishImages = [
+      `${this.basePath}Assets/images/fishes/blue-multi.png`,
+      `${this.basePath}Assets/images/fishes/blue.png`,
+      `${this.basePath}Assets/images/fishes/butter.png`,
+      `${this.basePath}Assets/images/fishes/clown.avif`,
+      `${this.basePath}Assets/images/fishes/clownfish.png`,
+      `${this.basePath}Assets/images/fishes/green.png`,
+      `${this.basePath}Assets/images/fishes/multicoloured.png`,
+      `${this.basePath}Assets/images/fishes/orange-multi.png`,
+      `${this.basePath}Assets/images/fishes/organge.webp`,
+      `${this.basePath}Assets/images/fishes/picmix.com_2469184.png`,
+      `${this.basePath}Assets/images/fishes/red-blue.png`,
+      `${this.basePath}Assets/images/fishes/yellow-multi.png`,
+      `${this.basePath}Assets/images/fishes/zebra.avif`
+    ];
     this.init();
+  }
+
+  getBasePath() {
+    // Detect if we're in a subdirectory (like pages/)
+    return window.location.pathname.includes('/pages/') ? '../' : '';
   }
 
   init() {
@@ -30,17 +52,8 @@ class FloatingFish {
     const fish = document.createElement('div');
     fish.className = 'fish';
     
-    // Detect if we're in a subdirectory (like pages/)
-    const basePath = window.location.pathname.includes('/pages/') ? '../' : '';
-    
-    // Array of local fish image paths
-    const fishImages = [
-      `${basePath}Assets/images/fishes/butter.avif`,
-      `${basePath}Assets/images/fishes/clown.avif`,
-      `${basePath}Assets/images/fishes/zebra.avif`
-    ];
-    
-    const randomImage = fishImages[Math.floor(Math.random() * fishImages.length)];
+    // Select random fish image from available images
+    const randomImage = this.fishImages[Math.floor(Math.random() * this.fishImages.length)];
     
     // Create image element
     const img = document.createElement('img');
@@ -49,6 +62,7 @@ class FloatingFish {
     img.style.width = '100%';
     img.style.height = '100%';
     img.style.objectFit = 'contain';
+    img.loading = 'lazy';
     
     fish.appendChild(img);
     this.container.appendChild(fish);
@@ -197,6 +211,31 @@ class FloatingFish {
       this.start();
     }
   }
+
+  updateMaxFish(newMax) {
+    const oldMax = this.maxFish;
+    this.maxFish = Math.max(1, Math.min(newMax, 20)); // Clamp between 1 and 20
+    
+    if (this.maxFish > oldMax) {
+      // Add more fish
+      const difference = this.maxFish - oldMax;
+      for (let i = 0; i < difference; i++) {
+        const newFish = this.createFish();
+        if (this.isActive) {
+          setTimeout(() => {
+            this.animateFish(newFish);
+          }, i * 1000);
+        }
+      }
+    } else if (this.maxFish < oldMax) {
+      // Remove fish
+      const toRemove = this.fishElements.slice(this.maxFish);
+      toRemove.forEach(fish => {
+        fish.remove();
+        this.fishElements = this.fishElements.filter(f => f !== fish);
+      });
+    }
+  }
 }
 
 // Initialize on page load
@@ -237,6 +276,22 @@ function initializeFishButtons() {
       this.classList.add('active');
     });
   });
+
+  // Setup fish count slider
+  const fishCountSlider = document.getElementById('fish-count-slider');
+  const fishCountDisplay = document.getElementById('fish-count-display');
+  
+  if (fishCountSlider && fishCountDisplay) {
+    // Set initial value from system
+    fishCountSlider.value = fishSystem.maxFish;
+    fishCountDisplay.textContent = fishSystem.maxFish;
+    
+    fishCountSlider.addEventListener('input', function() {
+      const newCount = parseInt(this.value);
+      fishCountDisplay.textContent = newCount;
+      fishSystem.updateMaxFish(newCount);
+    });
+  }
 }
 
 // Wait for DOM and components to be loaded

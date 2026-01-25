@@ -1,20 +1,21 @@
 {
   "personal": {
-    "name": "Khyle Mitchell",
+    "name": "Kai",
+    "fullName": "Kai Mitchell",
     "title": "Full Stack Developer & Software Engineer",
-    "email": "khyle.mitchell@email.com",
-    "phone": "+441234567890",
+    "email": "devvyydev@protonmail.com",
+    "phone": "N/A",
     "location": "England, UK",
-    "website": "https://khyle-mitchell.dev",
+    "website": "https://devvyy.xyz",
     "profileImage": "Assets/pfp-profile.jpg"
   },
   
   "bio": {
     "heroIntro": "Passionate full-stack developer with expertise in building responsive web applications and mobile solutions. Committed to clean code, user-centric design, and continuous learning.",
     "homePageWelcome": "I'm a full-stack developer passionate about creating beautiful, functional web experiences. With expertise in modern web technologies and a keen eye for design, I build solutions that matter.",
-    "getToKnowMe": "I'm Khyle Mitchell, a computer scientist and developer based in England with a passion for building innovative digital solutions. My career spans full-stack development, UI/UX design, and emerging technologies.",
+    "getToKnowMe": "I'm Kai, a computer scientist and developer based in England with a passion for building innovative digital solutions. My career spans full-stack development, UI/UX design, and emerging technologies.",
     "getToKnowMeExtended": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with other developers through blogging and community engagement.",
-    "aboutPageIntro": "I'm Khyle Mitchell, a passionate full-stack developer from England with a strong commitment to building beautiful, functional web applications that solve real-world problems. My journey in technology started during college and has evolved into a rewarding career working with startups and established tech companies.",
+    "aboutPageIntro": "I'm Kai, a passionate full-stack developer from England with a strong commitment to building beautiful, functional web applications that solve real-world problems. My journey in technology started during college and has evolved into a rewarding career working with startups and established tech companies.",
     "aboutPageBackground": "I completed my Bachelor of Science in Computer Science from the University of Birmingham in 2020 with a 2:1 (Upper Second Class Honours). My education focused on software engineering, web development, and emerging technologies like AI and machine learning. Before university, I studied IT and Computer Science at Gloucestershire College, where I developed a strong foundation in systems analysis and network administration.",
     "aboutPageQuote": "Technology has the power to transform lives and solve real-world problems. Every line of code I write is an opportunity to make that difference.",
     "aboutPagePhilosophy1": "I believe in writing clean, maintainable code that other developers can understand and work with. I'm passionate about user-centric design and creating interfaces that are both beautiful and intuitive. Continuous learning is a core part of my identity - I regularly explore new technologies and best practices to stay at the forefront of web development.",
@@ -29,8 +30,8 @@
   
   "social": {
     "github": {
-      "url": "https://github.com/khylemitchell",
-      "handle": "@khylemitchell",
+      "url": "https://github.com/devvyyxyz",
+      "handle": "@devvyyxyz",
       "stat": "150+ repositories"
     },
     "linkedin": {
@@ -39,23 +40,23 @@
       "stat": "500+ connections"
     },
     "twitter": {
-      "url": "https://twitter.com/khylemitchell",
-      "handle": "@khylemitchell",
+      "url": "https://twitter.com/devvyyxyz",
+      "handle": "@devvyyxyz",
       "stat": "Tech & Dev updates"
     },
     "codepen": {
-      "url": "https://codepen.io/khylemitchell",
-      "handle": "@khylemitchell",
+      "url": "https://codepen.io/devvyyxyz",
+      "handle": "@devvyyxyz",
       "stat": "Creative experiments"
     },
     "devto": {
-      "url": "https://dev.to/khylemitchell",
-      "handle": "@khylemitchell",
+      "url": "https://dev.to/devvyyxyz",
+      "handle": "@devvyyxyz",
       "stat": "Technical articles"
     },
     "portfolio": {
-      "url": "https://khyle-mitchell.dev",
-      "handle": "khyle-mitchell.dev",
+      "url": "https://devvyy.xyz",
+      "handle": "devvyy.xyz",
       "stat": "My Projects"
     }
   },

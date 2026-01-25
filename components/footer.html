@@ -108,7 +108,7 @@
         <div class="footer-bottom">
             <div class="footer-bottom-left">
                 <img src="Assets/logo.png" alt="Logo" class="footer-logo">
-                <span class="footer-brand">Khyle Mitchell</span>
+                <span class="footer-brand" data-config="personal.fullName">Khyle Mitchell</span>
             </div>
 
             <div class="footer-bottom-center">
@@ -120,7 +120,7 @@
             </div>
 
             <div class="footer-bottom-right">
-                <span class="copyright">&copy; 2026 Khyle Mitchell</span>
+                <span class="copyright">&copy; 2026 <span data-config="personal.fullName">Khyle Mitchell</span></span>
             </div>
         </div>
     </div>
@@ -131,31 +131,4 @@
     <img src="Assets/Icons/style-glossy-blue/arrow-up.png" alt="Scroll to top" style="width: 20px; height: 20px;" data-footer-icon>
 </button>
 
-<!-- Footer Config Population Script -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Wait for site config to be available
-    const configReady = setInterval(() => {
-        if (window.siteConfig && typeof window.siteConfig.get === 'function') {
-            clearInterval(configReady);
-            
-            // Populate all data-config-href links
-            document.querySelectorAll('[data-config-href]').forEach(element => {
-                const configPath = element.getAttribute('data-config-href');
-                const url = window.siteConfig.get(configPath);
-                
-                if (url) {
-                    element.href = url;
-                    // Remove if link doesn't have valid URL (optional)
-                    if (!url.startsWith('http')) {
-                        element.style.display = 'none';
-                    }
-                }
-            });
-        }
-    }, 100);
-    
-    // Timeout after 5 seconds if config doesn't load
-    setTimeout(() => clearInterval(configReady), 5000);
-});
-</script>
+<!-- Footer is now auto-populated by site-config-loader.js -->

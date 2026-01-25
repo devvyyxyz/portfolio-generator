@@ -329,7 +329,8 @@
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-.grid-item {
+.grid-item,
+a.grid-item {
   background: var(--surface-1);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
   border-radius: var(--radius-lg);
@@ -339,6 +340,12 @@
   overflow: hidden;
   border: 1px solid var(--card-border);
   color: var(--text-strong);
+  text-decoration: none;
+}
+
+a.grid-item:hover {
+  color: var(--text-strong);
+  text-decoration: none;
 }
 
 /* Aero Panel */

@@ -16,7 +16,27 @@
 .settings-bar {
   width: 100%;
   margin-bottom: var(--spacing-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+#navbarPlaceholder {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 1000;
+  max-width: calc(1200px + 2 * var(--spacing-md));
+  margin: 0 auto;
+}
+
+#sidebarPlaceholder {
+  position: sticky;
+  top: 120px;
+  z-index: 900;
+}
+
 .contact-details::before {
   content: "";
   position: absolute;
@@ -117,6 +137,7 @@
   z-index: 1;
   padding: 12px;
   width: 100%;
+  overflow: visible;
 }
 
 #siteContainer {
@@ -130,6 +151,7 @@
   flex-direction: column;
   min-height: fit-content;
   color: var(--text-strong);
+  overflow: visible;
 }
 
 /* Text size variants controlled by sidebar buttons */
@@ -152,13 +174,14 @@
   gap: var(--spacing-lg);
   flex: 1;
   width: 100%;
-  margin-top: var(--spacing-lg);
+  margin-top: 120px;
   align-items: flex-start;
 }
 
 .main-content-area {
   flex: 1;
   min-width: 0;
+  padding-bottom: 200px;
 }
 
 .main-content {
@@ -171,12 +194,14 @@
 /* Side Control Panel */
 .side-control-panel {
   width: 200px;
-  height: 75vh;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  position: relative;
+  position: sticky;
+  top: 120px;
   flex-shrink: 0;
+  align-self: flex-start;
+  margin-bottom: 100px;
 }
 
 .side-settings-bar {

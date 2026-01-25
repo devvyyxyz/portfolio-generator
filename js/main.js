@@ -89,10 +89,8 @@ function switchDataSource(source) {
 function setDebugMode(enabled) {
     if (enabled) {
         localStorage.setItem('DEBUG', 'true');
-        console.log('Debug mode enabled. Refresh to see debug logs.');
     } else {
         localStorage.removeItem('DEBUG');
-        console.log('Debug mode disabled.');
     }
 }
 

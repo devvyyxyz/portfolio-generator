@@ -2,31 +2,8 @@
 
 // Initialize after components are loaded
 function initializeApp() {
-    console.log('Initializing app...');
     initThemeSwitcher();
-    injectAmbientLayers();
-    const particleContainer = document.querySelector('.ui-particles');
-    let particlesOn = localStorage.getItem('portfolioParticlesEnabled') !== 'false';
-
-    function applyParticleState(enabled) {
-        particlesOn = enabled;
-        if (particleContainer) {
-            particleContainer.classList.toggle('is-hidden', !enabled);
-            particleContainer.innerHTML = '';
-        }
-        if (enabled) {
-            initParticles(18);
-        }
-        localStorage.setItem('portfolioParticlesEnabled', particlesOn);
-
-        const particleButtons = document.querySelectorAll('.particle-btn');
-        particleButtons.forEach(btn => {
-            const shouldBeActive = btn.dataset.particles === (enabled ? 'on' : 'off');
-            btn.classList.toggle('active', shouldBeActive);
-        });
-    }
-
-    applyParticleState(particlesOn);
+    
     initToasts();
     initDevOverlay();
     
@@ -189,23 +166,6 @@ function initializeApp() {
 
     initSystemStatus();
     initLogoEasterEgg();
-
-    // Particle toggle controls
-    function bindParticleButtons() {
-        const particleButtons = document.querySelectorAll('.particle-btn');
-        particleButtons.forEach(button => {
-            if (button.dataset.particlesBound === 'true') return;
-            button.dataset.particlesBound = 'true';
-            button.addEventListener('click', function() {
-                const setting = this.dataset.particles === 'on';
-                applyParticleState(setting);
-            });
-        });
-        applyParticleState(particlesOn);
-    }
-
-    bindParticleButtons();
-    document.addEventListener('componentsLoaded', bindParticleButtons);
     
     // Sound Toggle Controls
     const soundButtons = document.querySelectorAll('.sound-btn');
@@ -421,37 +381,7 @@ function applyTheme(themeKey, persist = true) {
     window.currentTheme = themeKey;
 }
 
-// Ambient gradient overlay + particles shell
-function injectAmbientLayers() {
-    if (!document.querySelector('.ambient-overlay')) {
-        const overlay = document.createElement('div');
-        overlay.className = 'ambient-overlay';
-        document.body.appendChild(overlay);
-    }
-    if (!document.querySelector('.ui-particles')) {
-        const particles = document.createElement('div');
-        particles.className = 'ui-particles';
-        document.body.appendChild(particles);
-    }
-}
-
-// Floating particles
-function initParticles(count = 12) {
-    const container = document.querySelector('.ui-particles');
-    if (!container) return;
-    container.innerHTML = '';
-    for (let i = 0; i < count; i++) {
-        const p = document.createElement('span');
-        const size = Math.random() * 6 + 4;
-        p.style.width = `${size}px`;
-        p.style.height = `${size}px`;
-        p.style.left = `${Math.random() * 100}%`;
-        p.style.animationDuration = `${12 + Math.random() * 10}s`;
-        p.style.animationDelay = `${Math.random() * 8}s`;
-        container.appendChild(p);
-    }
-}
-
+// Toast Messages
 const TOAST_MESSAGES = [
     '💾 Skills cache refreshed',
     '🌐 Network stable',

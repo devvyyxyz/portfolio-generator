@@ -6,11 +6,8 @@
 @import url("frutiger-global.css");
 @import url("layout.css");
 
-/* Components & UI */
-@import url("buttons.css");
+/* Components & UI (consolidated) */
 @import url("components.css");
-@import url("components-content.css");
-@import url("frutiger-components.css");
 
 /* Forms & Inputs */
 @import url("forms.css");
@@ -19,14 +16,5 @@
 @import url("animations.css");
 @import url("floating-fish.css");
 
-/* Modular Page Headers */
-@import url("page-headers.css");
-
-/* Page-Specific Styles */
-@import url("homepage.css");
-@import url("about-page.css");
-@import url("work-page.css");
-@import url("blog-page.css");
-@import url("gallery-page.css");
-@import url("connect-page.css");
-@import url("error-404.css");
+/* Page Styles (consolidated) */
+@import url("pages.css");

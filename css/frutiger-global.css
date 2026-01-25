@@ -91,24 +91,8 @@ span {
   text-shadow: 0px -2px 1px rgba(0, 0, 0, 0.25);
 }
 
-a,
 button {
   cursor: pointer;
-}
-
-a {
-  color: rgba(255, 255, 255, 0.9);
-  transition-duration: 0.2s;
-  font-family: Helvetica, Arial, "Segoe UI", sans-serif;
-  font-weight: 700;
-}
-a:hover {
-  color: rgba(223, 223, 223, 0.9);
-  text-decoration: none;
-  transition-duration: 0.2s;
-}
-
-button {
   border: none;
 }
 

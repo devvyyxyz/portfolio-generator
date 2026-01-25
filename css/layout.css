@@ -288,35 +288,7 @@
   gap: 10px;
 }
 
-/* Content Sections */
-.content-section {
-  margin: var(--spacing-lg) 0;
-  padding: var(--spacing-lg);
-  background: var(--surface-1);
-  box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.8);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--card-border);
-  color: var(--text-strong);
-  will-change: opacity;
-  contain: layout style paint;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.section-title {
-  font-size: 1.9em;
-  font-weight: 400;
-  color: var(--color-text-light);
-  text-shadow: 0px -2px 1px rgba(0, 0, 0, 0.25);
-  margin: 0;
-}
+/* Content Sections: unified styles defined later in file */
 
 /* Grid Layout */
 .content-grid {
@@ -387,36 +359,7 @@
   justify-content: space-between;
   align-items: center;
 }
-/* Content Section Styling */
-.content-section {
-  background: rgba(230, 240, 255, 0.7);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(150, 190, 255, 0.3);
-  margin-bottom: var(--spacing-lg);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.content-section h1 {
-  font-size: var(--font-size-xl);
-  color: var(--color-text-dark);
-  margin-bottom: var(--spacing-md);
-  font-weight: var(--font-weight-bold);
-}
-
-.content-section h2 {
-  font-size: var(--font-size-lg);
-  color: #316DC5;
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-sm);
-  font-weight: var(--font-weight-bold);
-}
-
-.content-section p {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: var(--spacing-md);
-}
+/* Content Section Styling consolidated below */
 
 
 /* Theme-synced overrides */

@@ -30,6 +30,8 @@ class ComponentLoader {
       html = html.replace(/src="Assets\//g, `src="${this.basePath}Assets/`);
       html = html.replace(/url\('Assets\//g, `url('${this.basePath}Assets/`);
       html = html.replace(/url\("Assets\//g, `url("${this.basePath}Assets/`);
+      // Fix audio and video sources (src attribute and data attribute)
+      html = html.replace(/data-src="Assets\//g, `data-src="${this.basePath}Assets/`);
       // Fix links that need base path
       html = html.replace(/href="pages\//g, `href="${this.basePath}pages/`);
       // Fix CSS and JS paths

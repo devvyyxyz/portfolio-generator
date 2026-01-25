@@ -54,12 +54,15 @@ function initializeApp() {
     const soundEnabled = localStorage.getItem('portfolioSoundsEnabled') !== 'false'; // default true
     let soundsOn = soundEnabled;
     
+    // Detect if we're in a subdirectory and adjust asset paths
+    const assetBasePath = window.location.pathname.includes('/pages/') ? '../' : '';
+    
     const sounds = {
-        click: new Audio('Assets/sounds/links.ogg'),
-        hover: new Audio('Assets/sounds/tokoni_hover.ogg'),
-        leave: new Audio('Assets/sounds/tokoni_leave.ogg'),
-        enable: new Audio('Assets/sounds/sounds_enable.mp3'),
-        disable: new Audio('Assets/sounds/sounds_disable.mp3')
+        click: new Audio(`${assetBasePath}Assets/sounds/links.ogg`),
+        hover: new Audio(`${assetBasePath}Assets/sounds/tokoni_hover.ogg`),
+        leave: new Audio(`${assetBasePath}Assets/sounds/tokoni_leave.ogg`),
+        enable: new Audio(`${assetBasePath}Assets/sounds/sounds_enable.mp3`),
+        disable: new Audio(`${assetBasePath}Assets/sounds/sounds_disable.mp3`)
     };
     
     // Preload all sounds
@@ -80,30 +83,30 @@ function initializeApp() {
     let musicOn = musicEnabled;
     
     const musicPlaylist = [
-        'Assets/music/home.mp3',
-        'Assets/music/about.mp3',
-        'Assets/music/blog.mp3',
-        'Assets/music/community.mp3',
-        'Assets/music/resources.mp3',
-        'Assets/music/chatroom.mp3',
-        'Assets/music/art_gallery.mp3',
-        'Assets/music/all_links.mp3',
-        'Assets/music/creator_spotlights.mp3',
-        'Assets/music/news.mp3',
-        'Assets/music/blog/website_launched.mp3',
-        'Assets/music/blog/10k_100k_milestone_event.mp3',
-        'Assets/music/creator_spotlights/january.mp3',
-        'Assets/music/creator_spotlights/february.mp3',
-        'Assets/music/creator_spotlights/march.mp3',
-        'Assets/music/creator_spotlights/april.mp3',
-        'Assets/music/creator_spotlights/may.mp3',
-        'Assets/music/creator_spotlights/june.mp3',
-        'Assets/music/creator_spotlights/july.mp3',
-        'Assets/music/creator_spotlights/august.mp3',
-        'Assets/music/creator_spotlights/september.mp3',
-        'Assets/music/creator_spotlights/october.mp3',
-        'Assets/music/creator_spotlights/november.mp3',
-        'Assets/music/creator_spotlights/december.mp3'
+        `${assetBasePath}Assets/music/home.mp3`,
+        `${assetBasePath}Assets/music/about.mp3`,
+        `${assetBasePath}Assets/music/blog.mp3`,
+        `${assetBasePath}Assets/music/community.mp3`,
+        `${assetBasePath}Assets/music/resources.mp3`,
+        `${assetBasePath}Assets/music/chatroom.mp3`,
+        `${assetBasePath}Assets/music/art_gallery.mp3`,
+        `${assetBasePath}Assets/music/all_links.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights.mp3`,
+        `${assetBasePath}Assets/music/news.mp3`,
+        `${assetBasePath}Assets/music/blog/website_launched.mp3`,
+        `${assetBasePath}Assets/music/blog/10k_100k_milestone_event.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/january.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/february.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/march.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/april.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/may.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/june.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/july.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/august.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/september.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/october.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/november.mp3`,
+        `${assetBasePath}Assets/music/creator_spotlights/december.mp3`
     ];
     
     let currentTrackIndex = 0;

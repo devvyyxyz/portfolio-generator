@@ -184,21 +184,16 @@ class SiteConfigLoader {
     _applyFooterLinks() {
         const footerConfig = this.config.footer;
         if (!footerConfig || !footerConfig.sections) {
-            console.warn('Footer config not found', footerConfig);
             return;
         }
 
         const footerColumnsContainer = document.querySelector('.footer-columns');
         if (!footerColumnsContainer) {
-            console.warn('Footer columns container not found. Checking for footer element:', document.querySelector('footer'));
             return;
         }
 
-        console.log('Applying footer links from config...');
-
-        // Clear existing footer columns (but not bottom section)
+        // Clear existing footer columns
         const existingColumns = footerColumnsContainer.querySelectorAll('.footer-column');
-        console.log(`Found ${existingColumns.length} existing columns, removing...`);
         existingColumns.forEach(col => col.remove());
 
         // Create columns from config
@@ -255,8 +250,6 @@ class SiteConfigLoader {
                 }
             });
         }
-
-        console.log('Footer links applied successfully');
     }
 
     /**

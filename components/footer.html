@@ -13,7 +13,18 @@
                 </ul>
             </div>
 
-            <!-- Column 2: Services -->
+            <!-- Column 2: Projects -->
+            <div class="footer-column">
+                <h4 class="footer-header">Projects</h4>
+                <ul class="footer-links">
+                    <li><a href="#featured-projects">Featured Projects</a></li>
+                    <li><a href="#open-source">Open Source</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
             <div class="footer-column">
                 <h4 class="footer-header">Services</h4>
                 <ul class="footer-links">
@@ -24,7 +35,7 @@
                 </ul>
             </div>
 
-            <!-- Column 3: Skills -->
+            <!-- Column 4: Technologies -->
             <div class="footer-column">
                 <h4 class="footer-header">Technologies</h4>
                 <ul class="footer-links">
@@ -35,20 +46,55 @@
                 </ul>
             </div>
 
-            <!-- Column 4: Connect -->
+            <!-- Column 5: Experience -->
             <div class="footer-column">
-                <h4 class="footer-header">Connect</h4>
+                <h4 class="footer-header">Experience</h4>
                 <ul class="footer-links">
-                    <li><a href="connect.html">Contact</a></li>
-                    <li><a href="#github" data-config="social.github.url" target="_blank">GitHub</a></li>
-                    <li><a href="#linkedin" data-config="social.linkedin.url" target="_blank">LinkedIn</a></li>
-                    <li><a href="#twitter" data-config="social.twitter.url" target="_blank">Twitter</a></li>
+                    <li><a href="#companies">Companies</a></li>
+                    <li><a href="#work-history">Work History</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                 </ul>
             </div>
 
-            <!-- Column 5: Resources -->
+            <!-- Column 6: Community -->
+            <div class="footer-column">
+                <h4 class="footer-header">Community</h4>
+                <ul class="footer-links">
+                    <li><a href="#contributions">Contributions</a></li>
+                    <li><a href="#speaking">Speaking</a></li>
+                    <li><a href="#mentoring">Mentoring</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 7: Resources -->
             <div class="footer-column">
                 <h4 class="footer-header">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 8: Connect -->
+            <div class="footer-column">
+                <h4 class="footer-header">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="../pages/connect.html">Contact</a></li>
+                    <li><a href="#" data-config-href="social.github.url" target="_blank">GitHub</a></li>
+                    <li><a href="#" data-config-href="social.linkedin.url" target="_blank">LinkedIn</a></li>
+                    <li><a href="#" data-config-href="social.twitter.url" target="_blank">Twitter</a></li>
+                    <li><a href="#" data-config-href="social.codepen.url" target="_blank">CodePen</a></li>
+                    <li><a href="#" data-config-href="social.devto.url" target="_blank">Dev.to</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 9: Legal -->
+            <div class="footer-column">
+                <h4 class="footer-header">Legal</h4>
                 <ul class="footer-links">
                     <li><a href="../pages/sitemap.html">Sitemap</a></li>
                     <li><a href="#privacy">Privacy Policy</a></li>
@@ -84,3 +130,32 @@
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
     <img src="Assets/Icons/style-glossy-blue/arrow-up.png" alt="Scroll to top" style="width: 20px; height: 20px;" data-footer-icon>
 </button>
+
+<!-- Footer Config Population Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for site config to be available
+    const configReady = setInterval(() => {
+        if (window.siteConfig && typeof window.siteConfig.get === 'function') {
+            clearInterval(configReady);
+            
+            // Populate all data-config-href links
+            document.querySelectorAll('[data-config-href]').forEach(element => {
+                const configPath = element.getAttribute('data-config-href');
+                const url = window.siteConfig.get(configPath);
+                
+                if (url) {
+                    element.href = url;
+                    // Remove if link doesn't have valid URL (optional)
+                    if (!url.startsWith('http')) {
+                        element.style.display = 'none';
+                    }
+                }
+            });
+        }
+    }, 100);
+    
+    // Timeout after 5 seconds if config doesn't load
+    setTimeout(() => clearInterval(configReady), 5000);
+});
+</script>

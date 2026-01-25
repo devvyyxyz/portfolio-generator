@@ -85,63 +85,63 @@
         ]
       },
       "projects": {
-        "title": "Projects",
+        "title": "My Projects",
         "links": [
-          { "label": "Featured Projects", "href": "#featured-projects", "icon": { "category": "footer", "key": "projects", "alt": "Projects" } },
-          { "label": "Open Source", "href": "#open-source", "icon": { "category": "footer", "key": "projects", "alt": "Open Source" } },
-          { "label": "Case Studies", "href": "#case-studies", "icon": { "category": "footer", "key": "projects", "alt": "Case Studies" } },
-          { "label": "Portfolio", "href": "#portfolio", "icon": { "category": "footer", "key": "projects", "alt": "Portfolio" } }
+          { "label": "Featured Projects", "href": "pages/work.html#featured-projects", "icon": { "category": "footer", "key": "projects", "alt": "Projects" } },
+          { "label": "Open Source", "href": "pages/work.html#open-source", "icon": { "category": "footer", "key": "projects", "alt": "Open Source" } },
+          { "label": "Case Studies", "href": "pages/work.html#case-studies", "icon": { "category": "footer", "key": "projects", "alt": "Case Studies" } },
+          { "label": "Portfolio", "href": "pages/work.html#portfolio", "icon": { "category": "footer", "key": "projects", "alt": "Portfolio" } }
         ]
       },
       "services": {
         "title": "Services",
         "links": [
-          { "label": "Web Development", "href": "#web-dev", "icon": { "category": "footer", "key": "services", "alt": "Web Development" } },
-          { "label": "Frontend Design", "href": "#frontend", "icon": { "category": "footer", "key": "services", "alt": "Frontend Design" } },
-          { "label": "Backend Development", "href": "#backend", "icon": { "category": "footer", "key": "services", "alt": "Backend Development" } },
-          { "label": "Consulting", "href": "#consulting", "icon": { "category": "footer", "key": "services", "alt": "Consulting" } }
+          { "label": "Web Development", "href": "pages/work.html#web-dev", "icon": { "category": "footer", "key": "services", "alt": "Web Development" } },
+          { "label": "Frontend Design", "href": "pages/work.html#frontend", "icon": { "category": "footer", "key": "services", "alt": "Frontend Design" } },
+          { "label": "Backend Development", "href": "pages/work.html#backend", "icon": { "category": "footer", "key": "services", "alt": "Backend Development" } },
+          { "label": "Consulting", "href": "pages/connect.html#consulting", "icon": { "category": "footer", "key": "services", "alt": "Consulting" } }
         ]
       },
       "technologies": {
         "title": "Technologies",
         "links": [
-          { "label": "React", "href": "#react", "icon": { "category": "footer", "key": "technologies", "alt": "React" } },
-          { "label": "Node.js", "href": "#nodejs", "icon": { "category": "footer", "key": "technologies", "alt": "Node.js" } },
-          { "label": "JavaScript", "href": "#javascript", "icon": { "category": "footer", "key": "technologies", "alt": "JavaScript" } },
-          { "label": "Web Design", "href": "#web-design", "icon": { "category": "footer", "key": "technologies", "alt": "Web Design" } }
+          { "label": "React", "href": "https://react.dev", "icon": { "category": "footer", "key": "technologies", "alt": "React" } },
+          { "label": "Node.js", "href": "https://nodejs.org", "icon": { "category": "footer", "key": "technologies", "alt": "Node.js" } },
+          { "label": "JavaScript", "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript", "icon": { "category": "footer", "key": "technologies", "alt": "JavaScript" } },
+          { "label": "TypeScript", "href": "https://www.typescriptlang.org", "icon": { "category": "footer", "key": "technologies", "alt": "TypeScript" } }
         ]
       },
       "experience": {
         "title": "Experience",
         "links": [
-          { "label": "Companies", "href": "#companies", "icon": { "category": "footer", "key": "experience", "alt": "Companies" } },
-          { "label": "Work History", "href": "#work-history", "icon": { "category": "footer", "key": "experience", "alt": "Work History" } },
-          { "label": "Education", "href": "#education", "icon": { "category": "footer", "key": "experience", "alt": "Education" } },
-          { "label": "Certifications", "href": "#certifications", "icon": { "category": "footer", "key": "experience", "alt": "Certifications" } }
+          { "label": "Companies", "href": "pages/about.html#companies", "icon": { "category": "footer", "key": "experience", "alt": "Companies" } },
+          { "label": "Work History", "href": "pages/about.html#work-history", "icon": { "category": "footer", "key": "experience", "alt": "Work History" } },
+          { "label": "Education", "href": "pages/about.html#education", "icon": { "category": "footer", "key": "experience", "alt": "Education" } },
+          { "label": "Certifications", "href": "pages/about.html#certifications", "icon": { "category": "footer", "key": "experience", "alt": "Certifications" } }
         ]
       },
       "community": {
         "title": "Community",
         "links": [
-          { "label": "Contributions", "href": "#contributions", "icon": { "category": "footer", "key": "community", "alt": "Contributions" } },
-          { "label": "Speaking", "href": "#speaking", "icon": { "category": "footer", "key": "community", "alt": "Speaking" } },
-          { "label": "Mentoring", "href": "#mentoring", "icon": { "category": "footer", "key": "community", "alt": "Mentoring" } },
-          { "label": "Testimonials", "href": "#testimonials", "icon": { "category": "footer", "key": "community", "alt": "Testimonials" } }
+          { "label": "Contributions", "href": "pages/about.html#contributions", "icon": { "category": "footer", "key": "community", "alt": "Contributions" } },
+          { "label": "Speaking", "href": "pages/about.html#speaking", "icon": { "category": "footer", "key": "community", "alt": "Speaking" } },
+          { "label": "Mentoring", "href": "pages/about.html#mentoring", "icon": { "category": "footer", "key": "community", "alt": "Mentoring" } },
+          { "label": "Testimonials", "href": "pages/about.html#testimonials", "icon": { "category": "footer", "key": "community", "alt": "Testimonials" } }
         ]
       },
-      "resources": {
-        "title": "Resources",
+      "projects": {
+        "title": "Projects",
         "links": [
-          { "label": "Articles", "href": "#articles", "icon": { "category": "footer", "key": "resources", "alt": "Articles" } },
-          { "label": "Tutorials", "href": "#tutorials", "icon": { "category": "footer", "key": "resources", "alt": "Tutorials" } },
-          { "label": "Tools", "href": "#tools", "icon": { "category": "footer", "key": "resources", "alt": "Tools" } },
-          { "label": "Guides", "href": "#guides", "icon": { "category": "footer", "key": "resources", "alt": "Guides" } }
+          { "label": "ABC Site", "href": "https://abc-site.devvyy.xyz", "icon": { "category": "footer", "key": "projects", "alt": "ABC Site" } },
+          { "label": "My Tools", "href": "https://mytools.devvyy.xyz", "icon": { "category": "footer", "key": "projects", "alt": "Tools" } },
+          { "label": "Blog", "href": "https://blog.devvyy.xyz", "icon": { "category": "footer", "key": "projects", "alt": "Blog" } },
+          { "label": "Documentation", "href": "https://docs.devvyy.xyz", "icon": { "category": "footer", "key": "projects", "alt": "Docs" } }
         ]
       },
       "connect": {
         "title": "Connect",
         "links": [
-          { "label": "Contact", "href": "../pages/connect.html", "icon": { "category": "footer", "key": "connect", "alt": "Contact" } },
+          { "label": "Contact", "href": "pages/connect.html", "icon": { "category": "footer", "key": "connect", "alt": "Contact" } },
           { "label": "GitHub", "href": "social.github.url", "icon": { "category": "footer", "key": "connect", "alt": "GitHub" } },
           { "label": "LinkedIn", "href": "social.linkedin.url", "icon": { "category": "footer", "key": "connect", "alt": "LinkedIn" } },
           { "label": "Twitter", "href": "social.twitter.url", "icon": { "category": "footer", "key": "connect", "alt": "Twitter" } },
@@ -152,17 +152,17 @@
       "legal": {
         "title": "Legal",
         "links": [
-          { "label": "Sitemap", "href": "../pages/sitemap.html", "icon": { "category": "footer", "key": "legal", "alt": "Sitemap" } },
-          { "label": "Privacy Policy", "href": "../pages/privacy.html", "icon": { "category": "footer", "key": "legal", "alt": "Privacy" } },
-          { "label": "Terms of Use", "href": "../pages/terms.html", "icon": { "category": "footer", "key": "legal", "alt": "Terms" } },
+          { "label": "Sitemap", "href": "pages/sitemap.html", "icon": { "category": "footer", "key": "legal", "alt": "Sitemap" } },
+          { "label": "Privacy Policy", "href": "pages/privacy.html", "icon": { "category": "footer", "key": "legal", "alt": "Privacy" } },
+          { "label": "Terms of Use", "href": "pages/terms.html", "icon": { "category": "footer", "key": "legal", "alt": "Terms" } },
           { "label": "Accessibility", "href": "#accessibility", "icon": { "category": "footer", "key": "legal", "alt": "Accessibility" } }
         ]
       }
     },
     "bottomLinks": [
-      { "label": "Privacy Statement", "href": "../pages/privacy.html", "icon": { "category": "footer", "key": "legal", "alt": "Privacy" } },
-      { "label": "Terms of Use", "href": "../pages/terms.html", "icon": { "category": "footer", "key": "legal", "alt": "Terms" } },
-      { "label": "Contact", "href": "../pages/contact.html", "icon": { "category": "footer", "key": "connect", "alt": "Contact" } }
+      { "label": "Privacy Statement", "href": "pages/privacy.html", "icon": { "category": "footer", "key": "legal", "alt": "Privacy" } },
+      { "label": "Terms of Use", "href": "pages/terms.html", "icon": { "category": "footer", "key": "legal", "alt": "Terms" } },
+      { "label": "Contact", "href": "pages/contact.html", "icon": { "category": "footer", "key": "connect", "alt": "Contact" } }
     ]
   }
 }

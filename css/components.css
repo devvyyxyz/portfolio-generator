@@ -1275,6 +1275,11 @@
     position: relative;
 }
 
+.cert-icon-wrapper .icon-img {
+    width: 56px !important;
+    height: 56px !important;
+}
+
 .cert-icon-wrapper::after {
     content: "";
     position: absolute;

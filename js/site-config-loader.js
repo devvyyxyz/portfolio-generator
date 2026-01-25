@@ -183,6 +183,33 @@ class SiteConfigLoader {
     }
 
     /**
+     * Resolve relative paths based on current page location
+     * @private
+     */
+    _resolvePagePath(href) {
+        // If it's an absolute URL, social config path, or hash, return as-is
+        if (href.startsWith('http') || href.startsWith('social.') || href.startsWith('#')) {
+            return href;
+        }
+        
+        // Get current page filename
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const isRootPage = currentPage === 'index.html' || currentPage === '';
+        
+        // If we're on a root page and path starts with ../, remove it
+        if (isRootPage && href.startsWith('../')) {
+            return href.substring(3); // Remove '../'
+        }
+        
+        // If we're on a page and path doesn't start with ../, add it
+        if (!isRootPage && !href.startsWith('../') && href.startsWith('pages/')) {
+            return '../' + href;
+        }
+        
+        return href;
+    }
+
+    /**
      * Generate footer links from config
      * @private
      */
@@ -235,12 +262,23 @@ class SiteConfigLoader {
                 const textNode = document.createTextNode(link.label);
                 a.appendChild(textNode);
 
-                // Check if href is a config path (contains '.')
-                if (link.href.includes('.')) {
-                    a.href = this.get(link.href) || '#';
-                    a.target = '_blank';
-                } else {
+                // Determine href type and resolve appropriately
+                if (link.href.startsWith('http://') || link.href.startsWith('https://')) {
+                    // Absolute URL
                     a.href = link.href;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                } else if (link.href.startsWith('social.')) {
+                    // Config path for social links
+                    const resolvedHref = this.get(link.href);
+                    a.href = resolvedHref || '#';
+                    if (resolvedHref) {
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                    }
+                } else {
+                    // Page relative path
+                    a.href = this._resolvePagePath(link.href);
                 }
 
                 li.appendChild(a);
@@ -263,7 +301,9 @@ class SiteConfigLoader {
 
             footerConfig.bottomLinks.forEach((link, index) => {
                 const a = document.createElement('a');
-                a.href = link.href;
+                
+                // Resolve paths for page links
+                a.href = this._resolvePagePath(link.href || '#');
                 a.textContent = link.label;
                 footerBottomCenter.appendChild(a);
 

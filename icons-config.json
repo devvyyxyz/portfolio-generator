@@ -327,55 +327,55 @@
       "name": "About",
       "type": "image",
       "alt": "About",
-      "icon": "Assets/Icons/Windows Vista Icons/User001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "projects": {
       "name": "Projects",
       "type": "image",
       "alt": "Projects",
-      "icon": "Assets/Icons/Windows Vista Icons/Folder001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "services": {
       "name": "Services",
       "type": "image",
       "alt": "Services",
-      "icon": "Assets/Icons/Windows Vista Icons/App001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "technologies": {
       "name": "Technologies",
       "type": "image",
       "alt": "Technologies",
-      "icon": "Assets/Icons/Windows Vista Icons/H&D001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "experience": {
       "name": "Experience",
       "type": "image",
       "alt": "Experience",
-      "icon": "Assets/Icons/Windows Vista Icons/File078.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "community": {
       "name": "Community",
       "type": "image",
       "alt": "Community",
-      "icon": "Assets/Icons/Windows Vista Icons/User017.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "resources": {
       "name": "Resources",
       "type": "image",
       "alt": "Resources",
-      "icon": "Assets/Icons/Windows Vista Icons/File001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "connect": {
       "name": "Connect",
       "type": "image",
       "alt": "Connect",
-      "icon": "Assets/Icons/Windows Vista Icons/Net001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     },
     "legal": {
       "name": "Legal",
       "type": "image",
       "alt": "Legal",
-      "icon": "Assets/Icons/Windows Vista Icons/Paper001.ico"
+      "icon": "Assets/Icons/Windows Vista Icons/Alert048.ico"
     }
   }
 }

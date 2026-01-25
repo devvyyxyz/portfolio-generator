@@ -12,7 +12,7 @@ function initializeApp() {
     initThemeSwitcher();
     
     initToasts();
-    initDevOverlay();
+    // Secrets are initialized separately via SecretsManager
     
     // Content now loaded from HTML components via component-loader.js
     // No JSON data loading needed
@@ -424,60 +424,7 @@ function showToast(message, timeout = 3000) {
     }, timeout);
 }
 
-// Dev overlay (Ctrl+Shift+F)
-function initDevOverlay() {
-    if (window.__devOverlayInitialized) return;
-    window.__devOverlayInitialized = true;
-    let overlay = document.getElementById('devOverlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.id = 'devOverlay';
-        overlay.className = 'dev-overlay';
-        overlay.innerHTML = `
-            <h4>Developer Mode</h4>
-            <div class="dev-row"><span>Status</span><span id="dev-status">Idle</span></div>
-            <div class="dev-row"><span>Theme</span><span id="dev-theme">Metro Red</span></div>
-            <div class="dev-row"><span>Build</span><span>Aero v2.3.1</span></div>
-            <div class="dev-row"><span>RAM</span><span id="dev-ram">2.4 GB</span></div>
-            <div class="dev-row"><span>FPS</span><span id="dev-fps">60</span></div>
-        `;
-        document.body.appendChild(overlay);
-    }
-
-    // Sync dev overlay with current theme selection
-    const activeTheme = document.body.dataset.theme
-        || localStorage.getItem('portfolioTheme')
-        || ((window.siteConfig && window.siteConfig.get('theme.default')) || 'aero');
-    applyTheme(activeTheme, false);
-
-    let fpsLast = performance.now();
-    let frameCount = 0;
-    let fpsValue = 60;
-
-    function trackFPS(now) {
-        frameCount++;
-        if (now - fpsLast >= 1000) {
-            fpsValue = frameCount;
-            frameCount = 0;
-            fpsLast = now;
-            const fpsEl = document.getElementById('dev-fps');
-            if (fpsEl) fpsEl.textContent = fpsValue;
-        }
-        requestAnimationFrame(trackFPS);
-    }
-    requestAnimationFrame(trackFPS);
-
-    document.addEventListener('keydown', (e) => {
-        if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'f') {
-            overlay.classList.toggle('active');
-            const status = overlay.classList.contains('active') ? 'Online' : 'Hidden';
-            const statusEl = document.getElementById('dev-status');
-            if (statusEl) statusEl.textContent = status;
-            const ramEl = document.getElementById('dev-ram');
-            if (ramEl) ramEl.textContent = `${(2 + Math.random() * 6).toFixed(1)} GB`;
-        }
-    });
-}
+// Dev overlay moved to js/secrets.js - See SecretsManager class for extending
 
 // System Status widget - only on homepage
 function initSystemStatus() {

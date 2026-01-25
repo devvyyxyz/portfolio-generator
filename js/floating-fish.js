@@ -251,6 +251,7 @@ class FloatingFish {
 let fishSystem;
 
 function initializeFishButtons() {
+  if (window.Logger) window.Logger.info('Initializing fish system')
   if (!fishSystem) return;
   
   // Setup toggle buttons
@@ -258,9 +259,11 @@ function initializeFishButtons() {
   const fishToggleBtn = document.querySelector('.setting-toggle-btn[data-setting="fish"]');
   
   if (fishButtons.length === 0) {
-    console.warn('Fish buttons not found');
+    if (window.Logger) window.Logger.warn('Fish buttons not found');
     return;
   }
+  
+  if (window.Logger) window.Logger.info('Fish state', { isActive: fishSystem.isActive, maxFish: fishSystem.maxFish });
   
   fishButtons.forEach(btn => {
     btn.classList.remove('active');
@@ -361,12 +364,20 @@ document.addEventListener('componentsLoaded', () => {
 
 // Adjust fish state when config becomes ready (if user hasn't set a preference yet)
 window.addEventListener('siteConfigReady', () => {
+  if (window.Logger) window.Logger.event('siteConfigReady (fish)');
   if (!fishSystem) return;
   const fishLS = localStorage.getItem('portfolioFishEnabled');
-  if (fishLS !== null) return; // user preference already set
+  if (fishLS !== null) {
+    if (window.Logger) window.Logger.info('Fish preference already set by user');
+    return;
+  }
   const cfg = window.siteConfig && window.siteConfig.get('defaults.fishes');
-  if (cfg === undefined) return;
+  if (cfg === undefined) {
+    if (window.Logger) window.Logger.info('No config default for fishes');
+    return;
+  }
   const wantActive = !!cfg;
+  if (window.Logger) window.Logger.info('Applying fish config default', { wantActive: wantActive, current: fishSystem.isActive });
   if (wantActive && !fishSystem.isActive) {
     fishSystem.start();
   } else if (!wantActive && fishSystem.isActive) {

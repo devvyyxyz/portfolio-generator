@@ -252,6 +252,12 @@ button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn
   text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
 }
 
+/* Sidebar: keep toggle buttons compact, not full-width */
+.side-settings-bar .setting-toggle-btn {
+  width: auto;
+  min-width: 96px;
+}
+
 .setting-toggle-btn::after {
   content: "";
   position: absolute;

@@ -52,11 +52,16 @@ class IconConfigLoader {
             // Add cache busting parameter
             const cacheBuster = `?v=${Date.now()}`;
             
+            if (window.Logger) window.Logger.group('Icons Config', true);
+            if (window.Logger) window.Logger.info('Fetching icons-config', { path: configPath });
             const response = await fetch(configPath + cacheBuster);
             if (!response.ok) {
                 throw new Error(`Failed to load icons config: ${response.status}`);
             }
-            return await response.json();
+            const json = await response.json();
+            if (window.Logger) window.Logger.success('icons-config loaded');
+            if (window.Logger) window.Logger.groupEnd();
+            return json;
         } catch (error) {
             console.error('Error loading icons config:', error);
             return null;

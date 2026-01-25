@@ -71,24 +71,23 @@
 <script>
 // Load sidebar icons from config
 async function loadSidebarIcons() {
-    console.log('loadSidebarIcons called, iconConfig:', window.iconConfig)
+    if (window.Logger) window.Logger.info('loadSidebarIcons')
     
     if (!window.iconConfig) {
-        console.log('iconConfig not ready, retrying in 100ms')
+        if (window.Logger) window.Logger.warn('iconConfig not ready, retrying in 100ms')
         setTimeout(loadSidebarIcons, 100)
         return
     }
 
     try {
-        console.log('Loading sidebar icons...')
         var iconKeys = ['text-size', 'sounds', 'music', 'particles', 'fish']
         var basePath = window.location.pathname.includes('/pages/') ? '../' : ''
         
-        console.log('Base path:', basePath)
+        if (window.Logger) window.Logger.info('Base path', basePath)
 
         // Wait for config to be loaded
         await window.iconConfig.load()
-        console.log('Config loaded')
+        if (window.Logger) window.Logger.success('iconConfig loaded')
 
         for (var i = 0; i < iconKeys.length; i++) {
             var key = iconKeys[i]
@@ -103,41 +102,41 @@ async function loadSidebarIcons() {
             try {
                 // Get icon from config
                 var iconData = await window.iconConfig.getIcon('sidebar', key)
-                console.log('Icon data for', key, ':', iconData)
+                if (window.Logger) window.Logger.info('Icon', { key: key })
                 
                 if (iconData && iconData.icon) {
                     var encodedPath = encodeURI(basePath + iconData.icon)
-                    console.log('Setting src for', key, 'to:', encodedPath)
                     el.src = encodedPath
                     el.style.display = 'block'
-                    console.log('✓ Icon set successfully for', key)
+                    if (window.Logger) window.Logger.success('Icon set', { key: key, src: encodedPath })
                 } else {
-                    console.warn('Icon data invalid for:', key, iconData)
+                    if (window.Logger) window.Logger.warn('Icon data invalid', { key: key, data: iconData })
                 }
             } catch (err) {
-                console.error('Error processing icon:', key, err)
+                if (window.Logger) window.Logger.error('Error processing icon', { key: key, error: String(err) })
             }
         }
     } catch (err) {
-        console.error('Error in loadSidebarIcons:', err)
+        if (window.Logger) window.Logger.error('Error in loadSidebarIcons', { error: String(err) })
     }
 }
 
 // Start loading when ready
-console.log('Sidebar script executing, document ready state:', document.readyState)
+if (window.Logger) window.Logger.group('Sidebar Icons', true)
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOMContentLoaded fired')
+        if (window.Logger) window.Logger.event('DOMContentLoaded')
         loadSidebarIcons()
     })
 } else {
-    console.log('Calling loadSidebarIcons immediately')
+    if (window.Logger) window.Logger.info('Loading sidebar icons')
     loadSidebarIcons()
 }
 
 // Also listen for config ready event
 window.addEventListener('iconConfigReady', function() {
-    console.log('iconConfigReady event fired')
+    if (window.Logger) window.Logger.event('iconConfigReady')
     loadSidebarIcons()
+    if (window.Logger) window.Logger.groupEnd()
 })
 </script>

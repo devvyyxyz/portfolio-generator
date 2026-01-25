@@ -49,11 +49,16 @@ class SiteConfigLoader {
             // Add cache busting parameter to ensure fresh data
             const cacheBuster = `?v=${Date.now()}`;
             
+            if (window.Logger) window.Logger.group('Site Config', true);
+            if (window.Logger) window.Logger.info('Fetching site-config', { path: configPath });
             const response = await fetch(configPath + cacheBuster);
             if (!response.ok) {
                 throw new Error(`Failed to load config: ${response.status}`);
             }
-            return await response.json();
+            const json = await response.json();
+            if (window.Logger) window.Logger.success('Site-config loaded');
+            if (window.Logger) window.Logger.groupEnd();
+            return json;
         } catch (error) {
             console.error('Error loading site config:', error);
             // Return minimal fallback config
@@ -294,6 +299,7 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', async () => {
         await window.siteConfig.load();
         window.siteConfig.applyToDOM();
+        if (window.Logger) window.Logger.event('siteConfigReady');
         
         // Dispatch event to notify other scripts that config is ready
         window.dispatchEvent(new CustomEvent('siteConfigReady', { detail: window.siteConfig.getAll() }));
@@ -311,6 +317,6 @@ document.addEventListener('componentsLoaded', () => {
     if (window.siteConfig && window.siteConfig.config) {
         window.siteConfig.applyToDOM();
         window.siteConfig.applyFooterLinks();
-        console.log('Config reapplied after components loaded');
+        if (window.Logger) window.Logger.info('Config reapplied after components loaded');
     }
 });

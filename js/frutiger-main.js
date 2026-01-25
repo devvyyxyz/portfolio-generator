@@ -2,6 +2,13 @@
 
 // Initialize after components are loaded
 function initializeApp() {
+    // Styled banner and startup group
+    if (window.Logger) {
+        window.Logger.banner();
+        window.Logger.group('Startup');
+        window.Logger.info('Initializing Frutiger Aero UI');
+    }
+
     initThemeSwitcher();
     
     initToasts();
@@ -67,6 +74,18 @@ function initializeApp() {
         ? (musicLS !== 'false')
         : (configDefaults.music !== undefined ? !!configDefaults.music : true);
     let musicOn = musicEnabled;
+
+    if (window.Logger) {
+        window.Logger.info('Defaults', configDefaults);
+        window.Logger.info('Theme', (document.body && document.body.dataset.theme) || 'unknown');
+        window.Logger.info('LocalStorage', {
+            theme: localStorage.getItem('portfolioTheme'),
+            sounds: soundLS,
+            music: musicLS,
+            textSize: localStorage.getItem('portfolioTextSize'),
+            particles: localStorage.getItem('portfolioParticlesEnabled'),
+        });
+    }
     
     const musicPlaylist = [
         `${assetBasePath}Assets/music/home.mp3`,
@@ -162,7 +181,7 @@ function initializeApp() {
     if (musicOn) {
         setTimeout(() => {
             musicPlayer.play().catch(e => {
-                console.log('Music autoplay blocked. Click anywhere to start.');
+                if (window.Logger) window.Logger.warn('Music autoplay blocked. User interaction required.');
             });
         }, 1000);
     }
@@ -304,6 +323,11 @@ function initializeApp() {
             navMenu.classList.remove('active');
         }
     });
+
+    if (window.Logger) {
+        window.Logger.success('Startup complete');
+        window.Logger.groupEnd();
+    }
 }
 
 // Theme Switcher
@@ -694,7 +718,7 @@ function buildSocial(profiles) {
 
 // Initialize on components loaded
 document.addEventListener('componentsLoaded', function() {
-    console.log('Components loaded, initializing app...');
+    if (window.Logger) window.Logger.event('componentsLoaded');
     initializeApp();
 });
 

@@ -8,6 +8,7 @@
 
 /* Components & UI (consolidated) */
 @import url("components.css");
+@import url("icons.css");
 
 /* Forms & Inputs */
 @import url("forms.css");

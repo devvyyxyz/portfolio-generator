@@ -454,14 +454,27 @@
   }
 }
 
+/* Footer Placeholder - Remove all spacing */
+#footerPlaceholder {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
 /* Windows Vista-Inspired Footer */
 .vista-footer {
   background: linear-gradient(180deg, rgba(100, 150, 200, 0.3) 0%, rgba(80, 120, 180, 0.35) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  margin-top: 4rem;
+  margin-top: auto;
   padding: 3rem 2rem;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .footer-container {

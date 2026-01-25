@@ -159,7 +159,7 @@ a {
 
 a:hover {
   color: var(--color-accent-blue);
-  text-decoration: underline;
+  text-decoration: none;
   transition-duration: 0.2s;
 }
 

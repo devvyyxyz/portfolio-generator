@@ -80,7 +80,7 @@
 }
 
 .contact-card a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .testimonials-section {

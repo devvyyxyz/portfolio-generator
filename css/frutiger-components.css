@@ -66,7 +66,8 @@
 }
 
 .nav-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .settings-side-vertical-separators {

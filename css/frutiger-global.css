@@ -104,7 +104,7 @@ a {
 }
 a:hover {
   color: rgba(223, 223, 223, 0.9);
-  text-decoration: underline;
+  text-decoration: none;
   transition-duration: 0.2s;
 }
 
@@ -137,7 +137,7 @@ button {
   text-decoration: none;
 }
 .buttons-no-underline a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Margin top for sections */
@@ -333,7 +333,7 @@ button {
   color: rgba(255, 255, 255, 0.9);
 }
 .button-links-inactive:hover span {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Styling for main navigation bar */

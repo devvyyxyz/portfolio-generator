@@ -554,7 +554,7 @@
 
 .footer-links a:hover {
   color: rgba(255, 255, 255, 1);
-  text-decoration: underline;
+  text-decoration: none;
   transform: translateX(2px);
 }
 

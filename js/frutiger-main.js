@@ -424,6 +424,9 @@ function showToast(message, timeout = 3000) {
     }, timeout);
 }
 
+// Expose globally for secrets
+window.showToast = showToast;
+
 // Dev overlay moved to js/secrets.js - See SecretsManager class for extending
 
 // System Status widget - only on homepage

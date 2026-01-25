@@ -85,24 +85,137 @@
 
                         <!-- Hidden Developer Mode Tutorial -->
                         <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px dashed rgba(255, 255, 255, 0.2);">
-                            <details style="cursor: pointer;">
-                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none;">🔐 Secret Developer Mode</summary>
-                                <div style="margin-top: 1rem; padding: 1rem; background: rgba(63, 169, 245, 0.1); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
-                                    <p style="margin: 0 0 0.5rem 0;"><strong>Hidden Feature:</strong> Developer Mode Overlay</p>
-                                    <p style="margin: 0 0 1rem 0; font-size: 0.9rem; opacity: 0.85;">A secret panel to monitor system status in real-time.</p>
-                                    <p style="margin: 0 0 0.5rem 0;"><strong>How to activate:</strong></p>
+                            <h2 style="color: var(--color-accent-blue); margin-bottom: 1rem;">🔐 Secret Easter Eggs & Developer Hotkeys</h2>
+                            <p style="opacity: 0.8; margin-bottom: 1.5rem;">A collection of hidden features and easter eggs. Expand each to learn how to activate!</p>
+
+                            <!-- Dev Overlay -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">🖥️ Developer Mode Overlay</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Hotkey:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Ctrl+Shift+F</code> (Mac: <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Cmd+Shift+F</code>)</p>
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Displays:</strong> Status, Theme, Build, Page Name, Browser, Memory, Latency, Music Status, FPS</p>
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Panel appears in bottom-right corner with real-time system info</em></p>
+                                    <button onclick="document.getElementById('devOverlay')?.classList.toggle('active')" style="margin-top: 8px; padding: 6px 12px; background: #3fa9f5; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Toggle Dev Overlay</button>
+                                </div>
+                            </details>
+
+                            <!-- Konami Code -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">🎮 Konami Code</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Sequence:</strong> ↑ ↑ ↓ ↓ ← → ← → B A</p>
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Effect:</strong> Triggers confetti celebration with gaming emojis 🎮</p>
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Classic arcade cheat code! Works anywhere on the site</em></p>
+                                    <button onclick="window.secretsManager?.triggerKonamiCode()" style="margin-top: 8px; padding: 6px 12px; background: #3fa9f5; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Trigger Konami Code</button>
+                                </div>
+                            </details>
+
+                            <!-- Matrix Rain -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">🟢 Matrix Rain</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Hotkey:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Ctrl+Shift+M</code></p>
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Press again to toggle off. Full Matrix experience!</em></p>
+                                    <button onclick="let active = document.getElementById('matrix-canvas'); if(active) window.secretsManager?.stopMatrixRain(); else window.secretsManager?.startMatrixRain();" style="margin-top: 8px; padding: 6px 12px; background: #0f0; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Toggle Matrix Rain</button
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Press again to toggle off. Full Matrix experience!</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Disco Mode -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">✨ Disco Mode</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Hotkey:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Ctrl+Shift+D</code></p>
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Get your party on! Toggle off with same hotkey</em></p>
+                                    <button onclick="window.secretsManager?.toggleDiscoMode()" style="margin-top: 8px; padding: 6px 12px; background: linear-gradient(90deg, #ff0080, #00ff00, #0080ff); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Toggle Disco Mode</button>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Get your party on! Toggle off with same hotkey</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Portfolio Stats -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">📊 Portfolio Statistics</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Hotkey:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Ctrl+Shift+S</code></p>
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Modal popup with detailed portfolio metrics</em></p>
+                                    <button onclick="window.secretsManager?.showPortfolioStats()" style="margin-top: 8px; padding: 6px 12px; background: #3fa9f5; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Show Portfolio Stats</button, etc.</p>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Modal popup with detailed portfolio metrics</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Terminal -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">💻 Terminal Emulator</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Appears in bottom-left corner. Toggle to hide</em></p>
+                                    <button onclick="window.secretsManager?.toggleTerminal()" style="margin-top: 8px; padding: 6px 12px; background: #0f0; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Toggle Terminal</buttonx; border-radius: 3px;">Ctrl+Shift+T</code></p>
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Effect:</strong> Hacker-style terminal window with retro green text</p>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Appears in bottom-left corner. Toggle to hide</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Memory Game -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">🎮 Memory Match Game</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Fun mini-game! Click the close button to exit</em></p>
+                                    <button onclick="window.secretsManager?.startMemoryGame()" style="margin-top: 8px; padding: 6px 12px; background: #3fa9f5; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Start Memory Game</buttonx; border-radius: 3px;">Ctrl+Shift+G</code></p>
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Gameplay:</strong> Click cards to reveal matching emoji pairs</p>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Fun mini-game! Click the close button to exit</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Credits Roll -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">🎬 Credits Roll</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Click anywhere to exit early</em></p>
+                                    <button onclick="window.secretsManager?.startCreditsRoll()" style="margin-top: 8px; padding: 6px 12px; background: #3fa9f5; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Start Credits Roll</button; padding: 2px 6px; border-radius: 3px;">Ctrl+Shift+C</code></p>
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Effect:</strong> Scrolling Y2K-style credits with thanks</p>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Click anywhere to exit early</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Logo Click -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">🖱️ Logo Click Secret</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Action:</strong> Click the navbar logo repeatedly</p>
                                     <ul style="margin: 0.5rem 0 1rem 1.5rem; padding: 0;">
-                                        <li style="margin: 0.3rem 0;"><code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Ctrl+Shift+F</code> (or <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Cmd+Shift+F</code> on Mac)</li>
+                                        <li style="margin: 0.3rem 0;">5 clicks: Toast message appears</li>
+                                        <li style="margin: 0.3rem 0;">10 clicks: ULTIMATE POWER UNLOCKED! 🌟</li>
                                     </ul>
-                                    <p style="margin: 0 0 0.5rem 0;"><strong>What you'll see:</strong></p>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Combined with Konami code for extra fun!</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Secret Chat -->
+                            <details style="cursor: pointer; margin-bottom: 1rem;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">💬 Secret Chat Phrases</summary>
+                                <div style="margin-top: 0.5rem; padding: 1rem; background: rgba(63, 169, 245, 0.05); border-left: 3px solid var(--color-accent-blue); border-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>How:</strong> Type phrases naturally on the page</p>
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Try these:</strong></p>
                                     <ul style="margin: 0.5rem 0 1rem 1.5rem; padding: 0; font-size: 0.9rem;">
-                                        <li style="margin: 0.3rem 0;">Current status (Online/Idle)</li>
-                                        <li style="margin: 0.3rem 0;">Active theme</li>
-                                        <li style="margin: 0.3rem 0;">Build version</li>
-                                        <li style="margin: 0.3rem 0;">Real-time FPS counter</li>
-                                        <li style="margin: 0.3rem 0;">Simulated system RAM usage</li>
+                                        <li>"the cake is a lie" → 🍰 Portal reference!</li>
+                                        <li>"konami" → ↑↑↓↓←→←→BA</li>
+                                        <li>"aero" → 🎨 Frutiger Aero FTW!</li>
+                                        <li>"easter egg" → 🥚 You found me!</li>
+                                        <li>"hello" → 👋 Hi there!</li>
+                                        <li>"matrix" → 🟢 Follow the white rabbit</li>
+                                        <li>"disco" → ✨ Let's get groovy!</li>
                                     </ul>
-                                    <p style="margin: 0; font-size: 0.85rem; opacity: 0.7;"><em>💡 Tip: Press the hotkey again to hide the overlay. Try it out!</em></p>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 More phrases exist to discover!</em></p>
+                                </div>
+                            </details>
+
+                            <!-- Music Visualizer -->
+                            <details style="cursor: pointer;">
+                                <summary style="color: var(--color-accent-blue); font-weight: 600; user-select: none; padding: 8px; background: rgba(63, 169, 245, 0.1); border-radius: 4px;">🎵 Music Visualizer</summary>
+                                <div style="margin-top: 0 0.5rem 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Enable music in sidebar to see it react! Toggle with same hotkey</em></p>
+                                    <button onclick="window.secretsManager?.toggleMusicVisualizer()" style="margin-top: 8px; padding: 6px 12px; background: linear-gradient(to top, #3fa9f5, #2ecc71); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Toggle Music Visualizer</buttoner-radius: 4px;">
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Hotkey:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">Ctrl+Shift+V</code></p>
+                                    <p style="margin: 0 0 0.5rem 0;"><strong>Effect:</strong> Animated frequency bars in bottom-right corner</p>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;"><em>💡 Enable music in sidebar to see it react! Toggle with same hotkey</em></p>
                                 </div>
                             </details>
                         </div>

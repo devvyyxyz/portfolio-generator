@@ -92,10 +92,9 @@ async function loadSidebarIcons() {
         for (var i = 0; i < iconKeys.length; i++) {
             var key = iconKeys[i]
             var el = document.getElementById(key + '-icon')
-            console.log('Processing icon:', key, 'Element:', el)
             
             if (!el) {
-                console.warn('Element not found for:', key)
+                if (window.Logger) window.Logger.warn('Element not found for: ' + key)
                 continue
             }
 

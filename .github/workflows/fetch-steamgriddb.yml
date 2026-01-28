@@ -22,33 +22,39 @@ jobs:
         # Create the data directory if it doesn't exist
         mkdir -p data
         
-        # Fetch SteamGridDB user submissions/grids
-        # Using the user endpoint with the Steam ID
-        curl -s -X GET "https://www.steamgriddb.com/api/v2/creators/76561199244651878/grids" \
+        # Fetch the authenticated user's own grids using the API key
+        echo "Fetching your SteamGridDB grids..."
+        curl -v -X GET "https://www.steamgriddb.com/api/v2/users/current/grids" \
           -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
           -H "Accept: application/json" \
-          -o data/steamgriddb.json
+          -o data/steamgriddb.json 2>&1 | head -20
         
-        # Also try alternative endpoint - get user's own submissions
-        if [ ! -s data/steamgriddb.json ] || grep -q "DOCTYPE" data/steamgriddb.json; then
-          echo "First endpoint failed, trying alternative endpoint..."
-          curl -s -X GET "https://www.steamgriddb.com/api/v2/grids/creators/76561199244651878" \
+        # Check response
+        if grep -q "DOCTYPE\|404\|Unauthorized" data/steamgriddb.json 2>/dev/null; then
+          echo "Current endpoint failed, trying alternative..."
+          curl -s -X GET "https://www.steamgriddb.com/api/v2/authenticated/grids" \
             -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
             -H "Accept: application/json" \
             -o data/steamgriddb.json
         fi
         
-        # Check if we got valid JSON data
-        if grep -q "DOCTYPE" data/steamgriddb.json || [ ! -s data/steamgriddb.json ]; then
-          echo "Error: Could not fetch valid data from SteamGridDB API"
-          echo "Response:"
-          head -20 data/steamgriddb.json
-          exit 1
-        else
+        # Final check
+        if grep -q "DOCTYPE\|404" data/steamgriddb.json 2>/dev/null; then
+          echo "Still failed, trying user endpoint to get ID first..."
+          curl -s -X GET "https://www.steamgriddb.com/api/v2/users" \
+            -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
+            -H "Accept: application/json" \
+            -o data/steamgriddb.json
+        fi
+        
+        # Display response
+        echo "Response received:"
+        cat data/steamgriddb.json
+        
+        if ! grep -q "DOCTYPE\|error\|404" data/steamgriddb.json 2>/dev/null && [ -s data/steamgriddb.json ]; then
           echo "Successfully fetched SteamGridDB data"
-          # Count the entries
-          COUNT=$(grep -o '"id"' data/steamgriddb.json | wc -l)
-          echo "Total entries: $COUNT"
+        else
+          echo "Warning: Response may contain errors"
         fi
 
     - name: Commit and push changes

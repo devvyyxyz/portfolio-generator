@@ -1,0 +1,80 @@
+# === Portfolio Generator .gitignore ===
+# Node.js dependencies
+node_modules/
+
+# Python virtual environments
+.venv/
+venv/
+
+# Build and output
+build/
+dist/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables and secrets
+.env
+.env.*
+js/secrets.js
+
+# Data (ignore all except .gitkeep)
+data/*
+!data/.gitkeep
+
+# Coverage
+coverage/
+
+# OS generated files
+*.swp
+*.bak
+
+# Test output
+/test-output/
+
+# Local scripts
+scripts/local-*
+
+# Ignore compiled JS map files
+*.map
+
+# Ignore generated JSON from workflows
+data/github-*.json
+data/steamgriddb.json
+data/stackoverflow-*.json
+data/codepen-*.json
+data/youtube-*.json
+data/linkedin-*.json
+
+# Ignore compiled site if using static export
+public/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore backup files
+*~
+
+# Ignore Mac resource forks
+*.AppleDouble
+
+# Ignore npm package lock
+package-lock.json
+yarn.lock
+
+# Ignore any user-specific config
+*.user

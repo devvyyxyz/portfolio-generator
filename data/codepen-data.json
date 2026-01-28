@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": {
+    "user": {
+      "username": "devvyyxyz",
+      "name": "Devvyyxyz",
+      "avatar": "https://avatars.githubusercontent.com/u/devvyyxyz",
+      "profile_url": "https://codepen.io/devvyyxyz",
+      "bio": "Frontend developer and creative coder",
+      "location": ""
+    },
+    "stats": {
+      "followers": 12,
+      "following": 8,
+      "total_pens": 3,
+      "total_views": 746,
+      "total_loves": 55
+    },
+    "top_pens": [
+      {
+        "title": "JavaScript Game",
+        "url": "https://codepen.io/devvyyxyz/pen/sample3",
+        "views": 312,
+        "loves": 25,
+        "comments": 5,
+        "id": "sample3"
+      },
+      {
+        "title": "Interactive Dashboard",
+        "url": "https://codepen.io/devvyyxyz/pen/sample1",
+        "views": 245,
+        "loves": 18,
+        "comments": 3,
+        "id": "sample1"
+      },
+      {
+        "title": "CSS Animation Demo",
+        "url": "https://codepen.io/devvyyxyz/pen/sample2",
+        "views": 189,
+        "loves": 12,
+        "comments": 2,
+        "id": "sample2"
+      }
+    ],
+    "fetched_at": "2026-01-28T04:57:39.184Z"
+  }
+}

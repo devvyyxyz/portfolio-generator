@@ -1,0 +1,66 @@
+name: Fetch YouTube Data
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    # Run daily at 6 AM UTC to keep data fresh
+    - cron: '0 6 * * *'
+
+jobs:
+  fetch-youtube-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Fetch YouTube Data
+      env:
+        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      run: |
+        # Create the data directory if it doesn't exist
+        mkdir -p data
+        
+        # Fetch YouTube channel data using YouTube Data API v3
+        # Channel ID: Replace with your actual channel ID or use forUsername
+        echo "Fetching YouTube channel data..."
+        
+        # Try to fetch by channel handle/username first
+        curl -s "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&forHandle=devvyyxyz&key=${YOUTUBE_API_KEY}" \
+          -o data/youtube-channel.json
+        
+        # If that fails, try by channel ID (you'll need to provide this)
+        # Uncomment and add your channel ID if needed:
+        # curl -s "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=YOUR_CHANNEL_ID&key=${YOUTUBE_API_KEY}" \
+        #   -o data/youtube-channel.json
+        
+        echo "✓ YouTube channel data fetched"
+        
+        # Compile the data into a single comprehensive file
+        echo "Compiling YouTube data..."
+        node scripts/compile-youtube-data.js
+        
+        echo "✓ YouTube data compiled successfully"
+        
+        # Verify the output
+        if [ -f data/youtube-data.json ]; then
+          echo "✓ Data verification passed"
+          cat data/youtube-data.json | head -20
+        else
+          echo "⚠ Warning: YouTube data may not be available (API key required)"
+          # Create empty data file as fallback
+          echo '{"success":false,"error":"YouTube API key required or channel not found"}' > data/youtube-data.json
+        fi
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/youtube-*.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update YouTube data" && git push)

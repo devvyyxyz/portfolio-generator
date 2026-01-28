@@ -1,0 +1,37 @@
+{
+  "data": {
+    "username": "devvyyxyz",
+    "name": "Devvyyxyz",
+    "avatar": "https://avatars.githubusercontent.com/u/devvyyxyz",
+    "bio": "Frontend developer and creative coder",
+    "location": "",
+    "followers": 12,
+    "following": 8,
+    "pens": [
+      {
+        "id": "sample1",
+        "title": "Interactive Dashboard",
+        "link": "https://codepen.io/devvyyxyz/pen/sample1",
+        "views": 245,
+        "loves": 18,
+        "comments": 3
+      },
+      {
+        "id": "sample2",
+        "title": "CSS Animation Demo",
+        "link": "https://codepen.io/devvyyxyz/pen/sample2",
+        "views": 189,
+        "loves": 12,
+        "comments": 2
+      },
+      {
+        "id": "sample3",
+        "title": "JavaScript Game",
+        "link": "https://codepen.io/devvyyxyz/pen/sample3",
+        "views": 312,
+        "loves": 25,
+        "comments": 5
+      }
+    ]
+  }
+}

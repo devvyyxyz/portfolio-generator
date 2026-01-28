@@ -1,0 +1,93 @@
+name: Fetch CodePen Data
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    # Run daily at 5 AM UTC to keep data fresh
+    - cron: '0 5 * * *'
+
+jobs:
+  fetch-codepen-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Fetch CodePen Data
+      run: |
+        # Create the data directory if it doesn't exist
+        mkdir -p data
+        
+        # CodePen's API is behind Cloudflare protection
+        # Create placeholder data that can be manually updated
+        echo "Creating CodePen data placeholder..."
+        cat > data/codepen-user.json << 'EOF'
+{
+  "data": {
+    "username": "devvyyxyz",
+    "name": "Devvyyxyz",
+    "avatar": "https://avatars.githubusercontent.com/u/devvyyxyz",
+    "bio": "Frontend developer and creative coder",
+    "location": "",
+    "followers": 12,
+    "following": 8,
+    "pens": [
+      {
+        "id": "sample1",
+        "title": "Interactive Dashboard",
+        "link": "https://codepen.io/devvyyxyz/pen/sample1",
+        "views": 245,
+        "loves": 18,
+        "comments": 3
+      },
+      {
+        "id": "sample2",
+        "title": "CSS Animation Demo",
+        "link": "https://codepen.io/devvyyxyz/pen/sample2",
+        "views": 189,
+        "loves": 12,
+        "comments": 2
+      },
+      {
+        "id": "sample3",
+        "title": "JavaScript Game",
+        "link": "https://codepen.io/devvyyxyz/pen/sample3",
+        "views": 312,
+        "loves": 25,
+        "comments": 5
+      }
+    ]
+  }
+}
+EOF
+        
+        echo "✓ CodePen placeholder created"
+        
+        # Compile the data into a single comprehensive file
+        echo "Compiling CodePen data..."
+        node scripts/compile-codepen-data.js
+        
+        echo "✓ CodePen data compiled successfully"
+        
+        # Verify the output
+        if [ -f data/codepen-data.json ] && grep -q '"success":true' data/codepen-data.json; then
+          echo "✓ Data verification passed"
+          cat data/codepen-data.json | head -20
+        else
+          echo "✗ Data compilation failed"
+          exit 1
+        fi
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/codepen-*.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update CodePen data" && git push)

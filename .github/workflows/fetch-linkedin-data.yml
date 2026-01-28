@@ -1,0 +1,61 @@
+name: Fetch LinkedIn Data
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    # Run daily at 7 AM UTC to keep data fresh
+    - cron: '0 7 * * *'
+
+jobs:
+  fetch-linkedin-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Fetch LinkedIn Data
+      run: |
+        # Create the data directory if it doesn't exist
+        mkdir -p data
+        
+        # LinkedIn doesn't have a public API for profile stats
+        # We'll create a placeholder that can be manually updated
+        # or use LinkedIn's RSS feed if available
+        
+        echo "Creating LinkedIn data placeholder..."
+        
+        # You can manually update this data or use LinkedIn API if you have access
+        cat > data/linkedin-user.json << 'EOF'
+{
+  "username": "devvyyxyz",
+  "profile_url": "https://www.linkedin.com/in/devvyyxyz",
+  "connections": 0,
+  "posts": 0,
+  "followers": 0,
+  "note": "LinkedIn data requires manual update or API access"
+}
+EOF
+        
+        echo "✓ LinkedIn placeholder created"
+        
+        # Compile the data into a single comprehensive file
+        echo "Compiling LinkedIn data..."
+        node scripts/compile-linkedin-data.js
+        
+        echo "✓ LinkedIn data compiled successfully"
+        
+        cat data/linkedin-data.json
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/linkedin-*.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update LinkedIn data" && git push)

@@ -497,6 +497,194 @@ function displayStackOverflowFallback() {
 }
 
 /**
+ * Fetch CodePen data
+ */
+async function fetchCodePenData() {
+    const container = document.getElementById('codepenData');
+    if (!container) return;
+
+    // Display coming soon message
+    container.innerHTML = `
+        <div class="platform-stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">🎨</div>
+                <div class="stat-label">Coming Soon</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">--</div>
+                <div class="stat-label">Pens</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">--</div>
+                <div class="stat-label">Loves</div>
+            </div>
+        </div>
+        <div style="grid-column: 1 / -1; margin-top: var(--spacing-md); text-align: center; color: var(--text-muted); font-size: 0.95em;">
+            <p>CodePen integration will be implemented later</p>
+        </div>
+    `;
+}
+
+/**
+ * Fetch YouTube data
+ */
+async function fetchYouTubeData() {
+    const container = document.getElementById('youtubeData');
+    if (!container) return;
+
+    try {
+        const response = await fetch('/data/youtube-data.json');
+        
+        if (!response.ok) {
+            console.warn('YouTube data file not found');
+            displayYouTubeFallback();
+            return;
+        }
+
+        const data = await response.json();
+        
+        if (!data.success || !data.data) {
+            displayYouTubeFallback();
+            return;
+        }
+
+        const { channel, stats } = data.data;
+
+        // Display YouTube stats
+        let html = `
+            <div class="platform-stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">${stats.subscribers?.toLocaleString() || 0}</div>
+                    <div class="stat-label">Subscribers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.total_videos || 0}</div>
+                    <div class="stat-label">Videos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.total_views?.toLocaleString() || 0}</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+            </div>
+        `;
+
+        if (channel.description) {
+            html += `
+                <div class="platform-description">
+                    <p>${channel.description.substring(0, 200)}${channel.description.length > 200 ? '...' : ''}</p>
+                </div>
+            `;
+        }
+
+        container.innerHTML = html;
+
+        // Add profile link
+        const linkHtml = `<a href="${channel.profile_url}" target="_blank" style="display: block; margin-top: var(--spacing-md); text-align: center; color: var(--color-accent-blue); text-decoration: none; font-weight: 600;">Visit YouTube Channel →</a>`;
+        container.innerHTML += linkHtml;
+
+        console.log(`Successfully loaded YouTube data for ${channel.title}`);
+
+    } catch (error) {
+        console.error('Error loading YouTube data:', error);
+        displayYouTubeFallback();
+    }
+}
+
+/**
+ * Display YouTube fallback message
+ */
+function displayYouTubeFallback() {
+    const container = document.getElementById('youtubeData');
+    if (container) {
+        container.innerHTML = `
+            <div class="loading-message">
+                <p style="color: var(--text-muted);">YouTube data requires API key configuration.</p>
+                <p style="color: var(--text-muted); font-size: 0.9em;">Add YOUTUBE_API_KEY to GitHub secrets to enable.</p>
+            </div>
+        `;
+    }
+}
+
+/**
+ * Fetch LinkedIn data
+ */
+async function fetchLinkedInData() {
+    const container = document.getElementById('linkedinData');
+    if (!container) return;
+
+    try {
+        const response = await fetch('/data/linkedin-data.json');
+        
+        if (!response.ok) {
+            console.warn('LinkedIn data file not found');
+            displayLinkedInFallback();
+            return;
+        }
+
+        const data = await response.json();
+        
+        if (!data.success || !data.data) {
+            displayLinkedInFallback();
+            return;
+        }
+
+        const { user, stats } = data.data;
+
+        // Display LinkedIn stats
+        let html = `
+            <div class="platform-stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">${stats.connections || 0}+</div>
+                    <div class="stat-label">Connections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.followers || 0}</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.posts || 0}</div>
+                    <div class="stat-label">Posts</div>
+                </div>
+            </div>
+        `;
+
+        if (data.data.note) {
+            html += `
+                <div class="platform-note" style="margin-top: var(--spacing-md); padding: var(--spacing-sm); background: var(--surface-2); border-radius: var(--radius-md); font-size: 0.9em; color: var(--text-muted);">
+                    <p>ℹ️ ${data.data.note}</p>
+                </div>
+            `;
+        }
+
+        container.innerHTML = html;
+
+        // Add profile link
+        const linkHtml = `<a href="${user.profile_url}" target="_blank" style="display: block; margin-top: var(--spacing-md); text-align: center; color: var(--color-accent-blue); text-decoration: none; font-weight: 600;">Visit LinkedIn Profile →</a>`;
+        container.innerHTML += linkHtml;
+
+        console.log(`Successfully loaded LinkedIn data for ${user.username}`);
+
+    } catch (error) {
+        console.error('Error loading LinkedIn data:', error);
+        displayLinkedInFallback();
+    }
+}
+
+/**
+ * Display LinkedIn fallback message
+ */
+function displayLinkedInFallback() {
+    const container = document.getElementById('linkedinData');
+    if (container) {
+        container.innerHTML = `
+            <div class="loading-message">
+                <p style="color: var(--text-muted);">LinkedIn data requires manual configuration.</p>
+            </div>
+        `;
+    }
+}
+
+/**
  * Initialize all API calls
  */
 function initializeOpenSourceData() {
@@ -507,12 +695,18 @@ function initializeOpenSourceData() {
             fetchSteamGridDBData();
             fetchGitHubData();
             fetchStackOverflowData();
+            fetchCodePenData();
+            fetchYouTubeData();
+            fetchLinkedInData();
         });
     } else {
         fetchProtonDBData();
         fetchSteamGridDBData();
         fetchGitHubData();
         fetchStackOverflowData();
+        fetchCodePenData();
+        fetchYouTubeData();
+        fetchLinkedInData();
     }
 }
 

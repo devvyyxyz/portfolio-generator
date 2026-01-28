@@ -1,0 +1,45 @@
+name: Fetch SteamGridDB Data
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    # Run daily at 2 AM UTC to keep data fresh
+    - cron: '0 2 * * *'
+
+jobs:
+  fetch-steamgriddb:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Fetch SteamGridDB Data
+      env:
+        STEAMGRIDDB_API_KEY: ${{ secrets.STEAMGRIDDB_API_KEY }}
+      run: |
+        # Create the data directory if it doesn't exist
+        mkdir -p data
+        
+        # Fetch SteamGridDB user data
+        curl -s -X GET "https://www.steamgriddb.com/api/v2/creators/76561199244651878/grids" \
+          -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
+          -H "Accept: application/json" \
+          -o data/steamgriddb.json
+        
+        # Check if we got valid data
+        if [ -s data/steamgriddb.json ]; then
+          echo "Successfully fetched SteamGridDB data"
+          cat data/steamgriddb.json
+        else
+          echo "Failed to fetch SteamGridDB data"
+          exit 1
+        fi
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/steamgriddb.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update SteamGridDB data" && git push)

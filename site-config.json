@@ -100,9 +100,9 @@
         "title": "My Projects",
         "links": [
           { "label": "Featured Projects", "href": "pages/work.html#featured-projects", "icon": { "category": "footer", "key": "projects", "alt": "Projects" } },
-          { "label": "Open Source", "href": "pages/work.html#open-source", "icon": { "category": "footer", "key": "projects", "alt": "Open Source" } },
-          { "label": "Case Studies", "href": "pages/work.html#case-studies", "icon": { "category": "footer", "key": "projects", "alt": "Case Studies" } },
-          { "label": "Portfolio", "href": "pages/work.html#portfolio", "icon": { "category": "footer", "key": "projects", "alt": "Portfolio" } }
+          { "label": "Open Source", "href": "pages/opensource.html", "icon": { "category": "footer", "key": "projects", "alt": "Open Source" } },
+          { "label": "Contributions", "href": "pages/opensource.html", "icon": { "category": "footer", "key": "projects", "alt": "Contributions" } },
+          { "label": "Case Studies", "href": "pages/work.html#case-studies", "icon": { "category": "footer", "key": "projects", "alt": "Case Studies" } }
         ]
       },
       "services": {

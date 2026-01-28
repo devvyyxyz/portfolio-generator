@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Contributions - Portfolio</title>
+    
+    <!-- Master CSS File - Imports all stylesheets -->
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/opensource.css">
+
+    <!-- Logger (styled console output) -->
+    <script src="../js/logger.js"></script>
+    
+    <!-- Component Loader Scripts -->
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/site-config-loader.js"></script>
+    <script src="../js/icon-config-loader.js"></script>
+    <script src="../js/icon-style-switcher.js"></script>
+    
+    <!-- Metadata Component -->
+    <div id="metadataPlaceholder" data-component="metadata"></div>
+</head>
+<body>
+    <!-- Y2K Preloader -->
+    <div class="y2k-preloader" id="y2kPreloader">
+      <div style="position: relative;">
+        <div class="glow-lines">
+          <div class="glow-line line-1"></div>
+          <div class="glow-line line-2"></div>
+        </div>
+        <div class="preloader-content">
+          <div class="loading-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+          <div class="preloader-text">Loading...</div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader Script -->
+    <script src="../js/preloader.js"></script>
+
+    <!-- Background Cursor Fix -->
+    <div id="background"></div>
+
+    <!-- Site Container -->
+    <div id="siteContainer" class="site-wrapper">
+        <!-- Navbar Component -->
+        <div id="navbarPlaceholder" data-component="navbar"></div>
+
+        <!-- Main Content with Side Panel Layout -->
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <!-- Page Header -->
+                <section class="page-header">
+                    <h1>🚀 Open Source Contributions</h1>
+                    <p>My journey contributing to the open source community through testing, development, and design</p>
+                </section>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    
+                    <!-- Stats Overview -->
+                    <section class="contributions-stats">
+                        <div class="stat-block">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Commits</div>
+                            <div class="stat-description">Code contributions</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Projects</div>
+                            <div class="stat-description">Contributing to</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Issues Reported</div>
+                            <div class="stat-description">Bug reports & feedback</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Artworks</div>
+                            <div class="stat-description">Created & designed</div>
+                        </div>
+                    </section>
+
+                    <!-- Live API Data Section -->
+                    <section class="live-data-section content-section">
+                        <h2>Live Contributions Data</h2>
+                        
+                        <!-- ProtonDB Section -->
+                        <div class="platform-section protondb-section">
+                            <div class="platform-header">
+                                <h3>ProtonDB Community</h3>
+                                <p>Testing & compatibility reports for gaming on Linux</p>
+                            </div>
+                            <div id="protondbData" class="platform-content">
+                                <div class="loading-spinner">Loading ProtonDB data...</div>
+                            </div>
+                        </div>
+
+                        <!-- SteamGridDB Section -->
+                        <div class="platform-section steamgriddb-section">
+                            <div class="platform-header">
+                                <h3>SteamGridDB Community</h3>
+                                <p>Custom artwork and grid designs for game libraries</p>
+                            </div>
+                            <div id="steamgriddbData" class="platform-content">
+                                <div class="loading-spinner">Loading SteamGridDB data...</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contribution Timeline -->
+                    <section class="contribution-timeline-section content-section">
+                        <h2>Contribution Timeline</h2>
+                        <div class="timeline-container">
+                            
+                            <!-- Timeline Item -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3>JavaScript/Web Libraries</h3>
+                                    <p class="timeline-date">Ongoing</p>
+                                    <p class="timeline-description">
+                                        Active contributor to popular JavaScript and web development libraries. Submitted pull requests for bug fixes, performance improvements, and new features.
+                                    </p>
+                                    <div class="timeline-tags">
+                                        <span>React</span>
+                                        <span>Node.js</span>
+                                        <span>Open Source</span>
+                                        <span>Code</span>
+                                    </div>
+                                    <a href="https://github.com/devvyyxyz" target="_blank" class="timeline-link">View GitHub Profile →</a>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3>Software Beta Testing Programs</h3>
+                                    <p class="timeline-date">2023 - Present</p>
+                                    <p class="timeline-description">
+                                        Participated in beta testing for multiple applications and developer tools. Reported bugs, tested features, and provided valuable feedback to developers.
+                                    </p>
+                                    <div class="timeline-tags">
+                                        <span>QA Testing</span>
+                                        <span>Bug Reporting</span>
+                                        <span>Feedback</span>
+                                        <span>Beta</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3>SteamGridDB Artwork</h3>
+                                    <p class="timeline-date">2022 - Present</p>
+                                    <p class="timeline-description">
+                                        Created and contributed custom grid artwork, banners, and designs to the SteamGridDB community. Designed high-quality assets for game libraries.
+                                    </p>
+                                    <div class="timeline-tags">
+                                        <span>Design</span>
+                                        <span>Graphics</span>
+                                        <span>Community</span>
+                                        <span>Art</span>
+                                    </div>
+                                    <a href="https://www.steamgriddb.com/profile/devvyyxyz" target="_blank" class="timeline-link">Visit SteamGridDB Profile →</a>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3>ProtonDB Testing</h3>
+                                    <p class="timeline-date">2021 - Present</p>
+                                    <p class="timeline-description">
+                                        Contributed extensive testing reports to ProtonDB for Proton/Wine compatibility. Tested 50+ games and provided detailed debugging information.
+                                    </p>
+                                    <div class="timeline-tags">
+                                        <span>Linux</span>
+                                        <span>Proton</span>
+                                        <span>Testing</span>
+                                        <span>QA</span>
+                                    </div>
+                                    <a href="https://protondb.com" target="_blank" class="timeline-link">Visit ProtonDB →</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- Contribution Categories -->
+                    <section class="contribution-categories">
+                        <h2>Categories of Contribution</h2>
+                        <div class="categories-grid">
+                            
+                            <div class="category-item">
+                                <div class="category-icon">💻</div>
+                                <h3>Code Development</h3>
+                                <p>Contributing bug fixes, features, and improvements to JavaScript libraries and web projects.</p>
+                                <ul class="category-list">
+                                    <li>Pull requests & patches</li>
+                                    <li>Bug fixes</li>
+                                    <li>Feature implementations</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="category-icon">🐛</div>
+                                <h3>Quality Assurance</h3>
+                                <p>Reporting bugs, testing features, and providing detailed feedback for software improvements.</p>
+                                <ul class="category-list">
+                                    <li>Bug reporting</li>
+                                    <li>Feature testing</li>
+                                    <li>Detailed feedback</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="category-icon">🎨</div>
+                                <h3>Design & Artwork</h3>
+                                <p>Creating custom designs, artwork, and visual assets for community projects and platforms.</p>
+                                <ul class="category-list">
+                                    <li>Grid artwork</li>
+                                    <li>Game designs</li>
+                                    <li>Visual assets</li>
+                                </ul>
+                            </div>
+
+                            <div class="category-item">
+                                <div class="category-icon">📚</div>
+                                <h3>Documentation</h3>
+                                <p>Improving project documentation, examples, and guides for better community understanding.</p>
+                                <ul class="category-list">
+                                    <li>Documentation improvements</li>
+                                    <li>Example code</li>
+                                    <li>Guides & tutorials</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section>
+
+                </main>
+            </div>
+
+            <!-- Side Control Panel -->
+            <div id="sidebarPlaceholder" data-component="sidebar"></div>
+        </div>
+        <!-- Footer -->
+        <div id="footerPlaceholder" data-component="footer"></div>
+    </div>
+
+    <script src="../js/secrets.js"></script>
+    <script src="../js/opensource-api.js"></script>
+    <script src="../js/frutiger-main.js"></script>
+    <script src="../js/floating-fish.js"></script>
+    <script src="../js/icon-loader.js"></script>
+</body>
+</html>

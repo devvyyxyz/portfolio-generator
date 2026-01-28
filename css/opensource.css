@@ -1,3 +1,82 @@
+/* Tested Game Link Style */
+.tested-game-link {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.98em;
+    transition: color 0.2s, transform 0.2s;
+}
+.tested-game-link:hover {
+    color: var(--color-primary-light);
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+/* ==================== TESTED GAMES SECTION ==================== */
+.testedgames-section {
+    border-color: color-mix(in srgb, #66cdaa 50%, var(--card-border));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #66cdaa 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #66cdaa 3%) 100%);
+}
+
+.tested-games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+}
+
+@media (min-width: 600px) {
+    .tested-games-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .tested-games-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+}
+
+.tested-game-card {
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(100, 150, 200, 0.3);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: none;
+}
+.tested-game-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+.tested-game-thumb {
+    width: 220px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    background: #222;
+}
+.tested-game-title {
+    font-weight: 600;
+    color: var(--text-strong);
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1.05em;
+    text-align: left;
+}
+.tested-game-desc {
+    color: var(--text-strong);
+    font-size: 0.95em;
+    text-align: left;
+    margin-top: var(--spacing-xs);
+    line-height: 1.5;
+}
 /* ==================== OPEN SOURCE PAGE STYLES ==================== */
 
 .page-header {

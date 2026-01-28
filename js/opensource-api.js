@@ -84,18 +84,29 @@ async function fetchSteamGridDBData() {
         if (response.ok) {
             const data = await response.json();
             
-            if (data.success && data.data) {
-                const grids = data.data;
+            console.log('SteamGridDB API Response:', data);
+            
+            // Handle both possible response formats
+            let grids = [];
+            if (data.success && data.data && Array.isArray(data.data)) {
+                grids = data.data;
+            } else if (Array.isArray(data)) {
+                grids = data;
+            } else if (data.data && Array.isArray(data.data)) {
+                grids = data.data;
+            }
+            
+            if (grids.length > 0) {
                 const totalGrids = grids.length;
                 
                 // Count different types if available
                 const types = {};
                 grids.forEach(grid => {
-                    const type = grid.type || 'Grid';
+                    const type = grid.type || grid.mime || 'Grid';
                     types[type] = (types[type] || 0) + 1;
                 });
                 
-                const typesList = Object.keys(types).join(', ');
+                const typesList = Object.keys(types).slice(0, 3).join(', ');
                 
                 const steamgriddbHTML = `
                     <div class="platform-item">
@@ -113,7 +124,7 @@ async function fetchSteamGridDBData() {
                         <div class="platform-item-title">🖼️ Design Assets</div>
                         <div class="platform-item-stat">
                             <span class="platform-item-stat-label">Asset Types:</span>
-                            <span class="platform-item-stat-value">${typesList || 'Multiple'}</span>
+                            <span class="platform-item-stat-value">${typesList || 'Multiple Formats'}</span>
                         </div>
                         <div class="platform-item-stat">
                             <span class="platform-item-stat-label">Quality:</span>
@@ -136,6 +147,7 @@ async function fetchSteamGridDBData() {
                 steamgriddbContainer.innerHTML = steamgriddbHTML;
                 console.log(`Successfully loaded ${totalGrids} grids from SteamGridDB`);
             } else {
+                console.warn('No grids found in response data');
                 displaySteamGridDBFallback();
             }
         } else {

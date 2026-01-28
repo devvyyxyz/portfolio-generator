@@ -22,19 +22,33 @@ jobs:
         # Create the data directory if it doesn't exist
         mkdir -p data
         
-        # Fetch SteamGridDB user data
+        # Fetch SteamGridDB user submissions/grids
+        # Using the user endpoint with the Steam ID
         curl -s -X GET "https://www.steamgriddb.com/api/v2/creators/76561199244651878/grids" \
           -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
           -H "Accept: application/json" \
           -o data/steamgriddb.json
         
-        # Check if we got valid data
-        if [ -s data/steamgriddb.json ]; then
-          echo "Successfully fetched SteamGridDB data"
-          cat data/steamgriddb.json
-        else
-          echo "Failed to fetch SteamGridDB data"
+        # Also try alternative endpoint - get user's own submissions
+        if [ ! -s data/steamgriddb.json ] || grep -q "DOCTYPE" data/steamgriddb.json; then
+          echo "First endpoint failed, trying alternative endpoint..."
+          curl -s -X GET "https://www.steamgriddb.com/api/v2/grids/creators/76561199244651878" \
+            -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
+            -H "Accept: application/json" \
+            -o data/steamgriddb.json
+        fi
+        
+        # Check if we got valid JSON data
+        if grep -q "DOCTYPE" data/steamgriddb.json || [ ! -s data/steamgriddb.json ]; then
+          echo "Error: Could not fetch valid data from SteamGridDB API"
+          echo "Response:"
+          head -20 data/steamgriddb.json
           exit 1
+        else
+          echo "Successfully fetched SteamGridDB data"
+          # Count the entries
+          COUNT=$(grep -o '"id"' data/steamgriddb.json | wc -l)
+          echo "Total entries: $COUNT"
         fi
 
     - name: Commit and push changes

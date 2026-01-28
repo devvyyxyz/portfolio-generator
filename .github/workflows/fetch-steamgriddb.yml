@@ -16,49 +16,27 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Fetch SteamGridDB Data
-      env:
-        STEAMGRIDDB_API_KEY: ${{ secrets.STEAMGRIDDB_API_KEY }}
       run: |
         # Create the data directory if it doesn't exist
         mkdir -p data
         
-        # According to SteamGridDB API v2 docs, fetch grids with author filter
-        # First get authenticated user info
-        echo "Fetching authenticated user info..."
-        curl -s -X GET "https://www.steamgriddb.com/api/v2/user" \
-          -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
-          -H "Accept: application/json" \
-          -o data/user_info.json
-        
-        echo "User info response:"
-        cat data/user_info.json
-        
-        # Extract user ID
-        USER_ID=$(grep -o '"id":[0-9]*' data/user_info.json | head -1 | sed 's/"id"://')
-        echo "User ID: $USER_ID"
-        
-        if [ -z "$USER_ID" ] || [ "$USER_ID" = "0" ]; then
-          echo "Error: Could not extract user ID"
-          exit 1
-        fi
-        
-        # Now fetch grids created by this user
-        echo "Fetching grids for user $USER_ID..."
-        curl -s -X GET "https://www.steamgriddb.com/api/v2/grids?author=$USER_ID" \
-          -H "Authorization: Bearer $STEAMGRIDDB_API_KEY" \
+        # Fetch public profile data - no authentication required
+        # Steam ID: 76561199244651878
+        echo "Fetching SteamGridDB profile data..."
+        curl -s -X GET "https://www.steamgriddb.com/api/public/profile/76561199244651878" \
           -H "Accept: application/json" \
           -o data/steamgriddb.json
         
-        echo "Grids response:"
+        echo "API Response:"
         cat data/steamgriddb.json
         
-        # Validate response
-        if ! grep -q "DOCTYPE\|Method not allowed" data/steamgriddb.json; then
-          echo "Successfully fetched SteamGridDB data"
-        else
-          echo "Error in response"
+        # Verify we got valid data
+        if ! grep -q '"success":true' data/steamgriddb.json; then
+          echo "Error: Failed to fetch valid data from SteamGridDB API"
           exit 1
         fi
+        
+        echo "✓ SteamGridDB data fetched successfully"
 
     - name: Commit and push changes
       run: |

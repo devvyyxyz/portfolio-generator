@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "data": {
+    "user": {
+      "display_name": "devvyyxyz",
+      "user_id": 15807152,
+      "reputation": 1,
+      "link": "https://stackoverflow.com/users/15807152/devvyyxyz",
+      "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GhYm5e8hzeZ_SBIp-oeYMH_e_B_jh_tAPvKC0yi3A=k-s256",
+      "location": "Unknown",
+      "about_me": ""
+    },
+    "stats": {
+      "reputation": 1,
+      "badge_counts": {
+        "bronze": 0,
+        "silver": 0,
+        "gold": 0
+      },
+      "badge_total": 0,
+      "answer_count": 0,
+      "question_count": 0,
+      "total_answers_available": 0,
+      "total_questions_available": 0
+    },
+    "top_answers": [],
+    "recent_questions": [],
+    "fetched_at": "2026-01-28T04:38:11.154Z"
+  }
+}

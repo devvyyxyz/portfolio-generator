@@ -1,0 +1,69 @@
+name: Fetch Stack Overflow Data
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    # Run daily at 4 AM UTC to keep data fresh
+    - cron: '0 4 * * *'
+
+jobs:
+  fetch-stackoverflow-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Fetch Stack Overflow Data
+      run: |
+        # Create the data directory if it doesn't exist
+        mkdir -p data
+        
+        # Fetch Stack Overflow user data using REST API (public, no auth needed)
+        # User ID: 15807152
+        echo "Fetching Stack Overflow user data..."
+        curl -s "https://api.stackexchange.com/2.3/users/15807152?site=stackoverflow" \
+          -o data/stackoverflow-user.json
+        
+        echo "✓ User data fetched"
+        
+        # Fetch Stack Overflow user's answers
+        echo "Fetching Stack Overflow answers..."
+        curl -s "https://api.stackexchange.com/2.3/users/15807152/answers?site=stackoverflow&sort=votes&pagesize=10" \
+          -o data/stackoverflow-answers.json
+        
+        echo "✓ Answers fetched"
+        
+        # Fetch Stack Overflow user's questions
+        echo "Fetching Stack Overflow questions..."
+        curl -s "https://api.stackexchange.com/2.3/users/15807152/questions?site=stackoverflow&sort=newest&pagesize=10" \
+          -o data/stackoverflow-questions.json
+        
+        echo "✓ Questions fetched"
+        
+        # Compile the data into a single comprehensive file
+        echo "Compiling Stack Overflow data..."
+        node scripts/compile-stackoverflow-data.js
+        
+        echo "✓ Stack Overflow data compiled successfully"
+        
+        # Verify the output
+        if [ -f data/stackoverflow-data.json ] && grep -q '"success":true' data/stackoverflow-data.json; then
+          echo "✓ Data verification passed"
+          cat data/stackoverflow-data.json | head -20
+        else
+          echo "⚠ Warning: Unexpected response format"
+        fi
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/stackoverflow-*.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update Stack Overflow data" && git push)

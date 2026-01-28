@@ -64,26 +64,26 @@
                 <main class="main-content">
                     
                     <!-- Stats Overview -->
-                    <section class="contributions-stats">
-                        <div class="stat-block">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Commits</div>
+                    <section class="contributions-stats" id="statsSection">
+                        <div class="stat-block" data-stat="repositories">
+                            <div class="stat-number" id="stat-repos">67</div>
+                            <div class="stat-label">Repositories</div>
+                            <div class="stat-description">Open source projects</div>
+                        </div>
+                        <div class="stat-block" data-stat="pull-requests">
+                            <div class="stat-number" id="stat-prs">20</div>
+                            <div class="stat-label">Pull Requests</div>
                             <div class="stat-description">Code contributions</div>
                         </div>
-                        <div class="stat-block">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Projects</div>
-                            <div class="stat-description">Contributing to</div>
+                        <div class="stat-block" data-stat="issues">
+                            <div class="stat-number" id="stat-issues">11</div>
+                            <div class="stat-label">Issues</div>
+                            <div class="stat-description">Reported & fixed</div>
                         </div>
-                        <div class="stat-block">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">Issues Reported</div>
-                            <div class="stat-description">Bug reports & feedback</div>
-                        </div>
-                        <div class="stat-block">
-                            <div class="stat-number">100+</div>
+                        <div class="stat-block" data-stat="artworks">
+                            <div class="stat-number" id="stat-artworks">817</div>
                             <div class="stat-label">Artworks</div>
-                            <div class="stat-description">Created & designed</div>
+                            <div class="stat-description">Designs created</div>
                         </div>
                     </section>
 
@@ -112,142 +112,30 @@
                                 <div class="loading-spinner">Loading SteamGridDB data...</div>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Contribution Timeline -->
-                    <section class="contribution-timeline-section content-section">
-                        <h2>Contribution Timeline</h2>
-                        <div class="timeline-container">
-                            
-                            <!-- Timeline Item -->
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h3>JavaScript/Web Libraries</h3>
-                                    <p class="timeline-date">Ongoing</p>
-                                    <p class="timeline-description">
-                                        Active contributor to popular JavaScript and web development libraries. Submitted pull requests for bug fixes, performance improvements, and new features.
-                                    </p>
-                                    <div class="timeline-tags">
-                                        <span>React</span>
-                                        <span>Node.js</span>
-                                        <span>Open Source</span>
-                                        <span>Code</span>
-                                    </div>
-                                    <a href="https://github.com/devvyyxyz" target="_blank" class="timeline-link">View GitHub Profile →</a>
-                                </div>
+                        <!-- GitHub Section -->
+                        <div class="platform-section github-section">
+                            <div class="platform-header">
+                                <h3>GitHub Development</h3>
+                                <p>Open source projects, code contributions, and development activity</p>
                             </div>
-
-                            <!-- Timeline Item -->
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h3>Software Beta Testing Programs</h3>
-                                    <p class="timeline-date">2023 - Present</p>
-                                    <p class="timeline-description">
-                                        Participated in beta testing for multiple applications and developer tools. Reported bugs, tested features, and provided valuable feedback to developers.
-                                    </p>
-                                    <div class="timeline-tags">
-                                        <span>QA Testing</span>
-                                        <span>Bug Reporting</span>
-                                        <span>Feedback</span>
-                                        <span>Beta</span>
-                                    </div>
-                                </div>
+                            <div id="githubData" class="platform-content">
+                                <div class="loading-spinner">Loading GitHub data...</div>
                             </div>
+                        </div>
 
-                            <!-- Timeline Item -->
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h3>SteamGridDB Artwork</h3>
-                                    <p class="timeline-date">2022 - Present</p>
-                                    <p class="timeline-description">
-                                        Created and contributed custom grid artwork, banners, and designs to the SteamGridDB community. Designed high-quality assets for game libraries.
-                                    </p>
-                                    <div class="timeline-tags">
-                                        <span>Design</span>
-                                        <span>Graphics</span>
-                                        <span>Community</span>
-                                        <span>Art</span>
-                                    </div>
-                                    <a href="https://www.steamgriddb.com/profile/devvyyxyz" target="_blank" class="timeline-link">Visit SteamGridDB Profile →</a>
-                                </div>
+                        <!-- Stack Overflow Section -->
+                        <div class="platform-section stackoverflow-section">
+                            <div class="platform-header">
+                                <h3>Stack Overflow Expertise</h3>
+                                <p>Community reputation, answers, and Q&A contributions</p>
                             </div>
-
-                            <!-- Timeline Item -->
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h3>ProtonDB Testing</h3>
-                                    <p class="timeline-date">2021 - Present</p>
-                                    <p class="timeline-description">
-                                        Contributed extensive testing reports to ProtonDB for Proton/Wine compatibility. Tested 50+ games and provided detailed debugging information.
-                                    </p>
-                                    <div class="timeline-tags">
-                                        <span>Linux</span>
-                                        <span>Proton</span>
-                                        <span>Testing</span>
-                                        <span>QA</span>
-                                    </div>
-                                    <a href="https://protondb.com" target="_blank" class="timeline-link">Visit ProtonDB →</a>
-                                </div>
+                            <div id="stackoverflowData" class="platform-content">
+                                <div class="loading-spinner">Loading Stack Overflow data...</div>
                             </div>
-
                         </div>
                     </section>
 
-                    <!-- Contribution Categories -->
-                    <section class="contribution-categories">
-                        <h2>Categories of Contribution</h2>
-                        <div class="categories-grid">
-                            
-                            <div class="category-item">
-                                <div class="category-icon">💻</div>
-                                <h3>Code Development</h3>
-                                <p>Contributing bug fixes, features, and improvements to JavaScript libraries and web projects.</p>
-                                <ul class="category-list">
-                                    <li>Pull requests & patches</li>
-                                    <li>Bug fixes</li>
-                                    <li>Feature implementations</li>
-                                </ul>
-                            </div>
-
-                            <div class="category-item">
-                                <div class="category-icon">🐛</div>
-                                <h3>Quality Assurance</h3>
-                                <p>Reporting bugs, testing features, and providing detailed feedback for software improvements.</p>
-                                <ul class="category-list">
-                                    <li>Bug reporting</li>
-                                    <li>Feature testing</li>
-                                    <li>Detailed feedback</li>
-                                </ul>
-                            </div>
-
-                            <div class="category-item">
-                                <div class="category-icon">🎨</div>
-                                <h3>Design & Artwork</h3>
-                                <p>Creating custom designs, artwork, and visual assets for community projects and platforms.</p>
-                                <ul class="category-list">
-                                    <li>Grid artwork</li>
-                                    <li>Game designs</li>
-                                    <li>Visual assets</li>
-                                </ul>
-                            </div>
-
-                            <div class="category-item">
-                                <div class="category-icon">📚</div>
-                                <h3>Documentation</h3>
-                                <p>Improving project documentation, examples, and guides for better community understanding.</p>
-                                <ul class="category-list">
-                                    <li>Documentation improvements</li>
-                                    <li>Example code</li>
-                                    <li>Guides & tutorials</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </section>
 
                 </main>
             </div>
@@ -261,6 +149,43 @@
 
     <script src="../js/secrets.js"></script>
     <script src="../js/opensource-api.js"></script>
+    <script>
+        // Update stats from fetched data
+        async function updateStatsFromData() {
+            try {
+                // Fetch GitHub data
+                const githubRes = await fetch('/data/github-data.json');
+                const githubData = githubRes.ok ? await githubRes.json() : null;
+                
+                // Fetch SteamGridDB data
+                const sgdbRes = await fetch('/data/steamgriddb.json');
+                const sgdbData = sgdbRes.ok ? await sgdbRes.json() : null;
+                
+                // Update stats
+                if (githubData && githubData.data) {
+                    const githubStats = githubData.data.stats;
+                    document.getElementById('stat-repos').textContent = githubStats.public_repos || '67';
+                    document.getElementById('stat-prs').textContent = githubStats.pull_requests || '--';
+                    document.getElementById('stat-issues').textContent = githubStats.issues_created || '--';
+                }
+                
+                if (sgdbData && sgdbData.data && sgdbData.data.stats) {
+                    document.getElementById('stat-artworks').textContent = sgdbData.data.stats.grids.total || '817';
+                }
+            } catch (error) {
+                console.log('Stats update skipped - data not yet loaded');
+            }
+        }
+        
+        // Update stats when data loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(updateStatsFromData, 1000);
+            });
+        } else {
+            setTimeout(updateStatsFromData, 1000);
+        }
+    </script>
     <script src="../js/frutiger-main.js"></script>
     <script src="../js/floating-fish.js"></script>
     <script src="../js/icon-loader.js"></script>

@@ -1,0 +1,94 @@
+{
+  "success": true,
+  "data": {
+    "user": {
+      "login": "devvyyxyz",
+      "name": "DevvyyXYZ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/132696257?v=4",
+      "bio": "Hey, Bonjour, 你好 i’m Devvyy, A software and cyber security developer!",
+      "location": "England",
+      "blog": "devvyy.xyz",
+      "twitter": "devvyyxyz",
+      "company": "devvyy.xyz game studios",
+      "html_url": "https://github.com/devvyyxyz",
+      "followers": 13,
+      "following": 36
+    },
+    "stats": {
+      "public_repos": 67,
+      "public_gists": 0,
+      "followers": 13,
+      "following": 36,
+      "created_at": "2023-05-05T16:50:32Z",
+      "issues_created": 11,
+      "pull_requests": 20
+    },
+    "recent_activity": {
+      "total_events": 40,
+      "event_types": {
+        "PushEvent": 37,
+        "CreateEvent": 1,
+        "WatchEvent": 1,
+        "ForkEvent": 1
+      }
+    },
+    "repositories": {
+      "total": 67,
+      "top_repos": [
+        {
+          "name": "github-stats",
+          "url": "https://github.com/devvyyxyz/github-stats",
+          "description": null,
+          "language": "Python",
+          "stars": 3,
+          "forks": 0,
+          "updated_at": "2026-01-28T00:56:48Z"
+        },
+        {
+          "name": "discord-tweaks",
+          "url": "https://github.com/devvyyxyz/discord-tweaks",
+          "description": "Discord tweaks, themes, css snippets",
+          "language": "CSS",
+          "stars": 2,
+          "forks": 0,
+          "updated_at": "2026-01-05T12:27:26Z"
+        },
+        {
+          "name": "minecraft-pack-automation",
+          "url": "https://github.com/devvyyxyz/minecraft-pack-automation",
+          "description": null,
+          "language": "Python",
+          "stars": 1,
+          "forks": 0,
+          "updated_at": "2025-12-14T13:13:19Z"
+        },
+        {
+          "name": "abc-crafting",
+          "url": "https://github.com/devvyyxyz/abc-crafting",
+          "description": "A collection of new and improved crafting recipes designed to enhance survival without breaking balance. Makes uncraftable items accessible and expands everyday crafting options.",
+          "language": null,
+          "stars": 1,
+          "forks": 0,
+          "updated_at": "2025-12-05T06:51:58Z"
+        },
+        {
+          "name": "portfolio-generator",
+          "url": "https://github.com/devvyyxyz/portfolio-generator",
+          "description": "JS framework to dynamically generate a portfolio site from a JSON resume",
+          "language": "JavaScript",
+          "stars": 0,
+          "forks": 0,
+          "updated_at": "2026-01-28T04:26:38Z"
+        }
+      ]
+    },
+    "languages": {
+      "Python": 2,
+      "CSS": 1,
+      "JavaScript": 2,
+      "HTML": 1,
+      "Java": 2
+    },
+    "fetched_at": "2026-01-28T04:40:46.334Z"
+  }
+}

@@ -1910,29 +1910,6 @@
     align-items: center;
     gap: var(--spacing-md);
 }
-
-.contribution-card {
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, var(--color-accent-blue) 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, var(--color-accent-blue) 3%) 100%);
-    border: 1px solid color-mix(in srgb, var(--card-border) 70%, var(--color-accent-blue) 30%);
-    backdrop-filter: blur(6px);
-    margin-bottom: var(--spacing-lg);
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.contribution-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-accent-blue);
-}
-
-.contribution-badge {
-    display: inline-block;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    background: linear-gradient(135deg, var(--color-accent-blue), color-mix(in srgb, var(--color-accent-blue) 70%, var(--color-primary-light)));
-    color: white;
     border-radius: var(--radius-sm);
     font-size: 0.75em;
     font-weight: 700;
@@ -1940,73 +1917,9 @@
     margin-bottom: var(--spacing-md);
 }
 
-.contribution-header {
-    margin-bottom: var(--spacing-md);
-}
-
-.contribution-title {
-    font-size: 1.6em;
-    font-weight: 500;
-    color: var(--color-primary-light);
-    margin: 0 0 var(--spacing-xs) 0;
-}
-
-.contribution-type {
-    font-size: 1.1em;
-    color: var(--color-accent-blue);
-    margin: 0;
-    font-weight: 400;
-}
-
-.contribution-description {
-    color: var(--text-strong);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
-}
-
-.contribution-highlights {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 var(--spacing-md) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.contribution-highlights li {
-    padding-left: var(--spacing-md);
-    position: relative;
-    color: var(--text-strong);
-}
-
-.contribution-highlights li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--color-accent-blue);
-    font-weight: bold;
-}
-
-.contribution-tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-}
-
-.contribution-link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-accent-blue);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.contribution-link:hover {
-    color: var(--color-primary-light);
-    transform: translateX(4px);
-}
+/* Legacy contribution classes consolidated into modular system
+   See: .contribution-card, .contribution-grid, .contribution-item in Phase 3 section
+   These classes are now part of the unified component library */
 
 /* ==================== ENHANCED RESPONSIVE ==================== */
 @media (max-width: 768px) {
@@ -4149,4 +4062,133 @@ textarea.aero-input:focus {
     .layout-responsive-two-col {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+/* ==================== CONTRIBUTION CARD SYSTEM (Modular Platform Cards) ==================== */
+
+/* Base contribution card - Reusable for any contribution/platform data */
+.contribution-card {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, 
+        color-mix(in srgb, var(--surface-1) 85%, transparent) 0%, 
+        color-mix(in srgb, var(--surface-2) 85%, transparent) 100%
+    );
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(4px);
+    margin-bottom: var(--spacing-lg);
+    transition: all 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid for contribution items within card */
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Platform accent variants - Add color personality to contribution cards */
+.contribution-card.protondb-accent {
+    border-left: 4px solid #6B9BD1;
+}
+
+.contribution-card.steamgriddb-accent {
+    border-left: 4px solid #1A9FD8;
+}
+
+.contribution-card.github-accent {
+    border-left: 4px solid #333;
+}
+
+.contribution-card.stackoverflow-accent {
+    border-left: 4px solid #F48024;
+}
+
+.contribution-card.codepen-accent {
+    border-left: 4px solid #000;
+}
+
+.contribution-card.youtube-accent {
+    border-left: 4px solid #FF0000;
+}
+
+.contribution-card.linkedin-accent {
+    border-left: 4px solid #0077b5;
+}
+
+/* Contribution item card */
+.contribution-item {
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(100, 150, 200, 0.3);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contribution-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: var(--color-accent-blue);
+}
+
+.contribution-item-title {
+    font-weight: 600;
+    color: var(--text-strong);
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1.05em;
+}
+
+.contribution-item-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--spacing-sm) 0;
+    font-size: 0.95em;
+}
+
+.contribution-item-stat-label {
+    color: var(--text-muted);
+}
+
+.contribution-item-stat-value {
+    font-weight: 600;
+    color: var(--color-accent-blue);
+    font-size: 1.2em;
+}
+
+/* Section with header - Reusable for any content section with header */
+.section-with-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Lives in card-header already, just ensure proper spacing */
+.section-with-header .card-header {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid color-mix(in srgb, var(--card-border) 70%, var(--color-accent-blue) 30%);
+}
+
+.section-with-header .card-title {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: var(--color-primary-light);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.section-with-header .card-subtitle {
+    color: var(--text-strong);
+    margin: 0;
+    font-size: 1.05em;
 }

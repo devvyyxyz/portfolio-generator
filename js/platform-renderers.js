@@ -15,16 +15,16 @@ const PlatformRenderers = {
     createPlatformItem(title, icon, stats = []) {
         const statsHtml = stats
             .map(stat => `
-                <div class="platform-item-stat">
-                    <span class="platform-item-stat-label">${stat.label}:</span>
-                    <span class="platform-item-stat-value">${stat.value}</span>
+                <div class="contribution-item-stat">
+                    <span class="contribution-item-stat-label">${stat.label}:</span>
+                    <span class="contribution-item-stat-value">${stat.value}</span>
                 </div>
             `)
             .join('');
         
         return `
-            <div class="platform-item">
-                <div class="platform-item-title">${icon} ${title}</div>
+            <div class="contribution-item">
+                <div class="contribution-item-title">${icon} ${title}</div>
                 ${statsHtml}
             </div>
         `;

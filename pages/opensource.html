@@ -295,6 +295,14 @@
         } else {
             setTimeout(updateStatsFromData, 1000);
         }
+
+        // Initialize 3D tilt effect for card images on contributions page
+        if (typeof initializePerspective3D === 'function') {
+            initializePerspective3D('.card-image-container', { 
+                intensity: 12, 
+                scale: 1.08 
+            });
+        }
     </script>
     <script src="../js/frutiger-main.js"></script>
     <script src="../js/floating-fish.js"></script>

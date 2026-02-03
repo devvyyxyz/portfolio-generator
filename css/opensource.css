@@ -541,3 +541,93 @@
         font-size: 1.1em;
     }
 }
+
+/* ==================== GUIDES & TUTORIALS SECTION ==================== */
+.guides-section {
+    border-color: color-mix(in srgb, #87ceeb 50%, var(--card-border));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #87ceeb 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #87ceeb 3%) 100%);
+}
+
+.guides-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .guides-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .guides-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.guide-item {
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(135, 206, 235, 0.3);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.guide-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.guide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.guide-title {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.guide-platform {
+    font-size: 0.85em;
+    color: var(--color-accent-blue);
+    font-weight: 500;
+    padding: 2px 8px;
+    background: color-mix(in srgb, var(--color-accent-blue) 15%, transparent);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+.guide-description {
+    color: var(--text-strong);
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: var(--spacing-sm) 0;
+    flex-grow: 1;
+}
+
+.guide-link {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.98em;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.guide-link:hover {
+    color: var(--color-primary-light);
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+

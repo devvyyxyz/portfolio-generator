@@ -14,9 +14,48 @@
     text-decoration: underline;
 }
 /* ==================== TESTED GAMES SECTION ==================== */
+/* ==================== BASE SECTION COMPONENT ==================== */
+/* Unified styling for all content sections with accent color customization */
+.content-section {
+    border: 1px solid;
+    border-color: color-mix(in srgb, var(--section-accent) 50%, var(--card-border));
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--surface-1) 70%, var(--section-accent) 5%) 0%,
+        color-mix(in srgb, var(--surface-2) 70%, var(--section-accent) 3%) 100%
+    );
+}
+
 .testedgames-section {
-    border-color: color-mix(in srgb, #66cdaa 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #66cdaa 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #66cdaa 3%) 100%);
+    --section-accent: #66cdaa;
+}
+
+.protondb-section {
+    --section-accent: #6B9BD1;
+}
+
+.steamgriddb-section {
+    --section-accent: #1A9FD8;
+}
+
+.guides-section {
+    --section-accent: #87ceeb;
+}
+
+.community-section {
+    --section-accent: #f0ad4e;
+}
+
+.moderation-section {
+    --section-accent: #9b59b6;
+}
+
+.tools-section {
+    --section-accent: #e74c3c;
+}
+
+.mods-section {
+    --section-accent: #16a085;
 }
 
 .tested-games-list {
@@ -95,15 +134,24 @@
     text-align: left;
 }
 
-.tested-game-platform {
+/* ==================== BADGE/LABEL STYLES ==================== */
+/* Consolidated badge styling with color variants */
+.tested-game-platform,
+.guide-platform,
+.community-activity,
+.mod-type {
     font-size: 0.85em;
-    color: var(--color-accent-blue);
     font-weight: 500;
-    margin-bottom: var(--spacing-sm);
-    display: inline-block;
-    padding: 2px 8px;
-    background: color-mix(in srgb, var(--color-accent-blue) 15%, transparent);
+    padding: 4px 10px;
     border-radius: var(--radius-sm);
+    display: inline-block;
+    white-space: nowrap;
+    background: color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.tested-game-platform {
+    color: var(--color-accent-blue);
+    margin-bottom: var(--spacing-sm);
 }
 
 .tested-game-desc {
@@ -216,13 +264,11 @@
 }
 
 .protondb-section {
-    border-color: color-mix(in srgb, #6B9BD1 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #6B9BD1 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #6B9BD1 3%) 100%);
+    --section-accent: #6B9BD1;
 }
 
 .steamgriddb-section {
-    border-color: color-mix(in srgb, #1A9FD8 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #1A9FD8 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #1A9FD8 3%) 100%);
+    --section-accent: #1A9FD8;
 }
 
 .platform-header {
@@ -297,12 +343,13 @@
     text-align: center;
     color: var(--text-muted);
     padding: var(--spacing-lg);
-    animation: spin 2s linear infinite;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
-@keyframes spin {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
 }
 
 /* ==================== TIMELINE SECTION ==================== */
@@ -566,11 +613,7 @@
     }
 }
 
-/* ==================== GUIDES & TUTORIALS SECTION ==================== */
-.guides-section {
-    border-color: color-mix(in srgb, #87ceeb 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #87ceeb 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #87ceeb 3%) 100%);
-}
+/* ==================== GUIDES & TUTORIALS SECTION ====================
 
 .guides-list {
     display: grid;
@@ -616,13 +659,7 @@
 }
 
 .guide-platform {
-    font-size: 0.85em;
     color: var(--color-accent-blue);
-    font-weight: 500;
-    padding: 2px 8px;
-    background: color-mix(in srgb, var(--color-accent-blue) 15%, transparent);
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
 }
 
 .guide-description {
@@ -649,11 +686,7 @@
     text-decoration: underline;
 }
 
-/* ==================== COMMUNITY HELP & SUPPORT SECTION ==================== */
-.community-section {
-    border-color: color-mix(in srgb, #f0ad4e 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #f0ad4e 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #f0ad4e 3%) 100%);
-}
+/* ==================== COMMUNITY HELP & SUPPORT SECTION ====================
 
 .community-contributions-list {
     display: grid;
@@ -699,13 +732,7 @@
 }
 
 .community-activity {
-    font-size: 0.85em;
     color: #f0ad4e;
-    font-weight: 600;
-    padding: 4px 10px;
-    background: color-mix(in srgb, #f0ad4e 15%, transparent);
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
 }
 
 .community-focus {
@@ -739,11 +766,7 @@
     text-decoration: underline;
 }
 
-/* ==================== MODERATION & TECHNICAL ROLES SECTION ==================== */
-.moderation-section {
-    border-color: color-mix(in srgb, #9b59b6 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #9b59b6 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #9b59b6 3%) 100%);
-}
+/* ==================== MODERATION & TECHNICAL ROLES SECTION ====================
 
 .moderation-roles-list {
     display: grid;
@@ -828,11 +851,7 @@
     text-decoration: underline;
 }
 
-/* ==================== TOOLS & UTILITIES SECTION ==================== */
-.tools-section {
-    border-color: color-mix(in srgb, #e74c3c 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #e74c3c 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #e74c3c 3%) 100%);
-}
+/* ==================== TOOLS & UTILITIES SECTION ====================
 
 .tools-utilities-list {
     display: grid;
@@ -899,11 +918,7 @@
     text-decoration: underline;
 }
 
-/* ==================== MODS & GAME CONTRIBUTIONS SECTION ==================== */
-.mods-section {
-    border-color: color-mix(in srgb, #16a085 50%, var(--card-border));
-    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #16a085 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #16a085 3%) 100%);
-}
+/* ==================== MODS & GAME CONTRIBUTIONS SECTION ====================
 
 .game-mods-list {
     display: grid;
@@ -949,13 +964,7 @@
 }
 
 .mod-type {
-    font-size: 0.85em;
     color: #16a085;
-    font-weight: 500;
-    padding: 4px 10px;
-    background: color-mix(in srgb, #16a085 15%, transparent);
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
 }
 
 .mod-description {

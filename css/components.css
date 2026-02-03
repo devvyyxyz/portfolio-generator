@@ -28,6 +28,38 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ==================== BADGE COMPONENT ==================== */
+/* Reusable badge/label styling for platforms, types, categories */
+.badge {
+  font-size: 0.85em;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.badge-primary {
+  color: var(--color-accent-blue);
+  background: color-mix(in srgb, var(--color-accent-blue) 15%, transparent);
+}
+
+.badge-warning {
+  color: #f0ad4e;
+  background: color-mix(in srgb, #f0ad4e 15%, transparent);
+}
+
+.badge-success {
+  color: #16a085;
+  background: color-mix(in srgb, #16a085 15%, transparent);
+}
+
+.badge-info {
+  color: #6B9BD1;
+  background: color-mix(in srgb, #6B9BD1 15%, transparent);
+}
+
+/* ==================== MODAL STYLING ==================== */
 /* Modal Styling (FrutigerAero) */
 .modal {
   position: fixed;

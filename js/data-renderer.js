@@ -10,14 +10,16 @@ const DATA_RENDERERS = {
         containerId: 'tested-games-list',
         dataKey: 'games',
         renderItem: (item) => `
-            <img src="${item.image}" alt="${item.title}" class="tested-game-thumb" onerror="this.src='https://via.placeholder.com/300x170?text=${encodeURIComponent(item.title)}'">
+            <div class="card-image-container with-effects">
+                <img src="${item.image}" alt="${item.title}" class="tested-game-thumb card-image" onerror="this.src='https://via.placeholder.com/300x170?text=${encodeURIComponent(item.title)}'">
+            </div>
             <div class="tested-game-title">${item.title}</div>
             <div class="tested-game-platform">${item.platform}</div>
             <div class="tested-game-desc">${item.description}</div>
             <div class="tested-game-focus">Focus: ${item.focus}</div>
             <a href="${item.url}" target="_blank" rel="noopener" class="tested-game-link">Visit Game Page &rarr;</a>
         `,
-        itemClass: 'tested-game-card'
+        itemClass: 'tested-game-card solid'
     },
     guides: {
         dataFile: '/data/guides.json',

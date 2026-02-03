@@ -2838,7 +2838,6 @@ textarea.aero-input:focus {
 .tools-utility-item,
 .game-mod-entry {
     padding: var(--spacing-md);
-    background: rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-md);
     transition: all 0.3s ease;
     display: flex;
@@ -2847,32 +2846,89 @@ textarea.aero-input:focus {
     box-shadow: none;
 }
 
-.tested-game-card:hover,
-.guide-item:hover,
-.community-entry:hover,
-.moderation-role:hover,
-.tools-utility-item:hover,
-.game-mod-entry:hover {
+/* Glassy variant - Semi-transparent cards */
+.tested-game-card.glassy,
+.guide-item.glassy,
+.community-entry.glassy,
+.moderation-role.glassy,
+.tools-utility-item.glassy,
+.game-mod-entry.glassy {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(100, 150, 200, 0.3);
+}
+
+.tested-game-card.glassy:hover,
+.guide-item.glassy:hover,
+.community-entry.glassy:hover,
+.moderation-role.glassy:hover,
+.tools-utility-item.glassy:hover,
+.game-mod-entry.glassy:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Solid variant - Opaque cards with accent tinting */
+.tested-game-card.solid,
+.guide-item.solid,
+.community-entry.solid,
+.moderation-role.solid,
+.tools-utility-item.solid,
+.game-mod-entry.solid {
+    background: color-mix(in srgb, var(--surface-1) 85%, var(--card-accent, var(--color-accent-blue)) 2%);
+    border: 1px solid color-mix(in srgb, var(--card-accent, var(--color-accent-blue)) 25%, var(--card-border));
+}
+
+.tested-game-card.solid:hover,
+.guide-item.solid:hover,
+.community-entry.solid:hover,
+.moderation-role.solid:hover,
+.tools-utility-item.solid:hover,
+.game-mod-entry.solid:hover {
+    background: color-mix(in srgb, var(--surface-1) 85%, var(--card-accent, var(--color-accent-blue)) 3%);
+    border-color: color-mix(in srgb, var(--card-accent, var(--color-accent-blue)) 40%, var(--card-border));
+    transform: translateY(-2px);
+}
+
+/* Default to solid for backwards compatibility - can be overridden per page */
+.tested-game-card:not(.glassy),
+.guide-item:not(.glassy),
+.community-entry:not(.glassy),
+.moderation-role:not(.glassy),
+.tools-utility-item:not(.glassy),
+.game-mod-entry:not(.glassy) {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(100, 150, 200, 0.3);
+}
+
+.tested-game-card:not(.glassy):hover,
+.guide-item:not(.glassy):hover,
+.community-entry:not(.glassy):hover,
+.moderation-role:not(.glassy):hover,
+.tools-utility-item:not(.glassy):hover,
+.game-mod-entry:not(.glassy):hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
 /* Tested Game Card Specific */
 .tested-game-card {
-    border: 1px solid rgba(100, 150, 200, 0.3);
     align-items: flex-start;
     max-width: 280px;
     min-height: 500px;
 }
 
 .tested-game-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card-image-container {
     width: 220px;
     height: 90px;
-    object-fit: cover;
-    border-radius: var(--radius-md);
     margin-bottom: var(--spacing-md);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    background: #222;
 }
 
 .tested-game-title {
@@ -4242,6 +4298,104 @@ textarea.aero-input:focus {
 /* Section with header - Reusable for any content section with header */
 .section-with-header {
     margin-bottom: var(--spacing-xl);
+}
+
+/* ==================== REUSABLE CARD IMAGE EFFECTS ==================== */
+
+/* 3D Perspective Base - Foundation for 3D tilt effects */
+.perspective-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* 3D Tilt Reset - Default no rotation state */
+.perspective-3d.reset {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+}
+
+/* Card image - Base styles with overflow protection and hover effects */
+.card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+/* Glassy card image with gloss and shine effects */
+.card-image.with-effects {
+    position: relative;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15),
+        inset 0px 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Parent hover - scale image on parent hover */
+.card-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--surface-1) 60%, transparent);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* When gallery-item is combined with card-image-container, inherit aspect ratio */
+.card-image-container.gallery-item {
+    aspect-ratio: 4/3;
+}
+
+.card-image-container:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* Gloss overlay for card images */
+.card-image-container.with-effects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 50%,
+        color-mix(in srgb, var(--color-accent-blue) 8%, transparent) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    border-radius: var(--radius-md);
+}
+
+.card-image-container.with-effects:hover::before {
+    opacity: 0.4;
+}
+
+/* Shine effect for card images */
+.card-image-container.with-effects::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.25) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+    z-index: 2;
+    border-radius: var(--radius-md);
+}
+
+.card-image-container.with-effects:hover::after {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
 }
 
 /* Lives in card-header already, just ensure proper spacing */

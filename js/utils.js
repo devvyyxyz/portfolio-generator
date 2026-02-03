@@ -225,3 +225,57 @@ function debug(message, data = null) {
 function logError(message, error = null) {
     console.error(`[ERROR] ${message}`, error || '');
 }
+
+/**
+ * Initialize 3D Tilt Effect
+ * Applies interactive perspective transform to elements on mouse movement
+ * Resets on mouse leave using CSS class
+ * 
+ * @param {string} selector - CSS selector for elements to apply effect
+ * @param {object} options - Configuration object
+ * @param {number} options.intensity - Tilt intensity (default: 10, lower = stronger)
+ * @param {number} options.scale - Hover scale value (default: 1.05)
+ * 
+ * @example
+ * // Apply to gallery items
+ * initializePerspective3D('.gallery-item', { intensity: 10, scale: 1.05 });
+ * 
+ * // Apply to card items with custom intensity
+ * initializePerspective3D('.card-item', { intensity: 15, scale: 1.03 });
+ */
+function initializePerspective3D(selector, options = {}) {
+    const defaults = {
+        intensity: 10,
+        scale: 1.05
+    };
+    const config = { ...defaults, ...options };
+    
+    document.querySelectorAll(selector).forEach(item => {
+        // Add base classes
+        item.classList.add('perspective-3d', 'reset');
+        
+        // Mouse move - apply tilt
+        item.addEventListener('mousemove', (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / config.intensity;
+            const rotateY = (centerX - x) / config.intensity;
+            
+            // Remove reset class to allow custom transform
+            item.classList.remove('reset');
+            
+            // Apply 3D perspective transform
+            item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(${config.scale}, ${config.scale}, 1)`;
+        });
+        
+        // Mouse leave - reset to default state
+        item.addEventListener('mouseleave', () => {
+            item.classList.add('reset');
+        });
+    });
+}

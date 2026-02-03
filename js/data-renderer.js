@@ -131,8 +131,8 @@ async function renderDataSection(configKey) {
     } catch (error) {
         console.error(`Error rendering ${configKey}:`, error);
         const container = document.getElementById(config.containerId);
-        if (container) {
-            container.innerHTML = '<p class="error-message">Failed to load data</p>';
+        if (container && APIService) {
+            APIService.displayError(container, 'Failed to load data');
         }
     }
 }

@@ -88,15 +88,24 @@ class APIService {
             console.log(`✓ Rendered to ${containerId}`);
         } catch (error) {
             console.error(`Error rendering ${containerId}:`, error);
-            container.innerHTML = `
-                <div class="platform-item" style="grid-column: 1/-1; text-align: center; padding: var(--spacing-xl);">
-                    <div style="color: var(--text-strong); font-weight: 500;">${errorMessage}</div>
-                    <div style="color: var(--text-muted); margin-top: var(--spacing-sm); font-size: 0.95em;">
-                        Try refreshing the page or check back later.
-                    </div>
-                </div>
-            `;
+            this.displayError(container, errorMessage);
         }
+    }
+    
+    /**
+     * Display unified error message in container
+     * @param {HTMLElement} container - Container element
+     * @param {string} title - Error title (short message)
+     * @param {string} hint - Hint text (optional, shows below title)
+     */
+    static displayError(container, title = 'Failed to load data', hint = 'Try refreshing the page or check back later.') {
+        container.innerHTML = `
+            <div class="error-message-container">
+                <div class="error-message-icon">⚠️</div>
+                <div class="error-message-title">${title}</div>
+                <div class="error-message-hint">${hint}</div>
+            </div>
+        `;
     }
     
     /**

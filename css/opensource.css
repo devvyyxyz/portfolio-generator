@@ -46,7 +46,8 @@
 /* Shared styles for all card types */
 .tested-game-card,
 .guide-item,
-.community-entry {
+.community-entry,
+.moderation-role {
     padding: var(--spacing-md);
     background: rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-md);
@@ -59,7 +60,8 @@
 
 .tested-game-card:hover,
 .guide-item:hover,
-.community-entry:hover {
+.community-entry:hover,
+.moderation-role:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
@@ -732,5 +734,95 @@
     transform: translateX(4px);
     text-decoration: underline;
 }
+
+/* ==================== MODERATION & TECHNICAL ROLES SECTION ==================== */
+.moderation-section {
+    border-color: color-mix(in srgb, #9b59b6 50%, var(--card-border));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #9b59b6 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #9b59b6 3%) 100%);
+}
+
+.moderation-roles-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .moderation-roles-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .moderation-roles-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.moderation-role {
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    max-width: 300px;
+}
+
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.role-title {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.role-organization {
+    font-size: 0.85em;
+    color: #9b59b6;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: color-mix(in srgb, #9b59b6 15%, transparent);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+.role-responsibilities,
+.role-impact {
+    color: var(--text-strong);
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: var(--spacing-sm) 0;
+}
+
+.role-responsibilities strong,
+.role-impact strong {
+    color: #9b59b6;
+    font-weight: 600;
+}
+
+.role-link {
+    display: inline-block;
+    margin-top: auto;
+    color: #9b59b6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.98em;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.role-link:hover {
+    color: var(--color-primary-light);
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+
 
 

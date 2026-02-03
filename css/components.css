@@ -1,4 +1,187 @@
-/* COMPONENTS - Modals, panels, cards, and UI components */
+/* COMPONENTS - Modals, panels, cards, UI components, buttons, forms, and icons */
+
+/* ==================== SECTION TITLE (Consolidated from pages.css) ==================== */
+.section-title {
+    font-size: 2em;
+    color: var(--text-strong);
+    margin: 3rem 0 2rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-accent-blue);
+}
+
+/* ==================== ICON SYSTEM (Consolidated from icons.css) ==================== */
+.icon-image,
+.icon-img {
+    display: inline-block;
+    vertical-align: middle;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.icon-image:hover,
+.icon-img:hover {
+    transform: scale(1.1);
+}
+
+/* Default icon size */
+.icon-img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Footer link icons */
+.footer-link-icon {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 6px;
+}
+
+/* Section title icons */
+.section-title .icon-img,
+.section-icon-title .icon-img {
+    width: 32px !important;
+    height: 32px !important;
+    margin-right: 8px;
+}
+
+/* Icon Emoji Styling */
+.icon-emoji {
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Social Card Icon Container */
+.social-card .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-card:hover .social-icon {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Ensure images fit properly in icon containers */
+.social-card .social-icon .icon-image {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Icon Theme Variants */
+.icon-style-classic .icon-image {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.icon-style-glossy-blue .icon-image {
+    filter: drop-shadow(0 2px 6px rgba(0, 100, 200, 0.2));
+}
+
+.icon-style-ios6 .icon-image {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+}
+
+/* ==================== PAGE COMPONENTS (Consolidated from pages.css) ==================== */
+/* Page Header - used across multiple pages */
+.page-header {
+    background: transparent;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 7px 10px var(--color-shadow),
+        inset 0px 10px 10px rgba(255, 255, 255, 0.3),
+        inset 0px -2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.page-header h1 {
+    font-size: 2.5em;
+    background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Hero Profile Picture */
+.hero-profile-picture {
+    position: relative;
+    z-index: 1;
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    padding: 8px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.hero-profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
+
+/* Quick Link Cards */
+.quick-link-card {
+    background: var(--surface-1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quick-link-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 102, 255, 0.2);
+}
+
+.quick-link-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-strong);
+}
+
+.quick-link-card p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95em;
+}
+
+/* Accent Border Utility */
+.accent-border {
+    border-left: 4px solid var(--color-accent-blue);
+}
 
 .toast-container {
   position: fixed;
@@ -57,6 +240,63 @@
 .badge-info {
   color: #6B9BD1;
   background: color-mix(in srgb, #6B9BD1 15%, transparent);
+}
+
+/* ==================== CARD COMPONENT SYSTEM ==================== */
+/* Unified card styling for consistency across the site */
+
+/* Base card - for all card-like containers */
+.card-container {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, transparent) 0%, color-mix(in srgb, var(--surface-2) 70%, transparent) 100%);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.card-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Card grid layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Card header section */
+.card-header {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--color-primary-light);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.card-subtitle {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Card body section */
+.card-body {
+    flex: 1;
+}
+
+/* Card footer section */
+.card-footer {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ==================== MODAL STYLING ==================== */
@@ -1780,4 +2020,999 @@
         flex-direction: column;
         text-align: center;
     }
+}
+/* ==================== BUTTONS (Consolidated from buttons.css) ==================== */
+/* FRUTIGER AERO UNIFIED BUTTON SYSTEM */
+/* All buttons use consistent Frutiger Aero styling with theme integration */
+
+/* Base Button - Default theme colors */
+.btn,
+.cta-button,
+.submit-btn,
+button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn"]):not([class*="particle-btn"]):not([class*="fish-btn"]):not([class*="control-btn"]) {
+  /* Base styling */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75em 2em;
+  
+  /* Background with theme colors and glow */
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.15)
+    );
+  background-color: rgba(255, 255, 255, 0.2);
+  
+  /* Border and shape */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9999px;
+  
+  /* Shadows */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Typography */
+  color: var(--text-strong);
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  
+  /* Interaction */
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: all 300ms ease;
+}
+
+/* Top highlight effect */
+.btn::after,
+.cta-button::after,
+.submit-btn::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 0.75em;
+  width: calc(100% - 1.5em);
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: inherit;
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+/* Hover state */
+.btn:hover,
+.cta-button:hover,
+.submit-btn:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Active state */
+.btn:active,
+.cta-button:active,
+.submit-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+}
+
+/* Primary button variant - uses theme accent */
+.btn.primary,
+.btn-primary,
+.cta-button.primary {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border-color: color-mix(in srgb, var(--color-accent-blue) 80%, white);
+}
+
+/* Secondary button variant - subtle theme */
+.btn.secondary,
+.btn-secondary,
+.cta-button.secondary {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.08)
+    );
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Small size */
+.btn.small {
+  padding: 0.5em 1.5em;
+  font-size: 0.875rem;
+}
+
+/* Medium size (default) */
+.btn.medium,
+.cta-button {
+  padding: 0.75em 2em;
+  font-size: 1rem;
+}
+
+/* Large size */
+.btn.large {
+  padding: 1em 3em;
+  font-size: 1.125rem;
+}
+
+/* Back button specific - less rounded */
+.back-btn {
+  padding: 0.6em 1.5em;
+  gap: 0.5em;
+  border-radius: var(--radius-md);
+}
+
+.back-btn::after {
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  width: auto;
+  height: 35%;
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+/* Skip button specific */
+.skip-btn {
+  padding: 0.6em 1.5em;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+}
+
+.skip-btn::after {
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  width: auto;
+  height: 35%;
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+/* Settings buttons - compact square style */
+.size-btn,
+.sound-btn,
+.music-btn,
+.particle-btn,
+.fish-btn,
+.control-btn {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.15)
+    );
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-strong);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family-main);
+  min-width: 48px;
+  transition: all 300ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  user-select: none;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+}
+
+/* Single unified toggle button for settings */
+.setting-toggle-btn {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.15)
+    );
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-strong);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-md);
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 600;
+  font-family: var(--font-family-main);
+  transition: all 300ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  user-select: none;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar: keep toggle buttons compact, not full-width */
+.side-settings-bar .setting-toggle-btn {
+  width: auto;
+  min-width: 96px;
+}
+
+.setting-toggle-btn::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: calc(var(--radius-md) - 2px);
+  pointer-events: none;
+}
+
+.setting-toggle-btn:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.setting-toggle-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+}
+
+.setting-toggle-btn.active {
+  /* Distinct ON state: vivid theme accent with glow */
+  background:
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.85),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 30%, white 10%),
+      color-mix(in srgb, var(--color-accent-blue) 80%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border-color: color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  color: #fff;
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.45),
+    0 0 0 2px color-mix(in srgb, var(--color-accent-blue) 30%, transparent),
+    inset 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+.setting-value {
+  font-weight: 700;
+}
+
+/* Settings button highlight */
+.size-btn::after,
+.sound-btn::after,
+.music-btn::after,
+.particle-btn::after,
+.fish-btn::after,
+.control-btn::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  width: auto;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: calc(var(--radius-md) - 2px);
+  pointer-events: none;
+}
+
+/* Settings buttons hover */
+.size-btn:hover,
+.sound-btn:hover,
+.music-btn:hover,
+.particle-btn:hover,
+.fish-btn:hover,
+.control-btn:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Settings buttons active state */
+.size-btn.active,
+.sound-btn.active,
+.music-btn.active,
+.particle-btn.active,
+.fish-btn.active,
+.control-btn.active {
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border-color: color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar specific sizing */
+.side-settings-bar .size-btn,
+.side-settings-bar .sound-btn,
+.side-settings-bar .music-btn,
+.side-settings-bar .particle-btn,
+.side-settings-bar .fish-btn,
+.side-settings-bar .skip-btn,
+.side-settings-bar .control-btn {
+  width: 100%;
+  height: 44px;
+  padding: 0;
+  font-size: 1.05em;
+  min-width: auto;
+}
+
+/* Remove old button-specific pseudo-elements that conflict */
+button:not([class*="size-btn"]):not([class*="sound-btn"]):not([class*="music-btn"]):not([class*="particle-btn"]):not([class*="fish-btn"]):not([class*="control-btn"])::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 0.75em;
+  width: calc(100% - 1.5em);
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: inherit;
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+/* Fish Count Slider */
+.fish-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 6px 10px;
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.08)
+    );
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  height: fit-content;
+}
+
+.fish-slider-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fish-count-slider {
+  width: 100px;
+  height: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Slider thumb styling - matches button theme */
+.fish-count-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border: 1px solid color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.fish-count-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.fish-count-slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Firefox slider thumb */
+.fish-count-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(
+      farthest-corner at bottom center,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-accent-blue) 40%, transparent),
+      color-mix(in srgb, var(--color-accent-blue) 60%, transparent)
+    );
+  background-color: var(--color-accent-blue);
+  border: 1px solid color-mix(in srgb, var(--color-accent-blue) 80%, white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.fish-count-slider::-moz-range-thumb:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.fish-count-slider::-moz-range-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Firefox track styling */
+.fish-count-slider::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+.fish-count-slider::-moz-range-progress {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--color-accent-blue) 60%, transparent),
+    color-mix(in srgb, var(--color-accent-blue) 40%, transparent)
+  );
+  height: 4px;
+  border-radius: 2px;
+}
+
+.fish-count-display {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent-blue);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  min-width: 18px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ==================== FORMS (Consolidated from forms.css) ==================== */
+/* FORMS - Input fields, textareas, checkboxes, selects */
+
+/* Base Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-sm);
+  color: var(--text-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  box-sizing: border-box;
+  transition: all var(--transition-normal);
+  background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(4px);
+}
+
+/* Aero Input Fields */
+.aero-input {
+  background-color: color-mix(in srgb, var(--surface-2) 82%, transparent);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-main);
+  color: var(--text-strong);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.aero-input:focus {
+  outline: none;
+  border-color: var(--color-accent-blue);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(255, 70, 100, 0.3);
+  background-color: color-mix(in srgb, var(--surface-2) 90%, transparent);
+}
+
+/* Aero Textarea */
+textarea.aero-input {
+  resize: vertical;
+  min-height: 100px;
+  background-color: color-mix(in srgb, var(--surface-2) 82%, transparent);
+  border: 1px solid var(--card-border);
+}
+
+textarea.aero-input:focus {
+  background-color: color-mix(in srgb, var(--surface-2) 90%, transparent);
+  border-color: var(--color-accent-blue);
+}
+
+/* Contact Form Inputs */
+#contactForm input,
+#contactForm textarea {
+  background: color-mix(in srgb, var(--surface-2) 82%, transparent);
+  border: 1px solid var(--card-border);
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--text-strong);
+  font-family: "Noto Sans Regular", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  backdrop-filter: blur(4px);
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: var(--text-muted);
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-blue);
+  background: color-mix(in srgb, var(--surface-2) 90%, transparent);
+  box-shadow: 0 0 10px rgba(255, 70, 100, 0.3);
+}
+
+/* Aero Checkbox & Radio */
+.aero-checkbox,
+.aero-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background-color: rgba(20, 20, 28, 0.96);
+  border: 1px solid rgba(255, 70, 100, 0.6);
+  margin-right: var(--spacing-sm);
+  vertical-align: middle;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.aero-checkbox:hover,
+.aero-radio:hover {
+  background-color: rgba(26, 26, 34, 0.98);
+  border-color: rgba(255, 110, 150, 0.95);
+}
+
+.aero-checkbox:checked,
+.aero-radio:checked {
+  background-color: rgba(220, 40, 70, 0.98);
+  border-color: rgba(255, 120, 150, 0.95);
+  position: relative;
+}
+
+.aero-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aero-radio {
+  border-radius: 50%;
+}
+
+.aero-radio:checked::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Aero Select/Dropdown */
+.aero-select {
+  background-color: rgba(20, 20, 28, 0.96);
+  border: 1px solid rgba(255, 70, 100, 0.6);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-light);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ff466a' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  padding-right: 24px;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-normal);
+}
+
+.aero-select:hover {
+  background-color: rgba(26, 26, 34, 0.98);
+  border-color: rgba(255, 110, 150, 0.95);
+}
+
+.aero-select:focus {
+  outline: none;
+  border-color: rgba(255, 110, 150, 0.95);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.4), 0px 0px 4px rgba(255, 70, 100, 0.6);
+}
+
+/* Form Labels */
+.aero-label {
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-light);
+  user-select: none;
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+#contactForm label {
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0px -2px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* ==================== HOMEPAGE HERO (Consolidated from pages.css) ==================== */
+.homepage-hero {
+    background: transparent;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0px 7px 10px var(--color-shadow),
+        inset 0px 10px 10px rgba(255, 255, 255, 0.3),
+        inset 0px -2px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Animated accent glow */
+.homepage-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--color-accent-blue) 0%, transparent 70%);
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.homepage-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.homepage-hero h1 {
+    font-size: 3em;
+    background: linear-gradient(135deg, var(--color-accent-blue), var(--text-strong));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.homepage-hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--text-strong);
+    max-width: 600px;
+    margin: 1rem 0;
+}
+
+/* ==================== STATS COMPONENTS (Consolidated from opensource.css) ==================== */
+.contributions-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-block {
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 85%, transparent) 0%, color-mix(in srgb, var(--surface-2) 85%, transparent) 100%);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.stat-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-accent-blue);
+}
+
+.stat-number {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--text-strong);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-description {
+    font-size: 0.95em;
+    color: var(--text-muted);
+}
+
+/* ==================== TESTED GAMES & CARD SYSTEM (Consolidated from opensource.css) ==================== */
+.tested-games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+}
+
+/* Shared base card component for all data cards */
+.tested-game-card,
+.guide-item,
+.community-entry,
+.moderation-role,
+.tools-utility-item,
+.game-mod-entry {
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: none;
+}
+
+.tested-game-card:hover,
+.guide-item:hover,
+.community-entry:hover,
+.moderation-role:hover,
+.tools-utility-item:hover,
+.game-mod-entry:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Tested Game Card Specific */
+.tested-game-card {
+    border: 1px solid rgba(100, 150, 200, 0.3);
+    align-items: flex-start;
+    max-width: 280px;
+    min-height: 500px;
+}
+
+.tested-game-thumb {
+    width: 220px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    background: #222;
+}
+
+.tested-game-title {
+    font-weight: 600;
+    color: var(--text-strong);
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1.05em;
+    text-align: left;
+}
+
+/* Badge/Label Styles */
+.tested-game-platform,
+.guide-platform,
+.community-activity,
+.mod-type {
+    font-size: 0.85em;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    white-space: nowrap;
+    background: color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.tested-game-platform {
+    color: var(--color-accent-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.tested-game-desc {
+    color: var(--text-strong);
+    font-size: 0.95em;
+    text-align: left;
+    margin: var(--spacing-sm) 0;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.tested-game-focus {
+    font-size: 0.85em;
+    color: var(--color-accent-blue);
+    font-weight: 500;
+    margin: var(--spacing-sm) 0;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(100, 150, 200, 0.2);
+}
+
+/* ==================== CONTACT COMPONENTS (Consolidated from pages.css) ==================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    width: 100%;
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-card {
+    background: var(--surface-1);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.15);
+}
+
+.contact-card .icon {
+    font-size: 3em;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.contact-card h3 {
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--text-strong);
+    font-size: 1.3em;
+}
+
+.contact-card p {
+    color: var(--text-secondary);
+    margin: var(--spacing-sm) 0;
+    font-size: 0.95em;
+}
+
+.contact-card a {
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    padding: 0.5em 1em;
+    border-radius: var(--radius-sm);
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
 }

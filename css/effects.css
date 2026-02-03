@@ -1,4 +1,6 @@
-/* Floating Fish Animation */
+/* EFFECTS - Special features, easter eggs, and interactive elements */
+
+/* ==================== FLOATING FISH (Easter Egg) ==================== */
 .fish-container {
   position: fixed;
   top: 0;
@@ -33,8 +35,6 @@
   image-rendering: crisp-edges;
 }
 
-/* Swimming Animation - removed since we're using dynamic positioning */
-
 /* Bubbles */
 .bubble {
   position: absolute;
@@ -47,17 +47,4 @@
   box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-50px) translateX(10px);
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-100px) translateX(-5px);
-    opacity: 0;
-  }
-}
+/* Animations are defined in animations.css */

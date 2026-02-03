@@ -6,17 +6,16 @@
 @import url("frutiger-global.css");
 @import url("layout.css");
 
-/* Components & UI (consolidated) */
+/* Utilities & Reusable Classes */
+@import url("utilities.css");
+
+/* Components, UI, Buttons, Forms, & Icons (consolidated into one file) */
 @import url("components.css");
-@import url("buttons.css");
-@import url("icons.css");
 
-/* Forms & Inputs */
-@import url("forms.css");
-
-/* Animations & Effects */
+/* Animations */
 @import url("animations.css");
-@import url("floating-fish.css");
 
-/* Page Styles (consolidated) */
-@import url("pages.css");
+/* Special Effects & Easter Eggs */
+@import url("effects.css");
+
+/* Page Styles */

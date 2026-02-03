@@ -251,6 +251,8 @@
     margin-bottom: 0.8rem;
 }
 
+/* Note: .section-title styling is now consolidated in components.css */
+
 .timeline-section {
     margin: 2rem 0;
 }

@@ -48,7 +48,8 @@
 .guide-item,
 .community-entry,
 .moderation-role,
-.tools-utility-item {
+.tools-utility-item,
+.game-mod-entry {
     padding: var(--spacing-md);
     background: rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-md);
@@ -63,7 +64,8 @@
 .guide-item:hover,
 .community-entry:hover,
 .moderation-role:hover,
-.tools-utility-item:hover {
+.tools-utility-item:hover,
+.game-mod-entry:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
@@ -896,6 +898,85 @@
     transform: translateX(4px);
     text-decoration: underline;
 }
+
+/* ==================== MODS & GAME CONTRIBUTIONS SECTION ==================== */
+.mods-section {
+    border-color: color-mix(in srgb, #16a085 50%, var(--card-border));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #16a085 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #16a085 3%) 100%);
+}
+
+.game-mods-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .game-mods-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-mods-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.game-mod-entry {
+    border: 1px solid rgba(22, 160, 133, 0.3);
+    max-width: 300px;
+}
+
+.mod-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.mod-game-name {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.mod-type {
+    font-size: 0.85em;
+    color: #16a085;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: color-mix(in srgb, #16a085 15%, transparent);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+.mod-description {
+    color: var(--text-strong);
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: var(--spacing-sm) 0;
+}
+
+.mod-outcome {
+    color: var(--text-strong);
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: var(--spacing-sm) 0;
+}
+
+.mod-outcome strong {
+    color: #16a085;
+    font-weight: 600;
+}
+
 
 
 

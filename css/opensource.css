@@ -47,7 +47,8 @@
 .tested-game-card,
 .guide-item,
 .community-entry,
-.moderation-role {
+.moderation-role,
+.tools-utility-item {
     padding: var(--spacing-md);
     background: rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-md);
@@ -61,7 +62,8 @@
 .tested-game-card:hover,
 .guide-item:hover,
 .community-entry:hover,
-.moderation-role:hover {
+.moderation-role:hover,
+.tools-utility-item:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
@@ -823,6 +825,78 @@
     transform: translateX(4px);
     text-decoration: underline;
 }
+
+/* ==================== TOOLS & UTILITIES SECTION ==================== */
+.tools-section {
+    border-color: color-mix(in srgb, #e74c3c 50%, var(--card-border));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 70%, #e74c3c 5%) 0%, color-mix(in srgb, var(--surface-2) 70%, #e74c3c 3%) 100%);
+}
+
+.tools-utilities-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .tools-utilities-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tools-utilities-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tools-utility-item {
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    max-width: 280px;
+}
+
+.tool-title {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.tool-problem,
+.tool-technologies {
+    color: var(--text-strong);
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: var(--spacing-sm) 0;
+}
+
+.tool-problem strong,
+.tool-technologies strong {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.tool-link {
+    display: inline-block;
+    margin-top: auto;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.98em;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.tool-link:hover {
+    color: var(--color-primary-light);
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+
 
 
 

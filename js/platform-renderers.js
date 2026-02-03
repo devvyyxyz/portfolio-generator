@@ -23,7 +23,7 @@ const PlatformRenderers = {
             .join('');
         
         return `
-            <div class="contribution-item">
+            <div class="contribution-item solid">
                 <div class="contribution-item-title">${icon} ${title}</div>
                 ${statsHtml}
             </div>

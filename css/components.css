@@ -4070,19 +4070,39 @@ textarea.aero-input:focus {
 .contribution-card {
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    transition: all 0.3s ease;
+}
+
+/* Glassy variant - Semi-transparent with backdrop blur */
+.contribution-card.glassy {
     background: linear-gradient(135deg, 
         color-mix(in srgb, var(--surface-1) 85%, transparent) 0%, 
         color-mix(in srgb, var(--surface-2) 85%, transparent) 100%
     );
     border: 1px solid var(--card-border);
     backdrop-filter: blur(4px);
-    margin-bottom: var(--spacing-lg);
-    transition: all 0.3s ease;
 }
 
-.contribution-card:hover {
+.contribution-card.glassy:hover {
     transform: translateY(-2px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Solid colored variant - Opaque with accent-tinted backgrounds */
+.contribution-card.solid {
+    border: 1px solid;
+    border-color: color-mix(in srgb, var(--contribution-accent, var(--color-accent-blue)) 40%, var(--card-border));
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--surface-1) 80%, var(--contribution-accent, var(--color-accent-blue)) 4%) 0%,
+        color-mix(in srgb, var(--surface-2) 80%, var(--contribution-accent, var(--color-accent-blue)) 2%) 100%
+    );
+}
+
+.contribution-card.solid:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: color-mix(in srgb, var(--contribution-accent, var(--color-accent-blue)) 60%, var(--card-border));
 }
 
 /* Grid for contribution items within card */
@@ -4097,38 +4117,71 @@ textarea.aero-input:focus {
 
 /* Platform accent variants - Add color personality to contribution cards */
 .contribution-card.protondb-accent {
+    --contribution-accent: #6B9BD1;
     border-left: 4px solid #6B9BD1;
 }
 
+.contribution-card.protondb-accent .contribution-item {
+    --item-accent: #6B9BD1;
+}
+
 .contribution-card.steamgriddb-accent {
+    --contribution-accent: #1A9FD8;
     border-left: 4px solid #1A9FD8;
 }
 
+.contribution-card.steamgriddb-accent .contribution-item {
+    --item-accent: #1A9FD8;
+}
+
 .contribution-card.github-accent {
+    --contribution-accent: #333;
     border-left: 4px solid #333;
 }
 
+.contribution-card.github-accent .contribution-item {
+    --item-accent: #333;
+}
+
 .contribution-card.stackoverflow-accent {
+    --contribution-accent: #F48024;
     border-left: 4px solid #F48024;
 }
 
+.contribution-card.stackoverflow-accent .contribution-item {
+    --item-accent: #F48024;
+}
+
 .contribution-card.codepen-accent {
+    --contribution-accent: #000;
     border-left: 4px solid #000;
 }
 
+.contribution-card.codepen-accent .contribution-item {
+    --item-accent: #000;
+}
+
 .contribution-card.youtube-accent {
+    --contribution-accent: #FF0000;
     border-left: 4px solid #FF0000;
 }
 
+.contribution-card.youtube-accent .contribution-item {
+    --item-accent: #FF0000;
+}
+
 .contribution-card.linkedin-accent {
+    --contribution-accent: #0077b5;
     border-left: 4px solid #0077b5;
 }
 
-/* Contribution item card */
+.contribution-card.linkedin-accent .contribution-item {
+    --item-accent: #0077b5;
+}
+
+/* Contribution item card - Base styles */
 .contribution-item {
     padding: var(--spacing-md);
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(100, 150, 200, 0.3);
     border-radius: var(--radius-md);
     transition: all 0.3s ease;
     display: flex;
@@ -4137,10 +4190,28 @@ textarea.aero-input:focus {
     color: inherit;
 }
 
-.contribution-item:hover {
+/* Glassy variant for contribution items */
+.contribution-item.glassy {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(100, 150, 200, 0.3);
+}
+
+.contribution-item.glassy:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     border-color: var(--color-accent-blue);
+}
+
+/* Solid variant for contribution items */
+.contribution-item.solid {
+    background: color-mix(in srgb, var(--surface-1) 85%, var(--item-accent, var(--color-accent-blue)) 2%);
+    border: 1px solid color-mix(in srgb, var(--item-accent, var(--color-accent-blue)) 30%, var(--card-border));
+}
+
+.contribution-item.solid:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--item-accent, var(--color-accent-blue)) 50%, var(--card-border));
+    background: color-mix(in srgb, var(--surface-1) 85%, var(--item-accent, var(--color-accent-blue)) 3%);
 }
 
 .contribution-item-title {
